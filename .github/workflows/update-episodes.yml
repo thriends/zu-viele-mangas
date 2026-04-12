@@ -1,0 +1,42 @@
+name: Update episodes
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch latest episodes from iTunes Lookup
+        run: |
+          curl -s "https://itunes.apple.com/lookup?id=1849594551&media=podcast&entity=podcastEpisode&limit=20" \
+            | python3 -c "
+          import sys, json, datetime
+          d = json.load(sys.stdin)
+          eps = [r for r in d.get('results', []) if r.get('wrapperType') == 'podcastEpisode']
+          out = {'episodes': eps, 'updatedAt': datetime.datetime.utcnow().isoformat() + 'Z'}
+          json.dump(out, sys.stdout, ensure_ascii=False, indent=2)
+          " > episodes.json
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Ignore changes only in updatedAt
+          if git diff --quiet -- episodes.json; then
+            echo "No changes"
+          else
+            CONTENT_DIFF=$(git diff episodes.json | grep -E '^[+-]' | grep -v updatedAt | grep -v '^[+-]\{3\}' || true)
+            if [ -z "$CONTENT_DIFF" ]; then
+              echo "Only updatedAt changed, skipping commit"
+              git checkout -- episodes.json
+            else
+              git add episodes.json
+              git commit -m "chore(episodes): update feed"
+              git push
+            fi
+          fi

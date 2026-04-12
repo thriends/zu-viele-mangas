@@ -55,15 +55,12 @@ const extractFolgeNr = (title) => {
 async function loadEpisodes() {
   const list = document.getElementById('episode-list');
   if (!list) return;
-  const id = list.dataset.podcastId;
-  if (!id) return;
 
   try {
-    const res = await fetch(`https://itunes.apple.com/lookup?id=${encodeURIComponent(id)}&media=podcast&entity=podcastEpisode&limit=20`);
+    const res = await fetch('episodes.json', { cache: 'no-cache' });
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
-    const eps = (data.results || [])
-      .filter((r) => r.wrapperType === 'podcastEpisode')
+    const eps = (data.episodes || [])
       .sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
       .slice(0, 5);
 

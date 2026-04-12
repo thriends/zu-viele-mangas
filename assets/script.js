@@ -25,3 +25,62 @@ document.querySelectorAll('.nav-links a').forEach((a) => {
   const href = a.getAttribute('href');
   if (href === path) a.classList.add('active');
 });
+
+// Live-Loader: holt die neuesten Folgen aus der iTunes-Lookup-API
+const APPLE_ICON = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-1.7 19.85v-3.8a3 3 0 113.4 0v3.8A10 10 0 0012 2zm0 6a3.5 3.5 0 110 7 3.5 3.5 0 010-7z"/></svg>';
+
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+const cleanTitle = (t) => String(t ?? '').replace(/\s*[(\[]\s*#?folge\s*\d+\s*[)\]]\s*$/i, '').replace(/\s*[#]?\d+\s*$/, (m) => m).trim();
+
+async function loadEpisodes() {
+  const list = document.getElementById('episode-list');
+  if (!list) return;
+  const id = list.dataset.podcastId;
+  if (!id) return;
+
+  try {
+    const res = await fetch(`https://itunes.apple.com/lookup?id=${encodeURIComponent(id)}&media=podcast&entity=podcastEpisode&limit=20`);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const eps = (data.results || [])
+      .filter((r) => r.wrapperType === 'podcastEpisode')
+      .sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
+      .slice(0, 5);
+
+    if (!eps.length) throw new Error('empty');
+
+    list.innerHTML = eps.map((ep) => {
+      const num = ep.episodeNumber ? String(ep.episodeNumber).padStart(2, '0') : '–';
+      const date = new Date(ep.releaseDate).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
+      const mins = Math.round((ep.trackTimeMillis || 0) / 60000);
+      const title = esc(cleanTitle(ep.trackName));
+      const appleUrl = esc((ep.trackViewUrl || '').replace('/us/', '/de/'));
+
+      return `
+        <article class="episode">
+          <div class="episode-num"><small>Folge</small>${esc(num)}</div>
+          <div class="episode-meta">
+            <h3>${title}</h3>
+            <div class="info">
+              <span>${esc(date)}</span>
+              <span>ca. ${mins} Min.</span>
+            </div>
+          </div>
+          <div class="episode-links">
+            <a class="episode-link" href="${appleUrl}" target="_blank" rel="noopener" aria-label="Auf Apple Podcasts anhören" title="Auf Apple Podcasts">${APPLE_ICON}</a>
+          </div>
+        </article>
+      `;
+    }).join('');
+  } catch {
+    list.innerHTML = `
+      <p class="episode-error">
+        Folgen gerade nicht verfügbar. Hör direkt auf
+        <a href="https://podcasts.apple.com/de/podcast/zu-viele-mangas/id1849594551" target="_blank" rel="noopener">Apple Podcasts</a> oder
+        <a href="https://open.spotify.com/show/5D5eCTuyQ6V66Uarn6dgdk" target="_blank" rel="noopener">Spotify</a>.
+      </p>`;
+  }
+}
+
+loadEpisodes();

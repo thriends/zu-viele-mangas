@@ -416,6 +416,16 @@ section.panel {
   gap: 12px;
 }
 
+.episode-loading, .episode-error {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ink-muted);
+  background: white;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+}
+.episode-error a { color: var(--orange); font-weight: 600; }
+
 .episode {
   display: grid;
   grid-template-columns: 72px 1fr auto;

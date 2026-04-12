@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF7A45"/>
+      <stop offset="100%" stop-color="#FFB347"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="92" fill="url(#lg)"/>
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#2B1D16" stroke-width="6"/>
+  <g transform="translate(100,108)" text-anchor="middle" font-family="'Zen Kaku Gothic Antique', 'Bricolage Grotesque', sans-serif" font-weight="800" fill="#2B1D16">
+    <text y="-8" font-size="34" letter-spacing="-1">zu viele</text>
+    <text y="28" font-size="38" letter-spacing="-1">Mangas</text>
+  </g>
+  <g fill="#2B1D16" opacity=".85">
+    <circle cx="40" cy="40" r="4"/>
+    <circle cx="160" cy="40" r="4"/>
+    <circle cx="40" cy="160" r="4"/>
+    <circle cx="160" cy="160" r="4"/>
+  </g>
+</svg>

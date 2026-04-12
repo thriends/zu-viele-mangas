@@ -195,6 +195,29 @@ body {
   50% { transform: translateY(-8px) rotate(-2deg); }
 }
 
+.hero-banner {
+  margin: 0 auto 40px;
+  max-width: 1040px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 3px solid var(--ink);
+  box-shadow: 12px 12px 0 var(--orange), 0 30px 80px rgba(43,29,22,.22);
+  transform: rotate(-0.8deg);
+  transition: transform .5s ease;
+  padding: 0;
+}
+.hero-banner:hover { transform: rotate(0deg) scale(1.01); }
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 640px) {
+  .hero-banner { transform: rotate(0); box-shadow: 6px 6px 0 var(--orange), var(--shadow); border-width: 2px; }
+}
+
 .hero h1 {
   font-family: var(--font-display);
   font-weight: 800;

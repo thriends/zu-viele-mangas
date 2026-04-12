@@ -1,5 +1,7 @@
 /* ===== zu-viele-mangas — Styles ===== */
 
+@import url('fonts/fonts.css');
+
 :root {
   --cream: #FDF6EC;
   --cream-2: #FFF0DC;
@@ -631,6 +633,31 @@ footer a:hover { color: var(--orange); }
 }
 
 /* ===== Shop ===== */
+.shop-gate {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  max-width: 600px;
+  margin: 0 auto;
+}
+.shop-gate h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+.shop-gate p {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+.shop-gate p a { color: var(--orange); font-weight: 600; }
+.shop-gate .btn { margin-top: 6px; }
+
 .shop-wrap {
   width: 100%;
   max-width: 1180px;

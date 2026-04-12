@@ -6,9 +6,6 @@
   <title>Merchandise — zu viele mangas</title>
   <meta name="description" content="Offizieller zu viele mangas Merch — Hoodies, Shirts und mehr über SpreadShop." />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -31,20 +28,22 @@
     </section>
 
     <div class="shop-wrap">
-      <!-- SpreadShop Einbindung laut Briefing -->
-      <div id="myShop">
+      <!-- Click-to-Load: SpreadShop wird erst nach Einwilligung des Nutzers geladen -->
+      <div id="shop-gate" class="shop-gate">
+        <h3>Shop anzeigen?</h3>
+        <p>
+          Der Shop wird von <strong>SpreadShop</strong> (sprd.net AG) bereitgestellt.
+          Beim Laden werden Daten (z.&nbsp;B. deine IP-Adresse) an SpreadShop übertragen und es können Cookies gesetzt werden.
+          Details in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+        </p>
+        <button type="button" id="shop-load" class="btn btn-primary">Shop laden</button>
+        <p style="margin-top: 14px; font-size: 14px;">
+          Alternativ: <a href="https://zu-viele-mangas.myspreadshop.de" target="_blank" rel="noopener">direkt im SpreadShop ansehen</a>
+        </p>
+      </div>
+      <div id="myShop" hidden>
         <a href="https://zu-viele-mangas.myspreadshop.de">zu-viele-mangas</a>
       </div>
-      <script>
-        var spread_shop_config = {
-          shopName: 'zu-viele-mangas',
-          locale: 'de_DE',
-          prefix: 'https://zu-viele-mangas.myspreadshop.de',
-          baseId: 'myShop'
-        };
-      </script>
-      <script type="text/javascript"
-              src="https://zu-viele-mangas.myspreadshop.de/shopfiles/shopclient/shopclient.nocache.js"></script>
     </div>
 
     <div class="wrap">
@@ -88,5 +87,23 @@
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="assets/script.js"></script>
+  <script>
+    // Click-to-Load für SpreadShop — lädt Drittanbieter erst nach bewusstem Klick
+    document.getElementById('shop-load')?.addEventListener('click', () => {
+      document.getElementById('shop-gate').remove();
+      const myShop = document.getElementById('myShop');
+      myShop.hidden = false;
+      window.spread_shop_config = {
+        shopName: 'zu-viele-mangas',
+        locale: 'de_DE',
+        prefix: 'https://zu-viele-mangas.myspreadshop.de',
+        baseId: 'myShop'
+      };
+      const s = document.createElement('script');
+      s.src = 'https://zu-viele-mangas.myspreadshop.de/shopfiles/shopclient/shopclient.nocache.js';
+      s.async = true;
+      document.body.appendChild(s);
+    });
+  </script>
 </body>
 </html>

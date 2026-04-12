@@ -35,7 +35,22 @@ const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@zu_viele_mangas';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-const cleanTitle = (t) => String(t ?? '').replace(/\s*[(\[]\s*#?folge\s*\d+\s*[)\]]\s*$/i, '').replace(/\s*[#]?\d+\s*$/, (m) => m).trim();
+const cleanTitle = (t) => String(t ?? '')
+  .replace(/\s*[(\[]\s*#?folge\s*\d+\s*[)\]]\s*$/i, '')
+  .replace(/^\s*\d+\.\s*folge[:?]?\s*/i, '')
+  .replace(/\s*#\d+\s*$/, '')
+  .trim();
+
+const extractFolgeNr = (title) => {
+  const s = String(title ?? '');
+  let m = s.match(/[(\[]\s*#?folge\s*(\d+)\s*[)\]]/i);
+  if (m) return m[1];
+  m = s.match(/(\d+)\.\s*folge/i);
+  if (m) return m[1];
+  m = s.match(/#(\d+)\s*$/);
+  if (m) return m[1];
+  return null;
+};
 
 async function loadEpisodes() {
   const list = document.getElementById('episode-list');
@@ -55,7 +70,8 @@ async function loadEpisodes() {
     if (!eps.length) throw new Error('empty');
 
     list.innerHTML = eps.map((ep) => {
-      const num = ep.episodeNumber ? String(ep.episodeNumber).padStart(2, '0') : '–';
+      const rawNum = ep.episodeNumber ?? extractFolgeNr(ep.trackName);
+      const num = rawNum ? String(rawNum).padStart(2, '0') : '–';
       const date = new Date(ep.releaseDate).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
       const mins = Math.round((ep.trackTimeMillis || 0) / 60000);
       const title = esc(cleanTitle(ep.trackName));

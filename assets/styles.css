@@ -284,6 +284,13 @@ body {
 }
 .btn-platform:hover { transform: translateY(-2px) rotate(-1deg); box-shadow: var(--shadow); background: white; }
 
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--cream); }
+
 .btn svg { width: 18px; height: 18px; }
 
 /* ===== Sections ===== */
@@ -413,11 +420,22 @@ section.panel {
 
 /* ===== Episodes list ===== */
 
+.episode-toolbar {
+  margin-top: 28px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .episode-list {
-  margin-top: 32px;
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.btn-row-podcast {
+  margin-top: 28px;
+  justify-content: center;
 }
 
 .episode-loading, .episode-error {

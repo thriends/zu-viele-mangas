@@ -52,46 +52,62 @@ const extractFolgeNr = (title) => {
   return null;
 };
 
+const EPISODE_PREVIEW_COUNT = 3;
+
+const renderEpisode = (ep) => {
+  const rawNum = ep.episodeNumber ?? extractFolgeNr(ep.trackName);
+  const num = rawNum ? String(rawNum).padStart(2, '0') : '–';
+  const date = new Date(ep.releaseDate).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
+  const mins = Math.round((ep.trackTimeMillis || 0) / 60000);
+  const title = esc(cleanTitle(ep.trackName));
+  const appleUrl = esc((ep.trackViewUrl || '').replace('/us/', '/de/'));
+
+  return `
+    <article class="episode">
+      <div class="episode-num"><small>Folge</small>${esc(num)}</div>
+      <div class="episode-meta">
+        <h3>${title}</h3>
+        <div class="info">
+          <span>${esc(date)}</span>
+          <span>ca. ${mins} Min.</span>
+        </div>
+      </div>
+      <div class="episode-links">
+        <a class="episode-link" href="${appleUrl}" target="_blank" rel="noopener" aria-label="Folge auf Apple Podcasts öffnen" title="Auf Apple Podcasts">${APPLE_ICON}</a>
+        <a class="episode-link" href="${SPOTIFY_SHOW_URL}" target="_blank" rel="noopener" aria-label="Auf Spotify öffnen" title="Auf Spotify">${SPOTIFY_ICON}</a>
+        <a class="episode-link" href="${YOUTUBE_CHANNEL_URL}" target="_blank" rel="noopener" aria-label="Auf YouTube öffnen" title="Auf YouTube">${YOUTUBE_ICON}</a>
+      </div>
+    </article>
+  `;
+};
+
 async function loadEpisodes() {
   const list = document.getElementById('episode-list');
+  const toggle = document.getElementById('show-all-episodes');
   if (!list) return;
 
   try {
     const res = await fetch('episodes.json', { cache: 'no-cache' });
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
-    const eps = (data.episodes || [])
-      .sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
-      .slice(0, 5);
+    const allEps = (data.episodes || [])
+      .sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate));
 
-    if (!eps.length) throw new Error('empty');
+    if (!allEps.length) throw new Error('empty');
 
-    list.innerHTML = eps.map((ep) => {
-      const rawNum = ep.episodeNumber ?? extractFolgeNr(ep.trackName);
-      const num = rawNum ? String(rawNum).padStart(2, '0') : '–';
-      const date = new Date(ep.releaseDate).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
-      const mins = Math.round((ep.trackTimeMillis || 0) / 60000);
-      const title = esc(cleanTitle(ep.trackName));
-      const appleUrl = esc((ep.trackViewUrl || '').replace('/us/', '/de/'));
+    const render = (eps) => { list.innerHTML = eps.map(renderEpisode).join(''); };
 
-      return `
-        <article class="episode">
-          <div class="episode-num"><small>Folge</small>${esc(num)}</div>
-          <div class="episode-meta">
-            <h3>${title}</h3>
-            <div class="info">
-              <span>${esc(date)}</span>
-              <span>ca. ${mins} Min.</span>
-            </div>
-          </div>
-          <div class="episode-links">
-            <a class="episode-link" href="${appleUrl}" target="_blank" rel="noopener" aria-label="Folge auf Apple Podcasts öffnen" title="Auf Apple Podcasts">${APPLE_ICON}</a>
-            <a class="episode-link" href="${SPOTIFY_SHOW_URL}" target="_blank" rel="noopener" aria-label="Auf Spotify öffnen" title="Auf Spotify">${SPOTIFY_ICON}</a>
-            <a class="episode-link" href="${YOUTUBE_CHANNEL_URL}" target="_blank" rel="noopener" aria-label="Auf YouTube öffnen" title="Auf YouTube">${YOUTUBE_ICON}</a>
-          </div>
-        </article>
-      `;
-    }).join('');
+    render(allEps.slice(0, EPISODE_PREVIEW_COUNT));
+
+    if (toggle && allEps.length > EPISODE_PREVIEW_COUNT) {
+      toggle.hidden = false;
+      let expanded = false;
+      toggle.addEventListener('click', () => {
+        expanded = !expanded;
+        render(expanded ? allEps : allEps.slice(0, EPISODE_PREVIEW_COUNT));
+        toggle.textContent = expanded ? 'Weniger anzeigen' : 'Alle Folgen anzeigen';
+      });
+    }
   } catch {
     list.innerHTML = `
       <p class="episode-error">

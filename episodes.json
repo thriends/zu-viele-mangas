@@ -2,7 +2,11 @@
   "episodes": [
     {
       "artworkUrl600": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/600x600bb.jpg",
+      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
+      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/118099114/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-3-7%2F421595074-44100-2-26a6f933c5207.m4a",
+      "episodeContentType": "audio",
       "artistIds": [],
+      "episodeFileExtension": "m4a",
       "genres": [
         {
           "name": "Animation & Manga",
@@ -11,6 +15,7 @@
       ],
       "episodeGuid": "dcfc9b05-75e8-4b98-b21c-6eca0f84304f",
       "releaseDate": "2026-04-08T10:00:00Z",
+      "trackName": "Naruto und alles was du drüber wissen musst (Folge 7)",
       "trackId": 1000760230823,
       "shortDescription": "Egal, ob du ein Naruto-Neuling bist oder schon seit Jahren Fan – diese Folge sprengt alle Klischees rund um den Shinobi-Mythos. Oskar und Elias nehmen dich mit auf eine wahre Frühlings- und Ninja-Reise voller überraschender Fakten, abgedrehter Chara",
       "feedUrl": "https://anchor.fm/s/10afff6bc/podcast/rss",
@@ -26,16 +31,15 @@
       "artworkUrl60": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/60x60bb.jpg",
       "trackTimeMillis": 2435000,
       "contentAdvisoryRating": "Clean",
-      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
-      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/118099114/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-3-7%2F421595074-44100-2-26a6f933c5207.m4a",
-      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/118099114/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-3-7%2F421595074-44100-2-26a6f933c5207.m4a",
-      "episodeFileExtension": "m4a",
-      "episodeContentType": "audio",
-      "trackName": "Naruto und alles was du drüber wissen musst (Folge 7)"
+      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/118099114/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-3-7%2F421595074-44100-2-26a6f933c5207.m4a"
     },
     {
       "artworkUrl600": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/600x600bb.jpg",
+      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
+      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/117472500/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-2-25%2F420760451-44100-2-f16e6a365e3e4.mp3",
+      "episodeContentType": "audio",
       "artistIds": [],
+      "episodeFileExtension": "mp3",
       "genres": [
         {
           "name": "Animation & Manga",
@@ -44,6 +48,7 @@
       ],
       "episodeGuid": "67525381-eb56-401f-88a6-d12b27d6726b",
       "releaseDate": "2026-03-25T18:50:40Z",
+      "trackName": "Unser 1. Livestream 🔴 (Folge 6)",
       "trackId": 1000757335605,
       "shortDescription": "Wir waren auf YT live, und haben jetzt den Livestream hier hochgeladen.\nDanke an alle die dabei waren ❤️\nUnd nochmal sorry das es ein bisschen Chaotisch war, wir haben das zum ersten Mal gemacht und machen sehr aufgeregt. Auch sorry für das Aprupte",
       "feedUrl": "https://anchor.fm/s/10afff6bc/podcast/rss",
@@ -59,16 +64,15 @@
       "artworkUrl60": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/60x60bb.jpg",
       "trackTimeMillis": 3372000,
       "contentAdvisoryRating": "Clean",
-      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
-      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/117472500/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-2-25%2F420760451-44100-2-f16e6a365e3e4.mp3",
-      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/117472500/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-2-25%2F420760451-44100-2-f16e6a365e3e4.mp3",
-      "episodeFileExtension": "mp3",
-      "episodeContentType": "audio",
-      "trackName": "Unser 1. Livestream 🔴 (Folge 6)"
+      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/117472500/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-2-25%2F420760451-44100-2-f16e6a365e3e4.mp3"
     },
     {
       "artworkUrl600": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/600x600bb.jpg",
+      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
+      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/113444049/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-0-3%2F415417849-44100-2-98eb4c00aa048.m4a",
+      "episodeContentType": "audio",
       "artistIds": [],
+      "episodeFileExtension": "m4a",
       "genres": [
         {
           "name": "Animation & Manga",
@@ -77,6 +81,7 @@
       ],
       "episodeGuid": "e25dffdf-81d3-4de9-9467-374387b1f91b",
       "releaseDate": "2026-03-24T15:16:17Z",
+      "trackName": "Wir beantworten fragen auf Gutefrage.de (folge 3)",
       "trackId": 1000743631409,
       "shortDescription": "Elias und Oskar beantworten heute fragen auf der Internetseite \"Gutefrage.de\" das ist eine Plattform wo Random Leute Fragen über unterschiedliche Themen stellen können. Elias und Oskar haben das Thema Mangas/Animes bearbeitet und haben sich über ein",
       "feedUrl": "https://anchor.fm/s/10afff6bc/podcast/rss",
@@ -92,16 +97,15 @@
       "artworkUrl60": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/60x60bb.jpg",
       "trackTimeMillis": 2943000,
       "contentAdvisoryRating": "Clean",
-      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
-      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/113444049/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-0-3%2F415417849-44100-2-98eb4c00aa048.m4a",
-      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/113444049/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-0-3%2F415417849-44100-2-98eb4c00aa048.m4a",
-      "episodeFileExtension": "m4a",
-      "episodeContentType": "audio",
-      "trackName": "Wir beantworten fragen auf Gutefrage.de (folge 3)"
+      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/113444049/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-0-3%2F415417849-44100-2-98eb4c00aa048.m4a"
     },
     {
       "artworkUrl600": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/600x600bb.jpg",
+      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
+      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/117406485/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-2-24%2F420670526-44100-2-2e0cc0e6adf6.m4a",
+      "episodeContentType": "audio",
       "artistIds": [],
+      "episodeFileExtension": "m4a",
       "genres": [
         {
           "name": "Animation & Manga",
@@ -110,6 +114,7 @@
       ],
       "episodeGuid": "5aad3cea-3c0d-4d13-8754-9dd466f512a0",
       "releaseDate": "2026-03-24T15:11:15Z",
+      "trackName": "6. Folge? (#Werbung",
       "trackId": 1000757066063,
       "shortDescription": "Kleine Info\n\nAchtung: nichts schlimmes 🤣 \n\nLive Stream 🔴:\nMittwoch der 25.04.26 um 16:00 Uhr!\n\nKommt alle in den Stream!\n#community\n\n\n*Lasst eine 5 Sterne Bewertung und ein Follow da*",
       "feedUrl": "https://anchor.fm/s/10afff6bc/podcast/rss",
@@ -125,16 +130,15 @@
       "artworkUrl60": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/60x60bb.jpg",
       "trackTimeMillis": 90000,
       "contentAdvisoryRating": "Clean",
-      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
-      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/117406485/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-2-24%2F420670526-44100-2-2e0cc0e6adf6.m4a",
-      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/117406485/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-2-24%2F420670526-44100-2-2e0cc0e6adf6.m4a",
-      "episodeFileExtension": "m4a",
-      "episodeContentType": "audio",
-      "trackName": "6. Folge? (#Werbung"
+      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/117406485/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-2-24%2F420670526-44100-2-2e0cc0e6adf6.m4a"
     },
     {
       "artworkUrl600": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/600x600bb.jpg",
+      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
+      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/116688894/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-2-17%2F420219500-44100-2-db9ae4e910e11.m4a",
+      "episodeContentType": "audio",
       "artistIds": [],
+      "episodeFileExtension": "m4a",
       "genres": [
         {
           "name": "Animation & Manga",
@@ -143,6 +147,7 @@
       ],
       "episodeGuid": "212f3312-1be2-4b7d-a7ce-79a7934e9e98",
       "releaseDate": "2026-03-10T13:04:35Z",
+      "trackName": "SPECIAL FOLGE: Interview mit Manga Fan Tamme (Folge 5)",
       "trackId": 1000754472476,
       "shortDescription": "Elias und Oskar interviewen ein Manga/Anime und Japan Fan, namens Tamme.\n\nIhr wollt noch mehr wissen, dann hört euch die Folge an.\nUnd danke für 100 Streams und Downloads ☺️\n\n\n*Lasst auch ein Follow und eine 5 Sterne bewertung da*\n\n(Tipp: Wir sind",
       "feedUrl": "https://anchor.fm/s/10afff6bc/podcast/rss",
@@ -158,16 +163,15 @@
       "artworkUrl60": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/60x60bb.jpg",
       "trackTimeMillis": 2625000,
       "contentAdvisoryRating": "Clean",
-      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
-      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/116688894/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-2-17%2F420219500-44100-2-db9ae4e910e11.m4a",
-      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/116688894/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-2-17%2F420219500-44100-2-db9ae4e910e11.m4a",
-      "episodeFileExtension": "m4a",
-      "episodeContentType": "audio",
-      "trackName": "SPECIAL FOLGE: Interview mit Manga Fan Tamme (Folge 5)"
+      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/116688894/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-2-17%2F420219500-44100-2-db9ae4e910e11.m4a"
     },
     {
       "artworkUrl600": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/600x600bb.jpg",
+      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
+      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/116039542/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-25%2F418816329-44100-2-b8960afc7fc9.m4a",
+      "episodeContentType": "audio",
       "artistIds": [],
+      "episodeFileExtension": "m4a",
       "genres": [
         {
           "name": "Animation & Manga",
@@ -176,6 +180,7 @@
       ],
       "episodeGuid": "c7efd5de-cd7a-4a7d-bb00-04b343c62e75",
       "releaseDate": "2026-02-25T17:24:31Z",
+      "trackName": "Eine kleine Folge mit kleinem Ranking (Folge 4)",
       "trackId": 1000751559807,
       "shortDescription": "Elias und Oskar haben heute eine kleine aber Feine FOlge für euch, Elias rankt heute auch noch Anime Mädchen und das W-Outro ist auch wieder am Start.\n\nDas Ranking von Elias:\n1: Rias Gremory, Kushina Uzumaki\n2: Revy, Tsukuyo\n3: Esdeath, Touka Kirishim",
       "feedUrl": "https://anchor.fm/s/10afff6bc/podcast/rss",
@@ -191,16 +196,15 @@
       "artworkUrl60": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/60x60bb.jpg",
       "trackTimeMillis": 2279000,
       "contentAdvisoryRating": "Clean",
-      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
-      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/116039542/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-25%2F418816329-44100-2-b8960afc7fc9.m4a",
-      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/116039542/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-25%2F418816329-44100-2-b8960afc7fc9.m4a",
-      "episodeFileExtension": "m4a",
-      "episodeContentType": "audio",
-      "trackName": "Eine kleine Folge mit kleinem Ranking (Folge 4)"
+      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/116039542/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-25%2F418816329-44100-2-b8960afc7fc9.m4a"
     },
     {
       "artworkUrl600": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/600x600bb.jpg",
+      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
+      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/112733945/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-11-18%2F414643825-44100-2-4896b04d3700a.m4a",
+      "episodeContentType": "audio",
       "artistIds": [],
+      "episodeFileExtension": "m4a",
       "genres": [
         {
           "name": "Animation & Manga",
@@ -209,6 +213,7 @@
       ],
       "episodeGuid": "ea64ac13-9890-43d0-b0bc-ac57e28016e5",
       "releaseDate": "2025-12-16T18:52:14Z",
+      "trackName": "Weihnachts Special (Folge 2)",
       "trackId": 1000741571617,
       "shortDescription": "Elias und Oskar labern heute spontan drauf Rum und machen ein Manga Quiz. Oskar leagt auch noch ein alten Song den er früher mit KI erstellt hat, und noch mehr.\nHört jetzt in unsere 2. Folge\n\n:) Lasst ein Follow und eine 5 sterne Bewertung da :)\n\nFür",
       "feedUrl": "https://anchor.fm/s/10afff6bc/podcast/rss",
@@ -224,16 +229,15 @@
       "artworkUrl60": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/60x60bb.jpg",
       "trackTimeMillis": 2733000,
       "contentAdvisoryRating": "Clean",
-      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
-      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/112733945/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-11-18%2F414643825-44100-2-4896b04d3700a.m4a",
-      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/112733945/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-11-18%2F414643825-44100-2-4896b04d3700a.m4a",
-      "episodeFileExtension": "m4a",
-      "episodeContentType": "audio",
-      "trackName": "Weihnachts Special (Folge 2)"
+      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/112733945/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-11-18%2F414643825-44100-2-4896b04d3700a.m4a"
     },
     {
       "artworkUrl600": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/600x600bb.jpg",
+      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
+      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/110338747/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-9-28%2F410133935-44100-2-20c33f6d3639e.m4a",
+      "episodeContentType": "audio",
       "artistIds": [],
+      "episodeFileExtension": "m4a",
       "genres": [
         {
           "name": "Animation & Manga",
@@ -242,6 +246,7 @@
       ],
       "episodeGuid": "52b83745-578b-4edb-9069-178cd21cad7c",
       "releaseDate": "2025-10-28T15:47:05Z",
+      "trackName": "Wir ranken Mangas/Animes! #1",
       "trackId": 1000734175033,
       "shortDescription": "Elias und Oskar ranken Mangas/Animes auf der Tierlist.\nViel Spaß beim Hören unserer ersten Folge.\n\n:) Danke fürs hören. Wenn es dir gefallen hat lass ein Follow da und eine 5 Sterne Bewertung :)",
       "feedUrl": "https://anchor.fm/s/10afff6bc/podcast/rss",
@@ -257,13 +262,8 @@
       "artworkUrl60": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/60x60bb.jpg",
       "trackTimeMillis": 3569000,
       "contentAdvisoryRating": "Clean",
-      "artworkUrl160": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/82/a8/d5/82a8d57d-f61a-8d8a-38d2-3e1f6f5ea3ff/mza_6714406093137480291.jpg/160x160bb.jpg",
-      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/110338747/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-9-28%2F410133935-44100-2-20c33f6d3639e.m4a",
-      "episodeUrl": "https://anchor.fm/s/10afff6bc/podcast/play/110338747/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-9-28%2F410133935-44100-2-20c33f6d3639e.m4a",
-      "episodeFileExtension": "m4a",
-      "episodeContentType": "audio",
-      "trackName": "Wir ranken Mangas/Animes! #1"
+      "previewUrl": "https://anchor.fm/s/10afff6bc/podcast/play/110338747/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-9-28%2F410133935-44100-2-20c33f6d3639e.m4a"
     }
   ],
-  "updatedAt": "2026-04-12T12:40:55.907682Z"
+  "updatedAt": "2026-04-12T18:34:05.201288Z"
 }

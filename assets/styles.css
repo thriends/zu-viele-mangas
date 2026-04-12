@@ -631,24 +631,37 @@ footer a:hover { color: var(--orange); }
 }
 
 /* ===== Shop ===== */
+.shop-wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin: 24px auto 80px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
 #myShop {
-  margin: 24px 0 80px;
-  min-height: 400px;
-  background: white;
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-sm);
+  width: 100%;
+  min-height: 600px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 #myShop > a { color: var(--ink-soft); }
+#myShop iframe,
+#myShop img {
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+@media (max-width: 640px) {
+  .shop-wrap { padding: 0 8px; }
+}
 
 /* ===== Channel grid (über uns) ===== */
 
 .channels {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin-top: 32px;
+  max-width: 640px;
 }
 .channel {
   display: flex;

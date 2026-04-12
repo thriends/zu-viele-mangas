@@ -233,6 +233,8 @@ body {
   background-clip: text;
   color: transparent;
   font-style: italic;
+  padding-right: 0.12em;
+  margin-right: -0.04em;
 }
 
 .hero-tagline {

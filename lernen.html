@@ -104,7 +104,59 @@
     .flow-chart h4 { font-family: var(--font-display); margin: 0 0 8px; font-size: 1em; }
 
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* ===== RESPONSIVE / MOBILE ===== */
+    @media (max-width: 640px) {
+      .two-col { grid-template-columns: 1fr; }
+
+      /* Tighter spacing */
+      .page-hero { padding: 40px 0 12px; }
+      .page-hero h1 { font-size: 1.8em; }
+      .thema { margin-bottom: 32px; }
+      .thema-title { font-size: 1.3em; }
+      .lern-card { padding: 16px 16px; }
+      .merke-box { padding: 14px 14px; }
+
+      /* Tables: horizontal scroll wrapper */
+      .lern-card { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .lern-table { font-size: 0.82em; min-width: 400px; }
+      .lern-table th, .lern-table td { padding: 7px 8px; }
+
+      /* Flow charts */
+      .flow-chart { padding: 14px 10px; }
+      .flow-chart .step { font-size: 0.8em; padding: 5px 10px; }
+
+      /* Lernkarten: fixed action bar at bottom */
+      .card-actions {
+        position: fixed; bottom: 0; left: 0; right: 0;
+        background: rgba(253,246,236,.95);
+        backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        padding: 12px 16px; margin: 0;
+        border-top: 1px solid var(--line);
+        z-index: 90; gap: 8px;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.06);
+      }
+      .card-actions button { padding: 10px 18px; font-size: 0.85em; }
+
+      /* Add bottom padding so cards don't hide behind fixed bar */
+      #karten { padding-bottom: 80px; }
+
+      /* Deck filter buttons */
+      .deck-nav { gap: 5px; }
+      .deck-btn { padding: 6px 12px; font-size: 0.78em; }
+
+      /* Flip cards */
+      .flip-face { padding: 22px 16px; }
+      .flip-front .q-text { font-size: 1.05em; }
+      .flip-front .deck-label { font-size: 0.6em; top: 10px; left: 12px; }
+
+      /* Mode bar */
+      .mode-bar { max-width: 280px; }
+      .mode-btn { padding: 9px 14px; font-size: 14px; }
+
+      /* Station list */
+      .station-list .station-title { font-size: 0.95em; }
+    }
 
     .b { font-weight: 700; }
     .accent-text { color: var(--orange); font-weight: 700; }

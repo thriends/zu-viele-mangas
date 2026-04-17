@@ -425,9 +425,9 @@
           </div>
         </div>
 
-        <!-- 3. HERZ, PULS, BLUTDRUCK -->
+        <!-- 3. HERZ -->
         <div class="thema">
-          <h2 class="thema-title"><span class="nr">3</span> Herz, Puls & Blutdruck</h2>
+          <h2 class="thema-title"><span class="nr">3</span> Das Herz</h2>
 
           <div class="lern-card">
             <h3>Aufbau des Herzens</h3>
@@ -443,34 +443,6 @@
             </table>
             <p style="margin-top:10px"><strong>Herzklappen</strong> = Ventile, die Rückfluss verhindern.<br>
             <strong>Herzscheidewand</strong> = trennt linke und rechte Seite.</p>
-          </div>
-
-          <div class="lern-card">
-            <h3>Der Puls</h3>
-            <p>Bei jedem Herzschlag geht eine <strong>Druckwelle</strong> durch die Arterien — das ist der <strong>Puls</strong>.</p>
-            <p><strong>Wo?</strong> Am Handgelenk (Daumeninnenseite) oder am Hals.</p>
-            <p><strong>Wie messen?</strong> 15 Sekunden zählen × 4 = Schläge pro Minute.</p>
-            <table class="lern-table">
-              <thead><tr><th>Wer?</th><th>Ruhepuls</th></tr></thead>
-              <tbody>
-                <tr><td>Kinder</td><td>~80–90 Schläge/min</td></tr>
-                <tr><td>Erwachsene</td><td>~60–80 Schläge/min</td></tr>
-                <tr><td>Sportler</td><td>~40–50 Schläge/min</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="lern-card">
-            <h3>Der Blutdruck</h3>
-            <p>= Druck, den das Blut auf die Arterienwände ausübt. Zwei Werte:</p>
-            <table class="lern-table">
-              <thead><tr><th>Wert</th><th>Wann?</th><th>Normal</th></tr></thead>
-              <tbody>
-                <tr><td><strong>Systolisch</strong> (oben)</td><td>Herz zieht sich zusammen</td><td>~120 mmHg</td></tr>
-                <tr><td><strong>Diastolisch</strong> (unten)</td><td>Herz entspannt sich</td><td>~80 mmHg</td></tr>
-              </tbody>
-            </table>
-            <p>Schreibweise: <strong>120/80 mmHg</strong> — gesprochen "120 zu 80".</p>
           </div>
         </div>
 
@@ -592,7 +564,7 @@
         <div class="deck-nav">
           <button class="deck-btn active" onclick="switchDeck('alle')">Alle Karten</button>
           <button class="deck-btn" onclick="switchDeck('blut')">Blut & Kreislauf</button>
-          <button class="deck-btn" onclick="switchDeck('herz')">Herz & Puls</button>
+          <button class="deck-btn" onclick="switchDeck('herz')">Herz</button>
           <button class="deck-btn" onclick="switchDeck('ernaehrung')">Ernährung</button>
           <button class="deck-btn" onclick="switchDeck('verdauung')">Verdauung</button>
           <button class="deck-btn" onclick="switchDeck('falsch')">Nochmal-Stapel</button>
@@ -663,12 +635,6 @@
       {deck:'herz',q:'Warum ist die <strong>linke Herzkammer dicker</strong>?',a:'Sie pumpt Blut in den gesamten <strong>Körperkreislauf</strong> — braucht mehr Kraft als der kurze Weg zur Lunge.'},
       {deck:'herz',q:'Was machen <strong>Herzklappen</strong>?',a:'Ventile, die verhindern, dass Blut in die <strong>falsche Richtung</strong> zurückfließt.'},
       {deck:'herz',q:'Was ist die <strong>Herzscheidewand</strong>?',a:'Trennt <strong>linke und rechte Herzhälfte</strong>. Verhindert, dass sich O₂-reiches und O₂-armes Blut mischen.'},
-      {deck:'herz',q:'Was ist der <strong>Puls</strong>?',a:'Fühlbare <strong>Druckwelle</strong> in den Arterien bei jedem Herzschlag.'},
-      {deck:'herz',q:'Wie <strong>misst</strong> man den Puls?',a:'Am Handgelenk oder Hals: <strong>15 Sekunden</strong> zählen × 4 = Schläge/Minute.'},
-      {deck:'herz',q:'Ruhepuls bei <strong>Kindern</strong>?',a:'Ca. <strong>80–90 Schläge/min</strong>. (Erwachsene: 60–80, Sportler: 40–50)'},
-      {deck:'herz',q:'Was ist <strong>systolischer</strong> Blutdruck?',a:'<strong>Oberer Wert</strong> — Druck, wenn das Herz sich <strong>zusammenzieht</strong>. Normal: ~120 mmHg.'},
-      {deck:'herz',q:'Was ist <strong>diastolischer</strong> Blutdruck?',a:'<strong>Unterer Wert</strong> — Druck, wenn das Herz sich <strong>entspannt</strong>. Normal: ~80 mmHg.'},
-      {deck:'herz',q:'Wie schreibt man den <strong>Blutdruck</strong>?',a:'<strong>120/80 mmHg</strong> — gesprochen "120 zu 80".'},
       // ERNÄHRUNG
       {deck:'ernaehrung',q:'Nenne die <strong>drei Hauptnährstoffe</strong>.',a:'<strong>Kohlenhydrate</strong> (Energie), <strong>Fette</strong> (Energiespeicher), <strong>Eiweiße</strong> (Baustoffe).'},
       {deck:'ernaehrung',q:'Welcher Nährstoff liefert <strong>am meisten Energie</strong> pro Gramm?',a:'<strong>Fette</strong> mit 39 kJ/g — doppelt so viel wie Kohlenhydrate oder Eiweiße (je 17 kJ/g).'},
@@ -712,7 +678,7 @@
 
     function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 
-    const dn = {blut:'Blut & Kreislauf',herz:'Herz & Puls',ernaehrung:'Ernährung',verdauung:'Verdauung'};
+    const dn = {blut:'Blut & Kreislauf',herz:'Herz',ernaehrung:'Ernährung',verdauung:'Verdauung'};
 
     function showCard() {
       if (!currentCards.length) {

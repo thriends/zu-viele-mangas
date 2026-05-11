@@ -174,7 +174,11 @@
         .thema-header.gruen { background: linear-gradient(135deg, var(--gruen), #1b5e20); }
         .thema-header.orange { background: linear-gradient(135deg, var(--orange), #e65100); }
         .thema-header.blau { background: linear-gradient(135deg, var(--blau), #0d47a1); }
-        .thema-header h2 { font-size: 1.35em; margin: 0; }
+        /* Explizit weiße Schrift — überschreibt die .rot/.lila/.gruen Utility-Klassen */
+        .thema-header,
+        .thema-header h2,
+        .thema-header .ico { color: white !important; }
+        .thema-header h2 { font-size: 1.45em; margin: 0; font-weight: 700; letter-spacing: 0.3px; }
         .thema-header .ico { font-size: 1.6em; }
 
         .block {

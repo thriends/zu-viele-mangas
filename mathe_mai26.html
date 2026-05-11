@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathe Arbeit 4 – Lernunterlage</title>
+    <style>
+        :root {
+            --blau: #1a73b5;
+            --hellblau: #e8f4fd;
+            --rot: #d32f2f;
+            --hellrot: #fde8e8;
+            --gruen: #2e7d32;
+            --hellgruen: #e8f5e9;
+            --orange: #f57c00;
+            --hellorange: #fff3e0;
+            --lila: #7b1fa2;
+            --helllila: #f3e5f5;
+            --dunkelgrau: #333;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.65;
+            color: var(--dunkelgrau);
+            background: #f0f2f5;
+        }
+
+        /* ===== NAV TABS ===== */
+        .tab-bar {
+            position: sticky; top: 0; z-index: 100;
+            background: white;
+            display: flex;
+            border-bottom: 3px solid var(--blau);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .tab-btn {
+            flex: 1; padding: 14px 10px;
+            border: none; background: white;
+            font-size: 1.05em; font-weight: 600;
+            cursor: pointer; color: #666;
+            transition: all 0.2s;
+        }
+        .tab-btn:hover { background: var(--hellblau); }
+        .tab-btn.active { color: var(--blau); border-bottom: 4px solid var(--blau); background: var(--hellblau); }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* ===== SHARED ===== */
+        .page { max-width: 880px; margin: 0 auto; padding: 25px 20px 60px; }
+        h1 { text-align: center; font-size: 1.9em; color: var(--blau); margin-bottom: 4px; }
+        .subtitle { text-align: center; font-size: 1em; color: #888; margin-bottom: 28px; }
+        ul, ol { padding-left: 22px; }
+        li { margin: 3px 0; }
+
+        /* ===== LAYOUT: SIDEBAR + MAIN ===== */
+        .layout {
+            display: grid;
+            grid-template-columns: 270px 1fr;
+            gap: 0;
+            max-width: 1240px;
+            margin: 0 auto;
+            align-items: start;
+        }
+        .sidebar {
+            position: sticky;
+            top: 51px; /* unter der Tab-Bar */
+            max-height: calc(100vh - 51px);
+            overflow-y: auto;
+            padding: 22px 16px 30px;
+            border-right: 1px solid #e0e0e0;
+            background: white;
+            font-size: 0.92em;
+        }
+        .main {
+            padding: 25px 26px 60px;
+            max-width: 920px;
+            width: 100%;
+        }
+
+        /* Agenda */
+        .agenda h4 {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin: 4px 0 10px;
+            font-weight: 700;
+        }
+        .agenda-block { margin-bottom: 18px; }
+        .agenda-h {
+            display: block;
+            font-weight: 700;
+            padding: 8px 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 4px;
+            border-left: 4px solid transparent;
+            transition: background 0.15s;
+        }
+        .agenda-h:hover { background: #f5f5f5; }
+        .agenda-h.rot { color: var(--rot); border-left-color: var(--rot); background: var(--hellrot); }
+        .agenda-h.lila { color: var(--lila); border-left-color: var(--lila); background: var(--helllila); }
+        .agenda-h.gruen { color: var(--gruen); border-left-color: var(--gruen); background: var(--hellgruen); }
+        .agenda-h.blau { color: var(--blau); border-left-color: var(--blau); background: var(--hellblau); }
+        .agenda-sub {
+            display: block;
+            color: #555;
+            text-decoration: none;
+            padding: 5px 10px 5px 22px;
+            border-radius: 6px;
+            font-size: 0.93em;
+            line-height: 1.35;
+            margin: 1px 0;
+            border-left: 2px solid transparent;
+            transition: all 0.15s;
+        }
+        .agenda-sub:hover { background: #f5f5f5; color: #222; }
+        .agenda-sub.active {
+            background: #f0f7fc;
+            color: var(--blau);
+            font-weight: 600;
+            border-left-color: var(--blau);
+        }
+        .agenda-sub.rot.active { background: var(--hellrot); color: var(--rot); border-left-color: var(--rot); }
+        .agenda-sub.lila.active { background: var(--helllila); color: var(--lila); border-left-color: var(--lila); }
+        .agenda-sub.gruen.active { background: var(--hellgruen); color: var(--gruen); border-left-color: var(--gruen); }
+
+        /* Scroll-Offset für Anker, damit Section nicht unter der Tab-Bar verschwindet */
+        .block[id], .thema[id], .checkliste[id] { scroll-margin-top: 65px; }
+
+        /* Sidebar-Toggle für Mobil */
+        .agenda-toggle {
+            display: none;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-weight: 600;
+            color: var(--blau);
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 14px;
+        }
+        .agenda-toggle::after { content: ' ▾'; }
+        .agenda-toggle.open::after { content: ' ▴'; }
+
+        @media (max-width: 880px) {
+            .layout { grid-template-columns: 1fr; }
+            .sidebar {
+                position: static;
+                max-height: none;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                padding: 16px 18px;
+            }
+            .agenda-toggle { display: block; }
+            .agenda { display: none; }
+            .agenda.open { display: block; }
+            .main { padding: 18px 16px 50px; }
+        }
+
+        /* ===== THEMA-BLOCK ===== */
+        .thema { margin-bottom: 40px; }
+        .thema-header {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 18px; border-radius: 12px 12px 0 0;
+            color: white; font-size: 1.05em;
+        }
+        .thema-header.rot { background: linear-gradient(135deg, var(--rot), #b71c1c); }
+        .thema-header.lila { background: linear-gradient(135deg, var(--lila), #4a148c); }
+        .thema-header.gruen { background: linear-gradient(135deg, var(--gruen), #1b5e20); }
+        .thema-header.orange { background: linear-gradient(135deg, var(--orange), #e65100); }
+        .thema-header.blau { background: linear-gradient(135deg, var(--blau), #0d47a1); }
+        .thema-header h2 { font-size: 1.35em; margin: 0; }
+        .thema-header .ico { font-size: 1.6em; }
+
+        .block {
+            background: white; border-radius: 0 0 12px 12px;
+            padding: 18px 20px; margin-bottom: 14px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+        }
+        .block + .block { border-radius: 12px; }
+        .block h3 { color: var(--blau); margin: 8px 0 8px; font-size: 1.1em; }
+        .block h4 { color: var(--dunkelgrau); margin: 14px 0 6px; font-size: 1em; }
+
+        /* H3-Farbe folgt der Block-Farbe */
+        .thema.rot .block h3 { color: var(--rot); }
+        .thema.lila .block h3 { color: var(--lila); }
+        .thema.gruen .block h3 { color: var(--gruen); }
+        .thema.orange .block h3 { color: var(--orange); }
+        .thema.blau .block h3 { color: var(--blau); }
+        .block p + p { margin-top: 8px; }
+        .block ul, .block ol { margin: 6px 0; }
+
+        /* Merke-Box */
+        .merke {
+            background: var(--hellorange);
+            border-left: 4px solid var(--orange);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+        }
+        .merke-label {
+            display: inline-block; background: var(--orange); color: white;
+            font-size: 0.75em; font-weight: 700; padding: 2px 10px;
+            border-radius: 8px; margin-bottom: 8px; letter-spacing: 0.5px;
+        }
+
+        /* Beispiel-Box */
+        .beispiel {
+            background: var(--hellblau);
+            border-left: 4px solid var(--blau);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+        }
+        .beispiel-label {
+            display: inline-block; background: var(--blau); color: white;
+            font-size: 0.75em; font-weight: 700; padding: 2px 10px;
+            border-radius: 8px; margin-bottom: 8px; letter-spacing: 0.5px;
+        }
+
+        /* Aufgaben-Box */
+        .aufgabe {
+            background: var(--hellgruen);
+            border-left: 4px solid var(--gruen);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+        }
+        .aufgabe-label {
+            display: inline-block; background: var(--gruen); color: white;
+            font-size: 0.75em; font-weight: 700; padding: 2px 10px;
+            border-radius: 8px; margin-bottom: 8px; letter-spacing: 0.5px;
+        }
+        .aufgabe details {
+            margin-top: 10px;
+            background: white;
+            border-radius: 8px;
+            padding: 4px 12px;
+            border: 1px solid #c8e6c9;
+        }
+        .aufgabe summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--gruen);
+            padding: 6px 0;
+            user-select: none;
+        }
+        .aufgabe details[open] summary { margin-bottom: 6px; }
+        .aufgabe details > div { padding: 4px 0 10px; }
+
+        /* Fehler-Box (rot) */
+        .fehler {
+            background: var(--hellrot);
+            border-left: 4px solid var(--rot);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+        }
+        .fehler-label {
+            display: inline-block; background: var(--rot); color: white;
+            font-size: 0.75em; font-weight: 700; padding: 2px 10px;
+            border-radius: 8px; margin-bottom: 8px; letter-spacing: 0.5px;
+        }
+
+        .b { font-weight: 700; }
+        .rot { color: var(--rot); }
+        .blau { color: var(--blau); }
+        .gruen { color: var(--gruen); }
+        .orange { color: var(--orange); }
+        .lila { color: var(--lila); }
+
+        /* Tabellen */
+        table.t {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            border-radius: 8px; overflow: hidden; margin: 10px 0; font-size: 0.95em;
+        }
+        table.t th { padding: 9px 12px; text-align: left; color: white; font-weight: 600; }
+        table.t td { padding: 8px 12px; border-top: 1px solid #eee; }
+        table.t tbody tr:nth-child(even) { background: #fafafa; }
+        .th-rot th { background: var(--rot); }
+        .th-blau th { background: var(--blau); }
+        .th-gruen th { background: var(--gruen); }
+        .th-lila th { background: var(--lila); }
+        .th-orange th { background: var(--orange); }
+
+        /* Stellenwerttafel */
+        table.swt {
+            border-collapse: collapse; margin: 12px auto; font-family: 'Courier New', monospace;
+            font-size: 1.1em; border: 2px solid var(--blau);
+        }
+        table.swt th, table.swt td {
+            border: 1px solid #999; padding: 6px 12px; text-align: center; min-width: 36px;
+        }
+        table.swt th { background: var(--hellblau); color: var(--blau); font-weight: 700; }
+        table.swt td.komma { border-left: 3px solid var(--rot); border-right: 3px solid var(--rot); background: var(--hellrot); font-weight: 700; color: var(--rot); }
+        table.swt .ganz { background: #f5f5f5; }
+        table.swt .nach { background: #fffbf0; }
+
+        /* Rechen-Block (Untereinander rechnen) */
+        .rechenblock {
+            font-family: 'Courier New', monospace;
+            font-size: 1.15em;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 10px 0;
+            display: inline-block;
+            white-space: pre;
+            line-height: 1.4;
+        }
+
+        .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 640px) { .cols { grid-template-columns: 1fr; } }
+
+        .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        @media (max-width: 640px) { .cols3 { grid-template-columns: 1fr; } }
+
+        /* Mini-Checkliste oben */
+        .checkliste {
+            background: white;
+            border: 2px solid var(--blau);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .checkliste h3 { color: var(--blau); margin-bottom: 10px; }
+        .checkliste-row {
+            display: flex; gap: 10px; align-items: flex-start;
+            padding: 5px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        .checkliste-row:last-child { border-bottom: none; }
+        .check-tag {
+            min-width: 80px;
+            font-size: 0.75em; font-weight: 700;
+            padding: 3px 8px; border-radius: 6px;
+            color: white; text-align: center;
+            height: fit-content;
+        }
+        .check-tag.rot { background: var(--rot); }
+        .check-tag.lila { background: var(--lila); }
+        .check-tag.gruen { background: var(--gruen); }
+        .check-tag.orange { background: var(--orange); }
+
+        /* TODO / Coming-soon */
+        .coming-soon {
+            background: #fafafa;
+            border: 2px dashed #ccc;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 14px;
+            text-align: center;
+            color: #888;
+        }
+        .coming-soon strong { color: var(--blau); display: block; margin-bottom: 6px; }
+
+        /* ===== LERNKARTEN ===== */
+        .deck-nav {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            justify-content: center; margin-bottom: 25px;
+        }
+        .deck-btn {
+            padding: 8px 16px; border-radius: 20px; border: 2px solid var(--blau);
+            background: white; color: var(--blau); font-weight: 600;
+            cursor: pointer; font-size: 0.9em; transition: all 0.2s;
+        }
+        .deck-btn:hover, .deck-btn.active { background: var(--blau); color: white; }
+
+        .card-container {
+            perspective: 800px;
+            max-width: 560px; margin: 0 auto 18px;
+            cursor: pointer;
+            min-height: 200px;
+        }
+        .card {
+            position: relative; width: 100%;
+            min-height: 180px;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+        }
+        .card.flipped { transform: rotateY(180deg); }
+        .card-face {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px; padding: 24px 22px;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+        }
+        .card-front {
+            background: white;
+            border: 3px solid var(--blau);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .card-front .label {
+            position: absolute; top: 12px; left: 16px;
+            font-size: 0.7em; font-weight: 700; color: white;
+            background: var(--blau); padding: 2px 10px; border-radius: 8px;
+        }
+        .card-front .q {
+            font-size: 1.2em; font-weight: 600; color: var(--dunkelgrau);
+            line-height: 1.4;
+        }
+        .card-front .tap {
+            position: absolute; bottom: 10px;
+            font-size: 0.75em; color: #bbb;
+        }
+        .card-back {
+            background: var(--hellblau);
+            border: 3px solid var(--blau);
+            transform: rotateY(180deg);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .card-back .a {
+            font-size: 1.05em; line-height: 1.5; color: var(--dunkelgrau);
+        }
+        .card-back .a strong { color: var(--blau); }
+
+        .card-counter {
+            text-align: center; color: #999; font-size: 0.85em;
+            margin-bottom: 25px;
+        }
+
+        .card-nav {
+            display: flex; justify-content: center; gap: 12px; margin-bottom: 30px;
+        }
+        .card-nav button {
+            padding: 10px 24px; border-radius: 25px; border: 2px solid var(--blau);
+            background: white; color: var(--blau); font-weight: 600;
+            cursor: pointer; font-size: 0.95em; transition: all 0.2s;
+        }
+        .card-nav button:hover { background: var(--blau); color: white; }
+
+        .progress-bar {
+            max-width: 560px; margin: 0 auto 20px; height: 6px;
+            background: #e0e0e0; border-radius: 3px; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: var(--gruen); border-radius: 3px;
+            transition: width 0.3s;
+        }
+
+        @media (max-width: 600px) {
+            .tab-btn { font-size: 0.9em; padding: 12px 6px; }
+            .page { padding: 16px 12px 40px; }
+            h1 { font-size: 1.5em; }
+            .card-front .q { font-size: 1.05em; }
+        }
+
+        @media print {
+            .tab-bar { display: none; }
+            .tab-content { display: block !important; }
+            .card { transform: none !important; }
+            .card-back { transform: none !important; position: relative; }
+            .card-front, .card-back { position: relative; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- TAB NAVIGATION -->
+<div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('theorie')">Theorie &amp; Übungen</button>
+    <button class="tab-btn" onclick="switchTab('karten')">Lernkarten</button>
+</div>
+
+<!-- ================================================================ -->
+<!--                    TEIL A: THEORIE & ÜBUNGEN                     -->
+<!-- ================================================================ -->
+<div id="theorie" class="tab-content active">
+<div class="layout">
+
+<!-- ───── LINKE AGENDA-SIDEBAR ───── -->
+<aside class="sidebar">
+    <button class="agenda-toggle" onclick="this.classList.toggle('open'); document.getElementById('agenda').classList.toggle('open')">Agenda</button>
+    <nav class="agenda" id="agenda">
+        <h4>Lerninhalt</h4>
+
+        <div class="agenda-block">
+            <a href="#ueberblick" class="agenda-h blau">Überblick</a>
+        </div>
+
+        <div class="agenda-block">
+            <a href="#block1" class="agenda-h rot">Block 1 · Dezimalzahlen</a>
+            <a href="#sec-1-1" class="agenda-sub rot">1.1 Was ist eine Dezimalzahl?</a>
+            <a href="#sec-1-2" class="agenda-sub rot">1.2 Vergleichen, Ordnen, Runden</a>
+            <a href="#sec-1-3" class="agenda-sub rot">1.3 Addieren &amp; Subtrahieren</a>
+            <a href="#sec-1-4" class="agenda-sub rot">1.4 Multiplikation</a>
+            <a href="#sec-1-5" class="agenda-sub rot">1.5 Division</a>
+            <a href="#sec-1-6" class="agenda-sub rot">1.6 Merkkarte: 5 Regeln</a>
+        </div>
+
+        <div class="agenda-block">
+            <a href="#block2" class="agenda-h lila">Block 2 · Brüche &amp; Prozente</a>
+            <a href="#sec-2-1" class="agenda-sub lila">2.1 Was ist Prozent?</a>
+            <a href="#sec-2-2" class="agenda-sub lila">2.2 Bruch ↔ Dezimalzahl ↔ %</a>
+            <a href="#sec-2-3" class="agenda-sub lila">2.3 Anteile berechnen</a>
+            <a href="#sec-2-4" class="agenda-sub lila">2.4 Brüche in Dezimalzahlen</a>
+            <a href="#sec-2-5" class="agenda-sub lila">2.5 Textaufgaben</a>
+        </div>
+
+        <div class="agenda-block">
+            <a href="#block3" class="agenda-h gruen">Block 3 · Geometrie</a>
+            <a href="#sec-3-1" class="agenda-sub gruen">3.1 Drei Arten von Symmetrie</a>
+            <a href="#sec-3-2" class="agenda-sub gruen">3.2 Achsensymmetrie</a>
+            <a href="#sec-3-3" class="agenda-sub gruen">3.3 Drehsymmetrie</a>
+            <a href="#sec-3-4" class="agenda-sub gruen">3.4 Punktsymmetrie</a>
+            <a href="#sec-3-5" class="agenda-sub gruen">3.5 Figuren verschieben</a>
+            <a href="#sec-3-6" class="agenda-sub gruen">3.6 Raumvorstellung</a>
+        </div>
+    </nav>
+</aside>
+
+<!-- ───── RECHTER INHALTSBEREICH ───── -->
+<main class="main">
+
+<h1>Mathe Arbeit 4</h1>
+<p class="subtitle">Klasse 6 · Schuljahr 25/26 · Dezimalzahlen, Brüche &amp; Prozente, Symmetrien</p>
+
+<!-- ── ÜBERBLICK / CHECKLISTE ── -->
+<div class="checkliste" id="ueberblick">
+    <h3>Was kommt dran?</h3>
+    <div class="checkliste-row">
+        <span class="check-tag rot">Block 1</span>
+        <div><strong>Dezimalzahlen</strong> — Stellenwerttafel, Lesen/Vergleichen, Runden, Zahlenstrahl, schriftlich addieren &amp; subtrahieren, multiplizieren &amp; dividieren, Zehnerpotenzen, Textaufgaben (Geld).</div>
+    </div>
+    <div class="checkliste-row">
+        <span class="check-tag lila">Block 2</span>
+        <div><strong>Brüche, Prozente, Umwandlungen</strong> — Bruch ↔ Dezimalzahl ↔ Prozent umwandeln, Hunderterbrüche, Anteile berechnen.</div>
+    </div>
+    <div class="checkliste-row">
+        <span class="check-tag gruen">Block 3</span>
+        <div><strong>Geometrie</strong> — Achsen-, Dreh- und Punktsymmetrie, Figuren verschieben (mit Geodreieck), Raumvorstellung / Kopfgeometrie.</div>
+    </div>
+    <div class="checkliste-row">
+        <span class="check-tag orange">Tools</span>
+        <div><strong>Material:</strong> Geodreieck, spitzer Bleistift (HB), blauer/schwarzer Schreibstift, eigene Karteikarten in Kästchenhöhe (einseitig, in der Folie).</div>
+    </div>
+</div>
+
+
+<!-- ================================================================ -->
+<!--                BLOCK 1: DEZIMALZAHLEN                            -->
+<!-- ================================================================ -->
+<div class="thema rot" id="block1">
+    <div class="thema-header rot"><span class="ico">🔢</span><h2>Block 1 · Dezimalzahlen</h2></div>
+
+    <!-- 1.1 Stellenwerttafel -->
+    <div class="block" id="sec-1-1">
+        <h3>1.1 · Was ist eine Dezimalzahl?</h3>
+        <p>Eine <span class="b">Dezimalzahl</span> hat zwei Teile, die durch ein <span class="b rot">Komma</span> getrennt sind:</p>
+        <ul>
+            <li><span class="b">Vor dem Komma</span> stehen die <span class="b">Ganzen</span> (Einer, Zehner, Hunderter, …).</li>
+            <li><span class="b">Nach dem Komma</span> stehen die <span class="b">Bruchteile</span> (Zehntel, Hundertstel, Tausendstel, …).</li>
+        </ul>
+        <p>Jede Stelle hat einen <span class="b">Stellenwert</span>. Je weiter rechts vom Komma, desto kleiner der Wert.</p>
+
+        <h4>Stellenwerttafel</h4>
+        <table class="swt">
+            <thead>
+                <tr>
+                    <th class="ganz">T</th><th class="ganz">H</th><th class="ganz">Z</th><th class="ganz">E</th>
+                    <th class="komma">,</th>
+                    <th class="nach">z</th><th class="nach">h</th><th class="nach">t</th>
+                </tr>
+                <tr>
+                    <th class="ganz" style="font-size:0.7em;font-weight:400">Tausender</th>
+                    <th class="ganz" style="font-size:0.7em;font-weight:400">Hunderter</th>
+                    <th class="ganz" style="font-size:0.7em;font-weight:400">Zehner</th>
+                    <th class="ganz" style="font-size:0.7em;font-weight:400">Einer</th>
+                    <th></th>
+                    <th class="nach" style="font-size:0.7em;font-weight:400">Zehntel</th>
+                    <th class="nach" style="font-size:0.7em;font-weight:400">Hundertstel</th>
+                    <th class="nach" style="font-size:0.7em;font-weight:400">Tausendstel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="ganz"></td><td class="ganz"></td><td class="ganz">2</td><td class="ganz">3</td><td class="komma">,</td><td class="nach">4</td><td class="nach">7</td><td class="nach"></td></tr>
+                <tr><td class="ganz"></td><td class="ganz">1</td><td class="ganz">0</td><td class="ganz">5</td><td class="komma">,</td><td class="nach">0</td><td class="nach">8</td><td class="nach"></td></tr>
+                <tr><td class="ganz"></td><td class="ganz"></td><td class="ganz"></td><td class="ganz">0</td><td class="komma">,</td><td class="nach">0</td><td class="nach">0</td><td class="nach">9</td></tr>
+            </tbody>
+        </table>
+        <p>Gelesen: <span class="b">23,47</span> = „dreiundzwanzig Komma vier sieben" oder „dreiundzwanzig und siebenundvierzig Hundertstel". <span class="b">0,009</span> = „neun Tausendstel".</p>
+
+        <div class="merke">
+            <span class="merke-label">MERKE</span>
+            <p>Stellen <span class="b">vor</span> dem Komma: <span class="b">E · 10 = Z · 10 = H · 10 = T</span> &nbsp;(jeweils mal 10 nach links).<br>
+            Stellen <span class="b">nach</span> dem Komma: <span class="b">z : 10 = h : 10 = t</span> &nbsp;(jeweils geteilt durch 10 nach rechts).</p>
+            <p style="margin-top:6px"><strong>Achtung:</strong> Nullen am Ende einer Dezimalzahl ändern den Wert nicht: <span class="b">3,5 = 3,50 = 3,500</span>. Aber: <span class="b">3,05 ≠ 3,5</span> &mdash; die Null im Inneren zählt!</p>
+        </div>
+    </div>
+
+    <!-- 1.2 Vergleichen & Ordnen -->
+    <div class="block" id="sec-1-2">
+        <h3>1.2 · Vergleichen, Ordnen, Runden</h3>
+
+        <h4>Dezimalzahlen vergleichen</h4>
+        <p>Vergleiche stellenweise <span class="b">von links nach rechts</span>:</p>
+        <ol>
+            <li>Zuerst die Ganzen vergleichen.</li>
+            <li>Wenn die gleich sind: Zehntel vergleichen.</li>
+            <li>Wenn die gleich sind: Hundertstel &mdash; usw.</li>
+        </ol>
+
+        <div class="beispiel">
+            <span class="beispiel-label">BEISPIEL</span>
+            <p>Vergleiche <span class="b">17,387</span> und <span class="b">17,5</span>.</p>
+            <p>Ganze: 17 = 17 ✓ &nbsp;&nbsp;|&nbsp;&nbsp; Zehntel: <span class="b rot">3</span> &lt; <span class="b rot">5</span> &nbsp;→&nbsp; also <span class="b">17,387 &lt; 17,5</span>.</p>
+            <p style="margin-top:8px"><strong>Tipp:</strong> Beide Zahlen auf gleiche Nachkommastellen-Anzahl bringen — mit Nullen auffüllen: 17,387 vs. 17,500. Dann ist es offensichtlich.</p>
+        </div>
+
+        <h4>Runden auf Stellen</h4>
+        <p>Schau dir die Ziffer <span class="b">rechts neben</span> der Rundungsstelle an:</p>
+        <ul>
+            <li><span class="b">0, 1, 2, 3, 4</span> → ab<span class="b">runden</span> (Ziffer bleibt)</li>
+            <li><span class="b">5, 6, 7, 8, 9</span> → auf<span class="b">runden</span> (Ziffer +1)</li>
+        </ul>
+
+        <div class="beispiel">
+            <span class="beispiel-label">BEISPIEL</span>
+            <p><strong>Runde 4,8175 auf …</strong></p>
+            <ul>
+                <li>… <span class="b">Zehntel</span>: Schau auf die Hundertstel (= <span class="b rot">1</span>) → abrunden → <span class="b">4,8</span></li>
+                <li>… <span class="b">Hundertstel</span>: Schau auf die Tausendstel (= <span class="b rot">7</span>) → aufrunden → <span class="b">4,82</span></li>
+                <li>… <span class="b">Tausendstel</span>: Schau auf die Zehntausendstel (= <span class="b rot">5</span>) → aufrunden → <span class="b">4,818</span></li>
+            </ul>
+        </div>
+
+        <h4>Auf dem Zahlenstrahl</h4>
+        <p>Zahlen werden mit zunehmender Größe weiter <span class="b">rechts</span> eingetragen. Zwischen zwei ganzen Zahlen liegen unendlich viele Dezimalzahlen. Beispiel: Zwischen 0,7 und 0,8 liegt 0,75 genau in der Mitte.</p>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN A</span>
+            <p><strong>A1.</strong> Ordne der Größe nach (kleinste zuerst): 5,49 · 5,9 · 5,409 · 5,094 · 5,49</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                5,094 &lt; 5,409 &lt; 5,49 = 5,49 &lt; 5,9
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A2.</strong> Runde 17,587 auf Zehntel.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Hundertstel = 8 → aufrunden → <span class="b">17,6</span>.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A3.</strong> Runde 0,098 auf Hundertstel.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Tausendstel = 8 → aufrunden → <span class="b">0,10</span> (man schreibt die Null mit, weil auf Hundertstel gerundet wurde).
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A4.</strong> Welche Zahl liegt auf dem Zahlenstrahl genau zwischen 4,2 und 4,3?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                <span class="b">4,25</span> (denn 4,2 = 4,20 und 4,3 = 4,30, Mitte ist 4,25).
+            </div></details>
+        </div>
+    </div>
+
+    <!-- 1.3 Addition / Subtraktion -->
+    <div class="block" id="sec-1-3">
+        <h3>1.3 · Schriftlich addieren und subtrahieren</h3>
+
+        <div class="merke">
+            <span class="merke-label">DIE GOLDENE REGEL</span>
+            <p><span class="b rot">Komma unter Komma</span> schreiben! Dann steht automatisch jede Stelle unter der gleichen Stelle.</p>
+        </div>
+
+        <h4>Addition</h4>
+        <ol>
+            <li>Zahlen untereinander schreiben — <span class="b">Komma unter Komma</span>.</li>
+            <li>Fehlende Stellen mit Nullen auffüllen.</li>
+            <li>Von rechts nach links addieren, Überträge nicht vergessen.</li>
+            <li>Komma im Ergebnis genau darunter setzen.</li>
+        </ol>
+
+        <div class="beispiel">
+            <span class="beispiel-label">BEISPIEL</span>
+            <p>Berechne <span class="b">17,387 + 47,8</span>.</p>
+            <pre class="rechenblock">    17,387
+  + 47,800        ← mit Nullen auffüllen
+  ‾‾‾‾‾‾‾‾
+    65,187</pre>
+            <p>Übertrag: 7+0 = 7 | 8+0 = 8 | 3+8 = 11 (1 stehen, 1 weiter) | 7+7+1 = 15 (5 stehen, 1 weiter) | 1+4+1 = 6.</p>
+        </div>
+
+        <h4>Subtraktion</h4>
+        <p>Genauso aufschreiben — Komma unter Komma. Falls eine Stelle „zu klein" ist, vom nächsthöheren Stellenwert leihen.</p>
+
+        <div class="beispiel">
+            <span class="beispiel-label">BEISPIEL</span>
+            <p>Berechne <span class="b">65,5 − 17,587</span>.</p>
+            <pre class="rechenblock">    65,500        ← mit Nullen auffüllen
+  − 17,587
+  ‾‾‾‾‾‾‾‾
+    47,913</pre>
+        </div>
+
+        <div class="fehler">
+            <span class="fehler-label">TYPISCHER FEHLER</span>
+            <p>Zahlen <span class="b rot">rechtsbündig</span> aufschreiben statt am Komma auszurichten. Bei 17,387 + 4,5 wird sonst aus 4,5 fälschlich 4,500 — aber rechtsbündig hieße, die 5 stünde unter der 7! Immer am Komma orientieren.</p>
+        </div>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN B</span>
+            <p><strong>B1.</strong> Berechne schriftlich: a) 28,4 + 7,065 &nbsp;&nbsp; b) 100 − 47,38 &nbsp;&nbsp; c) 0,7 + 0,07 + 0,007</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) 35,465 &nbsp;|&nbsp; b) 52,62 &nbsp;|&nbsp; c) 0,777
+            </div></details>
+
+            <p style="margin-top:10px"><strong>B2.</strong> Lena kauft im Supermarkt für 12,49 € ein. Sie bezahlt mit einem 20-Euro-Schein. Wie viel Rückgeld bekommt sie?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                20,00 − 12,49 = <span class="b">7,51 €</span>
+            </div></details>
+
+            <p style="margin-top:10px"><strong>B3.</strong> Drei Strecken sind 1,25 km, 870 m und 0,4 km lang. Wie lang sind sie zusammen?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Erst alles in km: 870 m = 0,870 km.<br>
+                1,25 + 0,870 + 0,4 = <span class="b">2,52 km</span>.
+            </div></details>
+        </div>
+    </div>
+
+    <!-- 1.4 Multiplikation -->
+    <div class="block" id="sec-1-4">
+        <h3>1.4 · Multiplikation von Dezimalzahlen</h3>
+
+        <div class="merke">
+            <span class="merke-label">DIE ZWEI REGELN</span>
+            <p><span class="b">1.</span> Multipliziere zuerst <span class="b">ohne Komma</span>, als wären es natürliche Zahlen.<br>
+            <span class="b">2.</span> Zähle die Nachkommastellen <span class="b">beider Faktoren</span> zusammen und setze im Ergebnis genauso viele Nachkommastellen.</p>
+        </div>
+
+        <div class="beispiel">
+            <span class="beispiel-label">BEISPIEL</span>
+            <p>Berechne <span class="b">5,1 · 4,85</span>.</p>
+            <p><strong>Überschlag:</strong> 5 · 5 = 25 (so weiß ich, das Ergebnis liegt um die 25).</p>
+            <pre class="rechenblock">    5,1 · 4,85
+    ‾‾‾‾‾‾‾‾‾‾‾
+    2 0 4 0 0          (5,1 · 4)
+      4 0 8 0           (5,1 · 0,8)
+        2 5 5            (5,1 · 0,05)
+    ‾‾‾‾‾‾‾‾‾
+    24,735</pre>
+            <p>5,1 hat 1 Nachkommastelle, 4,85 hat 2 → Ergebnis bekommt <span class="b">1 + 2 = 3</span> Nachkommastellen. Daher 24<span class="b rot">,</span>735.</p>
+        </div>
+
+        <h4>Vorsicht bei Nullen am Ende</h4>
+        <p>Beispiel: 4,8 · 5,05 = ? Ohne Komma: 48 · 505 = 24 240. Nachkommastellen 1 + 2 = 3 → <span class="b">24,240</span>. Die letzte Null kann man schreiben oder weglassen: 24,24.</p>
+
+        <h4>Multiplikation mit Zehnerpotenzen — Kommaverschiebung</h4>
+        <p>Eine besonders einfache Sorte: Mal 10, 100, 1000, … oder mal 0,1, 0,01, 0,001 … &mdash; hier wird nur <span class="b">das Komma verschoben</span>!</p>
+
+        <table class="t">
+            <thead class="th-blau"><tr><th>Mal</th><th>Komma wandert</th><th>Beispiel</th></tr></thead>
+            <tbody>
+                <tr><td><span class="b">· 10</span></td><td>1 Stelle nach <span class="b">rechts</span></td><td>3,125 · 10 = <span class="b">31,25</span></td></tr>
+                <tr><td><span class="b">· 100</span></td><td>2 Stellen nach rechts</td><td>3,125 · 100 = <span class="b">312,5</span></td></tr>
+                <tr><td><span class="b">· 1000</span></td><td>3 Stellen nach rechts</td><td>3,125 · 1000 = <span class="b">3125</span></td></tr>
+                <tr><td><span class="b">· 0,1</span></td><td>1 Stelle nach <span class="b">links</span></td><td>648,5 · 0,1 = <span class="b">64,85</span></td></tr>
+                <tr><td><span class="b">· 0,01</span></td><td>2 Stellen nach links</td><td>648,5 · 0,01 = <span class="b">6,485</span></td></tr>
+                <tr><td><span class="b">· 0,001</span></td><td>3 Stellen nach links</td><td>648,5 · 0,001 = <span class="b">0,6485</span></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Rechengesetze</h4>
+        <p>Sie gelten genauso wie bei natürlichen Zahlen:</p>
+        <ul>
+            <li><span class="b">Kommutativgesetz:</span> a · b = b · a (Faktoren vertauschen erlaubt)</li>
+            <li><span class="b">Assoziativgesetz:</span> a · b · c = a · (b · c) (Reihenfolge der Klammern egal)</li>
+            <li><span class="b">Distributivgesetz:</span> a · (b + c) = a · b + a · c (Klammer ausmultiplizieren)</li>
+        </ul>
+
+        <div class="fehler">
+            <span class="fehler-label">ZUM NACHDENKEN</span>
+            <p>Bei natürlichen Zahlen ist das Produkt immer größer-gleich jedem Faktor. <span class="b rot">Bei Dezimalzahlen NICHT!</span></p>
+            <p>0,5 · 16 = 8 &nbsp;→&nbsp; Produkt (8) ist <span class="b rot">kleiner</span> als Faktor 16.<br>
+            0,5 · 0,25 = 0,125 &nbsp;→&nbsp; Produkt ist <span class="b rot">kleiner</span> als beide Faktoren!</p>
+            <p>Faustregel: Multipliziert man mit einer Zahl <span class="b">kleiner als 1</span>, wird das Produkt <span class="b">kleiner</span>.</p>
+        </div>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN C — Kopfrechnen (Buch S. 159 Nr. 6)</span>
+            <p><strong>C1.</strong> Berechne im Kopf:<br>
+            a) 0,9 · 60 &nbsp;&nbsp; b) 400 · 0,7 &nbsp;&nbsp; c) 400 · 0,07 &nbsp;&nbsp; d) 1,2 · 1,2<br>
+            e) 100 · 0,02 &nbsp;&nbsp; f) 20 · 0,2 &nbsp;&nbsp; g) 34 · 0,5 &nbsp;&nbsp; h) 140 · 0,5</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) 54 &nbsp;|&nbsp; b) 280 &nbsp;|&nbsp; c) 28 &nbsp;|&nbsp; d) 1,44 &nbsp;|&nbsp; e) 2 &nbsp;|&nbsp; f) 4 &nbsp;|&nbsp; g) 17 &nbsp;|&nbsp; h) 70
+            </div></details>
+        </div>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN D — Schriftliche Multiplikation (Buch S. 159 Nr. 4)</span>
+            <p><strong>D1.</strong> Führe zuerst eine Überschlagsrechnung durch. Rechne danach schriftlich:<br>
+            a) 3,8 · 3 &nbsp;&nbsp; 7,2 · 1,3 &nbsp;&nbsp; 5,23 · 0,5<br>
+            b) 4,7 · 4 &nbsp;&nbsp; 4,8 · 4,2 &nbsp;&nbsp; 12,3 · 0,47<br>
+            c) 5 · 9,1 &nbsp;&nbsp; 6,2 · 2,7 &nbsp;&nbsp; 4,17 · 0,75<br>
+            d) 8 · 8,2 &nbsp;&nbsp; 7,2 · 1,1 &nbsp;&nbsp; 3,98 · 0,25</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) 11,4 &nbsp;|&nbsp; 9,36 &nbsp;|&nbsp; 2,615<br>
+                b) 18,8 &nbsp;|&nbsp; 20,16 &nbsp;|&nbsp; 5,781<br>
+                c) 45,5 &nbsp;|&nbsp; 16,74 &nbsp;|&nbsp; 3,1275<br>
+                d) 65,6 &nbsp;|&nbsp; 7,92 &nbsp;|&nbsp; 0,995
+            </div></details>
+        </div>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN E — Kommaverschiebung (Buch S. 160 Nr. 11)</span>
+            <p><strong>E1.</strong> Gegeben: 613,6 · 0,73 = 447,928. Bestimme <span class="b">ohne zu rechnen</span> die Ergebnisse:<br>
+            a) 61,36 · 7,3 &nbsp;&nbsp; b) 6,136 · 73 &nbsp;&nbsp; c) 61,36 · 0,73 &nbsp;&nbsp; d) 6136 · 0,073 &nbsp;&nbsp; e) 613,6 · 7,3</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Wenn ein Faktor um Faktor 10 verschiebt und der andere passt, bleibt das Ergebnis gleich.<br>
+                a) <span class="b">447,928</span> (61,36 = 613,6 : 10, 7,3 = 0,73 · 10 → gleich!)<br>
+                b) <span class="b">447,928</span> (6,136 = 613,6 : 100, 73 = 0,73 · 100 → gleich!)<br>
+                c) <span class="b">44,7928</span> (Faktor 613,6 : 10, anderer bleibt → : 10)<br>
+                d) <span class="b">447,928</span> (6136 = 613,6 · 10, 0,073 = 0,73 : 10 → gleich!)<br>
+                e) <span class="b">4479,28</span> (613,6 bleibt, 7,3 = 0,73 · 10 → · 10)
+            </div></details>
+
+            <p style="margin-top:10px"><strong>E2 — Rechenfehler erkennen (Buch S. 160 Nr. 12):</strong> Für 23,4 · 315,6 nennt die Klasse 6b: a) 738,24 &nbsp; b) 7385,4 &nbsp; c) 7385,224 &nbsp; d) 7385,22 &nbsp; e) 7385,04. Welche Ergebnisse sind „sofort" als falsch zu erkennen?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Überschlag: 23 · 316 ≈ 7268. Also muss das Ergebnis um die 7000 liegen — a) 738,24 ist viel zu klein, also falsch.<br>
+                Nachkommastellen: 1 + 1 = 2 → es müssen genau 2 Nachkommastellen sein. c) hat 3 Stellen → falsch.<br>
+                Richtig: <span class="b">7385,04</span> (Antwort e).
+            </div></details>
+        </div>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN F — Textaufgabe (Buch S. 162 Nr. 22)</span>
+            <p><strong>F1 — Wandertag:</strong> Für eine Wanderung muss die Klasse 6a den Fahrtkosten-Beitrag bezahlen. Insgesamt 27 Schüler reisen mit dem Bus, der pro Kilometer 1,80 € kostet. Die Strecke ist 75,5 km lang.</p>
+            <p>a) Wie viel kostet die Busfahrt insgesamt?<br>
+            b) Wie viel zahlt jeder Schüler, wenn alle gleich viel zahlen (auf Cent gerundet)?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) 75,5 · 1,80 = <span class="b">135,90 €</span><br>
+                b) 135,90 : 27 = 5,033… → <span class="b">5,04 € pro Schüler</span>
+            </div></details>
+        </div>
+    </div>
+
+    <!-- 1.5 Division -->
+    <div class="block" id="sec-1-5">
+        <h3>1.5 · Division von Dezimalzahlen</h3>
+
+        <h4>Dezimalzahl geteilt durch natürliche Zahl</h4>
+        <p>Schriftlich teilen wie gewohnt — beim <span class="b">Überschreiten des Kommas im Dividenden</span> auch im Ergebnis ein Komma setzen.</p>
+
+        <div class="beispiel">
+            <span class="beispiel-label">BEISPIEL</span>
+            <p>Berechne <span class="b">43,38 : 6</span>.</p>
+            <pre class="rechenblock">    43,38 : 6 = 7,23
+  − 42
+  ‾‾‾‾
+     1,3
+   − 1,2
+   ‾‾‾‾
+       18
+     − 18
+     ‾‾‾‾
+        0</pre>
+            <p>Sobald man bei der 1 Zehntel ankommt (Übergang von 43 zu 1,3), wird im Ergebnis das Komma gesetzt: 7<span class="b rot">,</span>23.</p>
+        </div>
+
+        <h4>Dezimalzahl geteilt durch Dezimalzahl</h4>
+        <p>Erweitere <span class="b">Divisor und Dividend gleichzeitig</span> mit 10, 100, … bis der <span class="b">Divisor eine ganze Zahl</span> ist (= Komma im Divisor verschwindet).</p>
+
+        <div class="beispiel">
+            <span class="beispiel-label">BEISPIEL</span>
+            <p>Berechne <span class="b">8,4 : 0,2</span>.</p>
+            <p>Erweitere beide mit 10: → <span class="b">84 : 2 = 42</span>. Fertig.</p>
+            <p style="margin-top:8px">Weiteres Beispiel: 2,76 : 0,12 → erweitern mit 100 → 276 : 12 = 23.</p>
+        </div>
+
+        <div class="merke">
+            <span class="merke-label">MERKE</span>
+            <p>Bei <span class="b">Geldaufgaben</span> hilft oft: Alles in Cent umrechnen (· 100), dann sind es ganze Zahlen. Beispiel: 126,72 € : 24 = 12 672 ct : 24 = 528 ct = <span class="b">5,28 €</span>.</p>
+        </div>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN G — Division</span>
+            <p><strong>G1.</strong> Berechne:<br>
+            a) 74,56 € : 8 &nbsp;&nbsp; b) 1,08 km : 3 &nbsp;&nbsp; c) 27,450 kg : 9 &nbsp;&nbsp; d) 8,22 : 3 &nbsp;&nbsp; e) 19,04 : 7</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) 9,32 € &nbsp;|&nbsp; b) 0,36 km &nbsp;|&nbsp; c) 3,05 kg &nbsp;|&nbsp; d) 2,74 &nbsp;|&nbsp; e) 2,72
+            </div></details>
+
+            <p style="margin-top:10px"><strong>G2.</strong> Berechne durch Erweitern: a) 2,76 : 0,12 &nbsp;&nbsp; b) 27,6 : 0,12 &nbsp;&nbsp; c) 0,98 : 0,7</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) 23 (· 100: 276 : 12 = 23) &nbsp;|&nbsp; b) 230 (· 100: 2760 : 12 = 230) &nbsp;|&nbsp; c) 1,4 (· 10: 9,8 : 7 = 1,4)
+            </div></details>
+        </div>
+    </div>
+
+    <!-- 1.6 Lernkarte -->
+    <div class="block" id="sec-1-6">
+        <h3>1.6 · Merkkarte zum Mitnehmen</h3>
+        <div class="merke">
+            <span class="merke-label">DEINE 5 REGELN FÜR DEZIMALZAHLEN</span>
+            <ol>
+                <li><span class="b">+/−</span>: Komma unter Komma, fehlende Stellen mit Nullen auffüllen.</li>
+                <li><span class="b">·</span>: Ohne Komma rechnen, dann Nachkommastellen beider Faktoren zählen und im Ergebnis setzen.</li>
+                <li><span class="b">: durch Dezimalzahl</span>: Beide gleichzeitig mit 10/100/… erweitern, bis der Teiler ganz ist.</li>
+                <li><span class="b">· 10ⁿ</span>: Komma um n Stellen <span class="b">nach rechts</span> verschieben. <span class="b">· 0,1ⁿ</span>: um n Stellen <span class="b">nach links</span>.</li>
+                <li><span class="b">Immer Überschlag machen!</span> Liegt das Ergebnis grob da, wo es hingehört?</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+<!-- ================================================================ -->
+<!--                BLOCK 2: BRÜCHE, PROZENTE                         -->
+<!-- ================================================================ -->
+<div class="thema lila" id="block2">
+    <div class="thema-header lila"><span class="ico">🍕</span><h2>Block 2 · Brüche &amp; Prozente</h2></div>
+
+    <!-- 2.1 Prozentbegriff -->
+    <div class="block" id="sec-2-1">
+        <h3>2.1 · Was ist Prozent?</h3>
+        <p>„Prozent" kommt aus dem Lateinischen und bedeutet wörtlich <span class="b">„von Hundert"</span>. Ein Prozent ist also einfach <span class="b">ein Hundertstel</span>.</p>
+
+        <div class="merke">
+            <span class="merke-label">MERKE</span>
+            <p><span class="b">Prozente sind Hundertstelbrüche.</span><br>
+            <span class="b">1 %</span> = <sup>1</sup>⁄<sub>100</sub> &nbsp;·&nbsp; <span class="b">25 %</span> = <sup>25</sup>⁄<sub>100</sub> = <sup>1</sup>⁄<sub>4</sub> &nbsp;·&nbsp; <span class="b">100 %</span> = das Ganze</p>
+        </div>
+
+        <h4>Die wichtigsten Prozentwerte</h4>
+        <table class="t">
+            <thead class="th-lila"><tr><th>Prozent</th><th>Bruch</th><th>Dezimalzahl</th><th>Wie viel vom Ganzen?</th></tr></thead>
+            <tbody>
+                <tr><td>1 %</td><td><sup>1</sup>⁄<sub>100</sub></td><td>0,01</td><td>ein Hundertstel</td></tr>
+                <tr><td>5 %</td><td><sup>1</sup>⁄<sub>20</sub></td><td>0,05</td><td>ein Zwanzigstel</td></tr>
+                <tr><td>10 %</td><td><sup>1</sup>⁄<sub>10</sub></td><td>0,1</td><td>ein Zehntel</td></tr>
+                <tr><td>20 %</td><td><sup>1</sup>⁄<sub>5</sub></td><td>0,2</td><td>ein Fünftel</td></tr>
+                <tr><td><span class="b">25 %</span></td><td><sup>1</sup>⁄<sub>4</sub></td><td>0,25</td><td><span class="b">ein Viertel</span></td></tr>
+                <tr><td><span class="b">50 %</span></td><td><sup>1</sup>⁄<sub>2</sub></td><td>0,5</td><td><span class="b">die Hälfte</span></td></tr>
+                <tr><td>75 %</td><td><sup>3</sup>⁄<sub>4</sub></td><td>0,75</td><td>drei Viertel</td></tr>
+                <tr><td><span class="b">100 %</span></td><td><sup>1</sup>⁄<sub>1</sub></td><td>1</td><td><span class="b">das Ganze</span></td></tr>
+            </tbody>
+        </table>
+
+        <div class="beispiel">
+            <span class="beispiel-label">BEISPIEL „SALE"</span>
+            <p>Eine Hose kostet eigentlich 80 €. Im SALE bekommt man <span class="b">50 %</span> Rabatt — also <span class="b">die Hälfte</span> weniger.</p>
+            <p>50 % von 80 € = <sup>1</sup>⁄<sub>2</sub> · 80 € = <span class="b">40 €</span> Rabatt → neuer Preis: 80 € − 40 € = <span class="b">40 €</span>.</p>
+            <p style="margin-top:6px"><strong>Achtung — Verwechslungsgefahr:</strong> „SALE 70 %" meint meist <span class="b">70 % Rabatt</span> — also nur noch 30 % vom Preis. Aus 80 € wird also 24 €.</p>
+        </div>
+    </div>
+
+    <!-- 2.2 Umwandeln -->
+    <div class="block" id="sec-2-2">
+        <h3>2.2 · Bruch ↔ Dezimalzahl ↔ Prozent — die drei Schreibweisen</h3>
+        <p>Diese drei Darstellungen sind nur <span class="b">verschiedene Kleider</span> für dieselbe Zahl. Du musst zwischen ihnen flüssig hin- und herwechseln können.</p>
+
+        <h4>Bruch → Prozent</h4>
+        <p>Erweitere oder kürze den Bruch so, dass im <span class="b">Nenner 100</span> steht. Der Zähler ist dann der Prozentwert.</p>
+        <ul>
+            <li><sup>3</sup>⁄<sub>4</sub> · <sup>25</sup>⁄<sub>25</sub> = <sup>75</sup>⁄<sub>100</sub> = <span class="b">75 %</span></li>
+            <li><sup>7</sup>⁄<sub>10</sub> · <sup>10</sup>⁄<sub>10</sub> = <sup>70</sup>⁄<sub>100</sub> = <span class="b">70 %</span></li>
+            <li><sup>3</sup>⁄<sub>5</sub> · <sup>20</sup>⁄<sub>20</sub> = <sup>60</sup>⁄<sub>100</sub> = <span class="b">60 %</span></li>
+        </ul>
+
+        <h4>Prozent → Bruch</h4>
+        <p>Schreibe als <span class="b">Hundertstelbruch</span> und <span class="b">kürze</span>:</p>
+        <ul>
+            <li>40 % = <sup>40</sup>⁄<sub>100</sub> = <sup>2</sup>⁄<sub>5</sub></li>
+            <li>35 % = <sup>35</sup>⁄<sub>100</sub> = <sup>7</sup>⁄<sub>20</sub></li>
+            <li>80 % = <sup>80</sup>⁄<sub>100</sub> = <sup>4</sup>⁄<sub>5</sub></li>
+        </ul>
+
+        <h4>Prozent → Dezimalzahl</h4>
+        <p>Komma <span class="b">zwei Stellen nach links</span> verschieben (denn % heißt geteilt durch 100):</p>
+        <ul>
+            <li>35 % = <span class="b">0,35</span></li>
+            <li>7 % = <span class="b">0,07</span></li>
+            <li>120 % = <span class="b">1,20</span></li>
+        </ul>
+
+        <h4>Dezimalzahl → Prozent</h4>
+        <p>Komma <span class="b">zwei Stellen nach rechts</span> verschieben (denn · 100 = %):</p>
+        <ul>
+            <li>0,42 = <span class="b">42 %</span></li>
+            <li>0,8 = 0,80 = <span class="b">80 %</span></li>
+            <li>1,25 = <span class="b">125 %</span></li>
+        </ul>
+
+        <div class="merke">
+            <span class="merke-label">SUPER-MERKHILFE</span>
+            <p>Dezimalzahl ↔ Prozent: <span class="b">Komma zwei Stellen wandern</span>.<br>
+            Bruch mit Nenner 100 ist auch direkt der Prozentwert (Zähler = %).</p>
+        </div>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN H</span>
+            <p><strong>H1.</strong> Schreibe als Prozent: a) <sup>1</sup>⁄<sub>2</sub> &nbsp;b) <sup>1</sup>⁄<sub>4</sub> &nbsp;c) <sup>2</sup>⁄<sub>5</sub> &nbsp;d) <sup>3</sup>⁄<sub>3</sub> &nbsp;e) <sup>4</sup>⁄<sub>5</sub> &nbsp;f) <sup>3</sup>⁄<sub>10</sub></p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) 50 % &nbsp;|&nbsp; b) 25 % &nbsp;|&nbsp; c) 40 % &nbsp;|&nbsp; d) 100 % &nbsp;|&nbsp; e) 80 % &nbsp;|&nbsp; f) 30 %
+            </div></details>
+
+            <p style="margin-top:10px"><strong>H2.</strong> Schreibe als Bruch (gekürzt): a) 40 % &nbsp;b) 75 % &nbsp;c) 12 % &nbsp;d) 80 % &nbsp;e) 5 %</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) <sup>2</sup>⁄<sub>5</sub> &nbsp;|&nbsp; b) <sup>3</sup>⁄<sub>4</sub> &nbsp;|&nbsp; c) <sup>3</sup>⁄<sub>25</sub> &nbsp;|&nbsp; d) <sup>4</sup>⁄<sub>5</sub> &nbsp;|&nbsp; e) <sup>1</sup>⁄<sub>20</sub>
+            </div></details>
+
+            <p style="margin-top:10px"><strong>H3.</strong> Ergänze die Tabelle:</p>
+            <table class="t">
+                <thead class="th-lila"><tr><th>Bruch</th><th>Dezimalzahl</th><th>Prozent</th></tr></thead>
+                <tbody>
+                    <tr><td><sup>1</sup>⁄<sub>5</sub></td><td>?</td><td>?</td></tr>
+                    <tr><td>?</td><td>0,25</td><td>?</td></tr>
+                    <tr><td>?</td><td>?</td><td>75 %</td></tr>
+                    <tr><td><sup>1</sup>⁄<sub>8</sub></td><td>?</td><td>?</td></tr>
+                </tbody>
+            </table>
+            <details><summary>Lösung anzeigen</summary><div>
+                Reihe 1: 0,2 — 20 %<br>
+                Reihe 2: <sup>1</sup>⁄<sub>4</sub> — 25 %<br>
+                Reihe 3: <sup>3</sup>⁄<sub>4</sub> — 0,75<br>
+                Reihe 4: 0,125 — 12,5 %
+            </div></details>
+        </div>
+    </div>
+
+    <!-- 2.3 Anteile berechnen -->
+    <div class="block" id="sec-2-3">
+        <h3>2.3 · Anteile berechnen — „X % von Y"</h3>
+        <p>Sehr häufige Aufgabe: „Wie viel sind <span class="b">25 % von 60 €</span>?" Hier rechnest du den <span class="b">Anteil</span> aus.</p>
+
+        <h4>Zwei einfache Wege</h4>
+        <p><strong>Weg 1 — über den Bruch:</strong> 25 % = <sup>1</sup>⁄<sub>4</sub> → <sup>1</sup>⁄<sub>4</sub> von 60 € = 60 € : 4 = <span class="b">15 €</span>.</p>
+        <p><strong>Weg 2 — über die Dezimalzahl:</strong> 25 % = 0,25 → 0,25 · 60 € = <span class="b">15 €</span>.</p>
+
+        <div class="merke">
+            <span class="merke-label">DENKHILFE</span>
+            <p>„<span class="b">von</span>" heißt mathematisch <span class="b">mal</span> (·). „Wie viel sind 25 % <em>von</em> 60?" = 0,25 · 60.</p>
+        </div>
+
+        <h4>Praktische Tricks im Kopf</h4>
+        <ul>
+            <li><span class="b">10 %</span> einer Zahl: Komma eine Stelle nach links (= geteilt durch 10).<br>10 % von 240 € = 24 €</li>
+            <li><span class="b">1 %</span> einer Zahl: Komma zwei Stellen nach links (= geteilt durch 100).<br>1 % von 240 € = 2,40 €</li>
+            <li><span class="b">50 %</span>: Halbieren. 50 % von 240 € = 120 €</li>
+            <li><span class="b">25 %</span>: Vierteln (oder zweimal halbieren). 25 % von 240 € = 60 €</li>
+            <li><span class="b">20 %</span>: Erst 10 % rechnen, dann verdoppeln. 20 % von 240 € = 24 · 2 = 48 €</li>
+        </ul>
+
+        <div class="beispiel">
+            <span class="beispiel-label">BEISPIEL — LOHNERHÖHUNG</span>
+            <p>Frau Brammer verdient monatlich 2 500 €. Sie bekommt <span class="b">10 % mehr Lohn</span>. Wie groß ist die Lohnerhöhung in Euro?</p>
+            <p>10 % von 2 500 € = 2 500 € : 10 = <span class="b">250 €</span>.</p>
+            <p>(Ihr neuer Lohn ist 2 500 € + 250 € = 2 750 €.)</p>
+        </div>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN I — Anteile berechnen (Buch S. 33 Nr. 8/9)</span>
+            <p><strong>I1.</strong> Berechne (wähle die Einheit passend):<br>
+            a) 10 % einer Stunde &nbsp;&nbsp; b) 75 % von 24 € &nbsp;&nbsp; c) 30 % von 3 m<br>
+            d) 50 % von 3,8 km² &nbsp;&nbsp; e) 25 % von 2 l &nbsp;&nbsp; f) 5 % von 1 t</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) 6 min (10 % von 60 min)<br>
+                b) 18 € (24 € : 4 · 3)<br>
+                c) 90 cm (10 % von 3 m = 30 cm, mal 3)<br>
+                d) 1,9 km²<br>
+                e) 0,5 l = 500 ml<br>
+                f) 50 kg (1 % von 1000 kg = 10 kg, mal 5)
+            </div></details>
+
+            <p style="margin-top:10px"><strong>I2.</strong> Tim hat bereits <span class="b">50 %</span> einer Strecke zurückgelegt. Wie viel ist das, wenn die Strecke 1 800 m lang ist?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                50 % = die Hälfte → 1 800 m : 2 = <span class="b">900 m</span>.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>I3.</strong> Hannah hat bereits 25 % einer 32 km langen Strecke zurückgelegt. Welcher Anteil fehlt noch? Wie lang sind beide Teilstrecken?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Schon: 25 % = <sup>1</sup>⁄<sub>4</sub> von 32 km = <span class="b">8 km</span>.<br>
+                Fehlt noch: 75 % = <span class="b">24 km</span>.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>I4 — Vereinsbericht (Buch S. 33 Nr. 10):</strong> Der Verein VfR Bolzdorf hat 240 Mitglieder. 50 % sind weiblich, 10 % sind jünger als 6 Jahre, 25 % sind Rentner, 5 % spielen in der C-Jugend. Gib die Anzahl der Personen an.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                weiblich: 50 % von 240 = 120<br>
+                &lt; 6 Jahre: 10 % von 240 = 24<br>
+                Rentner: 25 % von 240 = 60<br>
+                C-Jugend: 5 % von 240 = 12
+            </div></details>
+        </div>
+    </div>
+
+    <!-- 2.4 Brüche → Dezimalzahlen -->
+    <div class="block" id="sec-2-4">
+        <h3>2.4 · Brüche in Dezimalzahlen umwandeln</h3>
+        <p>Brüche und Dezimalzahlen sind dasselbe — nur in anderer Schreibweise. Es gibt <span class="b">drei Methoden</span> um einen Bruch in eine Dezimalzahl umzuwandeln.</p>
+
+        <h4>Methode 1 — Erweitern auf Zehner-Nenner</h4>
+        <p>Erweitere den Bruch so, dass der Nenner <span class="b">10, 100 oder 1 000</span> wird. Dann kannst du direkt ablesen.</p>
+        <ul>
+            <li><sup>3</sup>⁄<sub>4</sub> · <sup>25</sup>⁄<sub>25</sub> = <sup>75</sup>⁄<sub>100</sub> = <span class="b">0,75</span></li>
+            <li><sup>7</sup>⁄<sub>8</sub> · <sup>125</sup>⁄<sub>125</sub> = <sup>875</sup>⁄<sub>1000</sub> = <span class="b">0,875</span></li>
+            <li><sup>2</sup>⁄<sub>5</sub> · <sup>2</sup>⁄<sub>2</sub> = <sup>4</sup>⁄<sub>10</sub> = <span class="b">0,4</span></li>
+        </ul>
+        <p><strong>Wann klappt das?</strong> Wenn der Nenner durch <span class="b">Multiplikation mit einer Zahl auf 10, 100, 1000 … kommt</span> — also nur 2er und 5er enthält.</p>
+
+        <h4>Methode 2 — Schriftlich dividieren</h4>
+        <p>Bruch heißt: Zähler <span class="b">geteilt durch</span> Nenner. Klappt immer.</p>
+        <pre class="rechenblock">  7 : 8 = 0,875
+  6 4
+  ‾‾‾‾
+    6 0
+    5 6
+    ‾‾‾‾
+      4 0
+      4 0
+      ‾‾‾‾
+        0</pre>
+
+        <h4>Methode 3 — Über den Kehrwert</h4>
+        <p>Wenn <sup>1</sup>⁄<sub>8</sub> = 0,125, dann ist <sup>7</sup>⁄<sub>8</sub> = 7 · 0,125 = <span class="b">0,875</span>.</p>
+
+        <div class="fehler">
+            <span class="fehler-label">VORSICHT</span>
+            <p>Manche Brüche lassen sich <span class="b rot">nicht</span> als endliche Dezimalzahl schreiben! Beispiel: <sup>3</sup>⁄<sub>11</sub> = 0,272727… (die 27 wiederholt sich endlos — das nennt man eine <span class="b">periodische</span> Dezimalzahl). Hier funktionieren Methode 1 und 3 nicht.</p>
+        </div>
+
+        <h4>Die wichtigsten Brüche auswendig</h4>
+        <table class="t">
+            <thead class="th-lila"><tr><th>Bruch</th><th>Dezimal</th><th>Prozent</th><th></th><th>Bruch</th><th>Dezimal</th><th>Prozent</th></tr></thead>
+            <tbody>
+                <tr><td><sup>1</sup>⁄<sub>2</sub></td><td>0,5</td><td>50 %</td><td></td><td><sup>1</sup>⁄<sub>5</sub></td><td>0,2</td><td>20 %</td></tr>
+                <tr><td><sup>1</sup>⁄<sub>3</sub></td><td>0,333…</td><td>33,3 %</td><td></td><td><sup>2</sup>⁄<sub>5</sub></td><td>0,4</td><td>40 %</td></tr>
+                <tr><td><sup>1</sup>⁄<sub>4</sub></td><td>0,25</td><td>25 %</td><td></td><td><sup>3</sup>⁄<sub>5</sub></td><td>0,6</td><td>60 %</td></tr>
+                <tr><td><sup>3</sup>⁄<sub>4</sub></td><td>0,75</td><td>75 %</td><td></td><td><sup>1</sup>⁄<sub>8</sub></td><td>0,125</td><td>12,5 %</td></tr>
+                <tr><td><sup>1</sup>⁄<sub>10</sub></td><td>0,1</td><td>10 %</td><td></td><td><sup>1</sup>⁄<sub>100</sub></td><td>0,01</td><td>1 %</td></tr>
+            </tbody>
+        </table>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN J — Umwandeln</span>
+            <p><strong>J1.</strong> Wandle in eine Dezimalzahl um: a) <sup>9</sup>⁄<sub>20</sub> &nbsp;b) <sup>3</sup>⁄<sub>4</sub> &nbsp;c) <sup>7</sup>⁄<sub>10</sub> &nbsp;d) <sup>5</sup>⁄<sub>8</sub> &nbsp;e) <sup>17</sup>⁄<sub>50</sub></p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) 0,45 (· 5: <sup>45</sup>⁄<sub>100</sub>) &nbsp;|&nbsp; b) 0,75 &nbsp;|&nbsp; c) 0,7 &nbsp;|&nbsp; d) 0,625 &nbsp;|&nbsp; e) 0,34 (· 2: <sup>34</sup>⁄<sub>100</sub>)
+            </div></details>
+
+            <p style="margin-top:10px"><strong>J2.</strong> Wandle in einen Bruch um (gekürzt): a) 0,4 &nbsp;b) 0,75 &nbsp;c) 0,125 &nbsp;d) 0,08</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) <sup>2</sup>⁄<sub>5</sub> &nbsp;|&nbsp; b) <sup>3</sup>⁄<sub>4</sub> &nbsp;|&nbsp; c) <sup>1</sup>⁄<sub>8</sub> &nbsp;|&nbsp; d) <sup>2</sup>⁄<sub>25</sub>
+            </div></details>
+        </div>
+    </div>
+
+    <!-- 2.5 Textaufgaben -->
+    <div class="block" id="sec-2-5">
+        <h3>2.5 · Textaufgaben mit Prozent</h3>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN K</span>
+            <p><strong>K1 — KIM-Studie (Buch S. 31 Nr. 2):</strong> Eine Umfrage 2012 ergab: Bei den Mädchen lesen 20 % „jeden Tag", 37 % „ein-/mehrmals die Woche", 25 % „seltener" und 18 % „nie" ein Buch in der Freizeit.<br>
+            a) Schreibe alle Angaben als Bruch.<br>
+            b) Stimmt die Behauptung „Ein Viertel der Mädchen liest selten"?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) 20 % = <sup>1</sup>⁄<sub>5</sub> &nbsp;|&nbsp; 37 % = <sup>37</sup>⁄<sub>100</sub> &nbsp;|&nbsp; 25 % = <sup>1</sup>⁄<sub>4</sub> &nbsp;|&nbsp; 18 % = <sup>18</sup>⁄<sub>100</sub> = <sup>9</sup>⁄<sub>50</sub>.<br>
+                b) Ja! 25 % = <sup>1</sup>⁄<sub>4</sub> = ein Viertel. Stimmt.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>K2 — Wasser-Witz (Buch S. 33 Nr. 11):</strong> Eine Kuh sagt: „Unser Körper besteht zu 70 % aus Wasser." Eine Maus antwortet: „Wir bestehen beide aus gleich viel Wasser?" — Was meinst du dazu?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                <span class="b">Nein!</span> 70 % bezieht sich immer auf das <span class="b">Ganze</span> der jeweiligen Person/des Tiers. 70 % von einer 600-kg-Kuh sind 420 kg Wasser. 70 % von einer 30-g-Maus sind 21 g Wasser. Der prozentuale Anteil ist gleich, die absolute Wassermenge nicht.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>K3.</strong> Im SALE kostet eine Jacke nur noch 60 % vom ursprünglichen Preis. Vorher kostete sie 80 €. Wie teuer ist sie jetzt?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                60 % von 80 € = 0,6 · 80 € = <span class="b">48 €</span>.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>K4.</strong> In einer Schulklasse mit 30 Schülern sind 12 Mädchen. Wie viel Prozent sind das?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                <sup>12</sup>⁄<sub>30</sub> = <sup>4</sup>⁄<sub>10</sub> = <sup>40</sup>⁄<sub>100</sub> = <span class="b">40 %</span>.
+            </div></details>
+        </div>
+    </div>
+</div>
+
+
+<!-- ================================================================ -->
+<!--                BLOCK 3: GEOMETRIE                                -->
+<!-- ================================================================ -->
+<div class="thema gruen" id="block3">
+    <div class="thema-header gruen"><span class="ico">🔷</span><h2>Block 3 · Symmetrien &amp; Geometrie</h2></div>
+
+    <!-- 3.1 Übersicht der Symmetriearten -->
+    <div class="block" id="sec-3-1">
+        <h3>3.1 · Die drei Arten von Symmetrie</h3>
+        <p>„Symmetrie" heißt: Eine Figur sieht <span class="b">nach einer Bewegung</span> genauso aus wie vorher. Welche Bewegung? Das unterscheidet die drei Arten.</p>
+
+        <table class="t">
+            <thead class="th-gruen"><tr><th>Art</th><th>Bewegung</th><th>Test</th><th>Beispiel</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td><span class="b gruen">Achsen­symmetrie</span></td>
+                    <td><span class="b">Spiegeln</span> an einer geraden Linie (Symmetrieachse)</td>
+                    <td>Kannst du die Figur an einer Linie so falten, dass beide Hälften <strong>genau</strong> übereinander liegen?</td>
+                    <td>Schmetterling, Buchstabe A, Herz</td>
+                </tr>
+                <tr>
+                    <td><span class="b gruen">Dreh­symmetrie</span></td>
+                    <td><span class="b">Drehen</span> um einen Punkt (Drehzentrum), um einen bestimmten Winkel</td>
+                    <td>Sieht die Figur nach einer Drehung (z. B. 60°, 90°, 120°) genauso aus wie vorher?</td>
+                    <td>Windrad, Autofelge, Verkehrszeichen „Kreisverkehr"</td>
+                </tr>
+                <tr>
+                    <td><span class="b gruen">Punkt­symmetrie</span></td>
+                    <td><span class="b">180°-Drehung</span> um einen Punkt (Symmetriezentrum). Spezialfall der Drehsymmetrie!</td>
+                    <td>Steht die Figur auf dem Kopf genauso da wie vorher?</td>
+                    <td>Spielkarten (Pik-Ass), Buchstabe S, Z, N</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="merke">
+            <span class="merke-label">WICHTIG</span>
+            <p>Eine Figur kann <span class="b">mehrere Symmetrien gleichzeitig</span> haben — ein Quadrat ist z.B. achsensymmetrisch (4 Achsen), drehsymmetrisch (90°, 180°, 270°) <em>und</em> punktsymmetrisch.</p>
+            <p style="margin-top:6px"><span class="b">Punktsymmetrie ist immer auch Drehsymmetrie</span> (mit Drehwinkel 180°). Aber nicht jede Drehsymmetrie ist Punktsymmetrie!</p>
+        </div>
+
+        <h4>Symmetrien an Körpern (3D)</h4>
+        <p>Auch räumliche Körper können symmetrisch sein:</p>
+        <ul>
+            <li><span class="b">Spiegelsymmetrische Körper</span> haben eine <span class="b">Symmetrieebene</span> — beim Spiegeln daran sieht der Körper gleich aus. Beispiel: Ein Kühlschrank, ein Auto von vorne.</li>
+            <li><span class="b">Drehsymmetrische Körper</span> haben eine <span class="b">Drehachse</span>. Beispiel: Eine Schraube, ein Iglu.</li>
+        </ul>
+    </div>
+
+    <!-- 3.2 Achsensymmetrie -->
+    <div class="block" id="sec-3-2">
+        <h3>3.2 · Achsensymmetrische Figuren</h3>
+        <p>Eine Figur heißt <span class="b">achsensymmetrisch</span>, wenn es eine Gerade gibt, an der man sie spiegeln kann und sie auf sich selbst abgebildet wird. Diese Gerade heißt <span class="b">Symmetrieachse</span>.</p>
+
+        <h4>Spiegeln auf Karopapier oder dem Geobrett</h4>
+        <ol>
+            <li>Achse einzeichnen (rot).</li>
+            <li>Jeden Eckpunkt der Figur einzeln spiegeln: Messe den <span class="b">senkrechten Abstand</span> des Punktes zur Achse und trage ihn auf der anderen Seite genauso ab.</li>
+            <li>Die gespiegelten Punkte mit Strecken verbinden, wie das Original.</li>
+        </ol>
+
+        <div class="merke">
+            <span class="merke-label">SO ARBEITEST DU MIT DEM GEODREIECK</span>
+            <ol>
+                <li>Lege das Geodreieck mit der <span class="b">Nullkante senkrecht zur Achse</span>.</li>
+                <li>Schiebe es so, dass die <span class="b">0 auf der Achse</span> liegt und die Mittellinie auf den Punkt P zeigt.</li>
+                <li>Lies den Abstand von P zur Achse ab — das ist die gleiche Strecke auch auf der anderen Seite. Dort markierst du P'.</li>
+            </ol>
+        </div>
+
+        <h4>Symmetrieachsen bekannter Figuren</h4>
+        <table class="t">
+            <thead class="th-gruen"><tr><th>Figur</th><th>Anzahl Symmetrieachsen</th></tr></thead>
+            <tbody>
+                <tr><td>Quadrat</td><td><span class="b">4</span> (2 durch Mitten der Seiten, 2 Diagonalen)</td></tr>
+                <tr><td>Rechteck (nicht Quadrat)</td><td>2 (durch Mitten gegenüberliegender Seiten)</td></tr>
+                <tr><td>Gleichseitiges Dreieck</td><td>3</td></tr>
+                <tr><td>Gleichschenkliges Dreieck</td><td>1</td></tr>
+                <tr><td>Parallelogramm (kein Rechteck/Raute)</td><td><span class="b rot">0</span> (achtung: keine!)</td></tr>
+                <tr><td>Raute</td><td>2 (die Diagonalen)</td></tr>
+                <tr><td>Kreis</td><td>unendlich viele (jede Gerade durch den Mittelpunkt)</td></tr>
+            </tbody>
+        </table>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN L — Achsensymmetrie</span>
+            <p><strong>L1.</strong> Wie viele Symmetrieachsen haben die folgenden Großbuchstaben? <span class="b">A · B · H · M · O · S · X · Z</span></p>
+            <details><summary>Lösung anzeigen</summary><div>
+                A: 1 (senkrecht) &nbsp;|&nbsp; B: 1 (waagrecht) &nbsp;|&nbsp; H: 2 (senkr. + waagr.) &nbsp;|&nbsp; M: 1 (senkrecht) &nbsp;|&nbsp; O: unendlich (eigentlich nur 2 bei einem gedruckten Buchstaben, aber bei einem perfekten Kreis ∞) &nbsp;|&nbsp; S: <span class="b">0</span> (S ist punkt­symmetrisch, aber nicht achsen­symmetrisch!) &nbsp;|&nbsp; X: 2 &nbsp;|&nbsp; Z: <span class="b">0</span> (auch nur punktsymmetrisch).
+            </div></details>
+
+            <p style="margin-top:10px"><strong>L2.</strong> In ein Koordinatensystem ist ein Dreieck mit den Eckpunkten A(0|0), B(4|4), C(1|3) gezeichnet. Die Symmetrieachse ist die <span class="b">y-Achse</span>. Ergänze das Dreieck zur achsensymmetrischen Figur.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Spiegelung an der y-Achse: x-Koordinate ändert Vorzeichen, y bleibt.<br>
+                A' = (0|0) (auf der Achse — bleibt), B' = <span class="b">(−4|4)</span>, C' = <span class="b">(−1|3)</span>.
+            </div></details>
+        </div>
+    </div>
+
+    <!-- 3.3 Drehsymmetrie -->
+    <div class="block" id="sec-3-3">
+        <h3>3.3 · Drehsymmetrische Figuren</h3>
+        <p>Eine Figur ist <span class="b">drehsymmetrisch</span>, wenn man sie um einen Punkt (das <span class="b">Drehzentrum</span>) so drehen kann, dass sie wieder gleich aussieht.</p>
+
+        <h4>Der Drehwinkel</h4>
+        <p>Die Frage ist immer: <span class="b">Um wie viel Grad muss ich drehen?</span> Bei einer regelmäßigen Form mit <em>n</em> gleichen Teilen rechnet man:</p>
+        <p style="text-align:center; font-size:1.2em; padding:8px;"><span class="b">Drehwinkel = 360° : n</span></p>
+
+        <div class="beispiel">
+            <span class="beispiel-label">BEISPIEL — Autofelge</span>
+            <p>Eine Felge mit <span class="b">6 Speichen</span>: 360° : 6 = <span class="b">60°</span>. Nach 60°-Drehung sieht die Felge wieder gleich aus. Auch nach 120°, 180°, 240°, 300° — alle Vielfachen von 60° funktionieren.</p>
+        </div>
+
+        <h4>Wichtige Beispiele</h4>
+        <table class="t">
+            <thead class="th-gruen"><tr><th>Figur</th><th>Drehzahl</th><th>Drehwinkel</th></tr></thead>
+            <tbody>
+                <tr><td>Gleichseitiges Dreieck</td><td>3</td><td>120°</td></tr>
+                <tr><td>Quadrat</td><td>4</td><td>90°</td></tr>
+                <tr><td>Regelmäßiges Fünfeck</td><td>5</td><td>72°</td></tr>
+                <tr><td>Regelmäßiges Sechseck</td><td>6</td><td>60°</td></tr>
+                <tr><td>Kreis</td><td>∞</td><td>jeder beliebige Winkel</td></tr>
+            </tbody>
+        </table>
+
+        <div class="merke">
+            <span class="merke-label">MERKE</span>
+            <p>Beim Drehen brauchst du immer <span class="b">zwei Angaben</span>:</p>
+            <ol>
+                <li>Den <span class="b">Drehpunkt</span> (Drehzentrum)</li>
+                <li>Den <span class="b">Drehwinkel</span> (z.B. 60°)</li>
+                <li>Optional: die <span class="b">Drehrichtung</span> (im / gegen den Uhrzeigersinn)</li>
+            </ol>
+        </div>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN M — Drehsymmetrie</span>
+            <p><strong>M1.</strong> Welchen kleinsten Drehwinkel haben diese drehsymmetrischen Figuren?<br>
+            a) Windrad mit 4 Flügeln &nbsp;b) Kleeblatt mit 3 Blättern &nbsp;c) Stern mit 8 Strahlen &nbsp;d) Recycling-Symbol (3 Pfeile)</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                a) 360° : 4 = <span class="b">90°</span> &nbsp;|&nbsp; b) 360° : 3 = <span class="b">120°</span> &nbsp;|&nbsp; c) 360° : 8 = <span class="b">45°</span> &nbsp;|&nbsp; d) 360° : 3 = <span class="b">120°</span>
+            </div></details>
+
+            <p style="margin-top:10px"><strong>M2.</strong> Ist ein Rechteck (kein Quadrat) drehsymmetrisch? Und wenn ja, mit welchem Winkel?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Ja — bei <span class="b">180°-Drehung</span> sieht das Rechteck wieder gleich aus. Das ist also <span class="b">Punktsymmetrie</span> (= Drehsymmetrie mit 180°). Bei 90° wäre es ein Quadrat geworden — also bei einem reinen Rechteck nein.
+            </div></details>
+        </div>
+    </div>
+
+    <!-- 3.4 Punktsymmetrie -->
+    <div class="block" id="sec-3-4">
+        <h3>3.4 · Punktsymmetrische Figuren</h3>
+
+        <div class="merke">
+            <span class="merke-label">DEFINITION</span>
+            <p>Eine Figur ist <span class="b">punktsymmetrisch</span>, wenn sie nach einer <span class="b">180°-Drehung</span> um einen Punkt (das <span class="b">Symmetriezentrum</span> Z) wieder genauso aussieht.</p>
+            <p style="margin-top:6px">Anders gesagt: Punktsymmetrie = Drehsymmetrie mit Drehwinkel 180°.</p>
+        </div>
+
+        <h4>So spiegelst du an einem Punkt</h4>
+        <p>Um den Bildpunkt P' eines Punktes P zu finden:</p>
+        <ol>
+            <li>Verbinde P mit dem Symmetriezentrum Z.</li>
+            <li>Verlängere die Strecke <span class="b">auf der anderen Seite von Z</span> um die <span class="b">gleiche Länge</span> wie PZ.</li>
+            <li>Endpunkt = P'.</li>
+        </ol>
+        <p>Auf Karopapier zählt man die Kästchen: Wenn P drei Kästchen rechts und zwei nach oben von Z ist, dann liegt P' drei Kästchen links und zwei nach unten von Z.</p>
+
+        <h4>Punktsymmetrie erkennen</h4>
+        <p>Die Figur muss <span class="b">auf dem Kopf</span> (180° gedreht) genauso aussehen wie vorher. Tipps:</p>
+        <ul>
+            <li>Kippe das Blatt um 180° — sieht es immer noch gleich aus?</li>
+            <li>Der Symmetriepunkt liegt genau <span class="b">in der Mitte</span> der Figur.</li>
+            <li>Bei einer Spielkarte (z.B. Pik-Ass): Punktsymmetrie ist der Grund, warum sie egal aussieht, ob du sie aufrecht oder verkehrt herum hältst.</li>
+        </ul>
+
+        <div class="fehler">
+            <span class="fehler-label">VERWECHSLUNGSGEFAHR</span>
+            <p>Punktsymmetrie und Achsensymmetrie sind <span class="b rot">nicht</span> dasselbe.</p>
+            <ul>
+                <li>Der Buchstabe <span class="b">A</span> ist <em>achsensymmetrisch</em> (senkrechte Achse durch die Mitte), aber <strong>nicht</strong> punktsymmetrisch.</li>
+                <li>Der Buchstabe <span class="b">S</span> ist <em>punktsymmetrisch</em>, aber <strong>nicht</strong> achsensymmetrisch.</li>
+                <li>Der Buchstabe <span class="b">H</span> ist <em>beides</em>: zwei Symmetrieachsen und punktsymmetrisch.</li>
+            </ul>
+        </div>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN N — Punktsymmetrie</span>
+            <p><strong>N1.</strong> Welche dieser Buchstaben sind <span class="b">punktsymmetrisch</span>? &nbsp; <span class="b">H · I · N · O · S · X · Z</span></p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Alle! &nbsp;<span class="b">H, I, N, O, S, X, Z</span> sind punktsymmetrisch. (Bei N und S funktioniert <em>nur</em> Punktsymmetrie, nicht Achsensymmetrie.)
+            </div></details>
+
+            <p style="margin-top:10px"><strong>N2.</strong> Spiegele den Punkt P(2|3) am Symmetriezentrum Z(0|0). Wo liegt P'?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Beide Vorzeichen umdrehen: <span class="b">P'(−2|−3)</span>.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>N3.</strong> Spiegele Punkt A(3|1) am Punkt Z(5|2). Wo liegt A'?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Vom A zu Z: +2 nach rechts, +1 nach oben. Also von Z aus dasselbe nochmal: A' = Z + (2|1) = <span class="b">(7|3)</span>.
+            </div></details>
+        </div>
+    </div>
+
+    <!-- 3.5 Verschieben -->
+    <div class="block" id="sec-3-5">
+        <h3>3.5 · Figuren verschieben (mit Geodreieck)</h3>
+        <p>Beim Verschieben wird eine Figur <span class="b">parallel</span> bewegt — alle Punkte wandern in dieselbe Richtung um dieselbe Strecke. Es gibt keine Drehung, keine Spiegelung. Das Werkzeug dafür ist der <span class="b">Verschiebungspfeil</span>.</p>
+
+        <h4>Der Verschiebungspfeil</h4>
+        <p>Ein Pfeil hat zwei Eigenschaften:</p>
+        <ul>
+            <li><span class="b">Länge</span> — wie weit verschoben wird</li>
+            <li><span class="b">Richtung</span> — wohin verschoben wird</li>
+        </ul>
+        <p>Alle Eckpunkte der Figur werden um diesen Pfeil verschoben.</p>
+
+        <div class="merke">
+            <span class="merke-label">SO ARBEITEST DU MIT DEM GEODREIECK</span>
+            <ol>
+                <li>Lege das Geodreieck mit der <span class="b">Nullkante an den Verschiebungspfeil</span>.</li>
+                <li>Lies die Länge des Pfeils an deinem Geodreieck ab.</li>
+                <li>Schiebe das Geodreieck zu einem Eckpunkt P der Figur. Achte darauf, dass es <span class="b">parallel</span> zum Pfeil bleibt.</li>
+                <li>Trage von P aus dieselbe Länge in derselben Richtung ab → das ist P'.</li>
+                <li>Wiederhole für alle Eckpunkte und verbinde die neuen Punkte.</li>
+            </ol>
+        </div>
+
+        <h4>Auf Karopapier — viel einfacher</h4>
+        <p>Wenn die Aufgabe auf Karopapier ist, zählst du einfach die <span class="b">Kästchen</span>: „5 nach rechts und 2 nach unten" — wende das auf jeden Eckpunkt einzeln an. Fertig.</p>
+
+        <h4>Bandornamente</h4>
+        <p>Wenn man die Verschiebung <span class="b">immer wieder hintereinander</span> ausführt, entsteht ein Bandornament — wie eine Tapetenborte. Jede Wiederholung verwendet den gleichen Verschiebungspfeil.</p>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN O — Verschieben (Buch S. 144 Nr. 3+4)</span>
+            <p><strong>O1.</strong> Eine Figur ABCD mit A(1|1), B(3|1), C(3|2), D(1|2) wird um den Pfeil „5 nach rechts, 2 nach oben" verschoben. Wo liegen die Bildpunkte A', B', C', D'?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Auf jeden Punkt (+5|+2) addieren:<br>
+                A' = (6|3), B' = (8|3), C' = (8|4), D' = (6|4)
+            </div></details>
+
+            <p style="margin-top:10px"><strong>O2 — Bandornament:</strong> Du hast eine kleine Grundfigur und einen Pfeil „4 nach rechts". Wie oft kannst du verschieben, um die Heftbreite (20 cm) bei einer Grundfigur-Breite von 3 cm zu füllen?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Das erste Bild beginnt bei 0. Jedes nächste startet 4 cm weiter rechts. Nach 5 Verschiebungen ist Bild 6 bei x = 20 cm — passt genau hinein. (Oder: Wenn Heftbreite 20 cm und Schritt 4 cm: 20 : 4 = 5 Verschiebungen.)
+            </div></details>
+        </div>
+    </div>
+
+    <!-- 3.6 Raumvorstellung -->
+    <div class="block" id="sec-3-6">
+        <h3>3.6 · Raumvorstellung &amp; Kopfgeometrie</h3>
+        <p>Hier geht's um die Fähigkeit, sich Körper im Kopf <span class="b">vorzustellen</span>, sie zu drehen, zu kippen oder zu falten — ohne sie tatsächlich anzufassen.</p>
+
+        <h4>Würfel kippen und drehen</h4>
+        <p>Beim Kippen rollt der Würfel über eine Kante. Beim Drehen wird er um eine senkrechte Achse gedreht.</p>
+        <ul>
+            <li>Beim <span class="b">Kippen nach rechts</span> wandert die obere Seite nach rechts, die linke Seite kommt nach oben.</li>
+            <li>Beim <span class="b">90°-Drehen im Uhrzeigersinn</span> (von oben gesehen) wandern die Seitenflächen im Kreis: vorne → rechts → hinten → links → vorne.</li>
+        </ul>
+
+        <div class="merke">
+            <span class="merke-label">MERKE — Augenzahlen am Spielwürfel</span>
+            <p>Beim Standardwürfel ergeben sich <span class="b">gegenüberliegende Seiten</span> immer zu <span class="b">7</span>: 1↔6, 2↔5, 3↔4. Wenn du die obere Seite kennst, kennst du auch die untere.</p>
+        </div>
+
+        <h4>Würfelnetze</h4>
+        <p>Ein <span class="b">Würfelnetz</span> ist die „aufgeklappte" Hülle eines Würfels — sechs Quadrate, die so angeordnet sind, dass man sie zu einem Würfel falten kann.</p>
+        <p>Es gibt insgesamt <span class="b">11 verschiedene Würfelnetze</span> (durch Drehen und Spiegeln nicht doppelt gezählt). Ein Netz ist nur dann gültig, wenn sich kein Quadrat „doppelt" auf eine Würfelseite legen würde beim Falten.</p>
+
+        <div class="beispiel">
+            <span class="beispiel-label">TIPP ZUM ÜBEN</span>
+            <p>Wenn du dir bei einem Netz unsicher bist: Zeichne es auf Papier, schneide es aus, falte es. Klappt es — Netz gültig. Klappt nicht — kein Würfelnetz.</p>
+        </div>
+
+        <h4>Drei-Tafel-Projektion</h4>
+        <p>Ein 3D-Körper wird oft aus <span class="b">drei Richtungen</span> gezeichnet:</p>
+        <ul>
+            <li><span class="b">Vorderansicht</span> (von vorn)</li>
+            <li><span class="b">Seitenansicht</span> (von rechts)</li>
+            <li><span class="b">Draufsicht</span> (von oben)</li>
+        </ul>
+
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN P — Raumvorstellung</span>
+            <p><strong>P1.</strong> Bei einem Würfel ist vorne die <span class="b">5</span>, oben die <span class="b">3</span>, rechts die <span class="b">1</span>. Welche Augenzahlen sind dann unten, hinten und links?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Gegenüber-Regel (Summe = 7):<br>
+                unten = 7 − 3 = <span class="b">4</span><br>
+                hinten = 7 − 5 = <span class="b">2</span><br>
+                links = 7 − 1 = <span class="b">6</span>
+            </div></details>
+
+            <p style="margin-top:10px"><strong>P2.</strong> Ein Würfel hat vorne die 5, oben die 3. Er wird nach rechts gekippt. Was ist nach dem Kippen vorne, oben, rechts?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Beim Kippen nach rechts: was vorher rechts war, kommt nach unten. Was oben war, bleibt vorne. Was vorne war, geht nach oben. Was links war (= 7−1 = 6, wenn rechts vorher 1 wäre — hier aber nicht angegeben).<br>
+                Annahme rechts = 1: nach Kippen ist <span class="b">vorne = 3</span> (vorher oben), <span class="b">oben = 6</span> (vorher links), <span class="b">rechts = 5</span> (vorher vorne).
+            </div></details>
+
+            <p style="margin-top:10px"><strong>P3.</strong> Welcher der Buchstaben <span class="b">L, T, U, X, Y, Z</span> ergibt nach Faltung kein gültiges Würfelnetz, wenn man ihn als Anordnung von 6 Quadraten interpretiert? <em>(Tipp: Ein gültiges Netz braucht genau 6 Quadrate, in einer von 11 zulässigen Anordnungen.)</em></p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Das hängt vom konkreten Buchstaben ab — am besten ausprobieren mit Schnipseln.<br>
+                <strong>Typische gültige Anordnungen:</strong> T-Form (4 in Reihe + 1 oben + 1 unten an verschiedenen Stellen), Z-Form (3+3 versetzt), L-Form (4 in Reihe + 2 abgewinkelt).<br>
+                <strong>Tipp:</strong> Wenn 4 Quadrate in einer Reihe sind und 2 daneben „doppelt" liegen würden (z.B. beide am selben Quadrat unten), ist es kein gültiges Netz.
+            </div></details>
+        </div>
+    </div>
+</div>
+
+
+<div style="text-align:center;margin-top:40px;color:#999;font-size:0.85em">
+    Stand 11. Mai 2026 · Quelle: Mathematik Neue Wege 6 (Westermann) + Lehrer-Aufgabenliste
+</div>
+
+</main>
+</div><!-- /layout -->
+</div><!-- /theorie -->
+
+
+<!-- ================================================================ -->
+<!--                      TEIL B: LERNKARTEN                          -->
+<!-- ================================================================ -->
+<div id="karten" class="tab-content">
+<div class="page">
+
+<h1>Lernkarten</h1>
+<p class="subtitle">Klick auf eine Karte, um die Antwort aufzudecken. Wenn du's wusstest, klick "Gewusst!". Wenn nicht, "Nochmal".</p>
+
+<div class="deck-nav">
+    <button class="deck-btn active" onclick="switchDeck('alle')">Alle</button>
+    <button class="deck-btn" onclick="switchDeck('dezimal')">Dezimalzahlen</button>
+    <button class="deck-btn" onclick="switchDeck('bruch')">Brüche &amp; Prozente</button>
+    <button class="deck-btn" onclick="switchDeck('geo')">Geometrie</button>
+    <button class="deck-btn" onclick="switchDeck('falsch')">Nochmal-Stapel</button>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+<div class="card-counter" id="counter">Karte 1 von ?</div>
+
+<div id="card-area"></div>
+
+<div class="card-nav">
+    <button id="btn-nochmal" onclick="markCard(false)" style="border-color:var(--rot);color:var(--rot)">Nochmal</button>
+    <button id="btn-flip" onclick="flipCurrent()">Umdrehen</button>
+    <button id="btn-gewusst" onclick="markCard(true)" style="border-color:var(--gruen);color:var(--gruen)">Gewusst!</button>
+</div>
+
+<div id="result-box" style="display:none; text-align:center; padding:40px;">
+    <h2 style="color:var(--gruen); margin-bottom:10px;">Geschafft!</h2>
+    <p id="result-text" style="font-size:1.1em;"></p>
+    <button onclick="restartDeck()" style="margin-top:16px;padding:10px 28px;border-radius:25px;border:2px solid var(--blau);background:var(--blau);color:white;font-weight:600;cursor:pointer;font-size:1em;">Nochmal starten</button>
+</div>
+
+</div>
+</div>
+
+<!-- ================================================================ -->
+<!--                         JAVASCRIPT                               -->
+<!-- ================================================================ -->
+<script>
+function switchTab(id) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelector(`.tab-btn[onclick*="${id}"]`).classList.add('active');
+    if (id === 'karten' && !cardsInitialized) initCards();
+}
+
+// ===== SCROLL-SPY: aktiven Agenda-Eintrag markieren =====
+(function() {
+    const sectionIds = [
+        'ueberblick',
+        'block1','sec-1-1','sec-1-2','sec-1-3','sec-1-4','sec-1-5','sec-1-6',
+        'block2','sec-2-1','sec-2-2','sec-2-3','sec-2-4','sec-2-5',
+        'block3','sec-3-1','sec-3-2','sec-3-3','sec-3-4','sec-3-5','sec-3-6'
+    ];
+    const links = {};
+    document.querySelectorAll('.agenda a[href^="#"]').forEach(a => {
+        links[a.getAttribute('href').slice(1)] = a;
+    });
+
+    function onScroll() {
+        const scrollPos = window.scrollY + 100;
+        let activeId = sectionIds[0];
+        for (const id of sectionIds) {
+            const el = document.getElementById(id);
+            if (el && el.offsetTop <= scrollPos) activeId = id;
+        }
+        Object.values(links).forEach(a => a.classList.remove('active'));
+        if (links[activeId]) links[activeId].classList.add('active');
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', onScroll);
+
+    // Smooth scroll für Agenda-Links + Mobile-Sidebar schließen
+    document.querySelectorAll('.agenda a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.getElementById(a.getAttribute('href').slice(1));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (window.innerWidth <= 880) {
+                    document.getElementById('agenda').classList.remove('open');
+                    document.querySelector('.agenda-toggle').classList.remove('open');
+                }
+            }
+        });
+    });
+})();
+
+// ===== FLASHCARD DATA =====
+const allCards = [
+    // DEZIMALZAHLEN
+    { deck:'dezimal', q:'Was ist eine <strong>Dezimalzahl</strong>?', a:'Eine Zahl mit einem <strong>Komma</strong>. Links vom Komma stehen die <strong>Ganzen</strong>, rechts die <strong>Bruchteile</strong> (Zehntel, Hundertstel, Tausendstel …).' },
+    { deck:'dezimal', q:'Wie heißen die ersten drei <strong>Nachkomma-Stellen</strong>?', a:'<strong>Zehntel</strong> (z), <strong>Hundertstel</strong> (h), <strong>Tausendstel</strong> (t).' },
+    { deck:'dezimal', q:'Sind <strong>3,5</strong> und <strong>3,50</strong> gleich?', a:'<strong>Ja!</strong> Nullen <em>am Ende</em> einer Dezimalzahl ändern den Wert nicht. Aber: <strong>3,05 ≠ 3,5</strong> — die Null in der Mitte zählt.' },
+    { deck:'dezimal', q:'Wie <strong>vergleichst</strong> du zwei Dezimalzahlen?', a:'Stellenweise von <strong>links nach rechts</strong>: erst die Ganzen, dann Zehntel, dann Hundertstel … Tipp: vorher auf gleiche Anzahl Nachkommastellen mit Nullen auffüllen.' },
+    { deck:'dezimal', q:'Wie <strong>rundest</strong> du eine Dezimalzahl?', a:'Schau auf die <strong>Ziffer rechts neben</strong> der Rundungsstelle: bei <strong>0–4 abrunden</strong>, bei <strong>5–9 aufrunden</strong>.' },
+    { deck:'dezimal', q:'Runde <strong>4,8175</strong> auf <strong>Hundertstel</strong>.', a:'Die Tausendstel-Stelle ist 7 → aufrunden → <strong>4,82</strong>.' },
+    { deck:'dezimal', q:'Wie addiert oder subtrahiert man Dezimalzahlen <strong>schriftlich</strong>?', a:'<strong>Komma unter Komma</strong> schreiben, fehlende Stellen mit Nullen auffüllen, von rechts nach links rechnen, Komma im Ergebnis darunter setzen.' },
+    { deck:'dezimal', q:'Wie multipliziert man Dezimalzahlen <strong>schriftlich</strong>?', a:'1. <strong>Ohne Komma</strong> rechnen (wie natürliche Zahlen).<br>2. Nachkommastellen beider Faktoren <strong>zusammenzählen</strong> und im Ergebnis setzen.' },
+    { deck:'dezimal', q:'Was ist <strong>5,1 · 4,85</strong>?', a:'Überschlag: 5 · 5 = 25. Schriftlich: 51 · 485 = 24735. Nachkommastellen: 1 + 2 = 3 → <strong>24,735</strong>.' },
+    { deck:'dezimal', q:'Wie multiplizierst du eine Dezimalzahl mit <strong>10</strong>, <strong>100</strong>, <strong>1000</strong>?', a:'Komma um 1, 2, 3 Stellen nach <strong>rechts</strong> verschieben.<br>Beispiel: 3,125 · 100 = <strong>312,5</strong>.' },
+    { deck:'dezimal', q:'Wie multiplizierst du mit <strong>0,1</strong>, <strong>0,01</strong>, <strong>0,001</strong>?', a:'Komma um 1, 2, 3 Stellen nach <strong>links</strong> verschieben.<br>Beispiel: 648,5 · 0,01 = <strong>6,485</strong>.' },
+    { deck:'dezimal', q:'Wieso kann ein Produkt bei Dezimalzahlen <strong>kleiner</strong> als die Faktoren sein?', a:'Wenn man mit einer Zahl <strong>kleiner als 1</strong> multipliziert, wird das Ergebnis kleiner.<br>Beispiel: 0,5 · 16 = 8 (kleiner als 16).' },
+    { deck:'dezimal', q:'Wie dividierst du eine Dezimalzahl durch eine <strong>natürliche Zahl</strong>?', a:'Schriftlich teilen wie gewohnt. Sobald du beim Komma im Dividenden bist, <strong>Komma auch im Ergebnis</strong> setzen.' },
+    { deck:'dezimal', q:'Wie teilst du <strong>durch eine Dezimalzahl</strong>?', a:'Erweitere <strong>beide Zahlen gleichzeitig</strong> mit 10, 100, … bis der <strong>Divisor (Teiler) ganz</strong> ist. Dann ganz normal teilen.<br>Beispiel: 8,4 : 0,2 → · 10 → <strong>84 : 2 = 42</strong>.' },
+    { deck:'dezimal', q:'Was sollte man vor jeder schriftlichen Rechnung machen?', a:'Einen <strong>Überschlag</strong>! So merkst du sofort, wenn das Ergebnis um eine Zehnerpotenz daneben liegt (z.B. Komma falsch gesetzt).' },
+    { deck:'dezimal', q:'Was ist das <strong>Kommutativgesetz</strong>?', a:'a · b = b · a — die <strong>Reihenfolge</strong> der Faktoren ist beim Multiplizieren egal.' },
+    { deck:'dezimal', q:'Was ist das <strong>Distributivgesetz</strong>?', a:'a · (b + c) = a · b + a · c — eine Klammer wird ausmultipliziert. Hilft beim Kopfrechnen: 6,85 · 9 = 6,85 · 10 − 6,85 = 68,5 − 6,85 = 61,65.' },
+
+    // BRÜCHE & PROZENTE
+    { deck:'bruch', q:'Was bedeutet <strong>Prozent</strong>?', a:'„Prozent" heißt <strong>„von Hundert"</strong>. 1 % ist <strong>ein Hundertstel</strong>.<br>1 % = <sup>1</sup>⁄<sub>100</sub> = 0,01' },
+    { deck:'bruch', q:'Was ist <strong>100 %</strong>?', a:'<strong>Das Ganze.</strong> 100 % = <sup>100</sup>⁄<sub>100</sub> = 1.' },
+    { deck:'bruch', q:'Wie viel ist <strong>50 %</strong>?', a:'Die <strong>Hälfte</strong>. 50 % = <sup>1</sup>⁄<sub>2</sub> = 0,5.' },
+    { deck:'bruch', q:'Wie viel ist <strong>25 %</strong>?', a:'Ein <strong>Viertel</strong>. 25 % = <sup>1</sup>⁄<sub>4</sub> = 0,25.' },
+    { deck:'bruch', q:'Wie viel ist <strong>10 %</strong>?', a:'Ein <strong>Zehntel</strong>. 10 % = <sup>1</sup>⁄<sub>10</sub> = 0,1.<br>Trick: Komma eine Stelle nach links.' },
+    { deck:'bruch', q:'Wie wandelst du <strong>Prozent in Dezimalzahl</strong> um?', a:'Komma <strong>2 Stellen nach links</strong> verschieben (Division durch 100).<br>35 % = 0,35 &nbsp;|&nbsp; 7 % = 0,07' },
+    { deck:'bruch', q:'Wie wandelst du <strong>Dezimalzahl in Prozent</strong> um?', a:'Komma <strong>2 Stellen nach rechts</strong> verschieben (Multiplikation mit 100).<br>0,42 = 42 % &nbsp;|&nbsp; 0,8 = 80 %' },
+    { deck:'bruch', q:'Wie schreibst du <strong>einen Bruch als Prozent</strong>?', a:'Erweitere/kürze so, dass im <strong>Nenner 100</strong> steht. Der Zähler ist dann der %-Wert.<br><sup>3</sup>⁄<sub>4</sub> = <sup>75</sup>⁄<sub>100</sub> = <strong>75 %</strong>' },
+    { deck:'bruch', q:'Was bedeutet „<strong>von</strong>" in der Mathematik? (z.B. „25 % <em>von</em> 60")', a:'„von" heißt <strong>mal</strong> (·).<br>25 % von 60 = 0,25 · 60 = 15.<br>Oder: <sup>1</sup>⁄<sub>4</sub> · 60 = 15.' },
+    { deck:'bruch', q:'Berechne <strong>10 % von 240 €</strong> im Kopf.', a:'10 % = Komma eine Stelle nach links → <strong>24 €</strong>.' },
+    { deck:'bruch', q:'Berechne <strong>25 % von 80 €</strong> im Kopf.', a:'25 % = ein Viertel → 80 € : 4 = <strong>20 €</strong>.' },
+    { deck:'bruch', q:'Wie wandelst du einen Bruch in eine <strong>Dezimalzahl</strong> um?', a:'Drei Wege:<br><strong>1.</strong> Auf Nenner 10, 100, 1000 erweitern (wenn möglich).<br><strong>2.</strong> Schriftlich dividieren: Zähler : Nenner.<br><strong>3.</strong> Über Kehrwert: <sup>7</sup>⁄<sub>8</sub> = 7 · <sup>1</sup>⁄<sub>8</sub> = 7 · 0,125.' },
+    { deck:'bruch', q:'Was ist <strong>3/11</strong> als Dezimalzahl?', a:'<strong>0,272727…</strong> — eine <strong>periodische</strong> Dezimalzahl. Die Periode „27" wiederholt sich endlos.' },
+    { deck:'bruch', q:'Welche wichtigen Bruch-Dezimal-Prozent-Werte solltest du <strong>auswendig</strong> kennen?', a:'<sup>1</sup>⁄<sub>2</sub> = 0,5 = 50 %<br><sup>1</sup>⁄<sub>4</sub> = 0,25 = 25 %<br><sup>3</sup>⁄<sub>4</sub> = 0,75 = 75 %<br><sup>1</sup>⁄<sub>5</sub> = 0,2 = 20 %<br><sup>1</sup>⁄<sub>8</sub> = 0,125 = 12,5 %<br><sup>1</sup>⁄<sub>10</sub> = 0,1 = 10 %' },
+    { deck:'bruch', q:'Bedeutet „70 % Rabatt" im SALE, dass man <strong>nur 70 %</strong> oder <strong>nur 30 %</strong> des Preises zahlt?', a:'<strong>Nur 30 %</strong>! 70 % Rabatt heißt: 70 % werden abgezogen → es bleibt 30 % zu zahlen.' },
+
+    // GEOMETRIE / SYMMETRIE
+    { deck:'geo', q:'Was sind die drei Arten von <strong>Symmetrie</strong>?', a:'<strong>1. Achsensymmetrie</strong> — Spiegelung an einer Geraden.<br><strong>2. Drehsymmetrie</strong> — Drehung um einen Punkt.<br><strong>3. Punktsymmetrie</strong> — 180°-Drehung um einen Punkt (Sonderfall von Drehsymm.).' },
+    { deck:'geo', q:'Was ist eine <strong>Symmetrieachse</strong>?', a:'Eine Gerade, an der eine Figur gespiegelt werden kann, sodass sie wieder gleich aussieht. Bei <strong>Faltung</strong> an dieser Achse liegen beide Hälften genau aufeinander.' },
+    { deck:'geo', q:'Wie viele Symmetrieachsen hat ein <strong>Quadrat</strong>?', a:'<strong>4</strong> — zwei durch die Seitenmitten, zwei Diagonalen.' },
+    { deck:'geo', q:'Wie viele Symmetrieachsen hat ein <strong>Rechteck</strong> (kein Quadrat)?', a:'<strong>2</strong> — durch die Mitten gegenüberliegender Seiten. Die Diagonalen sind <em>keine</em> Symmetrieachsen!' },
+    { deck:'geo', q:'Was ist das <strong>Drehzentrum</strong>?', a:'Der <strong>Punkt</strong>, um den eine Figur gedreht wird. Bei Drehsymmetrie liegt das Drehzentrum meist im Mittelpunkt der Figur.' },
+    { deck:'geo', q:'Wie berechnet man den kleinsten <strong>Drehwinkel</strong> einer drehsymmetrischen Figur?', a:'<strong>360° geteilt durch die Anzahl gleicher Teile.</strong><br>Beispiel: Felge mit 6 Speichen → 360° : 6 = 60°.' },
+    { deck:'geo', q:'Was ist <strong>Punktsymmetrie</strong>?', a:'Die Figur sieht nach einer <strong>180°-Drehung</strong> um einen Punkt (Symmetriezentrum Z) genauso aus wie vorher.<br>Punktsymmetrie ist also ein Sonderfall der Drehsymmetrie.' },
+    { deck:'geo', q:'Wie konstruierst du den <strong>Bildpunkt P\'</strong> bei einer Punktspiegelung?', a:'1. Verbinde P mit dem Symmetriezentrum Z.<br>2. Verlängere die Strecke <strong>über Z hinaus</strong> um dieselbe Länge.<br>3. Endpunkt = P\'.' },
+    { deck:'geo', q:'Ist der Buchstabe <strong>S</strong> achsen- oder punktsymmetrisch?', a:'<strong>Nur punktsymmetrisch</strong>, nicht achsensymmetrisch. Er sieht auf dem Kopf gleich aus, aber gefaltet niemals deckungsgleich.' },
+    { deck:'geo', q:'Ist der Buchstabe <strong>A</strong> achsen- oder punktsymmetrisch?', a:'<strong>Nur achsensymmetrisch</strong> (senkrechte Achse durch die Spitze), nicht punktsymmetrisch.' },
+    { deck:'geo', q:'Ist der Buchstabe <strong>H</strong> achsen- oder punktsymmetrisch?', a:'<strong>Beides!</strong> Zwei Symmetrieachsen (senkrecht + waagerecht) und punktsymmetrisch (180° funktioniert auch).' },
+    { deck:'geo', q:'Wie verschiebst du eine Figur mit dem <strong>Geodreieck</strong>?', a:'1. Lege Geodreieck mit Nullkante an den <strong>Verschiebungspfeil</strong>.<br>2. Lies Länge ab.<br>3. Trage von jedem Eckpunkt der Figur dieselbe Strecke in derselben Richtung ab.<br>4. Verbinde die neuen Punkte.' },
+    { deck:'geo', q:'Was hat ein <strong>Verschiebungspfeil</strong>?', a:'Zwei Eigenschaften: <strong>Länge</strong> (wie weit) und <strong>Richtung</strong> (wohin).' },
+    { deck:'geo', q:'Was ist ein <strong>Bandornament</strong>?', a:'Ein Muster, das durch <strong>wiederholtes Verschieben</strong> der gleichen Grundfigur mit demselben Verschiebungspfeil entsteht — wie eine Tapetenborte.' },
+    { deck:'geo', q:'Was sind <strong>gegenüberliegende Seiten</strong> auf einem Spielwürfel?', a:'Die Summe ist immer <strong>7</strong>:<br>1 ↔ 6 &nbsp;|&nbsp; 2 ↔ 5 &nbsp;|&nbsp; 3 ↔ 4' },
+    { deck:'geo', q:'Wie viele verschiedene <strong>Würfelnetze</strong> gibt es?', a:'Genau <strong>11 Stück</strong> (Drehungen/Spiegelungen nicht doppelt gezählt). Ein Netz besteht aus 6 Quadraten, die zu einem Würfel gefaltet werden können.' },
+    { deck:'geo', q:'Welche drei <strong>Ansichten</strong> hat man bei einer 3-Tafel-Projektion eines Körpers?', a:'<strong>Vorderansicht</strong> (von vorn), <strong>Seitenansicht</strong> (von der Seite), <strong>Draufsicht</strong> (von oben).' },
+    { deck:'geo', q:'Spiegele <strong>P(2|3)</strong> am Symmetriezentrum <strong>Z(0|0)</strong>.', a:'Vorzeichen umdrehen: <strong>P\'(−2|−3)</strong>.' },
+    { deck:'geo', q:'Spiegele <strong>A(1|2)</strong> an der <strong>y-Achse</strong>.', a:'x-Wert ändert das Vorzeichen, y bleibt: <strong>A\'(−1|2)</strong>.' },
+];
+
+let cardsInitialized = false;
+let currentDeckId = 'alle';
+let currentCards = [];
+let currentIndex = 0;
+let wrongCards = [];
+let rightCount = 0;
+
+function initCards() {
+    cardsInitialized = true;
+    switchDeck('alle');
+}
+
+function switchDeck(deckId) {
+    currentDeckId = deckId;
+    document.querySelectorAll('.deck-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`.deck-btn[onclick*="${deckId}"]`).classList.add('active');
+
+    if (deckId === 'falsch') {
+        currentCards = [...wrongCards];
+    } else if (deckId === 'alle') {
+        currentCards = shuffle([...allCards]);
+    } else {
+        currentCards = shuffle(allCards.filter(c => c.deck === deckId));
+    }
+
+    currentIndex = 0;
+    rightCount = 0;
+    document.getElementById('result-box').style.display = 'none';
+    document.getElementById('card-area').style.display = 'block';
+    document.querySelector('.card-nav').style.display = 'flex';
+    showCard();
+}
+
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+function showCard() {
+    if (currentCards.length === 0) {
+        document.getElementById('card-area').innerHTML = '<p style="text-align:center;color:#999;padding:40px;">Keine Karten in diesem Stapel.</p>';
+        document.querySelector('.card-nav').style.display = 'none';
+        return;
+    }
+
+    const card = currentCards[currentIndex];
+    const deckColors = { dezimal:'#d32f2f', bruch:'#7b1fa2', geo:'#2e7d32' };
+    const deckNames = { dezimal:'Dezimalzahlen', bruch:'Brüche & Prozente', geo:'Geometrie' };
+    const color = deckColors[card.deck] || '#1a73b5';
+
+    document.getElementById('card-area').innerHTML = `
+        <div class="card-container" onclick="flipCurrent()">
+            <div class="card" id="current-card" style="min-height:200px">
+                <div class="card-face card-front" style="border-color:${color}">
+                    <span class="label" style="background:${color}">${deckNames[card.deck]}</span>
+                    <div class="q">${card.q}</div>
+                    <span class="tap">Klick zum Umdrehen</span>
+                </div>
+                <div class="card-face card-back" style="border-color:${color};background:${color}11">
+                    <div class="a">${card.a}</div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    requestAnimationFrame(() => {
+        const front = document.querySelector('.card-front');
+        const back = document.querySelector('.card-back');
+        if (front && back) {
+            const h = Math.max(front.scrollHeight, back.scrollHeight, 180);
+            document.querySelector('.card').style.minHeight = h + 'px';
+            document.querySelector('.card-container').style.minHeight = h + 'px';
+            front.style.height = h + 'px';
+            back.style.height = h + 'px';
+        }
+    });
+
+    document.getElementById('counter').textContent = `Karte ${currentIndex + 1} von ${currentCards.length}`;
+    document.getElementById('progress').style.width = ((currentIndex) / currentCards.length * 100) + '%';
+}
+
+function flipCurrent() {
+    const card = document.getElementById('current-card');
+    if (card) card.classList.toggle('flipped');
+}
+
+function markCard(correct) {
+    if (!currentCards.length) return;
+
+    if (correct) {
+        rightCount++;
+    } else {
+        if (!wrongCards.includes(currentCards[currentIndex])) {
+            wrongCards.push(currentCards[currentIndex]);
+        }
+    }
+
+    currentIndex++;
+    if (currentIndex >= currentCards.length) {
+        finishDeck();
+    } else {
+        showCard();
+    }
+}
+
+function finishDeck() {
+    document.getElementById('card-area').style.display = 'none';
+    document.querySelector('.card-nav').style.display = 'none';
+    document.getElementById('progress').style.width = '100%';
+
+    const total = currentCards.length;
+    const pct = total ? Math.round(rightCount / total * 100) : 0;
+    let msg = `Du hast <strong>${rightCount} von ${total}</strong> Karten gewusst (${pct}%).`;
+    if (wrongCards.length > 0) {
+        msg += `<br><br>${wrongCards.length} Karte${wrongCards.length > 1 ? 'n' : ''} im "Nochmal"-Stapel.`;
+    }
+    if (pct === 100) msg += '<br><br>Perfekt! Du bist bereit für die Arbeit!';
+    else if (pct >= 80) msg += '<br><br>Sehr gut! Fast alles sitzt.';
+    else if (pct >= 50) msg += '<br><br>Guter Anfang. Geh nochmal die Theorie durch und dann den "Nochmal"-Stapel.';
+    else msg += '<br><br>Lies dir die Theorie nochmal in Ruhe durch und probier es dann erneut.';
+
+    document.getElementById('result-text').innerHTML = msg;
+    document.getElementById('result-box').style.display = 'block';
+    document.getElementById('counter').textContent = 'Fertig!';
+}
+
+function restartDeck() {
+    switchDeck(currentDeckId);
+}
+</script>
+
+</body>
+</html>

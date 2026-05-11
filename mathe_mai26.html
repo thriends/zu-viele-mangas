@@ -183,15 +183,28 @@
             box-shadow: 0 1px 5px rgba(0,0,0,0.06);
         }
         .block + .block { border-radius: 12px; }
-        .block h3 { color: var(--blau); margin: 8px 0 8px; font-size: 1.1em; }
-        .block h4 { color: var(--dunkelgrau); margin: 14px 0 6px; font-size: 1em; }
 
-        /* H3-Farbe folgt der Block-Farbe */
-        .thema.rot .block h3 { color: var(--rot); }
-        .thema.lila .block h3 { color: var(--lila); }
-        .thema.gruen .block h3 { color: var(--gruen); }
-        .thema.orange .block h3 { color: var(--orange); }
-        .thema.blau .block h3 { color: var(--blau); }
+        /* H3 als farbiger Banner mit weißer Schrift — kindgerechte, klare Hierarchie */
+        .block h3 {
+            display: inline-block;
+            background: var(--blau);
+            color: white;
+            padding: 8px 16px 8px 18px;
+            border-radius: 10px;
+            margin: -4px 0 16px -8px;
+            font-size: 1.15em;
+            font-weight: 700;
+            box-shadow: 0 3px 0 rgba(0,0,0,0.08);
+            letter-spacing: 0.2px;
+        }
+        .block h4 { color: var(--dunkelgrau); margin: 14px 0 6px; font-size: 1em; font-weight: 700; }
+
+        /* H3-Hintergrund folgt der Block-Farbe (Schrift bleibt weiß) */
+        .thema.rot .block h3 { background: var(--rot); }
+        .thema.lila .block h3 { background: var(--lila); }
+        .thema.gruen .block h3 { background: var(--gruen); }
+        .thema.orange .block h3 { background: var(--orange); }
+        .thema.blau .block h3 { background: var(--blau); }
         .block p + p { margin-top: 8px; }
         .block ul, .block ol { margin: 6px 0; }
 

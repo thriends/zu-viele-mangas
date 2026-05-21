@@ -1136,19 +1136,14 @@
         <h4>Methode 3 — Über den Kehrwert</h4>
         <p>Wenn <sup>1</sup>⁄<sub>8</sub> = 0,125, dann ist <sup>7</sup>⁄<sub>8</sub> = 7 · 0,125 = <span class="b">0,875</span>.</p>
 
-        <div class="fehler">
-            <span class="fehler-label">VORSICHT</span>
-            <p>Manche Brüche lassen sich <span class="b rot">nicht</span> als endliche Dezimalzahl schreiben! Beispiel: <sup>3</sup>⁄<sub>11</sub> = 0,272727… (die 27 wiederholt sich endlos — das nennt man eine <span class="b">periodische</span> Dezimalzahl). Hier funktionieren Methode 1 und 3 nicht.</p>
-        </div>
-
         <h4>Die wichtigsten Brüche auswendig</h4>
         <table class="t">
             <thead class="th-lila"><tr><th>Bruch</th><th>Dezimal</th><th>Prozent</th><th></th><th>Bruch</th><th>Dezimal</th><th>Prozent</th></tr></thead>
             <tbody>
                 <tr><td><sup>1</sup>⁄<sub>2</sub></td><td>0,5</td><td>50 %</td><td></td><td><sup>1</sup>⁄<sub>5</sub></td><td>0,2</td><td>20 %</td></tr>
-                <tr><td><sup>1</sup>⁄<sub>3</sub></td><td>0,333…</td><td>33,3 %</td><td></td><td><sup>2</sup>⁄<sub>5</sub></td><td>0,4</td><td>40 %</td></tr>
-                <tr><td><sup>1</sup>⁄<sub>4</sub></td><td>0,25</td><td>25 %</td><td></td><td><sup>3</sup>⁄<sub>5</sub></td><td>0,6</td><td>60 %</td></tr>
-                <tr><td><sup>3</sup>⁄<sub>4</sub></td><td>0,75</td><td>75 %</td><td></td><td><sup>1</sup>⁄<sub>8</sub></td><td>0,125</td><td>12,5 %</td></tr>
+                <tr><td><sup>1</sup>⁄<sub>4</sub></td><td>0,25</td><td>25 %</td><td></td><td><sup>2</sup>⁄<sub>5</sub></td><td>0,4</td><td>40 %</td></tr>
+                <tr><td><sup>3</sup>⁄<sub>4</sub></td><td>0,75</td><td>75 %</td><td></td><td><sup>3</sup>⁄<sub>5</sub></td><td>0,6</td><td>60 %</td></tr>
+                <tr><td><sup>1</sup>⁄<sub>8</sub></td><td>0,125</td><td>12,5 %</td><td></td><td><sup>4</sup>⁄<sub>5</sub></td><td>0,8</td><td>80 %</td></tr>
                 <tr><td><sup>1</sup>⁄<sub>10</sub></td><td>0,1</td><td>10 %</td><td></td><td><sup>1</sup>⁄<sub>100</sub></td><td>0,01</td><td>1 %</td></tr>
             </tbody>
         </table>
@@ -1633,6 +1628,12 @@ const allCards = [
     { deck:'dezimal', q:'Was sollte man vor jeder schriftlichen Rechnung machen?', a:'Einen <strong>Überschlag</strong>! So merkst du sofort, wenn das Ergebnis um eine Zehnerpotenz daneben liegt (z.B. Komma falsch gesetzt).' },
     { deck:'dezimal', q:'Was ist das <strong>Kommutativgesetz</strong>?', a:'a · b = b · a — die <strong>Reihenfolge</strong> der Faktoren ist beim Multiplizieren egal.' },
     { deck:'dezimal', q:'Was ist das <strong>Distributivgesetz</strong>?', a:'a · (b + c) = a · b + a · c — eine Klammer wird ausmultipliziert. Hilft beim Kopfrechnen: 6,85 · 9 = 6,85 · 10 − 6,85 = 68,5 − 6,85 = 61,65.' },
+    { deck:'dezimal', q:'Wie dividierst du eine Dezimalzahl durch <strong>10</strong>, <strong>100</strong>, <strong>1000</strong>?', a:'Komma um 1, 2, 3 Stellen nach <strong>links</strong> verschieben.<br>Beispiel: 47,5 : 100 = <strong>0,475</strong>.' },
+    { deck:'dezimal', q:'Rechne schriftlich: <strong>12,4 − 7,85</strong>', a:'Mit einer Null auffüllen: 12,40 − 7,85. Komma unter Komma rechnen → <strong>4,55</strong>.' },
+    { deck:'dezimal', q:'Welche Zahl ist <strong>größer</strong>: 0,7 oder 0,68?', a:'<strong>0,7</strong> ist größer! Auffüllen: 0,70 gegen 0,68. Mehr Nachkommastellen heißt <em>nicht</em> automatisch größere Zahl.' },
+    { deck:'dezimal', q:'Rechne: <strong>9,6 : 4</strong>', a:'Schriftlich teilen: 9 : 4 = 2 (Rest 1). Beim Komma das <strong>Komma im Ergebnis</strong> setzen, dann 16 : 4 = 4 → <strong>2,4</strong>.' },
+    { deck:'dezimal', q:'Welchen <strong>Stellenwert</strong> hat die Ziffer 7 in <strong>2,375</strong>?', a:'Die 7 steht an der <strong>Hundertstel</strong>-Stelle. Sie ist also <sup>7</sup>⁄<sub>100</sub> wert.' },
+    { deck:'dezimal', q:'Du kaufst <strong>3 Hefte zu je 2,49 €</strong> und zahlst mit einem 10-€-Schein. Wie viel bekommst du zurück?', a:'3 · 2,49 € = 7,47 €. Rückgeld: 10,00 € − 7,47 € = <strong>2,53 €</strong>.' },
 
     // BRÜCHE & PROZENTE
     { deck:'bruch', q:'Was bedeutet <strong>Prozent</strong>?', a:'„Prozent" heißt <strong>„von Hundert"</strong>. 1 % ist <strong>ein Hundertstel</strong>.<br>1 % = <sup>1</sup>⁄<sub>100</sub> = 0,01' },
@@ -1647,9 +1648,14 @@ const allCards = [
     { deck:'bruch', q:'Berechne <strong>10 % von 240 €</strong> im Kopf.', a:'10 % = Komma eine Stelle nach links → <strong>24 €</strong>.' },
     { deck:'bruch', q:'Berechne <strong>25 % von 80 €</strong> im Kopf.', a:'25 % = ein Viertel → 80 € : 4 = <strong>20 €</strong>.' },
     { deck:'bruch', q:'Wie wandelst du einen Bruch in eine <strong>Dezimalzahl</strong> um?', a:'Drei Wege:<br><strong>1.</strong> Auf Nenner 10, 100, 1000 erweitern (wenn möglich).<br><strong>2.</strong> Schriftlich dividieren: Zähler : Nenner.<br><strong>3.</strong> Über Kehrwert: <sup>7</sup>⁄<sub>8</sub> = 7 · <sup>1</sup>⁄<sub>8</sub> = 7 · 0,125.' },
-    { deck:'bruch', q:'Was ist <strong>3/11</strong> als Dezimalzahl?', a:'<strong>0,272727…</strong> — eine <strong>periodische</strong> Dezimalzahl. Die Periode „27" wiederholt sich endlos.' },
     { deck:'bruch', q:'Welche wichtigen Bruch-Dezimal-Prozent-Werte solltest du <strong>auswendig</strong> kennen?', a:'<sup>1</sup>⁄<sub>2</sub> = 0,5 = 50 %<br><sup>1</sup>⁄<sub>4</sub> = 0,25 = 25 %<br><sup>3</sup>⁄<sub>4</sub> = 0,75 = 75 %<br><sup>1</sup>⁄<sub>5</sub> = 0,2 = 20 %<br><sup>1</sup>⁄<sub>8</sub> = 0,125 = 12,5 %<br><sup>1</sup>⁄<sub>10</sub> = 0,1 = 10 %' },
     { deck:'bruch', q:'Bedeutet „70 % Rabatt" im SALE, dass man <strong>nur 70 %</strong> oder <strong>nur 30 %</strong> des Preises zahlt?', a:'<strong>Nur 30 %</strong>! 70 % Rabatt heißt: 70 % werden abgezogen → es bleibt 30 % zu zahlen.' },
+    { deck:'bruch', q:'Berechne <strong>1 % von 350 €</strong> im Kopf.', a:'1 % heißt durch 100 teilen → Komma 2 Stellen nach links → <strong>3,50 €</strong>.' },
+    { deck:'bruch', q:'Schreibe <strong><sup>2</sup>⁄<sub>5</sub></strong> als Prozent.', a:'Auf Nenner 100 erweitern (mit 20): <sup>2</sup>⁄<sub>5</sub> = <sup>40</sup>⁄<sub>100</sub> = <strong>40 %</strong>.' },
+    { deck:'bruch', q:'Schreibe <strong>0,6</strong> als <strong>gekürzten Bruch</strong>.', a:'0,6 = <sup>6</sup>⁄<sub>10</sub>, mit 2 gekürzt → <strong><sup>3</sup>⁄<sub>5</sub></strong>.' },
+    { deck:'bruch', q:'Berechne <strong>75 % von 60 €</strong>.', a:'75 % = <sup>3</sup>⁄<sub>4</sub>. Erst 60 € : 4 = 15 €, dann · 3 = <strong>45 €</strong>.' },
+    { deck:'bruch', q:'<strong>20 %</strong> einer Klasse sind <strong>6 Kinder</strong>. Wie viele Kinder hat die ganze Klasse?', a:'Wenn 20 % = 6 Kinder, dann sind 10 % = 3 Kinder und 100 % = <strong>30 Kinder</strong>.' },
+    { deck:'bruch', q:'Ein Spiel kostet <strong>40 €</strong>, jetzt mit <strong>30 % Rabatt</strong>. Was kostet es jetzt?', a:'30 % von 40 € = 12 € Rabatt → 40 € − 12 € = <strong>28 €</strong>.<br>Oder direkt: man zahlt 70 % → 0,7 · 40 € = 28 €.' },
 
     // GEOMETRIE / SYMMETRIE
     { deck:'geo', q:'Was sind die drei Arten von <strong>Symmetrie</strong>?', a:'<strong>1. Achsensymmetrie</strong> — Spiegelung an einer Geraden.<br><strong>2. Drehsymmetrie</strong> — Drehung um einen Punkt.<br><strong>3. Punktsymmetrie</strong> — 180°-Drehung um einen Punkt (Sonderfall von Drehsymm.).' },
@@ -1671,6 +1677,12 @@ const allCards = [
     { deck:'geo', q:'Welche drei <strong>Ansichten</strong> hat man bei einer 3-Tafel-Projektion eines Körpers?', a:'<strong>Vorderansicht</strong> (von vorn), <strong>Seitenansicht</strong> (von der Seite), <strong>Draufsicht</strong> (von oben).' },
     { deck:'geo', q:'Spiegele <strong>P(2|3)</strong> am Symmetriezentrum <strong>Z(0|0)</strong>.', a:'Vorzeichen umdrehen: <strong>P\'(−2|−3)</strong>.' },
     { deck:'geo', q:'Spiegele <strong>A(1|2)</strong> an der <strong>y-Achse</strong>.', a:'x-Wert ändert das Vorzeichen, y bleibt: <strong>A\'(−1|2)</strong>.' },
+    { deck:'geo', q:'Wie viele Symmetrieachsen hat ein <strong>gleichseitiges Dreieck</strong>?', a:'<strong>3</strong> — jede Achse geht durch eine Ecke und die Mitte der gegenüberliegenden Seite. Es ist außerdem drehsymmetrisch (120°).' },
+    { deck:'geo', q:'Wie viele Symmetrieachsen hat ein <strong>Kreis</strong>?', a:'<strong>Unendlich viele</strong> — jede Gerade durch den Mittelpunkt ist eine Symmetrieachse.' },
+    { deck:'geo', q:'Spiegele <strong>B(3|4)</strong> an der <strong>x-Achse</strong>.', a:'Der y-Wert ändert das Vorzeichen, x bleibt: <strong>B\'(3|−4)</strong>.' },
+    { deck:'geo', q:'Was bedeuten die beiden Zahlen bei einem Punkt <strong>P(2|3)</strong>?', a:'Erste Zahl = <strong>x</strong> (nach rechts), zweite Zahl = <strong>y</strong> (nach oben). Also: 2 nach rechts, 3 nach oben.' },
+    { deck:'geo', q:'Ändert eine <strong>Verschiebung</strong> die Größe oder Form einer Figur?', a:'<strong>Nein.</strong> Die Figur wird nur an einen anderen Ort geschoben — sie bleibt <strong>deckungsgleich</strong> (gleich groß, gleiche Form). Das gilt auch für Spiegelung und Drehung.' },
+    { deck:'geo', q:'Wie viele Symmetrieachsen hat ein <strong>gleichschenkliges Dreieck</strong> (nicht gleichseitig)?', a:'<strong>1</strong> — die Achse durch die Spitze und die Mitte der Grundseite (Basis).' },
 ];
 
 let cardsInitialized = false;

@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die Welt der Griechen – GuG Lernunterlage</title>
+    <style>
+        :root {
+            --blau: #1a73b5;
+            --hellblau: #e8f4fd;
+            --rot: #d32f2f;
+            --hellrot: #fde8e8;
+            --gruen: #2e7d32;
+            --hellgruen: #e8f5e9;
+            --orange: #f57c00;
+            --hellorange: #fff3e0;
+            --lila: #7b1fa2;
+            --helllila: #f3e5f5;
+            --dunkelgrau: #333;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.65;
+            color: var(--dunkelgrau);
+            background: #f0f2f5;
+        }
+
+        /* ===== NAV TABS ===== */
+        .tab-bar {
+            position: sticky; top: 0; z-index: 100;
+            background: white;
+            display: flex;
+            border-bottom: 3px solid var(--blau);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .tab-btn {
+            flex: 1; padding: 14px 10px;
+            border: none; background: white;
+            font-size: 1.05em; font-weight: 600;
+            cursor: pointer; color: #666;
+            transition: all 0.2s;
+        }
+        .tab-btn:hover { background: var(--hellblau); }
+        .tab-btn.active { color: var(--blau); border-bottom: 4px solid var(--blau); background: var(--hellblau); }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* ===== SHARED ===== */
+        .page { max-width: 880px; margin: 0 auto; padding: 25px 20px 60px; }
+        h1 { text-align: center; font-size: 1.9em; color: var(--blau); margin-bottom: 4px; }
+        .subtitle { text-align: center; font-size: 1em; color: #888; margin-bottom: 28px; }
+        ul, ol { padding-left: 22px; }
+        li { margin: 3px 0; }
+
+        /* ===== LAYOUT: SIDEBAR + MAIN ===== */
+        .layout {
+            display: grid;
+            grid-template-columns: 270px 1fr;
+            gap: 0;
+            max-width: 1240px;
+            margin: 0 auto;
+            align-items: start;
+        }
+        .sidebar {
+            position: sticky;
+            top: 51px; /* unter der Tab-Bar */
+            max-height: calc(100vh - 51px);
+            overflow-y: auto;
+            padding: 22px 16px 30px;
+            border-right: 1px solid #e0e0e0;
+            background: white;
+            font-size: 0.92em;
+        }
+        .main {
+            padding: 25px 26px 60px;
+            max-width: 920px;
+            width: 100%;
+        }
+
+        /* Agenda */
+        .agenda h4 {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin: 4px 0 10px;
+            font-weight: 700;
+        }
+        .agenda-block { margin-bottom: 18px; }
+        .agenda-h {
+            display: block;
+            font-weight: 700;
+            padding: 8px 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 4px;
+            border-left: 4px solid transparent;
+            transition: background 0.15s;
+        }
+        .agenda-h:hover { background: #f5f5f5; }
+        .agenda-h.rot { color: var(--rot); border-left-color: var(--rot); background: var(--hellrot); }
+        .agenda-h.lila { color: var(--lila); border-left-color: var(--lila); background: var(--helllila); }
+        .agenda-h.gruen { color: var(--gruen); border-left-color: var(--gruen); background: var(--hellgruen); }
+        .agenda-h.blau { color: var(--blau); border-left-color: var(--blau); background: var(--hellblau); }
+        .agenda-h.orange { color: var(--orange); border-left-color: var(--orange); background: var(--hellorange); }
+        .agenda-sub {
+            display: block;
+            color: #555;
+            text-decoration: none;
+            padding: 5px 10px 5px 22px;
+            border-radius: 6px;
+            font-size: 0.93em;
+            line-height: 1.35;
+            margin: 1px 0;
+            border-left: 2px solid transparent;
+            transition: all 0.15s;
+        }
+        .agenda-sub:hover { background: #f5f5f5; color: #222; }
+        .agenda-sub.active {
+            background: #f0f7fc;
+            color: var(--blau);
+            font-weight: 600;
+            border-left-color: var(--blau);
+        }
+        .agenda-sub.rot.active { background: var(--hellrot); color: var(--rot); border-left-color: var(--rot); }
+        .agenda-sub.lila.active { background: var(--helllila); color: var(--lila); border-left-color: var(--lila); }
+        .agenda-sub.gruen.active { background: var(--hellgruen); color: var(--gruen); border-left-color: var(--gruen); }
+        .agenda-sub.orange.active { background: var(--hellorange); color: var(--orange); border-left-color: var(--orange); }
+
+        /* Scroll-Offset für Anker, damit Section nicht unter der Tab-Bar verschwindet */
+        .block[id], .thema[id], .checkliste[id] { scroll-margin-top: 65px; }
+
+        /* Sidebar-Toggle für Mobil */
+        .agenda-toggle {
+            display: none;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-weight: 600;
+            color: var(--blau);
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 14px;
+        }
+        .agenda-toggle::after { content: ' ▾'; }
+        .agenda-toggle.open::after { content: ' ▴'; }
+
+        @media (max-width: 880px) {
+            .layout { grid-template-columns: 1fr; }
+            .sidebar {
+                position: static;
+                max-height: none;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                padding: 16px 18px;
+            }
+            .agenda-toggle { display: block; }
+            .agenda { display: none; }
+            .agenda.open { display: block; }
+            .main { padding: 18px 16px 50px; }
+        }
+
+        /* ===== THEMA-BLOCK ===== */
+        .thema { margin-bottom: 40px; }
+        .thema-header {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 18px; border-radius: 12px 12px 0 0;
+            color: white; font-size: 1.05em;
+        }
+        .thema-header.rot { background: linear-gradient(135deg, var(--rot), #b71c1c); }
+        .thema-header.lila { background: linear-gradient(135deg, var(--lila), #4a148c); }
+        .thema-header.gruen { background: linear-gradient(135deg, var(--gruen), #1b5e20); }
+        .thema-header.orange { background: linear-gradient(135deg, var(--orange), #e65100); }
+        .thema-header.blau { background: linear-gradient(135deg, var(--blau), #0d47a1); }
+        /* Explizit weiße Schrift — überschreibt die .rot/.lila/.gruen Utility-Klassen */
+        .thema-header,
+        .thema-header h2,
+        .thema-header .ico { color: white !important; }
+        .thema-header h2 { font-size: 1.45em; margin: 0; font-weight: 700; letter-spacing: 0.3px; }
+        .thema-header .ico { font-size: 1.6em; }
+
+        .block {
+            background: white; border-radius: 0 0 12px 12px;
+            padding: 18px 20px; margin-bottom: 14px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+        }
+        .block + .block { border-radius: 12px; }
+
+        /* H3 als farbiger Banner mit weißer Schrift — kindgerechte, klare Hierarchie */
+        .block h3 {
+            display: inline-block;
+            background: var(--blau);
+            color: white;
+            padding: 8px 16px 8px 18px;
+            border-radius: 10px;
+            margin: -4px 0 16px -8px;
+            font-size: 1.15em;
+            font-weight: 700;
+            box-shadow: 0 3px 0 rgba(0,0,0,0.08);
+            letter-spacing: 0.2px;
+        }
+        .block h4 { color: var(--dunkelgrau); margin: 14px 0 6px; font-size: 1em; font-weight: 700; }
+
+        /* H3-Hintergrund folgt der Block-Farbe (Schrift bleibt weiß) */
+        .thema.rot .block h3 { background: var(--rot); }
+        .thema.lila .block h3 { background: var(--lila); }
+        .thema.gruen .block h3 { background: var(--gruen); }
+        .thema.orange .block h3 { background: var(--orange); }
+        .thema.blau .block h3 { background: var(--blau); }
+        .block p + p { margin-top: 8px; }
+        .block ul, .block ol { margin: 6px 0; }
+
+        /* Merke-Box */
+        .merke {
+            background: var(--hellorange);
+            border-left: 4px solid var(--orange);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+        }
+        .merke-label {
+            display: inline-block; background: var(--orange); color: white;
+            font-size: 0.75em; font-weight: 700; padding: 2px 10px;
+            border-radius: 8px; margin-bottom: 8px; letter-spacing: 0.5px;
+        }
+
+        /* Beispiel-Box */
+        .beispiel {
+            background: var(--hellblau);
+            border-left: 4px solid var(--blau);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+        }
+        .beispiel-label {
+            display: inline-block; background: var(--blau); color: white;
+            font-size: 0.75em; font-weight: 700; padding: 2px 10px;
+            border-radius: 8px; margin-bottom: 8px; letter-spacing: 0.5px;
+        }
+
+        /* Aufgaben-Box */
+        .aufgabe {
+            background: var(--hellgruen);
+            border-left: 4px solid var(--gruen);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+        }
+        .aufgabe-label {
+            display: inline-block; background: var(--gruen); color: white;
+            font-size: 0.75em; font-weight: 700; padding: 2px 10px;
+            border-radius: 8px; margin-bottom: 8px; letter-spacing: 0.5px;
+        }
+        .aufgabe details {
+            margin-top: 10px;
+            background: white;
+            border-radius: 8px;
+            padding: 4px 12px;
+            border: 1px solid #c8e6c9;
+        }
+        .aufgabe summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--gruen);
+            padding: 6px 0;
+            user-select: none;
+        }
+        .aufgabe details[open] summary { margin-bottom: 6px; }
+        .aufgabe details > div { padding: 4px 0 10px; }
+
+        /* Fehler-Box (rot) */
+        .fehler {
+            background: var(--hellrot);
+            border-left: 4px solid var(--rot);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+        }
+        .fehler-label {
+            display: inline-block; background: var(--rot); color: white;
+            font-size: 0.75em; font-weight: 700; padding: 2px 10px;
+            border-radius: 8px; margin-bottom: 8px; letter-spacing: 0.5px;
+        }
+
+        .b { font-weight: 700; }
+        .rot { color: var(--rot); }
+        .blau { color: var(--blau); }
+        .gruen { color: var(--gruen); }
+        .orange { color: var(--orange); }
+        .lila { color: var(--lila); }
+
+        /* Tabellen */
+        table.t {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            border-radius: 8px; overflow: hidden; margin: 10px 0; font-size: 0.95em;
+        }
+        table.t th { padding: 9px 12px; text-align: left; color: white; font-weight: 600; }
+        table.t td { padding: 8px 12px; border-top: 1px solid #eee; vertical-align: top; }
+        table.t tbody tr:nth-child(even) { background: #fafafa; }
+        .th-rot th { background: var(--rot); }
+        .th-blau th { background: var(--blau); }
+        .th-gruen th { background: var(--gruen); }
+        .th-lila th { background: var(--lila); }
+        .th-orange th { background: var(--orange); }
+
+        .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 640px) { .cols { grid-template-columns: 1fr; } }
+
+        .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        @media (max-width: 640px) { .cols3 { grid-template-columns: 1fr; } }
+
+        /* Mini-Checkliste oben */
+        .checkliste {
+            background: white;
+            border: 2px solid var(--blau);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .checkliste h3 { color: var(--blau); margin-bottom: 10px; }
+        .checkliste-row {
+            display: flex; gap: 10px; align-items: flex-start;
+            padding: 5px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        .checkliste-row:last-child { border-bottom: none; }
+        .check-tag {
+            min-width: 80px;
+            font-size: 0.75em; font-weight: 700;
+            padding: 3px 8px; border-radius: 6px;
+            color: white; text-align: center;
+            height: fit-content;
+        }
+        .check-tag.rot { background: var(--rot); }
+        .check-tag.lila { background: var(--lila); }
+        .check-tag.gruen { background: var(--gruen); }
+        .check-tag.orange { background: var(--orange); }
+        .check-tag.blau { background: var(--blau); }
+
+        /* ===== LERNKARTEN ===== */
+        .deck-nav {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            justify-content: center; margin-bottom: 25px;
+        }
+        .deck-btn {
+            padding: 8px 16px; border-radius: 20px; border: 2px solid var(--blau);
+            background: white; color: var(--blau); font-weight: 600;
+            cursor: pointer; font-size: 0.9em; transition: all 0.2s;
+        }
+        .deck-btn:hover, .deck-btn.active { background: var(--blau); color: white; }
+
+        .card-container {
+            perspective: 800px;
+            max-width: 560px; margin: 0 auto 18px;
+            cursor: pointer;
+            min-height: 200px;
+        }
+        .card {
+            position: relative; width: 100%;
+            min-height: 180px;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+        }
+        .card.flipped { transform: rotateY(180deg); }
+        .card-face {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px; padding: 24px 22px;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+        }
+        .card-front {
+            background: white;
+            border: 3px solid var(--blau);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .card-front .label {
+            position: absolute; top: 12px; left: 16px;
+            font-size: 0.7em; font-weight: 700; color: white;
+            background: var(--blau); padding: 2px 10px; border-radius: 8px;
+        }
+        .card-front .q {
+            font-size: 1.2em; font-weight: 600; color: var(--dunkelgrau);
+            line-height: 1.4;
+        }
+        .card-front .tap {
+            position: absolute; bottom: 10px;
+            font-size: 0.75em; color: #bbb;
+        }
+        .card-back {
+            background: var(--hellblau);
+            border: 3px solid var(--blau);
+            transform: rotateY(180deg);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .card-back .a {
+            font-size: 1.05em; line-height: 1.5; color: var(--dunkelgrau);
+        }
+        .card-back .a strong { color: var(--blau); }
+
+        .card-counter {
+            text-align: center; color: #999; font-size: 0.85em;
+            margin-bottom: 25px;
+        }
+
+        .card-nav {
+            display: flex; justify-content: center; gap: 12px; margin-bottom: 30px;
+        }
+        .card-nav button {
+            padding: 10px 24px; border-radius: 25px; border: 2px solid var(--blau);
+            background: white; color: var(--blau); font-weight: 600;
+            cursor: pointer; font-size: 0.95em; transition: all 0.2s;
+        }
+        .card-nav button:hover { background: var(--blau); color: white; }
+
+        .progress-bar {
+            max-width: 560px; margin: 0 auto 20px; height: 6px;
+            background: #e0e0e0; border-radius: 3px; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: var(--gruen); border-radius: 3px;
+            transition: width 0.3s;
+        }
+
+        @media (max-width: 600px) {
+            .tab-btn { font-size: 0.9em; padding: 12px 6px; }
+            .page { padding: 16px 12px 40px; }
+            h1 { font-size: 1.5em; }
+            .card-front .q { font-size: 1.05em; }
+        }
+
+        @media print {
+            .tab-bar { display: none; }
+            .tab-content { display: block !important; }
+            .card { transform: none !important; }
+            .card-back { transform: none !important; position: relative; }
+            .card-front, .card-back { position: relative; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- TAB NAVIGATION -->
+<div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('theorie')">Theorie &amp; Aufgaben</button>
+    <button class="tab-btn" onclick="switchTab('karten')">Lernkarten</button>
+</div>
+
+<!-- ================================================================ -->
+<!--                    TEIL A: THEORIE & AUFGABEN                    -->
+<!-- ================================================================ -->
+<div id="theorie" class="tab-content active">
+<div class="layout">
+
+<!-- ───── LINKE AGENDA-SIDEBAR ───── -->
+<aside class="sidebar">
+    <button class="agenda-toggle" onclick="this.classList.toggle('open'); document.getElementById('agenda').classList.toggle('open')">Agenda</button>
+    <nav class="agenda" id="agenda">
+        <h4>Lerninhalt</h4>
+
+        <div class="agenda-block">
+            <a href="#ueberblick" class="agenda-h blau">Überblick &amp; Zeitstrahl</a>
+        </div>
+
+        <div class="agenda-block">
+            <a href="#block1" class="agenda-h blau">Block 1 · Geografie</a>
+            <a href="#sec-1-1" class="agenda-sub">1.1 Wo lag das antike Griechenland?</a>
+            <a href="#sec-1-2" class="agenda-sub">1.2 Die Landschaft Griechenlands</a>
+            <a href="#sec-1-3" class="agenda-sub">1.3 Die Landschaft Ägyptens</a>
+            <a href="#sec-1-4" class="agenda-sub">1.4 Der große Vergleich</a>
+            <a href="#sec-1-5" class="agenda-sub">1.5 Aufgaben</a>
+        </div>
+
+        <div class="agenda-block">
+            <a href="#block2" class="agenda-h gruen">Block 2 · Die Polis</a>
+            <a href="#sec-2-1" class="agenda-sub gruen">2.1 Was ist eine Polis?</a>
+            <a href="#sec-2-2" class="agenda-sub gruen">2.2 Wie eine Polis aussah</a>
+            <a href="#sec-2-3" class="agenda-sub gruen">2.3 Viele Poleis – ein Volk</a>
+            <a href="#sec-2-4" class="agenda-sub gruen">2.4 Athen und Sparta</a>
+            <a href="#sec-2-5" class="agenda-sub gruen">2.5 Aufgaben</a>
+        </div>
+
+        <div class="agenda-block">
+            <a href="#block3" class="agenda-h orange">Block 3 · Kolonisation</a>
+            <a href="#sec-3-1" class="agenda-sub orange">3.1 Warum die Griechen auswanderten</a>
+            <a href="#sec-3-2" class="agenda-sub orange">3.2 Wie eine Kolonie entstand</a>
+            <a href="#sec-3-3" class="agenda-sub orange">3.3 Wohin die Griechen zogen</a>
+            <a href="#sec-3-4" class="agenda-sub orange">3.4 Folgen der Kolonisation</a>
+            <a href="#sec-3-5" class="agenda-sub orange">3.5 Aufgaben</a>
+        </div>
+
+        <div class="agenda-block">
+            <a href="#block4" class="agenda-h rot">Block 4 · Demokratie in Athen</a>
+            <a href="#sec-4-1" class="agenda-sub rot">4.1 Monarchie &amp; Aristokratie</a>
+            <a href="#sec-4-2" class="agenda-sub rot">4.2 Die Krise der Bauern – Solon</a>
+            <a href="#sec-4-3" class="agenda-sub rot">4.3 Kleisthenes</a>
+            <a href="#sec-4-4" class="agenda-sub rot">4.4 So funktionierte die Demokratie</a>
+            <a href="#sec-4-5" class="agenda-sub rot">4.5 Wer durfte mitbestimmen?</a>
+            <a href="#sec-4-6" class="agenda-sub rot">4.6 Aufgaben</a>
+        </div>
+    </nav>
+</aside>
+
+<!-- ───── RECHTER INHALTSBEREICH ───── -->
+<main class="main">
+
+<h1>Die Welt der Griechen</h1>
+<p class="subtitle">GuG · Geografie und Geschichte · Klasse 6 · Lernunterlage</p>
+
+<!-- ── ÜBERBLICK / CHECKLISTE ── -->
+<div class="checkliste" id="ueberblick">
+    <h3>Was kommt dran?</h3>
+    <div class="checkliste-row">
+        <span class="check-tag blau">Block 1</span>
+        <div><strong>Geografie: Griechenland &amp; Ägypten</strong> — Lage am Mittelmeer, Gebirge und zerklüftete Küste, der Nil und das Wüstenland Ägypten, der große Landschaftsvergleich.</div>
+    </div>
+    <div class="checkliste-row">
+        <span class="check-tag gruen">Block 2</span>
+        <div><strong>Die Polis — der Stadtstaat</strong> — was eine Polis ist, Akropolis &amp; Agora, viele unabhängige Poleis, das gemeinsame Wir-Gefühl der Griechen, Athen und Sparta.</div>
+    </div>
+    <div class="checkliste-row">
+        <span class="check-tag orange">Block 3</span>
+        <div><strong>Kolonisation</strong> — warum die Griechen auswanderten, wie eine Kolonie gegründet wurde, wohin sie zogen, welche Folgen das hatte.</div>
+    </div>
+    <div class="checkliste-row">
+        <span class="check-tag rot">Block 4</span>
+        <div><strong>Demokratie in Athen</strong> — Monarchie, Aristokratie, die Reformen von Solon und Kleisthenes, Volksversammlung &amp; Rat der 500, wer mitbestimmen durfte.</div>
+    </div>
+</div>
+
+<!-- ── ZEITSTRAHL ── -->
+<div class="merke" style="margin-bottom:30px">
+    <span class="merke-label">ZEITSTRAHL — DIE WICHTIGSTEN JAHRESZAHLEN</span>
+    <table class="t">
+        <thead class="th-orange"><tr><th>Zeit</th><th>Was geschah</th></tr></thead>
+        <tbody>
+            <tr><td>ab 3000 v. Chr.</td><td>In Ägypten entsteht am Nil eine <span class="b">Hochkultur</span>.</td></tr>
+            <tr><td>um 800–700 v. Chr.</td><td>In Griechenland entstehen die <span class="b">Stadtstaaten (Poleis)</span>.</td></tr>
+            <tr><td>776 v. Chr.</td><td>Die ersten überlieferten <span class="b">Olympischen Spiele</span>.</td></tr>
+            <tr><td>ca. 750–550 v. Chr.</td><td>Die <span class="b">griechische Kolonisation</span> rund um das Mittelmeer.</td></tr>
+            <tr><td>um 600 v. Chr.</td><td><span class="b">Solon</span> löst die Krise der Bauern in Athen.</td></tr>
+            <tr><td>ab 508 v. Chr.</td><td><span class="b">Kleisthenes</span> — Beginn der Demokratie in Athen.</td></tr>
+            <tr><td>5./4. Jh. v. Chr.</td><td><span class="b">Blütezeit der Demokratie</span> in Athen.</td></tr>
+            <tr><td>148 v. Chr.</td><td>Griechenland wird Teil des <span class="b">Römischen Reichs</span>.</td></tr>
+        </tbody>
+    </table>
+    <p style="margin-top:6px"><strong>Tipp zum Lesen:</strong> „v. Chr." bedeutet „vor Christus". Bei diesen Zahlen zählt man <span class="b">rückwärts</span> — 776 v. Chr. liegt also <span class="b">früher</span> (länger her) als 508 v. Chr.</p>
+</div>
+
+
+<!-- ================================================================ -->
+<!--                BLOCK 1: GEOGRAFIE                                -->
+<!-- ================================================================ -->
+<div class="thema blau" id="block1">
+    <div class="thema-header blau"><span class="ico">🗺️</span><h2>Block 1 · Geografie: Griechenland &amp; Ägypten</h2></div>
+
+    <!-- 1.1 Wo lag Griechenland -->
+    <div class="block" id="sec-1-1">
+        <h3>1.1 · Wo lag das antike Griechenland?</h3>
+        <p>Das antike Griechenland lag im <span class="b">Südosten Europas</span>, rund um das <span class="b blau">Mittelmeer</span>. Es bestand aus drei Teilen:</p>
+        <ul>
+            <li>dem <span class="b">Festland</span> im Norden,</li>
+            <li>der großen Halbinsel <span class="b">Peloponnes</span> im Süden, die nur über eine schmale Landenge mit dem Festland verbunden ist,</li>
+            <li>und sehr <span class="b">vielen Inseln</span> — in der Ägäis (östlich) und im Ionischen Meer (westlich). Die größte Insel ist <span class="b">Kreta</span>.</li>
+        </ul>
+        <p>Die Griechen siedelten aber nicht nur dort: Auch an der Westküste von <span class="b">Kleinasien</span> (das ist die heutige Türkei) lebten viele Griechen.</p>
+        <p>Wichtig zu wissen: In Griechenland ist man <span class="b">nie weit vom Meer entfernt</span>. Egal, wo man stand — das Meer war immer in der Nähe.</p>
+    </div>
+
+    <!-- 1.2 Landschaft Griechenland -->
+    <div class="block" id="sec-1-2">
+        <h3>1.2 · Die Landschaft Griechenlands</h3>
+        <p>Griechenland ist ein <span class="b">gebirgiges</span> Land. Große Teile sind von Bergen bedeckt. Der höchste Berg ist der <span class="b">Olymp</span> (rund 2900 m hoch) — in den griechischen Sagen war er der Wohnsitz der Götter.</p>
+
+        <h4>Was die Berge bewirken</h4>
+        <p>Die vielen Berge <span class="b">zerschneiden das Land</span> in kleine, voneinander getrennte Ebenen und Täler. Über Land zu reisen war anstrengend und langsam. Jede Ebene war wie eine kleine, abgetrennte Welt.</p>
+        <p>Die Küste ist <span class="b">stark gegliedert</span> (man sagt auch „zerklüftet"): Es gibt unzählige Buchten, Halbinseln und natürliche Häfen.</p>
+
+        <h4>Boden, Klima und Landwirtschaft</h4>
+        <p>Der Boden ist meist <span class="b">karg und steinig</span> — gutes Ackerland war knapp. Das Klima ist <span class="b">mediterran</span>: heiße, trockene Sommer und milde, feuchte Winter.</p>
+        <p>Angebaut wurde vor allem, was mit wenig Wasser auskommt:</p>
+        <ul>
+            <li><span class="b">Oliven</span> (für Olivenöl)</li>
+            <li><span class="b">Wein</span> (Trauben)</li>
+            <li>etwas <span class="b">Getreide</span>, vor allem Gerste</li>
+            <li>auf den Bergen weideten <span class="b">Ziegen und Schafe</span></li>
+        </ul>
+
+        <div class="merke">
+            <span class="merke-label">MERKE — DAS MEER VERBINDET</span>
+            <p>Weil das Land karg war und das Meer überall nah, wurden die Griechen zu <span class="b">Seefahrern, Fischern und Händlern</span>. Eine Schiffsreise war oft schneller und einfacher als der beschwerliche Weg über die Berge. Das Meer <span class="b">verband</span> die Griechen.</p>
+        </div>
+    </div>
+
+    <!-- 1.3 Landschaft Ägypten -->
+    <div class="block" id="sec-1-3">
+        <h3>1.3 · Die Landschaft Ägyptens</h3>
+        <p>Ägypten liegt in <span class="b">Nordafrika</span>, mitten in der <span class="b">Wüste</span>. Dort regnet es fast nie.</p>
+        <p>Mitten durch dieses Wüstenland fließt ein einziger, sehr langer Fluss: der <span class="b blau">Nil</span>. Nur das schmale Tal direkt am Nil ist grün und fruchtbar — links und rechts davon beginnt sofort wieder die Wüste.</p>
+
+        <h4>Die Nilüberschwemmung</h4>
+        <p>Jedes Jahr trat der Nil über die Ufer (das nennt man die <span class="b">Nilüberschwemmung</span> oder Nilflut). Wenn das Wasser zurückging, blieb fruchtbarer <span class="b">Schlamm</span> liegen. Auf diesem Schlamm konnten die Bauern <span class="b">reiche Ernten</span> einfahren.</p>
+
+        <div class="beispiel">
+            <span class="beispiel-label">EIN GESCHENK DES NILS</span>
+            <p>Der griechische Geschichtsschreiber <span class="b">Herodot</span> nannte Ägypten „ein <span class="b">Geschenk des Nils</span>". Damit meinte er: Ohne den Fluss und seinen fruchtbaren Schlamm wäre Ägypten nur Wüste. Erst der Nil machte das Land bewohnbar.</p>
+        </div>
+
+        <p>Der Nil war außerdem der wichtigste <span class="b">Verkehrsweg</span> — auf ihm fuhren Schiffe durch das ganze Land.</p>
+        <p>Weil das fruchtbare Land ein einziges, <span class="b">zusammenhängendes Tal</span> an einem Fluss war, ließ es sich auch von einer einzigen Herrscherfamilie regieren. Ägypten war deshalb ein großes, <span class="b">einheitliches Reich</span> mit einem König — dem <span class="b">Pharao</span> — an der Spitze.</p>
+    </div>
+
+    <!-- 1.4 Vergleich -->
+    <div class="block" id="sec-1-4">
+        <h3>1.4 · Der große Vergleich</h3>
+        <p>Diese Tabelle stellt die beiden Länder direkt nebeneinander. Sie ist der Kern dieses Themas:</p>
+        <table class="t">
+            <thead class="th-blau"><tr><th>Merkmal</th><th>Griechenland</th><th>Ägypten</th></tr></thead>
+            <tbody>
+                <tr><td><span class="b">Lage</span></td><td>am Mittelmeer, viele Inseln und Halbinseln</td><td>in der Wüste Nordafrikas, am Nil</td></tr>
+                <tr><td><span class="b">Landschaft</span></td><td>gebirgig, zerklüftet, viele kleine Ebenen</td><td>flaches, fruchtbares Flusstal, ringsum Wüste</td></tr>
+                <tr><td><span class="b">Wasser</span></td><td>das Meer — überall in der Nähe</td><td>der Nil — die einzige Lebensader</td></tr>
+                <tr><td><span class="b">Boden</span></td><td>karg, steinig, wenig Ackerland</td><td>sehr fruchtbar durch den Nilschlamm</td></tr>
+                <tr><td><span class="b">Wichtigster Weg</span></td><td>das Meer (Schiffe)</td><td>der Fluss Nil (Schiffe)</td></tr>
+                <tr><td><span class="b">Wirtschaft</span></td><td>Seehandel, Fischfang, Oliven &amp; Wein</td><td>Ackerbau, reiche Getreideernten</td></tr>
+                <tr><td><span class="b">Staat (Folge)</span></td><td>viele kleine, unabhängige Stadtstaaten</td><td>ein großes, einheitliches Reich (Pharao)</td></tr>
+            </tbody>
+        </table>
+
+        <div class="merke">
+            <span class="merke-label">DIE WICHTIGSTE ERKENNTNIS</span>
+            <p>Die <span class="b">Landschaft prägt den Staat</span>:</p>
+            <ul>
+                <li>Griechenland ist durch <span class="b">Gebirge und Meer zerteilt</span> → daraus entstanden <span class="b">viele kleine, selbstständige Poleis</span>.</li>
+                <li>Ägypten ist ein langes, <span class="b">verbundenes Flusstal</span> → daraus entstand <span class="b">ein großes Reich</span> unter einem Herrscher.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 1.5 Aufgaben -->
+    <div class="block" id="sec-1-5">
+        <h3>1.5 · Aufgaben</h3>
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN — GEOGRAFIE</span>
+
+            <p><strong>A1.</strong> Beschreibe die Landschaft Griechenlands und vergleiche sie mit der Landschaft Ägyptens.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                <span class="b">Griechenland:</span> ein gebirgiges Land am Mittelmeer mit vielen Inseln und einer zerklüfteten Küste mit vielen Häfen. Die Berge teilen das Land in kleine Ebenen. Der Boden ist karg, das Meer überall nah.<br>
+                <span class="b">Ägypten:</span> ein schmales, sehr fruchtbares Flusstal am Nil, ringsum nur Wüste. Es regnet fast nie; die jährliche Nilüberschwemmung macht den Boden fruchtbar.<br>
+                <span class="b">Vergleich:</span> Griechenland ist zerteilt und karg, Ägypten ist ein zusammenhängendes, fruchtbares Tal. In Griechenland verbindet das Meer, in Ägypten der Fluss.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A2.</strong> Erkläre, warum in Griechenland viele kleine Staaten entstanden, in Ägypten aber ein großes Reich.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                In Griechenland trennten die <span class="b">Gebirge</span> die Menschen voneinander — jede Ebene wurde ein eigener kleiner Staat (Polis). In Ägypten lag das fruchtbare Land in <span class="b">einem einzigen, zusammenhängenden Flusstal</span>. Es ließ sich gemeinsam von einem Herrscher regieren — so entstand ein großes, einheitliches Reich.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A3.</strong> Warum wurden die Griechen zu Seefahrern und Händlern?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Weil das Land <span class="b">gebirgig und karg</span> war und es wenig gutes Ackerland gab. Das <span class="b">Meer war überall nah</span>, und mit Schiffen kam man schneller voran als über die Berge. Über das Meer konnten sie handeln und Dinge holen, die es zu Hause nicht gab.
+            </div></details>
+        </div>
+    </div>
+</div>
+
+
+<!-- ================================================================ -->
+<!--                BLOCK 2: DIE POLIS                                -->
+<!-- ================================================================ -->
+<div class="thema gruen" id="block2">
+    <div class="thema-header gruen"><span class="ico">🏛️</span><h2>Block 2 · Die Polis — der Stadtstaat</h2></div>
+
+    <!-- 2.1 Was ist eine Polis -->
+    <div class="block" id="sec-2-1">
+        <h3>2.1 · Was ist eine Polis?</h3>
+
+        <div class="merke">
+            <span class="merke-label">BEGRIFF · POLIS</span>
+            <p>Eine <span class="b">Polis</span> ist ein griechischer <span class="b">Stadtstaat</span>: ein eigener kleiner Staat, der nur aus <span class="b">einer Stadt und ihrem Umland</span> besteht — also den Feldern, Dörfern und Bergen rings um die Stadt.</p>
+        </div>
+
+        <p>Jede Polis war <span class="b">selbstständig und unabhängig</span>. Sie hatte:</p>
+        <ul>
+            <li>eigene <span class="b">Gesetze</span> und eine eigene <span class="b">Regierung</span></li>
+            <li>ein eigenes <span class="b">Heer</span></li>
+            <li>eigene <span class="b">Götter</span>, die besonders verehrt wurden</li>
+            <li>eigene <span class="b">Münzen</span></li>
+        </ul>
+
+        <div class="beispiel">
+            <span class="beispiel-label">BEISPIEL — DER STADTSTAAT ATHEN</span>
+            <p>Die Polis <span class="b">Athen</span> bestand aus der Stadt Athen und der umliegenden Landschaft <span class="b">Attika</span>. Um 400 v. Chr. lebten allein in der Stadt etwa <span class="b">100 000 Menschen</span> — und noch mehr im fruchtbaren Umland davor. Athen war eine der größten und wichtigsten Städte am Mittelmeer.</p>
+        </div>
+
+        <p>Es gab nicht nur eine, sondern <span class="b">Hunderte solcher Poleis</span>. Bekannte Beispiele sind <span class="b">Athen, Sparta, Korinth</span> und <span class="b">Theben</span>.</p>
+    </div>
+
+    <!-- 2.2 Wie eine Polis aussah -->
+    <div class="block" id="sec-2-2">
+        <h3>2.2 · Wie eine Polis aussah — das Beispiel Athen</h3>
+        <p>Fast jede griechische Stadt hatte die gleichen wichtigen Teile:</p>
+
+        <table class="t">
+            <thead class="th-gruen"><tr><th>Teil der Stadt</th><th>Was es war</th></tr></thead>
+            <tbody>
+                <tr><td><span class="b">Akropolis</span></td><td>Die „Oberstadt" — ein <span class="b">befestigter Hügel</span> mitten in der Stadt. Oben standen die Tempel der Götter. Bei Gefahr bot der Hügel Schutz.</td></tr>
+                <tr><td><span class="b">Agora</span></td><td>Der <span class="b">Marktplatz</span> — das Herz der Polis. Hier wurde gehandelt, hier traf man sich und sprach über Neuigkeiten und Politik.</td></tr>
+                <tr><td><span class="b">Pnyx</span></td><td>In Athen ein <span class="b">halbrunder Platz</span>, auf dem sich die Bürger zur Volksversammlung trafen, um gemeinsam zu entscheiden.</td></tr>
+                <tr><td><span class="b">Tempel</span></td><td>Heilige Gebäude für die Götter. Auf der Akropolis von Athen stand der große Tempel für die Stadtgöttin <span class="b">Athene</span>.</td></tr>
+                <tr><td><span class="b">Stadtmauer</span></td><td>Eine Mauer schützte die Stadt vor Feinden. Außerhalb lag das Umland mit Feldern und Dörfern.</td></tr>
+            </tbody>
+        </table>
+
+        <div class="merke">
+            <span class="merke-label">MERKE</span>
+            <p>Die zwei Begriffe, die man oft verwechselt: Die <span class="b">Akropolis</span> ist der <span class="b">befestigte Hügel mit den Tempeln</span> (Schutz und Religion). Die <span class="b">Agora</span> ist der <span class="b">Marktplatz</span> unten in der Stadt (Handel und Treffpunkt).</p>
+        </div>
+    </div>
+
+    <!-- 2.3 Viele Poleis - ein Volk -->
+    <div class="block" id="sec-2-3">
+        <h3>2.3 · Viele Poleis – ein Volk</h3>
+        <p>Obwohl jede Polis ein eigener Staat war und die Poleis sich oft sogar gegenseitig <span class="b">bekriegten</span>, fühlten sich alle Griechen als <span class="b">zusammengehörig</span> — als ein Volk. Sie nannten sich selbst <span class="b">Hellenen</span> und ihr Land <span class="b">Hellas</span>.</p>
+
+        <h4>Was die Griechen verband</h4>
+        <ul>
+            <li>die gleiche <span class="b">Sprache</span> — Griechisch</li>
+            <li>die gleichen <span class="b">Götter</span> — zum Beispiel Zeus, Athene und Apollon — und gemeinsame Heiligtümer wie das Orakel von Delphi</li>
+            <li>die gleichen <span class="b">Geschichten</span>: die Werke des Dichters <span class="b">Homer</span> — die <span class="b">„Ilias"</span> (vom Trojanischen Krieg) und die <span class="b">„Odyssee"</span> (von den Irrfahrten des Odysseus). Jeder Grieche kannte sie.</li>
+            <li>gemeinsame <span class="b">Feste</span>, vor allem die <span class="b">Olympischen Spiele</span>: Alle vier Jahre kamen Sportler aus allen Poleis in Olympia zusammen. Während der Spiele galt ein <span class="b">Waffenstillstand</span> — es herrschte Friede.</li>
+        </ul>
+
+        <div class="beispiel">
+            <span class="beispiel-label">GUT ZU WISSEN</span>
+            <p>Wer kein Griechisch sprach, galt für die Griechen als <span class="b">„Barbar"</span> — so nannten sie alle Fremden. Das Wort hat also eigentlich nur „Nicht-Grieche" bedeutet.</p>
+        </div>
+    </div>
+
+    <!-- 2.4 Athen und Sparta -->
+    <div class="block" id="sec-2-4">
+        <h3>2.4 · Athen und Sparta — zwei verschiedene Poleis</h3>
+        <p>Wie unterschiedlich Poleis sein konnten, zeigen die beiden bekanntesten: <span class="b">Athen</span> und <span class="b">Sparta</span>.</p>
+
+        <table class="t">
+            <thead class="th-gruen"><tr><th></th><th>Athen</th><th>Sparta</th></tr></thead>
+            <tbody>
+                <tr><td><span class="b">Schwerpunkt</span></td><td>Handel und Seefahrt</td><td>das Militär (Krieg)</td></tr>
+                <tr><td><span class="b">Erziehung</span></td><td>Bildung, Kunst, Theater, Diskussion</td><td>harte Soldaten-Erziehung schon für Jungen</td></tr>
+                <tr><td><span class="b">Regierung</span></td><td>später die Demokratie (siehe Block 4)</td><td>Herrschaft von wenigen — keine Demokratie</td></tr>
+            </tbody>
+        </table>
+
+        <p>Beide waren griechische Poleis, beide sprachen Griechisch und verehrten dieselben Götter — und trotzdem waren sie sehr <span class="b">verschieden</span>. Das zeigt, wie eigenständig jede Polis war.</p>
+    </div>
+
+    <!-- 2.5 Aufgaben -->
+    <div class="block" id="sec-2-5">
+        <h3>2.5 · Aufgaben</h3>
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN — DIE POLIS</span>
+
+            <p><strong>A1.</strong> Beschreibe das Bild der Stadt Athen um 400 v. Chr. Welche Unterschiede und Gemeinsamkeiten zu einer heutigen Stadt fallen dir auf?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                <span class="b">Beschreibung:</span> In der Mitte erhebt sich die Akropolis, ein befestigter Hügel mit einem großen Tempel. Darum liegen dicht gedrängt viele kleine Häuser, dazwischen der halbrunde Platz Pnyx. Um die Stadt herum liegen Felder (Attika).<br>
+                <span class="b">Gemeinsamkeiten</span> mit heute: viele Häuser dicht beieinander, Plätze zum Treffen, Menschen leben und arbeiten zusammen.<br>
+                <span class="b">Unterschiede:</span> keine Hochhäuser, keine Autos oder Straßen für Fahrzeuge, eine Stadtmauer, ein Tempel statt Kirchen, viel mehr Grün und Felder direkt am Stadtrand. (Hier sind eigene Beobachtungen erlaubt.)
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A2.</strong> Erkläre den Begriff „Polis". Nenne die wichtigsten Teile einer griechischen Stadt.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Eine <span class="b">Polis</span> ist ein Stadtstaat — ein eigener kleiner Staat aus einer Stadt und ihrem Umland, mit eigenen Gesetzen, eigener Regierung und eigenem Heer.<br>
+                Wichtige Teile: die <span class="b">Akropolis</span> (befestigter Tempelhügel), die <span class="b">Agora</span> (Marktplatz), Tempel, Wohnhäuser und eine Stadtmauer.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A3.</strong> Die griechischen Poleis waren unabhängig und bekriegten sich oft. Warum fühlten sich die Griechen trotzdem als ein Volk? Nenne vier Dinge, die sie verbanden.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Die Griechen verband: <span class="b">(1)</span> die gemeinsame Sprache, <span class="b">(2)</span> die gemeinsamen Götter, <span class="b">(3)</span> die Dichtungen Homers (Ilias und Odyssee), die jeder kannte, und <span class="b">(4)</span> gemeinsame Feste wie die Olympischen Spiele. Sie nannten sich selbst Hellenen.
+            </div></details>
+        </div>
+    </div>
+</div>
+
+
+<!-- ================================================================ -->
+<!--                BLOCK 3: KOLONISATION                             -->
+<!-- ================================================================ -->
+<div class="thema orange" id="block3">
+    <div class="thema-header orange"><span class="ico">⛵</span><h2>Block 3 · Kolonisation</h2></div>
+
+    <!-- 3.1 Warum auswandern -->
+    <div class="block" id="sec-3-1">
+        <h3>3.1 · Warum die Griechen auswanderten</h3>
+        <p>Zwischen etwa <span class="b">750 und 550 v. Chr.</span> verließen sehr viele Griechen ihre Heimat und gründeten in der Ferne neue Städte. Diese große Auswanderungswelle nennt man die <span class="b">griechische Kolonisation</span>.</p>
+
+        <h4>Die Gründe für die Auswanderung</h4>
+        <ul>
+            <li><span class="b">Landmangel:</span> Wegen der vielen Gebirge gab es in Griechenland nur wenig Ackerland (siehe Block 1).</li>
+            <li><span class="b">Wachsende Bevölkerung:</span> Es wurden immer mehr Menschen — aber das Land wurde nicht mehr.</li>
+            <li><span class="b">Hunger und Armut:</span> Reichte das Land nicht für alle, drohte Hunger.</li>
+            <li><span class="b">Erbteilung:</span> Ein Bauernhof wurde unter den Söhnen aufgeteilt — die Stücke wurden mit jeder Generation kleiner.</li>
+            <li><span class="b">Streit in der Polis:</span> Wer in politischen Konflikten unterlag, verließ manchmal die Stadt.</li>
+            <li><span class="b">Handel:</span> Manche zogen los, um neue Handelsplätze und Rohstoffe zu finden.</li>
+        </ul>
+
+        <div class="merke">
+            <span class="merke-label">MERKE</span>
+            <p>Der wichtigste Grund war <span class="b">Landmangel</span>: zu viele Menschen und zu wenig fruchtbares Land. Die Auswanderung war ein Ventil — sie nahm Druck von der überfüllten Heimat.</p>
+        </div>
+    </div>
+
+    <!-- 3.2 Wie eine Kolonie entstand -->
+    <div class="block" id="sec-3-2">
+        <h3>3.2 · Wie eine Kolonie entstand</h3>
+        <p>Eine Koloniegründung lief meist nach demselben Muster ab:</p>
+        <ol>
+            <li>Eine bestehende Polis — die <span class="b">Mutterstadt</span> (griechisch <span class="b">Metropolis</span>) — rüstete eine Gruppe von Auswanderern aus, die <span class="b">Kolonisten</span>.</li>
+            <li>An ihrer Spitze stand ein Anführer, der <span class="b">Oikist</span>.</li>
+            <li>Vorher fragte man oft das <span class="b">Orakel von Delphi</span> um Rat — wohin man ziehen solle.</li>
+            <li>Am Zielort gründeten die Auswanderer eine <span class="b">neue Stadt</span>.</li>
+        </ol>
+
+        <div class="merke">
+            <span class="merke-label">BEGRIFFE · MUTTERSTADT &amp; KOLONIE</span>
+            <p>Die <span class="b">Mutterstadt (Metropolis)</span> ist die alte Polis, von der die Auswanderer ausgehen.<br>
+            Die <span class="b">Kolonie</span> ist die neu gegründete Stadt in der Ferne.</p>
+        </div>
+
+        <p>Wichtig: Die neue Kolonie war eine <span class="b">eigenständige Polis</span> mit eigener Regierung — sie gehörte der Mutterstadt <span class="b">nicht</span>. Trotzdem blieben Mutterstadt und Kolonie eng verbunden: gleiche Sprache, gleiche Götter, gleiche Bräuche und oft Handel und Freundschaft.</p>
+    </div>
+
+    <!-- 3.3 Wohin -->
+    <div class="block" id="sec-3-3">
+        <h3>3.3 · Wohin die Griechen zogen</h3>
+        <p>Die Griechen gründeten Kolonien rund um das ganze <span class="b">Mittelmeer</span> und das <span class="b">Schwarze Meer</span>. Wichtige Gebiete waren:</p>
+        <ul>
+            <li><span class="b">Süditalien und Sizilien</span> — dort lagen so viele griechische Städte, dass man die Gegend später <span class="b">„Magna Graecia"</span> („Großgriechenland") nannte. Ein Beispiel ist die mächtige Stadt <span class="b">Syrakus</span>.</li>
+            <li><span class="b">Südfrankreich</span> — die Kolonie <span class="b">Massalia</span> ist das heutige Marseille.</li>
+            <li>die Küsten von <span class="b">Nordafrika</span>, <span class="b">Spanien</span> und des <span class="b">Schwarzen Meeres</span>.</li>
+        </ul>
+
+        <div class="beispiel">
+            <span class="beispiel-label">STÄDTE, DIE ES HEUTE NOCH GIBT</span>
+            <p>Manche griechischen Kolonien existieren bis heute — nur der Name hat sich verändert:</p>
+            <ul>
+                <li><span class="b">Neapolis</span> (griechisch für „Neustadt") → das heutige <span class="b">Neapel</span> in Italien</li>
+                <li><span class="b">Massalia</span> → das heutige <span class="b">Marseille</span> in Frankreich</li>
+            </ul>
+        </div>
+
+        <div class="merke">
+            <span class="merke-label">EIN BERÜHMTES BILD</span>
+            <p>Der Philosoph <span class="b">Platon</span> sagte später, die Griechen säßen rund um das Mittelmeer „<span class="b">wie Frösche um einen Teich</span>". Damit meinte er: An fast jeder Küste des Mittelmeers gab es eine griechische Stadt.</p>
+        </div>
+    </div>
+
+    <!-- 3.4 Folgen -->
+    <div class="block" id="sec-3-4">
+        <h3>3.4 · Folgen der Kolonisation</h3>
+        <p>Die Kolonisation veränderte die ganze antike Welt:</p>
+        <ul>
+            <li>Die <span class="b">Not in der Heimat</span> wurde gelindert — überschüssige Menschen fanden neues Land.</li>
+            <li>Der <span class="b">Handel blühte auf</span>: Die Kolonien lieferten Getreide, Metalle und andere Waren; aus Griechenland kamen Olivenöl, Wein und Töpferwaren (Keramik).</li>
+            <li>Es entstanden überall <span class="b">griechische Städte</span> — so verbreiteten sich die griechische <span class="b">Sprache, Schrift, Religion und Lebensweise</span> im ganzen Mittelmeerraum.</li>
+            <li>Eine Erfindung verbreitete sich nun und machte den Handel viel leichter: das <span class="b">Geld in Form von Münzen</span>.</li>
+        </ul>
+
+        <div class="merke">
+            <span class="merke-label">MERKE</span>
+            <p>Kurz gesagt: Die Kolonisation brachte mehr <span class="b">Handel</span> — und sie verbreitete die griechische <span class="b">Kultur</span> über das ganze Mittelmeer.</p>
+        </div>
+    </div>
+
+    <!-- 3.5 Aufgaben -->
+    <div class="block" id="sec-3-5">
+        <h3>3.5 · Aufgaben</h3>
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN — KOLONISATION</span>
+
+            <p><strong>A1.</strong> Nenne drei Gründe, warum viele Griechen ihre Heimat verließen.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Zum Beispiel: <span class="b">(1)</span> Landmangel — es gab wegen der Gebirge zu wenig Ackerland. <span class="b">(2)</span> Die Bevölkerung wuchs, sodass Hunger drohte. <span class="b">(3)</span> Höfe wurden unter den Erben immer kleiner aufgeteilt. (Auch richtig: Streit in der Polis, Suche nach Handel.)
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A2.</strong> Beschreibe in eigenen Worten, wie eine neue Kolonie gegründet wurde.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Eine Mutterstadt (Metropolis) stellte eine Gruppe von Auswanderern zusammen. Ein Anführer, der Oikist, führte sie an. Oft fragte man vorher das Orakel von Delphi um Rat. Am Zielort gründeten die Auswanderer eine neue, eigenständige Polis, die mit der Mutterstadt durch Sprache, Götter und Bräuche verbunden blieb.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A3.</strong> Welche Folgen hatte die Kolonisation für den Handel und für die Verbreitung der griechischen Kultur?</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Der <span class="b">Handel</span> wuchs stark: Waren wie Getreide, Metalle, Öl, Wein und Keramik wurden zwischen Kolonien und Mutterstädten getauscht; Münzen verbreiteten sich. Durch die vielen neuen griechischen Städte breiteten sich auch die griechische <span class="b">Sprache, Schrift, Religion und Lebensweise</span> über den ganzen Mittelmeerraum aus.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A4.</strong> Erkläre den Satz von Platon, die Griechen säßen „wie Frösche um einen Teich".</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Der „Teich" ist das Mittelmeer. Die „Frösche" sind die Griechen. Der Satz bedeutet: Rund um das ganze Mittelmeer — an fast jeder Küste — gab es griechische Städte. Die Griechen lebten verteilt um das Meer herum.
+            </div></details>
+        </div>
+    </div>
+</div>
+
+
+<!-- ================================================================ -->
+<!--                BLOCK 4: DEMOKRATIE IN ATHEN                      -->
+<!-- ================================================================ -->
+<div class="thema rot" id="block4">
+    <div class="thema-header rot"><span class="ico">⚖️</span><h2>Block 4 · Demokratie in Athen</h2></div>
+
+    <!-- 4.1 Monarchie & Aristokratie -->
+    <div class="block" id="sec-4-1">
+        <h3>4.1 · Vom König zum Adel — Monarchie &amp; Aristokratie</h3>
+        <p>Die Demokratie gab es nicht von Anfang an. Athen hatte vorher andere Herrschaftsformen. Sie wechselten in dieser Reihenfolge:</p>
+        <p style="text-align:center; font-size:1.1em; padding:8px;"><span class="b">Monarchie &nbsp;→&nbsp; Aristokratie &nbsp;→&nbsp; Demokratie</span></p>
+
+        <h4>Zuerst: die Monarchie</h4>
+        <p>Am Anfang wurde Athen von <span class="b">Königen</span> regiert. Sie lebten auf der Akropolis.</p>
+
+        <div class="merke">
+            <span class="merke-label">BEGRIFF · MONARCHIE</span>
+            <p>Die <span class="b">Monarchie</span> ist die Herrschaft eines <span class="b">Einzelnen</span> — eines Königs. (Aus dem Griechischen: <em>monos</em> = allein, <em>archein</em> = herrschen.)</p>
+        </div>
+
+        <h4>Dann: die Aristokratie</h4>
+        <p>Um <span class="b">700 v. Chr.</span> wurden die adligen Großgrundbesitzer durch ihren <span class="b">Reichtum</span> immer mächtiger. Sie setzten den König ab und regierten von nun an selbst.</p>
+
+        <div class="merke">
+            <span class="merke-label">BEGRIFF · ARISTOKRATIE</span>
+            <p>Die <span class="b">Aristokratie</span> ist die Herrschaft einer kleinen Gruppe von <span class="b">Adligen</span>. (Aus dem Griechischen: <em>aristoi</em> = die Besten, <em>kratein</em> = herrschen.)</p>
+        </div>
+
+        <p>In der Aristokratie hatten nur die adligen Familien das Sagen. Die einfachen Bürger, Fremde, Frauen und versklavte Menschen hatten <span class="b">keine politischen Rechte</span>.</p>
+    </div>
+
+    <!-- 4.2 Solon -->
+    <div class="block" id="sec-4-2">
+        <h3>4.2 · Die Krise der Bauern und die Reformen Solons</h3>
+
+        <h4>Die Krise der Bauern</h4>
+        <p>Im <span class="b">7. Jahrhundert v. Chr.</span> gerieten die einfachen Bauern in eine schwere Krise:</p>
+        <ul>
+            <li>Nach <span class="b">schlechten Ernten</span> mussten sie sich <span class="b">Saatgut</span> von den Adligen leihen.</li>
+            <li>Die <span class="b">Schulden</span> konnten sie oft nicht zurückzahlen.</li>
+            <li>Wer seine Schulden nicht zahlte, wurde mit seiner Familie zum <span class="b">Sklaven</span> des Gläubigers und verlor seine Freiheit.</li>
+        </ul>
+
+        <div class="merke">
+            <span class="merke-label">BEGRIFF · SCHULDKNECHTSCHAFT</span>
+            <p><span class="b">Schuldknechtschaft</span> bedeutet: Ein Bauer, der seine Schulden nicht bezahlen konnte, wurde mit seiner Familie zum Sklaven seines Gläubigers. Er verlor seine <span class="b">Freiheit</span>, solange die Schulden bestanden.</p>
+        </div>
+
+        <h4>Solon als „Schiedsrichter"</h4>
+        <p>Die Unzufriedenheit der Bauern wuchs. Um <span class="b">600 v. Chr.</span> drohte ein <span class="b">Bürgerkrieg</span>. Da ernannten die Athener den angesehenen Adligen <span class="b">Solon</span> zum „<span class="b">Schiedsrichter</span>" — er sollte den Streit schlichten.</p>
+
+        <h4>Solons Reformen</h4>
+        <ul>
+            <li>Er <span class="b">verbot die Schuldknechtschaft</span>. Die verschuldeten Bauern bekamen ihre <span class="b">Freiheit und ihr Land zurück</span>.</li>
+            <li>Er teilte die männlichen Bürger nach ihrem Besitz in <span class="b">vier Vermögensklassen</span> ein. Vom Besitz hing ab, welche Rechte und Pflichten jemand hatte.</li>
+            <li>Auch die <span class="b">ärmsten Bürger</span> durften nun erstmals in der <span class="b">Volksversammlung mitentscheiden</span> — auch wenn sie noch keine Ämter übernehmen durften.</li>
+        </ul>
+    </div>
+
+    <!-- 4.3 Kleisthenes -->
+    <div class="block" id="sec-4-3">
+        <h3>4.3 · Kleisthenes — mehr Mitbestimmung für alle</h3>
+        <p>Ab <span class="b">508 v. Chr.</span> setzte der Adlige <span class="b">Kleisthenes</span> weitere Reformen durch. Mit ihm beginnt die eigentliche <span class="b">Demokratie</span> in Athen.</p>
+
+        <h4>Seine wichtigsten Neuerungen</h4>
+        <ul>
+            <li><span class="b">Ämter für alle:</span> Auch Bürger der untersten Vermögensklasse durften jetzt politische Ämter übernehmen. Damit galt der <span class="b">Gleichheitsgrundsatz</span> — vor dem Gesetz waren alle Bürger gleich.</li>
+            <li><span class="b">Das Losverfahren:</span> Die meisten Ämter wurden per <span class="b">Los</span> vergeben — nicht der Reichste oder Mächtigste bekam sie, sondern der vom Zufall Bestimmte.</li>
+            <li><span class="b">Das Scherbengericht:</span> siehe Kasten unten.</li>
+        </ul>
+
+        <div class="merke">
+            <span class="merke-label">BEGRIFF · SCHERBENGERICHT (OSTRAKISMOS)</span>
+            <p>Hatten die Bürger den Verdacht, dass ein Mann zu mächtig werden und die <span class="b">Alleinherrschaft</span> an sich reißen wollte, ritzten sie seinen <span class="b">Namen in eine Tonscherbe</span>. Wessen Name am häufigsten genannt wurde, musste Athen für <span class="b">zehn Jahre verlassen</span> — er verlor aber weder seine Ehre noch sein Vermögen.</p>
+        </div>
+
+        <p>Das Scherbengericht sollte die junge Demokratie davor schützen, dass ein Einzelner sie wieder abschaffte.</p>
+    </div>
+
+    <!-- 4.4 So funktionierte die Demokratie -->
+    <div class="block" id="sec-4-4">
+        <h3>4.4 · So funktionierte die Demokratie</h3>
+
+        <div class="merke">
+            <span class="merke-label">BEGRIFF · DEMOKRATIE</span>
+            <p><span class="b">Demokratie</span> heißt „<span class="b">Herrschaft des Volkes</span>". (Aus dem Griechischen: <em>demos</em> = Volk, <em>kratein</em> = herrschen.) In einer Demokratie entscheidet das Volk über die Politik des Staates.</p>
+        </div>
+
+        <p>Die Demokratie in Athen hatte vor allem zwei wichtige Einrichtungen:</p>
+
+        <table class="t">
+            <thead class="th-rot"><tr><th>Einrichtung</th><th>Aufgaben</th></tr></thead>
+            <tbody>
+                <tr><td><span class="b">Volksversammlung</span></td><td>Die wichtigste Einrichtung. <span class="b">Alle männlichen Bürger</span> durften kommen. Sie traf sich rund <span class="b">40-mal im Jahr</span> auf der Pnyx; oft kamen mehrere Tausend Bürger zusammen. Hier wurden die <span class="b">Gesetze beschlossen</span> und über <span class="b">Krieg und Frieden</span> entschieden.</td></tr>
+                <tr><td><span class="b">Rat der 500</span></td><td><span class="b">500 Bürger</span>, per <span class="b">Los</span> bestimmt. Der Rat <span class="b">bereitete die Volksversammlung vor</span>, machte <span class="b">Gesetzesvorschläge</span> und kümmerte sich um die laufenden Aufgaben des Staates (Einnahmen, Ausgaben, Beamte).</td></tr>
+            </tbody>
+        </table>
+
+        <div class="merke">
+            <span class="merke-label">MERKE — DAS MEHRHEITSPRINZIP</span>
+            <p>In der Volksversammlung galt das <span class="b">Mehrheitsprinzip</span>: Eine Entscheidung galt, wenn die <span class="b">Mehrheit</span> dafür stimmte. So konnten viele Menschen gemeinsam entscheiden.</p>
+        </div>
+
+        <p>Auch die <span class="b">Ämter</span> wurden meist für nur ein Jahr und per Los vergeben — damit möglichst <span class="b">viele Bürger</span> einmal mitregieren konnten.</p>
+    </div>
+
+    <!-- 4.5 Wer durfte mitbestimmen -->
+    <div class="block" id="sec-4-5">
+        <h3>4.5 · Wer durfte mitbestimmen — und wer nicht?</h3>
+        <p>Die Demokratie in Athen war ein riesiger Fortschritt — aber sie war noch <span class="b">nicht</span> so wie unsere Demokratie heute.</p>
+
+        <div class="cols">
+            <div class="beispiel">
+                <span class="beispiel-label">DURFTEN MITBESTIMMEN</span>
+                <p>Nur die <span class="b">männlichen Bürger</span> Athens: erwachsene Männer, deren Eltern bereits Athener Bürger waren.</p>
+            </div>
+            <div class="fehler">
+                <span class="fehler-label">DURFTEN NICHT MITBESTIMMEN</span>
+                <ul>
+                    <li><span class="b">Frauen</span></li>
+                    <li><span class="b">Fremde / Zugezogene</span> (Metöken) — auch wenn sie lange in Athen lebten</li>
+                    <li><span class="b">versklavte Menschen</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="merke">
+            <span class="merke-label">WICHTIG ZU VERSTEHEN</span>
+            <p>Es war noch keine Demokratie wie heute, in der <span class="b">alle Erwachsenen</span> wählen dürfen. Tatsächlich durfte nur ein kleiner Teil der Bevölkerung mitbestimmen. <span class="b">Trotzdem</span> war es etwas völlig Neues: Zum ersten Mal entschied nicht ein König oder eine kleine adlige Schicht, sondern <span class="b">das Volk</span>. Deshalb gilt Athen als die Geburtsstätte der Demokratie.</p>
+        </div>
+    </div>
+
+    <!-- 4.6 Aufgaben -->
+    <div class="block" id="sec-4-6">
+        <h3>4.6 · Aufgaben</h3>
+        <div class="aufgabe">
+            <span class="aufgabe-label">AUFGABEN — DEMOKRATIE IN ATHEN</span>
+
+            <p><strong>A1.</strong> Erkläre die Begriffe Monarchie, Aristokratie und Demokratie.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                <span class="b">Monarchie:</span> Herrschaft eines Einzelnen (eines Königs).<br>
+                <span class="b">Aristokratie:</span> Herrschaft einer kleinen Gruppe von Adligen (aristoi = die Besten).<br>
+                <span class="b">Demokratie:</span> Herrschaft des Volkes — das Volk entscheidet über die Politik (demos = Volk).
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A2.</strong> Beschreibe die Krise in der Polis Athen im 7. Jahrhundert v. Chr.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                Nach schlechten Ernten mussten sich die Bauern Saatgut von den Adligen leihen. Sie konnten die Schulden nicht zurückzahlen und gerieten in <span class="b">Schuldknechtschaft</span> — sie wurden mit ihren Familien zu Sklaven und verloren ihre Freiheit. Die Unzufriedenheit wuchs so stark, dass um 600 v. Chr. ein Bürgerkrieg drohte.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A3.</strong> Erläutere, welche Elemente der Reformen von Solon und Kleisthenes die Entstehung der Demokratie unterstützten.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                <span class="b">Solon:</span> verbot die Schuldknechtschaft (die Bauern blieben frei) und ließ auch die ärmsten Bürger in der Volksversammlung mitentscheiden — so durften erstmals einfache Bürger mitreden.<br>
+                <span class="b">Kleisthenes:</span> erlaubte auch den ärmsten Bürgern, Ämter zu übernehmen (Gleichheitsgrundsatz), vergab Ämter per Los und führte das Scherbengericht ein, das die Demokratie vor Alleinherrschern schützte.<br>
+                Zusammen sorgten diese Reformen dafür, dass <span class="b">immer mehr Bürger mitbestimmen</span> konnten — das ist der Kern der Demokratie.
+            </div></details>
+
+            <p style="margin-top:10px"><strong>A4.</strong> Wähle eine Aufgabe aus:<br>
+            <span class="b">a)</span> Fasse die Aufgaben und Funktionen des <span class="b">Rates der 500</span> zusammen.<br>
+            <span class="b">b)</span> Fasse die Aufgaben und Funktionen der <span class="b">Volksversammlung</span> zusammen.</p>
+            <details><summary>Lösung anzeigen</summary><div>
+                <span class="b">a) Rat der 500:</span> besteht aus 500 per Los bestimmten Bürgern. Er bereitet die Volksversammlung vor, macht Gesetzesvorschläge und verwaltet die laufenden Aufgaben des Staates (Einnahmen, Ausgaben, Beamte).<br><br>
+                <span class="b">b) Volksversammlung:</span> offen für alle männlichen Bürger, tagt rund 40-mal im Jahr auf der Pnyx. Sie beschließt die Gesetze und entscheidet über Krieg und Frieden — immer nach dem Mehrheitsprinzip.
+            </div></details>
+        </div>
+    </div>
+</div>
+
+
+<div style="text-align:center;margin-top:40px;color:#999;font-size:0.85em">
+    Stand 22. Mai 2026 · GuG — Die Welt der Griechen · Quelle: Cornelsen-Geschichtsbuch (Kapitel 5 „Die Welt der Griechen") + Lehrplan Geschichte Klasse 6
+</div>
+
+</main>
+</div><!-- /layout -->
+</div><!-- /theorie -->
+
+
+<!-- ================================================================ -->
+<!--                      TEIL B: LERNKARTEN                          -->
+<!-- ================================================================ -->
+<div id="karten" class="tab-content">
+<div class="page">
+
+<h1>Lernkarten</h1>
+<p class="subtitle">Klick auf eine Karte, um die Antwort aufzudecken. Wenn du's wusstest, klick "Gewusst!". Wenn nicht, "Nochmal".</p>
+
+<div class="deck-nav">
+    <button class="deck-btn active" onclick="switchDeck('alle')">Alle</button>
+    <button class="deck-btn" onclick="switchDeck('geo')">Geografie</button>
+    <button class="deck-btn" onclick="switchDeck('polis')">Die Polis</button>
+    <button class="deck-btn" onclick="switchDeck('kolonien')">Kolonisation</button>
+    <button class="deck-btn" onclick="switchDeck('demokratie')">Demokratie</button>
+    <button class="deck-btn" onclick="switchDeck('falsch')">Nochmal-Stapel</button>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+<div class="card-counter" id="counter">Karte 1 von ?</div>
+
+<div id="card-area"></div>
+
+<div class="card-nav">
+    <button id="btn-nochmal" onclick="markCard(false)" style="border-color:var(--rot);color:var(--rot)">Nochmal</button>
+    <button id="btn-flip" onclick="flipCurrent()">Umdrehen</button>
+    <button id="btn-gewusst" onclick="markCard(true)" style="border-color:var(--gruen);color:var(--gruen)">Gewusst!</button>
+</div>
+
+<div id="result-box" style="display:none; text-align:center; padding:40px;">
+    <h2 style="color:var(--gruen); margin-bottom:10px;">Geschafft!</h2>
+    <p id="result-text" style="font-size:1.1em;"></p>
+    <button onclick="restartDeck()" style="margin-top:16px;padding:10px 28px;border-radius:25px;border:2px solid var(--blau);background:var(--blau);color:white;font-weight:600;cursor:pointer;font-size:1em;">Nochmal starten</button>
+</div>
+
+</div>
+</div>
+
+<!-- ================================================================ -->
+<!--                         JAVASCRIPT                               -->
+<!-- ================================================================ -->
+<script>
+function switchTab(id) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelector(`.tab-btn[onclick*="${id}"]`).classList.add('active');
+    if (id === 'karten' && !cardsInitialized) initCards();
+}
+
+// ===== SCROLL-SPY: aktiven Agenda-Eintrag markieren =====
+(function() {
+    const sectionIds = [
+        'ueberblick',
+        'block1','sec-1-1','sec-1-2','sec-1-3','sec-1-4','sec-1-5',
+        'block2','sec-2-1','sec-2-2','sec-2-3','sec-2-4','sec-2-5',
+        'block3','sec-3-1','sec-3-2','sec-3-3','sec-3-4','sec-3-5',
+        'block4','sec-4-1','sec-4-2','sec-4-3','sec-4-4','sec-4-5','sec-4-6'
+    ];
+    const links = {};
+    document.querySelectorAll('.agenda a[href^="#"]').forEach(a => {
+        links[a.getAttribute('href').slice(1)] = a;
+    });
+
+    function onScroll() {
+        const scrollPos = window.scrollY + 100;
+        let activeId = sectionIds[0];
+        for (const id of sectionIds) {
+            const el = document.getElementById(id);
+            if (el && el.offsetTop <= scrollPos) activeId = id;
+        }
+        Object.values(links).forEach(a => a.classList.remove('active'));
+        if (links[activeId]) links[activeId].classList.add('active');
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', onScroll);
+
+    // Smooth scroll für Agenda-Links + Mobile-Sidebar schließen
+    document.querySelectorAll('.agenda a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.getElementById(a.getAttribute('href').slice(1));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (window.innerWidth <= 880) {
+                    document.getElementById('agenda').classList.remove('open');
+                    document.querySelector('.agenda-toggle').classList.remove('open');
+                }
+            }
+        });
+    });
+})();
+
+// ===== FLASHCARD DATA =====
+const allCards = [
+    // GEOGRAFIE
+    { deck:'geo', q:'Wo lag das antike <strong>Griechenland</strong>?', a:'Im <strong>Südosten Europas</strong>, rund um das Mittelmeer — auf dem Festland, der Halbinsel Peloponnes und vielen Inseln. Auch an der Westküste Kleinasiens lebten Griechen.' },
+    { deck:'geo', q:'Wie ist die <strong>Landschaft Griechenlands</strong>?', a:'<strong>Gebirgig und zerklüftet.</strong> Berge teilen das Land in viele kleine Ebenen. Die Küste hat zahllose Buchten und Häfen. Der Boden ist karg.' },
+    { deck:'geo', q:'Welcher ist der <strong>höchste Berg</strong> Griechenlands?', a:'Der <strong>Olymp</strong> (rund 2900 m). In den griechischen Sagen war er der Wohnsitz der Götter.' },
+    { deck:'geo', q:'Welches <strong>Klima</strong> hat Griechenland?', a:'Ein <strong>mediterranes Klima</strong>: heiße, trockene Sommer und milde, feuchte Winter.' },
+    { deck:'geo', q:'Was bauten die Griechen <strong>an</strong>?', a:'Vor allem <strong>Oliven</strong> (Olivenöl) und <strong>Wein</strong>, dazu etwas Getreide (Gerste). In den Bergen weideten Ziegen und Schafe.' },
+    { deck:'geo', q:'Warum wurden die Griechen zu <strong>Seefahrern und Händlern</strong>?', a:'Das Land war karg und gebirgig, gutes Ackerland knapp — und das <strong>Meer überall nah</strong>. Schiffe waren oft schneller als der Weg über die Berge.' },
+    { deck:'geo', q:'Wie ist die <strong>Landschaft Ägyptens</strong>?', a:'Ein schmales, sehr <strong>fruchtbares Flusstal</strong> am Nil, ringsum nur Wüste. Es regnet fast nie.' },
+    { deck:'geo', q:'Was ist die <strong>Nilüberschwemmung</strong>?', a:'Jedes Jahr trat der Nil über die Ufer und hinterließ <strong>fruchtbaren Schlamm</strong>. Dadurch konnten die Bauern reiche Ernten einfahren.' },
+    { deck:'geo', q:'Warum nannte <strong>Herodot</strong> Ägypten „ein Geschenk des Nils"?', a:'Ohne den Nil und seinen fruchtbaren Schlamm wäre Ägypten nur <strong>Wüste</strong>. Erst der Fluss machte das Land bewohnbar.' },
+    { deck:'geo', q:'Was war der wichtigste <strong>Verkehrsweg</strong> in Griechenland, was in Ägypten?', a:'In Griechenland das <strong>Meer</strong>, in Ägypten der Fluss <strong>Nil</strong>.' },
+    { deck:'geo', q:'Warum entstanden in Griechenland <strong>viele kleine Staaten</strong>?', a:'Die <strong>Gebirge trennten</strong> die Menschen voneinander. Jede Ebene wurde ein eigener kleiner Staat — eine Polis.' },
+    { deck:'geo', q:'Warum war Ägypten <strong>ein großes Reich</strong>?', a:'Das fruchtbare Land war ein einziges, <strong>zusammenhängendes Flusstal</strong>. Es ließ sich gemeinsam von einem Herrscher (dem Pharao) regieren.' },
+    { deck:'geo', q:'Was ist der <strong>größte Unterschied</strong> zwischen den Landschaften?', a:'Griechenland ist durch Gebirge und Meer <strong>zerteilt</strong> → viele Staaten. Ägypten ist ein <strong>verbundenes</strong> fruchtbares Flusstal → ein Reich.' },
+
+    // DIE POLIS
+    { deck:'polis', q:'Was ist eine <strong>Polis</strong>?', a:'Ein griechischer <strong>Stadtstaat</strong>: ein eigener kleiner Staat aus einer Stadt und ihrem Umland.' },
+    { deck:'polis', q:'Woraus bestand der <strong>Stadtstaat Athen</strong>?', a:'Aus der Stadt <strong>Athen</strong> und der umliegenden Landschaft <strong>Attika</strong>.' },
+    { deck:'polis', q:'Was ist die <strong>Akropolis</strong>?', a:'Die „Oberstadt" — ein <strong>befestigter Hügel</strong> mitten in der Stadt mit den Tempeln der Götter. Bei Gefahr ein Schutzort.' },
+    { deck:'polis', q:'Welcher Göttin war der große Tempel auf der <strong>Akropolis von Athen</strong> geweiht?', a:'Der Stadtgöttin <strong>Athene</strong>.' },
+    { deck:'polis', q:'Was ist die <strong>Agora</strong>?', a:'Der <strong>Marktplatz</strong> — das Herz der Polis. Hier wurde gehandelt und über Politik gesprochen.' },
+    { deck:'polis', q:'Was ist die <strong>Pnyx</strong>?', a:'Der <strong>halbrunde Platz</strong> in Athen, auf dem sich die Bürger zur Volksversammlung trafen.' },
+    { deck:'polis', q:'Waren die griechischen Poleis <strong>unabhängig</strong>?', a:'<strong>Ja</strong> — jede Polis hatte eigene Gesetze, eine eigene Regierung, ein eigenes Heer und eigene Münzen.' },
+    { deck:'polis', q:'Wie nannten sich die <strong>Griechen selbst</strong>?', a:'<strong>Hellenen</strong> — und ihr Land nannten sie <strong>Hellas</strong>.' },
+    { deck:'polis', q:'Was <strong>verband alle Griechen</strong> trotz der vielen Staaten?', a:'Die gleiche <strong>Sprache</strong>, die gleichen <strong>Götter</strong>, die Dichtungen <strong>Homers</strong> und gemeinsame Feste wie die <strong>Olympischen Spiele</strong>.' },
+    { deck:'polis', q:'Wer war <strong>Homer</strong> und welche Werke kannte jeder Grieche?', a:'Ein <strong>Dichter</strong>. Von ihm stammen die „<strong>Ilias</strong>" (Trojanischer Krieg) und die „<strong>Odyssee</strong>" (Irrfahrten des Odysseus).' },
+    { deck:'polis', q:'Was waren die <strong>Olympischen Spiele</strong>?', a:'Ein gemeinsames Sportfest aller Griechen, alle vier Jahre in Olympia. Während der Spiele galt ein <strong>Waffenstillstand</strong>.' },
+    { deck:'polis', q:'Wodurch unterschieden sich <strong>Athen und Sparta</strong>?', a:'<strong>Athen</strong> war Handels- und Seemacht und wurde zur Demokratie. <strong>Sparta</strong> war ganz auf das Militär ausgerichtet und wurde von wenigen regiert.' },
+    { deck:'polis', q:'Wen nannten die Griechen „<strong>Barbaren</strong>"?', a:'Alle, die <strong>kein Griechisch</strong> sprachen — also die Fremden.' },
+
+    // KOLONISATION
+    { deck:'kolonien', q:'Was ist mit „<strong>griechischer Kolonisation</strong>" gemeint?', a:'Dass zwischen etwa <strong>750 und 550 v. Chr.</strong> viele Griechen auswanderten und rund ums Mittelmeer neue Städte gründeten.' },
+    { deck:'kolonien', q:'Nenne <strong>Gründe</strong>, warum die Griechen auswanderten.', a:'<strong>Landmangel</strong> und Hunger, wachsende Bevölkerung, Aufteilung der Höfe unter den Erben, Streit in der Polis, Suche nach Handel.' },
+    { deck:'kolonien', q:'Was war der <strong>wichtigste Grund</strong> für die Auswanderung?', a:'Der <strong>Landmangel</strong>: zu viele Menschen und zu wenig fruchtbares Ackerland in Griechenland.' },
+    { deck:'kolonien', q:'Was ist eine <strong>Mutterstadt (Metropolis)</strong>?', a:'Die bestehende Polis, von der die Auswanderer ausgingen, um eine neue Stadt zu gründen.' },
+    { deck:'kolonien', q:'Was ist eine <strong>Kolonie</strong>?', a:'Eine <strong>neue Stadt</strong>, die von griechischen Auswanderern gegründet wurde — eine eigenständige Polis.' },
+    { deck:'kolonien', q:'Wer war der <strong>Oikist</strong>?', a:'Der <strong>Anführer</strong> der Auswanderergruppe bei der Gründung einer Kolonie.' },
+    { deck:'kolonien', q:'Welches <strong>Orakel</strong> fragten die Griechen vor einer Koloniegründung um Rat?', a:'Das <strong>Orakel von Delphi</strong>.' },
+    { deck:'kolonien', q:'War eine Kolonie von der Mutterstadt <strong>abhängig</strong>?', a:'<strong>Nein</strong> — sie war ein eigener Staat. Aber beide blieben durch Sprache, Götter und Bräuche eng verbunden.' },
+    { deck:'kolonien', q:'<strong>Wohin</strong> gründeten die Griechen Kolonien?', a:'Rund um das <strong>Mittelmeer</strong> und das <strong>Schwarze Meer</strong> — z. B. Süditalien, Sizilien, Südfrankreich, Nordafrika.' },
+    { deck:'kolonien', q:'Was ist „<strong>Magna Graecia</strong>"?', a:'„<strong>Großgriechenland</strong>" — so nannte man <strong>Süditalien und Sizilien</strong>, weil dort so viele griechische Städte lagen.' },
+    { deck:'kolonien', q:'Welche <strong>heutigen Städte</strong> gehen auf griechische Kolonien zurück?', a:'<strong>Neapel</strong> (aus Neapolis) und <strong>Marseille</strong> (aus Massalia).' },
+    { deck:'kolonien', q:'Welche <strong>Folgen</strong> hatte die Kolonisation?', a:'Der <strong>Handel</strong> blühte auf, Münzen verbreiteten sich, und die griechische <strong>Sprache, Schrift und Kultur</strong> breiteten sich im ganzen Mittelmeerraum aus.' },
+    { deck:'kolonien', q:'Wie beschrieb <strong>Platon</strong> die Lage der Griechen am Mittelmeer?', a:'Sie säßen rund um das Meer „<strong>wie Frösche um einen Teich</strong>" — an fast jeder Küste gab es eine griechische Stadt.' },
+
+    // DEMOKRATIE IN ATHEN
+    { deck:'demokratie', q:'Was bedeutet „<strong>Demokratie</strong>"?', a:'„<strong>Herrschaft des Volkes</strong>" (griech. <em>demos</em> = Volk, <em>kratein</em> = herrschen). Das Volk entscheidet über die Politik.' },
+    { deck:'demokratie', q:'Was ist eine <strong>Monarchie</strong>?', a:'Die Herrschaft eines <strong>Einzelnen</strong> (eines Königs). So wurde Athen am Anfang regiert.' },
+    { deck:'demokratie', q:'Was ist eine <strong>Aristokratie</strong>?', a:'Die Herrschaft einer kleinen Gruppe von <strong>Adligen</strong> (griech. <em>aristoi</em> = die Besten).' },
+    { deck:'demokratie', q:'In welcher <strong>Reihenfolge</strong> wechselten die Herrschaftsformen in Athen?', a:'Erst <strong>Monarchie</strong> (Könige), dann <strong>Aristokratie</strong> (Adlige), dann <strong>Demokratie</strong> (Volk).' },
+    { deck:'demokratie', q:'Was ist <strong>Schuldknechtschaft</strong>?', a:'Wer seine Schulden nicht zahlen konnte, wurde mit seiner Familie zum <strong>Sklaven</strong> des Gläubigers und verlor die Freiheit.' },
+    { deck:'demokratie', q:'Warum gerieten die <strong>Bauern</strong> im 7. Jh. v. Chr. in eine Krise?', a:'Nach schlechten Ernten mussten sie sich <strong>Saatgut leihen</strong>, konnten die Schulden nicht zahlen und gerieten in Schuldknechtschaft.' },
+    { deck:'demokratie', q:'Wer war <strong>Solon</strong>?', a:'Ein angesehener Adliger, der um <strong>600 v. Chr.</strong> zum „Schiedsrichter" ernannt wurde, um die Krise der Bauern zu lösen.' },
+    { deck:'demokratie', q:'Was waren <strong>Solons wichtigste Reformen</strong>?', a:'Er <strong>verbot die Schuldknechtschaft</strong>, gab den Bauern Freiheit und Land zurück und ließ auch die ärmsten Bürger in der Volksversammlung mitentscheiden.' },
+    { deck:'demokratie', q:'Was sind die <strong>vier Vermögensklassen</strong>?', a:'Solon teilte die männlichen Bürger nach ihrem <strong>Besitz</strong> in vier Gruppen ein. Vom Besitz hingen Rechte und Pflichten ab.' },
+    { deck:'demokratie', q:'Wer war <strong>Kleisthenes</strong>?', a:'Der Adlige, der ab <strong>508 v. Chr.</strong> weitere Reformen durchsetzte. Mit ihm beginnt die eigentliche Demokratie.' },
+    { deck:'demokratie', q:'Was war das <strong>Scherbengericht (Ostrakismos)</strong>?', a:'Verdächtigten die Bürger jemanden, die Alleinherrschaft an sich zu reißen, ritzten sie seinen <strong>Namen in eine Tonscherbe</strong>. Wer am häufigsten genannt wurde, musste Athen für <strong>10 Jahre</strong> verlassen.' },
+    { deck:'demokratie', q:'Was ist der <strong>Gleichheitsgrundsatz</strong>, den Kleisthenes durchsetzte?', a:'Auch die ärmsten Bürger durften <strong>Ämter übernehmen</strong> — vor dem Gesetz waren alle Bürger gleich.' },
+    { deck:'demokratie', q:'Wie wurden die meisten <strong>Ämter</strong> in Athen vergeben?', a:'Per <strong>Los</strong> — damit möglichst viele Bürger einmal mitregieren konnten.' },
+    { deck:'demokratie', q:'Was war die <strong>Volksversammlung</strong>?', a:'Die wichtigste Einrichtung: Alle männlichen Bürger durften kommen. Sie beschloss auf der Pnyx die <strong>Gesetze</strong> und entschied über <strong>Krieg und Frieden</strong>.' },
+    { deck:'demokratie', q:'Was war der <strong>Rat der 500</strong>?', a:'<strong>500 per Los bestimmte Bürger</strong>, die die Volksversammlung vorbereiteten, Gesetzesvorschläge machten und den Staat verwalteten.' },
+    { deck:'demokratie', q:'Was ist das <strong>Mehrheitsprinzip</strong>?', a:'Eine Entscheidung gilt, wenn die <strong>Mehrheit</strong> dafür stimmt.' },
+    { deck:'demokratie', q:'Wer durfte in Athen <strong>mitbestimmen</strong> — und wer nicht?', a:'Nur erwachsene <strong>männliche Bürger</strong>. <strong>Frauen</strong>, <strong>Fremde</strong> (Metöken) und <strong>versklavte Menschen</strong> waren ausgeschlossen.' },
+];
+
+let cardsInitialized = false;
+let currentDeckId = 'alle';
+let currentCards = [];
+let currentIndex = 0;
+let wrongCards = [];
+let rightCount = 0;
+
+function initCards() {
+    cardsInitialized = true;
+    switchDeck('alle');
+}
+
+function switchDeck(deckId) {
+    currentDeckId = deckId;
+    document.querySelectorAll('.deck-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`.deck-btn[onclick*="${deckId}"]`).classList.add('active');
+
+    if (deckId === 'falsch') {
+        currentCards = [...wrongCards];
+    } else if (deckId === 'alle') {
+        currentCards = shuffle([...allCards]);
+    } else {
+        currentCards = shuffle(allCards.filter(c => c.deck === deckId));
+    }
+
+    currentIndex = 0;
+    rightCount = 0;
+    document.getElementById('result-box').style.display = 'none';
+    document.getElementById('card-area').style.display = 'block';
+    document.querySelector('.card-nav').style.display = 'flex';
+    showCard();
+}
+
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+function showCard() {
+    if (currentCards.length === 0) {
+        document.getElementById('card-area').innerHTML = '<p style="text-align:center;color:#999;padding:40px;">Keine Karten in diesem Stapel.</p>';
+        document.querySelector('.card-nav').style.display = 'none';
+        return;
+    }
+
+    const card = currentCards[currentIndex];
+    const deckColors = { geo:'#1a73b5', polis:'#2e7d32', kolonien:'#f57c00', demokratie:'#d32f2f' };
+    const deckNames = { geo:'Geografie', polis:'Die Polis', kolonien:'Kolonisation', demokratie:'Demokratie' };
+    const color = deckColors[card.deck] || '#1a73b5';
+
+    document.getElementById('card-area').innerHTML = `
+        <div class="card-container" onclick="flipCurrent()">
+            <div class="card" id="current-card" style="min-height:200px">
+                <div class="card-face card-front" style="border-color:${color}">
+                    <span class="label" style="background:${color}">${deckNames[card.deck]}</span>
+                    <div class="q">${card.q}</div>
+                    <span class="tap">Klick zum Umdrehen</span>
+                </div>
+                <div class="card-face card-back" style="border-color:${color};background:${color}11">
+                    <div class="a">${card.a}</div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    requestAnimationFrame(() => {
+        const front = document.querySelector('.card-front');
+        const back = document.querySelector('.card-back');
+        if (front && back) {
+            const h = Math.max(front.scrollHeight, back.scrollHeight, 180);
+            document.querySelector('.card').style.minHeight = h + 'px';
+            document.querySelector('.card-container').style.minHeight = h + 'px';
+            front.style.height = h + 'px';
+            back.style.height = h + 'px';
+        }
+    });
+
+    document.getElementById('counter').textContent = `Karte ${currentIndex + 1} von ${currentCards.length}`;
+    document.getElementById('progress').style.width = ((currentIndex) / currentCards.length * 100) + '%';
+}
+
+function flipCurrent() {
+    const card = document.getElementById('current-card');
+    if (card) card.classList.toggle('flipped');
+}
+
+function markCard(correct) {
+    if (!currentCards.length) return;
+
+    if (correct) {
+        rightCount++;
+    } else {
+        if (!wrongCards.includes(currentCards[currentIndex])) {
+            wrongCards.push(currentCards[currentIndex]);
+        }
+    }
+
+    currentIndex++;
+    if (currentIndex >= currentCards.length) {
+        finishDeck();
+    } else {
+        showCard();
+    }
+}
+
+function finishDeck() {
+    document.getElementById('card-area').style.display = 'none';
+    document.querySelector('.card-nav').style.display = 'none';
+    document.getElementById('progress').style.width = '100%';
+
+    const total = currentCards.length;
+    const pct = total ? Math.round(rightCount / total * 100) : 0;
+    let msg = `Du hast <strong>${rightCount} von ${total}</strong> Karten gewusst (${pct}%).`;
+    if (wrongCards.length > 0) {
+        msg += `<br><br>${wrongCards.length} Karte${wrongCards.length > 1 ? 'n' : ''} im "Nochmal"-Stapel.`;
+    }
+    if (pct === 100) msg += '<br><br>Perfekt! Du bist bereit für die Arbeit!';
+    else if (pct >= 80) msg += '<br><br>Sehr gut! Fast alles sitzt.';
+    else if (pct >= 50) msg += '<br><br>Guter Anfang. Geh nochmal die Theorie durch und dann den "Nochmal"-Stapel.';
+    else msg += '<br><br>Lies dir die Theorie nochmal in Ruhe durch und probier es dann erneut.';
+
+    document.getElementById('result-text').innerHTML = msg;
+    document.getElementById('result-box').style.display = 'block';
+    document.getElementById('counter').textContent = 'Fertig!';
+}
+
+function restartDeck() {
+    switchDeck(currentDeckId);
+}
+</script>
+
+</body>
+</html>

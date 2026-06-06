@@ -119,3 +119,170 @@ async function loadEpisodes() {
 }
 
 loadEpisodes();
+
+// Make the embedded ElevenLabs widget fill the helper panel instead of using
+// the small default call-button presentation.
+function enlargeConvaiWidget() {
+  const widget = document.querySelector('elevenlabs-convai');
+  if (!widget) return;
+
+  const applyStyles = () => {
+    const root = widget.shadowRoot;
+    if (!root) return false;
+    if (root.getElementById('zvm-convai-size')) return true;
+
+    const style = document.createElement('style');
+    style.id = 'zvm-convai-size';
+    style.textContent = `
+      :host {
+        --btn-max-width: 100%;
+        --el-border-radius: 22px;
+        --el-btn-radius: 999px;
+        position: relative !important;
+        inset: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        z-index: 1 !important;
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        pointer-events: auto !important;
+      }
+
+      [class*="_wrapper_"] {
+        width: 100%;
+        height: 100%;
+        min-height: 280px !important;
+        align-items: stretch !important;
+        justify-content: center !important;
+        gap: 18px !important;
+        pointer-events: auto !important;
+      }
+
+      [class*="_box_"] {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 230px !important;
+        max-width: none !important;
+        max-height: none !important;
+        justify-content: center !important;
+        gap: 26px !important;
+        padding: 32px !important;
+        box-shadow: none !important;
+        pointer-events: auto !important;
+      }
+
+      [class*="_avatar_"] {
+        width: 96px !important;
+        height: 96px !important;
+      }
+
+      [class*="_actions_"] {
+        width: min(100%, 380px) !important;
+        gap: 16px !important;
+      }
+
+      [class*="_status_"] {
+        max-width: none !important;
+        margin: 0 !important;
+        font-size: 22px !important;
+        line-height: 1.2 !important;
+      }
+
+      [class*="_actionButtons_"] {
+        min-width: 100% !important;
+        max-width: none !important;
+      }
+
+      button[class*="_btn_"] {
+        min-height: 56px !important;
+        padding: 0 24px !important;
+        font-size: 18px !important;
+      }
+
+      [class*="_iconSlot_"] {
+        font-size: 22px !important;
+      }
+
+      [class*="_iconSlot_"] svg {
+        width: 22px !important;
+        height: 22px !important;
+      }
+
+      [class*="_poweredBy_"] {
+        margin: 0 !important;
+        font-size: 11px !important;
+      }
+
+      @media (max-width: 600px) {
+        [class*="_box_"] {
+          min-height: 280px !important;
+          flex-direction: column !important;
+          padding: 24px !important;
+          text-align: center !important;
+        }
+
+        [class*="_actions_"] {
+          align-items: center !important;
+        }
+
+        [class*="_status_"] {
+          text-align: center !important;
+        }
+      }
+    `;
+    root.append(style);
+    return true;
+  };
+
+  if (applyStyles()) return;
+
+  const interval = window.setInterval(() => {
+    if (applyStyles()) window.clearInterval(interval);
+  }, 100);
+
+  window.setTimeout(() => window.clearInterval(interval), 10000);
+}
+
+window.addEventListener('DOMContentLoaded', enlargeConvaiWidget);
+customElements.whenDefined('elevenlabs-convai')
+  .then(enlargeConvaiWidget)
+  .catch(() => {});
+
+function addAnimaHelpPopup() {
+  if (document.querySelector('.anima-help-popup')) return;
+
+  const isAboutPage = (location.pathname.split('/').pop() || 'index.html') === 'ueber-uns.html';
+  const helperHref = isAboutPage ? '#helfer' : 'ueber-uns.html#helfer';
+
+  const popup = document.createElement('a');
+  popup.className = 'anima-help-popup';
+  popup.href = helperHref;
+  popup.setAttribute('aria-label', 'Zum Sprachassistenten Anima springen');
+  popup.innerHTML = `
+    <span class="anima-help-icon" aria-hidden="true">
+      <video src="assets/media/anima-orb.mov" autoplay muted loop playsinline></video>
+    </span>
+    <span class="anima-help-text">
+      <strong>Du brauchst Hilfe?</strong>
+      <span>Rede mit Anima.</span>
+    </span>
+  `;
+
+  document.body.append(popup);
+
+  let scrollTimer;
+  const expandAfterScroll = () => {
+    popup.classList.remove('is-expanded');
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(() => {
+      popup.classList.add('is-expanded');
+    }, 450);
+  };
+
+  popup.classList.add('is-expanded');
+  window.setTimeout(() => popup.classList.remove('is-expanded'), 3500);
+  window.addEventListener('scroll', expandAfterScroll, { passive: true });
+}
+
+window.addEventListener('DOMContentLoaded', addAnimaHelpPopup);

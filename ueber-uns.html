@@ -7,6 +7,7 @@
   <meta name="description" content="Oskar und Elias, zwei Freunde aus Deutschland, reden über Anime und Manga — jede Woche neu." />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <script src="https://elevenlabs.io/convai-widget/index.js" async></script>
 </head>
 <body>
   <div class="bg-fx" aria-hidden="true"></div>
@@ -39,6 +40,31 @@
           Heute ist <strong>zu viele mangas</strong> genau das: zwei Freunde, die über ihre Lieblingsserien reden.
           Ohne Script, ohne abgesprochene Meinungen — einfach so, wie wir es sonst auch tun würden.
         </p>
+      </div>
+    </section>
+
+    <!-- Voice agent -->
+    <section class="panel wrap agent-section" id="helfer">
+      <div class="agent-card reveal">
+        <div>
+          <div class="section-eyebrow">Zu viele Mangas Helfer</div>
+          <h2 class="section-title">Frag Anima dein Helfer.</h2>
+          <p class="section-lead">
+            Wenn du Fragen an Zu viele Mangas hast, dann bist du hier richtig.
+          </p>
+        </div>
+        <div class="agent-widget">
+          <elevenlabs-convai
+            agent-id="agent_2201ktenvnzge0grms54cnn8kat4"
+            variant="expanded"
+            action-text="Brauchst du Hilfe?"
+            start-call-text="Gespräch starten"
+            end-call-text="Gespräch beenden"
+            expand-text="Helfer öffnen"
+            listening-text="Ich höre zu..."
+            speaking-text="Der Helfer antwortet..."
+          ></elevenlabs-convai>
+        </div>
       </div>
     </section>
 

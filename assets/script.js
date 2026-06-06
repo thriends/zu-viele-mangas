@@ -261,7 +261,7 @@ function addAnimaHelpPopup() {
   popup.setAttribute('aria-label', 'Zum Sprachassistenten Anima springen');
   popup.innerHTML = `
     <span class="anima-help-icon" aria-hidden="true">
-      <video src="assets/media/anima-orb.mov" autoplay muted loop playsinline></video>
+      <video src="assets/media/anima-orb.mov?v=anima-3" autoplay muted loop playsinline></video>
     </span>
     <span class="anima-help-text">
       <strong>Du brauchst Hilfe?</strong>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Tammes Minecraft-Skin — zu viele mangas</title>
+  <meta name="description" content="Der Minecraft-Skin von Tamme zum Herunterladen." />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <style>
+    .skin-wrap { max-width: 720px; margin: 0 auto; padding: 40px 20px 80px; }
+
+    .skin-card {
+      background: var(--cream-2, #FFF0DC);
+      border: 2px solid var(--line, #E8D9C4);
+      border-radius: var(--radius-lg, 28px);
+      box-shadow: var(--shadow, 0 12px 40px rgba(43,29,22,.10));
+      padding: 32px 24px 36px;
+      text-align: center;
+    }
+
+    .skin-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .85rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--orange, #FF7A45);
+      margin-bottom: 10px;
+    }
+    .skin-eyebrow .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--orange, #FF7A45);
+    }
+
+    .skin-card h1 {
+      font-family: var(--font-display, system-ui, sans-serif);
+      font-size: clamp(1.8rem, 6vw, 2.6rem);
+      line-height: 1.1; margin: 0 0 8px;
+      color: var(--ink, #2B1D16);
+    }
+    .skin-card h1 .accent { color: var(--orange, #FF7A45); }
+
+    .skin-sub { color: var(--ink-soft, #5A463C); margin: 0 0 28px; }
+
+    /* Gesicht: Ausschnitt x8..15 / y8..15 des 64x64-Skins, 20-fach vergrössert */
+    .skin-face {
+      width: 160px; height: 160px; margin: 0 auto 24px;
+      background-image: url("TNTTamme_Skin.png");
+      background-size: 1280px 1280px;
+      background-position: -160px -160px;
+      background-repeat: no-repeat;
+      image-rendering: pixelated;
+      border-radius: 14px;
+      border: 3px solid var(--ink, #2B1D16);
+      box-shadow: var(--shadow-sm, 0 2px 6px rgba(43,29,22,.06));
+    }
+
+    .skin-sheet {
+      display: block; width: 256px; max-width: 100%; height: auto;
+      margin: 0 auto 8px;
+      image-rendering: pixelated;
+      background: #fff;
+      border: 2px solid var(--line, #E8D9C4);
+      border-radius: 12px;
+      padding: 8px;
+    }
+
+    .skin-meta {
+      font-size: .85rem; color: var(--ink-muted, #8B7569);
+      margin: 0 0 28px;
+    }
+
+    .skin-actions { margin-bottom: 8px; }
+    .skin-actions .btn { font-size: 1.05rem; padding: 14px 26px; }
+
+    .skin-hint { font-size: .9rem; color: var(--ink-muted, #8B7569); margin-top: 14px; }
+
+    .anleitung {
+      text-align: left; margin: 36px auto 0; max-width: 560px;
+      background: #fff;
+      border: 2px solid var(--line, #E8D9C4);
+      border-radius: var(--radius, 18px);
+      padding: 22px 24px;
+    }
+    .anleitung h2 {
+      font-family: var(--font-display, system-ui, sans-serif);
+      font-size: 1.15rem; margin: 0 0 12px; color: var(--ink, #2B1D16);
+    }
+    .anleitung ol { margin: 0; padding-left: 20px; color: var(--ink-soft, #5A463C); }
+    .anleitung li { margin: 8px 0; }
+    .anleitung a { color: var(--orange, #FF7A45); }
+
+    .zurueck { text-align: center; margin-top: 32px; }
+    .zurueck a { color: var(--ink-muted, #8B7569); text-decoration: none; font-size: .9rem; }
+    .zurueck a:hover { color: var(--orange, #FF7A45); text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="bg-fx" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html">
+        <img src="../assets/logo.webp" alt="" />
+        <span>zu viele mangas</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../ueber-uns.html">Über uns</a>
+        <a href="../merchandise.html">Merchandise</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="skin-wrap">
+      <div class="skin-card">
+        <div class="skin-eyebrow"><span class="dot"></span> Für Tamme</div>
+        <h1>Dein <span class="accent">Minecraft-Skin</span></h1>
+        <p class="skin-sub">Hier ist er. Einmal tippen, und er gehört dir.</p>
+
+        <div class="skin-face" role="img" aria-label="Gesicht des Minecraft-Skins von Tamme"></div>
+
+        <img class="skin-sheet" src="TNTTamme_Skin.png"
+             alt="Vollständige Skin-Datei von Tamme, 64 mal 64 Pixel" width="64" height="64" />
+        <p class="skin-meta">TNTTamme_Skin.png — 64 × 64 Pixel</p>
+
+        <div class="skin-actions">
+          <a class="btn btn-primary" href="TNTTamme_Skin.png" download="TNTTamme_Skin.png">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+              <path d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17.4l-4.7-4.7 1.4-1.4 3.3 3.3V3h2zM5 19h14v2H5v-2z"/>
+            </svg>
+            Skin herunterladen
+          </a>
+        </div>
+        <p class="skin-hint">Am Handy: lange auf das Bild tippen und „Bild sichern" wählen.</p>
+
+        <div class="anleitung">
+          <h2>So kommt der Skin ins Spiel</h2>
+          <ol>
+            <li><strong>Java-Edition:</strong> Auf <a href="https://www.minecraft.net/msaprofile/mygames/editskin" rel="noopener">minecraft.net → Skins</a> anmelden, „Skin auswählen", die Datei hochladen und als Modell <em>Classic</em> oder <em>Slim</em> setzen.</li>
+            <li><strong>Bedrock (Handy, Switch, Xbox):</strong> Im Spiel auf den Kleiderbügel tippen → „Eigene Skins" → „Wählen" → die heruntergeladene Datei nehmen.</li>
+            <li>Spiel einmal neu starten, falls der alte Skin noch zu sehen ist.</li>
+          </ol>
+        </div>
+      </div>
+
+      <p class="zurueck"><a href="../index.html">← zurück zu zu viele mangas</a></p>
+    </div>
+  </main>
+</body>
+</html>

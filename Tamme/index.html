@@ -44,7 +44,7 @@
     /* Gesicht: Ausschnitt x8..15 / y8..15 des 64x64-Skins, 20-fach vergrössert */
     .skin-face {
       width: 160px; height: 160px; margin: 0 auto 24px;
-      background-image: url("TNTTamme_Skin.png");
+      background-image: url("skin.png");
       background-size: 1280px 1280px;
       background-position: -160px -160px;
       background-repeat: no-repeat;
@@ -55,7 +55,7 @@
     }
 
     .skin-sheet {
-      display: block; width: 256px; max-width: 100%; height: auto;
+      display: block; width: 224px; max-width: 100%; height: auto;
       margin: 0 auto 8px;
       image-rendering: pixelated;
       background: #fff;
@@ -72,7 +72,10 @@
     .skin-actions { margin-bottom: 8px; }
     .skin-actions .btn { font-size: 1.05rem; padding: 14px 26px; }
 
-    .skin-hint { font-size: .9rem; color: var(--ink-muted, #8B7569); margin-top: 14px; }
+    .skin-hint {
+      font-size: .9rem; color: var(--ink-muted, #8B7569);
+      margin: 14px auto 0; max-width: 460px; line-height: 1.5;
+    }
 
     .anleitung {
       text-align: left; margin: 36px auto 0; max-width: 560px;
@@ -119,19 +122,22 @@
 
         <div class="skin-face" role="img" aria-label="Gesicht des Minecraft-Skins von Tamme"></div>
 
-        <img class="skin-sheet" src="TNTTamme_Skin.png"
+        <img class="skin-sheet" src="skin.png"
              alt="Vollständige Skin-Datei von Tamme, 64 mal 64 Pixel" width="64" height="64" />
-        <p class="skin-meta">TNTTamme_Skin.png — 64 × 64 Pixel</p>
+        <p class="skin-meta">skin.png — 64 × 64 Pixel</p>
 
         <div class="skin-actions">
-          <a class="btn btn-primary" href="TNTTamme_Skin.png" download="TNTTamme_Skin.png">
+          <a class="btn btn-primary" href="skin.png" download="tamme-skin.png">
             <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
               <path d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17.4l-4.7-4.7 1.4-1.4 3.3 3.3V3h2zM5 19h14v2H5v-2z"/>
             </svg>
             Skin herunterladen
           </a>
         </div>
-        <p class="skin-hint">Am Handy: lange auf das Bild tippen und „Bild sichern" wählen.</p>
+        <p class="skin-hint">
+          Auf iPhone oder iPad: lang auf den Knopf tippen und <strong>„In Dateien sichern"</strong> wählen —
+          <em>nicht</em> „In Fotos". Fotos rechnet das Bild um, und Minecraft nimmt es dann nicht mehr an.
+        </p>
 
         <div class="anleitung">
           <h2>So kommt der Skin ins Spiel</h2>

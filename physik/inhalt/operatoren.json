@@ -1,0 +1,100 @@
+{
+  "operatoren": [
+    {
+      "wort": "nennen",
+      "afb": "I",
+      "bedeutung": "Begriffe, Fakten oder Beispiele knapp aufzählen, ohne Erklärung.",
+      "beispielAufgabe": "Nenne die beiden Teilchen, die in einem Atom elektrisch geladen sind, und ihre Ladungsart.",
+      "soKlingtEsGut": "Protonen im Atomkern sind positiv geladen. Elektronen in der Atomhülle sind negativ geladen.",
+      "typischerFehler": "Lange Erklärungen schreiben, obwohl nur Stichworte gefragt sind. Das kostet Zeit und bringt keine Punkte."
+    },
+    {
+      "wort": "angeben",
+      "afb": "I",
+      "bedeutung": "Einen Wert, eine Richtung oder eine Eigenschaft kurz mitteilen, ohne Begründung.",
+      "beispielAufgabe": "Gib an, in welche Richtung elektrische Feldlinien zeigen.",
+      "soKlingtEsGut": "Elektrische Feldlinien zeigen von der positiven zur negativen Ladung.",
+      "typischerFehler": "Die Richtung umdrehen (von minus nach plus), weil man an die Bewegung der Elektronen denkt."
+    },
+    {
+      "wort": "beschreiben",
+      "afb": "I",
+      "bedeutung": "Einen Vorgang oder eine Beobachtung in eigenen Worten geordnet wiedergeben: was passiert und in welcher Reihenfolge, aber noch nicht warum.",
+      "beispielAufgabe": "Beschreibe, was mit zwei gleich geladenen Luftballons passiert, die nebeneinander an Fäden hängen.",
+      "soKlingtEsGut": "Die beiden Ballons bewegen sich voneinander weg. Die Fäden hängen danach schräg. Solange die Ballons geladen sind, bleiben sie auf Abstand.",
+      "typischerFehler": "Schon erklären (warum) statt beschreiben (was). Die Begründung gehört erst in eine Erklär-Aufgabe."
+    },
+    {
+      "wort": "darstellen",
+      "afb": "II",
+      "bedeutung": "Einen Sachverhalt geordnet wiedergeben, sodass Zusammenhänge sichtbar werden. Das geht mit Text, Tabelle oder beschrifteter Zeichnung.",
+      "beispielAufgabe": "Stelle dar, wie sich die Ladungen in einer neutralen Metalldose verteilen, wenn man ihr von links einen negativ geladenen Stab nähert.",
+      "soKlingtEsGut": "Die frei beweglichen Elektronen in der Dose werden vom Stab abgestoßen und sammeln sich auf der rechten Seite. Die linke Seite hat dann einen Elektronenmangel und ist positiv. Insgesamt bleibt die Dose neutral, die Ladungen sind nur verschoben.",
+      "typischerFehler": "Nur das Ergebnis nennen, ohne die Verteilung auf beiden Seiten zu zeigen, oder vergessen, dass die Dose insgesamt neutral bleibt."
+    },
+    {
+      "wort": "skizzieren",
+      "afb": "I",
+      "bedeutung": "Einen Sachverhalt auf das Wesentliche reduziert zeichnen und beschriften. Es geht um Klarheit, nicht um Kunst.",
+      "beispielAufgabe": "Skizziere das Feldlinienbild zwischen einer positiv und einer negativ geladenen Kugel.",
+      "soKlingtEsGut": "Zwei Kreise, beschriftet mit plus und minus. Dazwischen gebogene Linien, die an der positiven Kugel beginnen und an der negativen enden. Pfeile zeigen von plus nach minus. Die Linien schneiden sich nicht und treffen senkrecht auf die Kugeloberflächen.",
+      "typischerFehler": "Pfeile oder Beschriftung vergessen, oder Linien zeichnen, die sich kreuzen."
+    },
+    {
+      "wort": "erklären",
+      "afb": "II",
+      "bedeutung": "Einen Sachverhalt auf Ursachen, Modelle oder Gesetze zurückführen. Die Leitfrage lautet: Warum passiert das?",
+      "beispielAufgabe": "Erkläre, warum ein geriebener Luftballon an einer Wand hängen bleibt.",
+      "soKlingtEsGut": "Beim Reiben gehen Elektronen vom Pulli auf den Ballon über, der Ballon hat danach einen Elektronenüberschuss. Die Wand ist neutral, aber der Ballon verschiebt ihre Ladungen ein wenig: Die positive Seite liegt näher am Ballon. Weil die Anziehung zur näheren Ladung stärker ist als die Abstoßung, bleibt der Ballon an der Wand haften.",
+      "typischerFehler": "Nur „weil er statisch geladen ist“ schreiben. Das benennt das Phänomen, erklärt es aber nicht."
+    },
+    {
+      "wort": "erläutern",
+      "afb": "II",
+      "bedeutung": "Wie erklären, aber ausführlicher: mit Beispielen, Zwischenschritten oder zusätzlichen Informationen verständlich machen.",
+      "beispielAufgabe": "Erläutere an einem Beispiel, wie ein Elektroskop anzeigt, dass ein Körper geladen ist.",
+      "soKlingtEsGut": "Ein geriebener Kunststoffstab wird an den Metallteller eines Elektroskops gehalten. Dabei geht Ladung vom Stab auf das Elektroskop über und verteilt sich über Stab und Zeiger. Beide sind danach gleichnamig geladen und stoßen sich ab, deshalb schlägt der Zeiger aus. Je stärker die Ladung, desto größer der Ausschlag.",
+      "typischerFehler": "Kein Beispiel bringen oder Zwischenschritte überspringen, sodass die Erläuterung zu einer knappen Erklärung schrumpft."
+    },
+    {
+      "wort": "begründen",
+      "afb": "III",
+      "bedeutung": "Eine Aussage mit Argumenten, Beobachtungen oder Gesetzen absichern. Typische Form: weil ..., deshalb ...",
+      "beispielAufgabe": "Begründe, warum man beim Einbauen von Computerchips ein geerdetes Armband trägt.",
+      "soKlingtEsGut": "Der Körper lädt sich bei jeder Bewegung durch Reibung auf. Nähert sich die geladene Hand einem Chip, kann ein Funke überspringen, der die winzigen Bauteile beschädigt. Das Armband verbindet den Körper leitend mit der Erde. Deshalb fließt die Ladung laufend ab, bevor ein gefährlicher Funke entstehen kann.",
+      "typischerFehler": "Die Aussage nur mit anderen Worten wiederholen, statt einen physikalischen Grund zu nennen."
+    },
+    {
+      "wort": "vergleichen",
+      "afb": "II",
+      "bedeutung": "Gemeinsamkeiten und Unterschiede nach klaren Gesichtspunkten gegenüberstellen.",
+      "beispielAufgabe": "Vergleiche Influenz und Polarisation.",
+      "soKlingtEsGut": "Gemeinsam ist beiden, dass ein geladener Körper die Ladungen in einem neutralen Körper verschiebt und die entgegengesetzte Ladung dadurch näher liegt. Der Unterschied liegt im Material: Influenz findet in Leitern statt, dort wandern freie Elektronen durch den ganzen Körper. Polarisation findet in Nichtleitern statt, dort verschieben sich die Ladungen nur ein kleines Stück. In beiden Fällen wird der neutrale Körper angezogen.",
+      "typischerFehler": "Beide Begriffe nacheinander beschreiben, ohne Gemeinsamkeiten und Unterschiede ausdrücklich zu nennen."
+    },
+    {
+      "wort": "beurteilen",
+      "afb": "III",
+      "bedeutung": "Eine Aussage an fachlichen Maßstäben prüfen und zu einem begründeten Urteil kommen: Entscheidung, mindestens zwei Fachargumente, Bezug zu Material oder Beobachtung, Fazit.",
+      "beispielAufgabe": "Beurteile die Aussage: „Im Auto ist man bei Gewitter sicher, weil die Gummireifen isolieren.“",
+      "soKlingtEsGut": "Ich halte die Aussage für falsch, auch wenn ihr Ergebnis stimmt. Man ist im Auto tatsächlich geschützt. Der Grund ist aber die Metallkarosserie: Sie wirkt wie ein Faraday-Käfig, die Ladung des Blitzes fließt außen über das Metall ab, und innen wirkt kein elektrisches Feld. Die Reifen können einen Blitz nicht aufhalten, denn er ist zuvor schon durch eine lange Strecke Luft gesprungen, die ebenfalls isoliert. Deshalb ist mein Urteil: Die Sicherheit kommt von der Metallhülle, nicht von den Reifen.",
+      "typischerFehler": "Nur „stimmt“ oder „stimmt nicht“ schreiben, ohne Fachargumente, oder eine Meinung ohne physikalische Begründung abgeben."
+    },
+    {
+      "wort": "Stellung nehmen",
+      "afb": "III",
+      "bedeutung": "Eine eigene, begründete Position beziehen. Neben Fachwissen dürfen auch Folgen für Menschen, Sicherheit oder Umwelt eine Rolle spielen.",
+      "beispielAufgabe": "Nimm Stellung: Sollten Betriebe, in denen viel Mehl- oder Holzstaub in der Luft ist, auf Schutz gegen elektrostatische Aufladung achten?",
+      "soKlingtEsGut": "Ich bin klar dafür. Durch Reibung können sich Maschinen, Förderbänder und Menschen elektrisch aufladen. Ein Funke kann eine Wolke aus feinem Staub entzünden, und das kann zu einer Explosion führen. Maßnahmen wie Erdung von Maschinen und leitfähige Schuhe kosten zwar Geld und Aufwand. Gemessen an der Gefahr für die Beschäftigten ist dieser Aufwand aber gerechtfertigt.",
+      "typischerFehler": "Nur Fakten aufzählen, ohne sich festzulegen. Zu einer Stellungnahme gehört eine klare eigene Position."
+    },
+    {
+      "wort": "überprüfen",
+      "afb": "III",
+      "bedeutung": "Eine Aussage oder ein Ergebnis an Gesetzen, Modellen oder Beobachtungen messen und feststellen, ob es stimmt. Fehler werden benannt und korrigiert.",
+      "beispielAufgabe": "Überprüfe die Aussage: „Elektrische Feldlinien können sich kreuzen, wenn zwei geladene Kugeln nah beieinander liegen.“",
+      "soKlingtEsGut": "Die Aussage stimmt nicht. Eine Feldlinie gibt an jedem Punkt die Richtung der Kraft auf einen positiv geladenen Körper an. Würden sich zwei Feldlinien kreuzen, hätte ein Körper an diesem Punkt zwei verschiedene Kraftrichtungen gleichzeitig. Das ist nicht möglich. Richtig ist deshalb: Feldlinien schneiden sich nie, auch nicht bei kleinem Abstand.",
+      "typischerFehler": "Nur „falsch“ schreiben, ohne zu sagen, woran man das prüft, und ohne die richtige Aussage zu nennen."
+    }
+  ]
+}

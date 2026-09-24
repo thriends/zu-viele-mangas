@@ -1,0 +1,261 @@
+/* Physik-Fachunterlage · baut auf den Farben von zu viele mangas auf */
+@import url('/assets/fonts/fonts.css');
+
+:root {
+  --papier: #FDF6EC;
+  --karte: #FFFFFF;
+  --tinte: #231A15;
+  --tinte-2: #5A463C;
+  --leise: #7A665B;
+  --linie: #E8D9C4;
+  --orange: #B8461A;
+  --orange-hell: #FFE3D3;
+  --sonne: #FFD166;
+  --plus: #D7263D;
+  --plus-hell: #FDE2E6;
+  --minus: #2F5BEA;
+  --minus-hell: #E1E8FF;
+  --feld: #7B3FE4;
+  --gruen: #16704A;
+  --gruen-hell: #DDF3E8;
+  --lvl1: #16704A;
+  --lvl2: #975A00;
+  --boss: #7B3FE4;
+  --radius: 16px;
+  --schatten: 0 8px 28px rgba(35, 26, 21, .08);
+  --display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --text: 'Inter', system-ui, -apple-system, sans-serif;
+  --max: 860px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--papier); color: var(--tinte); font: 17px/1.62 var(--text); overflow-wrap: break-word; }
+img, svg { max-width: 100%; }
+a { color: var(--minus); text-underline-offset: 3px; }
+a:hover { color: var(--feld); }
+h1, h2, h3, h4, h5 { font-family: var(--display); line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.01em; }
+h1 { font-size: clamp(2rem, 6vw, 3.1rem); font-weight: 800; }
+h2 { font-size: clamp(1.55rem, 4.4vw, 2.1rem); font-weight: 800; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.08rem; margin-top: 1.1em; }
+p { margin: 0 0 .85em; }
+.klein { font-size: .88rem; color: var(--leise); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 8px 12px; z-index: 50; }
+:focus-visible { outline: 3px solid var(--minus); outline-offset: 2px; }
+
+/* Kopfleiste */
+.topbar { position: sticky; top: 0; z-index: 20; background: rgba(253, 246, 236, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linie); }
+.topbar-inner { max-width: var(--max); margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: space-between; }
+.marke { font-family: var(--display); font-weight: 800; font-size: 1.15rem; color: var(--tinte); text-decoration: none; display: flex; gap: 6px; align-items: center; }
+.marke .dim { color: var(--leise); font-weight: 600; font-size: .95rem; }
+.hauptnav { display: flex; gap: 4px; flex-wrap: wrap; }
+.hauptnav a { color: var(--tinte-2); text-decoration: none; font-weight: 600; font-size: .92rem; padding: 6px 10px; border-radius: 999px; }
+.hauptnav a[aria-current="page"], .hauptnav a:hover { background: var(--tinte); color: #fff; }
+@media (max-width: 520px) { .marke .dim { display: none; } }
+
+main { max-width: var(--max); margin: 0 auto; padding: 0 16px 40px; }
+
+/* Hero */
+.hero { padding: 36px 0 18px; }
+.kicker { font-family: var(--display); font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: .08em; font-size: .82rem; margin-bottom: .4em; display: block; }
+.untertitel { font-size: 1.15rem; color: var(--tinte-2); max-width: 44em; }
+.ziel { background: var(--karte); border: 2px solid var(--tinte); border-radius: var(--radius); padding: 14px 18px; box-shadow: 5px 5px 0 var(--sonne); margin: 18px 0; }
+.ziel-label, .merke-label, .falle-label, .kurz-label, .versuch-label { font-family: var(--display); font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: .78rem; margin-bottom: .35em; }
+.ziel p:last-child { margin: 0; }
+.fortschritt { font-weight: 600; color: var(--gruen); min-height: 1.4em; }
+
+.schritt-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip { display: inline-block; background: var(--karte); border: 1px solid var(--linie); color: var(--tinte); border-radius: 999px; padding: 5px 12px; font-size: .9rem; text-decoration: none; font-weight: 500; margin: 2px 0; }
+.chip:hover { border-color: var(--tinte); color: var(--tinte); }
+
+/* Lernschritt */
+.schritt { background: var(--karte); border-radius: 22px; padding: 22px 20px 18px; margin: 26px 0; box-shadow: var(--schatten); border: 1px solid var(--linie); }
+@media (min-width: 700px) { .schritt { padding: 30px 34px 24px; } }
+.schritt-nr { font-family: var(--display); font-weight: 800; color: var(--orange); margin: 0 0 .2em; }
+.leitfrage { font-family: var(--display); font-size: 1.2rem; font-weight: 600; background: var(--minus-hell); border-radius: 14px; padding: 10px 14px; position: relative; display: inline-block; max-width: 100%; }
+.leitfrage::before { content: "?"; font-weight: 800; color: var(--minus); margin-right: 8px; }
+.ichkann { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; margin: 8px 0; }
+.ichkann input { width: 22px; height: 22px; margin-top: 2px; accent-color: var(--gruen); flex: none; }
+.schritt-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .88rem; color: var(--leise); border-top: 1px dashed var(--linie); padding-top: 10px; margin-top: 10px; }
+.einstieg { font-size: 1.08rem; border-left: 5px solid var(--sonne); padding: 4px 0 4px 14px; margin: 18px 0; font-weight: 500; }
+.block-h { margin-top: 1.6em; font-size: 1.15rem; display: flex; align-items: center; gap: 8px; }
+.block-h::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--orange); }
+
+.merke { background: var(--gruen-hell); border-left: 6px solid var(--gruen); border-radius: 12px; padding: 12px 16px; margin: 18px 0; }
+.merke-label { color: var(--gruen); }
+.merke p { font-weight: 600; }
+.merke p:last-child { margin-bottom: 0; }
+
+/* Skizzen: Farben kommen über Klassen aus dem Inhalt */
+.skizzen { display: grid; gap: 14px; margin: 18px 0; }
+@media (min-width: 700px) { .skizzen:has(.skizze + .skizze) { grid-template-columns: 1fr 1fr; } }
+.skizze { margin: 0; background: #FFFBF5; border: 1px solid var(--linie); border-radius: 14px; padding: 12px; }
+.skizze figcaption { font-size: .88rem; color: var(--tinte-2); margin-top: 6px; text-align: center; }
+.skizze-svg { width: 100%; height: auto; display: block; color: var(--tinte); }
+.skizze-svg .plus { fill: var(--plus); stroke: var(--plus); }
+.skizze-svg .minus { fill: var(--minus); stroke: var(--minus); }
+.skizze-svg .feld { stroke: var(--feld); fill: none; }
+.skizze-svg marker .feld, .skizze-svg marker path.feld { fill: var(--feld); }
+.skizze-svg .koerper { fill: none; stroke: var(--tinte); }
+.skizze-svg .txt { fill: var(--tinte); font-family: var(--text); }
+
+/* Fallen */
+.fallen { display: grid; gap: 12px; margin: 18px 0; }
+.falle { border: 2px solid var(--plus); border-radius: 14px; padding: 12px 16px; background: #FFF7F8; }
+.falle-label { color: var(--plus); }
+.falle-label::before { content: "⚠ "; }
+.falsch { text-decoration: line-through; text-decoration-color: rgba(215, 38, 61, .5); color: var(--tinte-2); }
+.falsch span { color: var(--plus); font-weight: 800; text-decoration: none; display: inline-block; }
+.richtig span { color: var(--gruen); font-weight: 800; }
+.richtig { font-weight: 600; }
+.warum { font-size: .95rem; color: var(--tinte-2); margin: 0; }
+
+/* Video: lädt erst nach Klick */
+.video { margin: 12px 0 18px; }
+.video-rahmen { position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #1B1330; }
+.video-rahmen iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-start { position: absolute; inset: 0; width: 100%; border: 0; cursor: pointer; color: #fff; text-align: left; padding: 18px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; font: inherit;
+  background: radial-gradient(60% 80% at 80% 20%, rgba(123, 63, 228, .75), transparent), radial-gradient(50% 70% at 10% 90%, rgba(232, 96, 44, .7), transparent), #1B1330; }
+.video-start .play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%); width: 64px; height: 64px; border-radius: 50%; background: #fff; color: #1B1330; display: grid; place-items: center; font-size: 1.5rem; padding-left: 4px; }
+.video-start:hover .play { background: var(--sonne); }
+.video-titel { font-family: var(--display); font-weight: 800; font-size: 1.1rem; }
+.video-meta, .video-hinweis { font-size: .82rem; opacity: .9; }
+.video figcaption { margin-top: 10px; }
+.wozu { margin-bottom: .5em; }
+.zeitmarken { padding-left: 1.2em; }
+.zeitmarken li { margin: .3em 0; }
+.zeit { font-family: ui-monospace, Menlo, monospace; font-size: .85rem; background: var(--minus-hell); color: var(--minus); border-radius: 6px; padding: 1px 6px; margin-right: 4px; }
+.video-einordnung { font-size: .92rem; background: #FFF6DE; border-radius: 10px; padding: 8px 12px; }
+
+details { margin: 6px 0; }
+summary { cursor: pointer; font-weight: 600; color: var(--minus); }
+details[open] > summary { margin-bottom: 6px; }
+
+.links { padding-left: 1.1em; }
+.links li { margin-bottom: .8em; }
+.linktyp { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; background: var(--orange-hell); color: #9A3A10; border-radius: 6px; padding: 1px 6px; }
+.auftrag { font-size: .95rem; color: var(--tinte-2); }
+
+.versuch { border: 2px dashed var(--orange); border-radius: 16px; padding: 14px 18px; margin: 20px 0; background: #FFF9F2; }
+.versuch-label { color: var(--orange); }
+.versuch h4 { margin-top: 0; }
+
+/* Level-Badges */
+.badge { display: inline-block; font-size: .74rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; border-radius: 999px; padding: 2px 10px; color: #fff; }
+.badge.stufe-einfach { background: var(--lvl1); }
+.badge.stufe-mittel { background: var(--lvl2); }
+.badge.stufe-schwer { background: var(--boss); }
+.badge.afb-I { background: var(--lvl1); } .badge.afb-II { background: var(--lvl2); } .badge.afb-III { background: var(--boss); }
+
+.praxis-grid { display: grid; gap: 12px; }
+@media (min-width: 700px) { .praxis-grid { grid-template-columns: repeat(3, 1fr); } }
+.praxis { border: 1px solid var(--linie); border-radius: 14px; padding: 12px 14px; background: #FFFCF8; border-top: 5px solid var(--lvl1); }
+.praxis.stufe-mittel { border-top-color: var(--lvl2); }
+.praxis.stufe-schwer { border-top-color: var(--boss); }
+.praxis h5 { font-size: 1.02rem; margin: 8px 0 6px; }
+.praxis p { font-size: .95rem; }
+
+.trainings { display: grid; gap: 12px; }
+.training { border: 1px solid var(--linie); border-left: 6px solid var(--lvl1); border-radius: 12px; padding: 12px 16px; }
+.training.stufe-mittel { border-left-color: var(--lvl2); }
+.training.stufe-schwer { border-left-color: var(--boss); }
+.training header { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; margin-bottom: 6px; }
+.afb, .stil { font-size: .82rem; color: var(--leise); font-weight: 600; }
+.aufgabe { font-weight: 500; }
+.hilfe.loesung summary { color: var(--gruen); }
+
+.kurz { background: var(--tinte); color: #fff; border-radius: 16px; padding: 14px 18px; margin: 22px 0 10px; }
+.kurz-label { color: var(--sonne); }
+.kurz ul { margin: 0; padding-left: 1.1em; }
+.kurz li { margin: .25em 0; }
+
+/* Quiz */
+.quiz { margin: 18px 0; border: 2px solid var(--tinte); border-radius: 16px; padding: 14px 16px; background: #fff; }
+.quiz h4 { margin-top: 0; }
+.quizfrage { border: 0; padding: 0; margin: 0 0 14px; min-width: 0; }
+.quizfrage legend { font-weight: 600; margin-bottom: 6px; padding: 0; }
+.quizfrage label { display: flex; gap: 8px; align-items: flex-start; padding: 7px 10px; border-radius: 10px; border: 1px solid var(--linie); margin: 5px 0; cursor: pointer; }
+.quizfrage label:hover { border-color: var(--tinte-2); }
+.quizfrage input { margin-top: 4px; flex: none; }
+.quizfrage label.ist-richtig { background: var(--gruen-hell); border-color: var(--gruen); }
+.quizfrage label.ist-falsch { background: var(--plus-hell); border-color: var(--plus); }
+.quiz-feedback { font-size: .95rem; padding: 8px 12px; border-radius: 10px; background: #F6F1EA; }
+.quiz-stand { font-weight: 700; margin: 0; }
+
+.begriffe { margin-top: 14px; }
+
+/* Coulomb-Regler */
+.coulomb { border: 2px solid var(--feld); border-radius: 16px; padding: 14px 16px; margin: 18px 0; background: #F7F2FF; }
+.coulomb-svg { width: 100%; height: auto; display: block; }
+.plus-kugel { fill: var(--plus); }
+.minus-kugel { fill: var(--minus); }
+.kugeltext { fill: #fff; font: 800 26px var(--text); }
+.kraftpfeil { stroke: var(--feld); stroke-width: 6; stroke-linecap: round; }
+.pfeil { fill: var(--feld); }
+.regler { display: grid; gap: 10px; margin: 8px 0; }
+@media (min-width: 640px) { .regler { grid-template-columns: 1fr 1fr; } }
+.regler label { display: grid; gap: 4px; font-weight: 600; font-size: .95rem; }
+.regler input { width: 100%; accent-color: var(--feld); }
+.coulomb-ergebnis { font-weight: 700; font-size: 1.05rem; }
+
+/* Abschluss, Start, Tabellen */
+.abschluss { margin: 30px 0; }
+.selbstcheck { list-style: none; padding: 0; }
+.selbstcheck li { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 8px 12px; margin: 8px 0; }
+.selbstcheck .ichkann { margin: 0; }
+.knopf { display: inline-block; background: var(--tinte); color: #fff; border: 0; border-radius: 999px; padding: 10px 20px; font: 700 1rem var(--text); text-decoration: none; cursor: pointer; }
+.knopf:hover { background: var(--feld); color: #fff; }
+.knopf.zurueck { background: #fff; color: var(--tinte); border: 2px solid var(--tinte); }
+.linkknopf { background: none; border: 0; color: var(--leise); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; }
+.tabelle { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; background: var(--karte); }
+th, td { border-bottom: 1px solid var(--linie); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { font-family: var(--display); }
+.anleitung li { margin: .4em 0; }
+
+.seq-liste { display: grid; gap: 16px; }
+.seq-karte { display: grid; gap: 4px; background: var(--karte); border: 2px solid var(--tinte); border-radius: 20px; padding: 18px 20px; text-decoration: none; color: var(--tinte); box-shadow: 6px 6px 0 var(--orange); transition: transform .15s; }
+.seq-karte:hover { transform: translate(-2px, -2px); color: var(--tinte); }
+.seq-titel { font-family: var(--display); font-weight: 800; font-size: 1.7rem; }
+.seq-unter { color: var(--tinte-2); }
+.seq-zahlen { font-size: .88rem; color: var(--leise); }
+
+/* Glossar */
+.suche { display: grid; gap: 4px; max-width: 420px; font-weight: 600; }
+.suche input { font: inherit; padding: 10px 14px; border-radius: 12px; border: 2px solid var(--tinte); background: #fff; }
+.glossar { margin: 10px 0; }
+.glossar-eintrag { background: var(--karte); border: 1px solid var(--linie); border-radius: 14px; padding: 12px 16px; margin: 10px 0; }
+.glossar-eintrag:target { border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-hell); }
+.glossar dt { font-family: var(--display); font-weight: 800; font-size: 1.15rem; }
+.glossar dd { margin: 4px 0 0; }
+.glossar dd p { margin-bottom: .4em; }
+
+/* Lernkarten */
+.kartenbox { display: grid; gap: 14px; justify-items: center; }
+.karten-filter { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.karten-filter select { font: inherit; padding: 6px 10px; border-radius: 10px; border: 1px solid var(--tinte-2); background: #fff; }
+.faecher { font-size: .9rem; color: var(--tinte-2); text-align: center; margin: 0; }
+.karte { width: 100%; max-width: 520px; min-height: 260px; perspective: 1200px; cursor: pointer; outline-offset: 6px; }
+.karte-innen { position: relative; width: 100%; min-height: 260px; transition: transform .45s; transform-style: preserve-3d; }
+.karte.umgedreht .karte-innen { transform: rotateY(180deg); }
+.karte-vorne, .karte-hinten { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; justify-content: center; gap: 10px; border: 2px solid var(--tinte); }
+.karte-vorne { background: #fff; box-shadow: 6px 6px 0 var(--minus); }
+.karte-vorne p { font-family: var(--display); font-size: 1.45rem; font-weight: 800; margin: 0; }
+.karte-hinten { background: var(--tinte); color: #fff; transform: rotateY(180deg); box-shadow: 6px 6px 0 var(--sonne); overflow-y: auto; }
+.karte-hinten .klein { color: #E9DED5; }
+.karte-typ { font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--minus); }
+.karten-knoepfe { display: flex; gap: 12px; }
+
+/* Operatoren */
+.operatoren { display: grid; gap: 12px; }
+.operator { background: var(--karte); border: 1px solid var(--linie); border-radius: 14px; padding: 14px 18px; }
+.operator header { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.operator h2 { font-size: 1.35rem; margin: 0; text-transform: capitalize; }
+.falsch-hinweis { color: #8E1C2B; }
+
+.fuss { max-width: var(--max); margin: 0 auto; padding: 24px 16px 40px; font-size: .85rem; color: var(--leise); border-top: 1px solid var(--linie); }
+.fuss a { color: var(--leise); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }

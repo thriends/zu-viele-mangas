@@ -1,0 +1,7 @@
+{
+  "name": "zu-viele-mangas",
+  "private": true,
+  "scripts": {
+    "physik:build": "bun tools/physik/build.ts"
+  }
+}

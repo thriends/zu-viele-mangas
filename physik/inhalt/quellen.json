@@ -1,0 +1,19 @@
+{
+  "stand": "2026-09-24",
+  "herkunft": "QR-Codes aus dem Lernplan Physik 7 Elektrostatik und aus den Buchseiten, per zbarimg dekodiert",
+  "lernplan": [
+    { "schritt": "s1", "typ": "Video", "titel": "YouTube: Reibungselektrizität", "url": "https://www.youtube.com/watch?v=u9PP2UQhZr0" },
+    { "schritt": "s1", "typ": "Artikel", "titel": "Leifi: Reibungselektrizität", "url": "https://www.leifiphysik.de/elektrizitaetslehre/elektrische-grundgroessen/ausblick/reibungselektrizitaet" },
+    { "schritt": "s2", "typ": "Simulation", "titel": "PhET: John Travoltage", "url": "https://phet.colorado.edu/sims/html/john-travoltage/latest/john-travoltage_de.html" },
+    { "schritt": "s2", "typ": "Artikel", "titel": "Leifi: Elektrizität und Ladung", "url": "https://www.leifiphysik.de/elektrizitaetslehre/einfache-stromkreise/grundwissen/elektrizitaet-und-ladung" }
+  ],
+  "webcodes": [
+    { "schritt": "s2", "code": "gagiya", "buchseite": "Cornelsen S. 392", "titel": "Elektrische Ladungen", "url": "https://www.cornelsen.de/codes/code/gagiya",
+      "medien": ["Animation Influenz", "Animation Nachweis von Ladungen durch ein Elektroskop (negativ)", "Animation Nachweis von Ladungen durch ein Elektroskop (positiv)", "Elektrostatische Aufladung Luftballon", "Entladung Elektroskop", "Phänomene der Reibungselektrizität"],
+      "auftrag": "Schau dir zuerst die beiden Elektroskop-Animationen an. Achte darauf, wohin die Elektronen jeweils wandern, wenn ein negativer und wenn ein positiver Stab kommt." },
+    { "schritt": "s4", "code": "vuqifa", "buchseite": "Cornelsen S. 396", "titel": "Elektrisches Feld und getrennte Ladungen", "url": "https://www.cornelsen.de/codes/code/vuqifa",
+      "medien": ["Das elektrische Feld sichtbar machen", "Entstehung eines Gewitters"],
+      "auftrag": "Im ersten Video wird das Feld sichtbar gemacht. Vergleiche das Muster mit den Feldlinienregeln hier auf der Seite: Wo liegen die Linien dicht, wo weit auseinander?" }
+  ],
+  "hinweis": "Die Cornelsen-Videos sind urheberrechtlich geschützt und werden nur verlinkt, nicht eingebettet."
+}

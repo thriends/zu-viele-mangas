@@ -559,3 +559,9 @@ th { font-family: var(--display); }
 .fuss a { color: var(--leise); }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+/* KI-Hinweis, bewusst dezent */
+.ki-marke { display: inline-block; font: 800 .68rem/1 var(--text); letter-spacing: .06em; border: 1.5px solid currentColor; border-radius: 5px; padding: 2px 4px; margin-right: 4px; vertical-align: 1px; }
+.ki-zeile { font-size: .85rem; color: var(--leise); margin: -.3em 0 .6em; }
+.ki-zeile a, .ki-hinweis a { color: inherit; }
+.ki-hinweis { max-width: 46em; }

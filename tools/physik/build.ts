@@ -81,7 +81,8 @@ function seite(opts: { titel: string; beschreibung: string; aktiv: string; inhal
 ${opts.inhalt}
 </main>
 <footer class="fuss">
-  <p>Selbst geschrieben für Oskar. Buchseiten sind nur Verweise, Videos gehören ihren Kanälen.</p>
+  <p class="ki-hinweis"><span class="ki-marke">KI</span> Texte, Aufgaben, Quizfragen und Skizzen dieser Unterlage wurden mit KI erstellt (Claude von Anthropic) und von einem zweiten KI-Modell fachlich gegengeprüft. Fehler sind trotzdem möglich. Im Zweifel gilt, was Lehrkraft und Schulbuch sagen. <a href="/physik/#entstehung">Wie die Unterlage entsteht</a></p>
+  <p>Buchseiten sind nur Verweise. Videos und verlinkte Seiten stammen von ihren Anbietern und sind nicht mit KI erstellt.</p>
   <p><a href="/">zu viele mangas</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p>
 </footer>
 ${opts.daten ?? ""}
@@ -214,6 +215,7 @@ function sequenzSeite(seq: SeqDatei, quellen: Quellen) {
   <p class="kicker">Klasse ${seq.klasse} · ${esc(seq.zeitraum)}</p>
   <h1>${md(seq.titel)}</h1>
   <p class="untertitel">${md(seq.untertitel)}</p>
+  <p class="ki-zeile"><span class="ki-marke">KI</span> Mit KI erstellt, fachlich gegengeprüft. <a href="/physik/#entstehung">Mehr dazu</a></p>
   <div class="ziel"><p class="ziel-label">Das kann ich am Ende der Lernsequenz</p><p>${md(seq.ziel)}</p></div>
   <p class="fortschritt" data-fortschritt="${seq.id}" data-gesamt="${seq.schritte.length}"></p>
   <nav class="schritt-nav" aria-label="Lernschritte">${nav}</nav>
@@ -246,6 +248,13 @@ function startSeite(seqs: SeqDatei[]) {
   <p class="untertitel">Jede Lernsequenz landet hier. Glossar und Lernkarten wachsen mit, damit du in Klasse 9 noch findest, was du in Klasse 7 gelernt hast.</p>
 </section>
 <section class="seq-liste" aria-label="Lernsequenzen">${karten}</section>
+<section class="abschluss" id="entstehung">
+  <h2>Wie diese Unterlage entsteht</h2>
+  <p>Die Grundlage ist das Material aus dem Unterricht: Lernplan, Arbeitsblätter und die angegebenen Buchseiten. Daraus erstellt eine KI (Claude von Anthropic) eigene Texte, Aufgaben, Quizfragen, Lernkarten und Skizzen. Aus den Büchern wird nichts abgeschrieben.</p>
+  <p>Danach liest ein zweites KI-Modell eines anderen Anbieters (GPT von OpenAI) alles fachlich gegen. Was es findet, wird korrigiert. Zusätzlich prüft ein Programm, ob jede Lernstufe vollständig ist und ob Buchtext übernommen wurde.</p>
+  <p>Die Videos wählt die KI aus bekannten Lernkanälen aus und prüft, was darin gesagt wird. Die Videos selbst stammen von ihren Kanälen, die Zusammenfassungen darunter sind KI-Text.</p>
+  <p><strong>Wichtig:</strong> Auch doppelt geprüfte KI-Texte können Fehler enthalten. Wenn etwas hier anders klingt als im Unterricht, frag deine Lehrkraft. Im Zweifel gilt, was sie und das Schulbuch sagen.</p>
+</section>
 <section class="abschluss">
   <h2>So nutzt du das</h2>
   <ol class="anleitung">

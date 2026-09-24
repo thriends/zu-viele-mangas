@@ -10,6 +10,10 @@ const ROOT = join(import.meta.dir, "..", "..");
 const PHYSIK = join(ROOT, "physik");
 const INHALT = join(PHYSIK, "inhalt");
 
+// Inhaltskennung für CSS/JS, damit der Browser nach einem Update nicht die alte Fassung aus dem Cache nimmt
+const kennung = (f: string) => new Bun.CryptoHasher("sha1").update(readFileSync(join(PHYSIK, "assets", f))).digest("hex").slice(0, 8);
+const V_CSS = kennung("physik.css"), V_JS = kennung("physik.js");
+
 // ---------- Hilfen ----------
 
 const esc = (s: string) =>
@@ -63,7 +67,7 @@ function seite(opts: { titel: string; beschreibung: string; aktiv: string; inhal
 <title>${esc(opts.titel)}</title>
 <meta name="description" content="${esc(opts.beschreibung)}">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="stylesheet" href="/physik/assets/physik.css">
+<link rel="stylesheet" href="/physik/assets/physik.css?v=${V_CSS}">
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt</a>
@@ -81,7 +85,7 @@ ${opts.inhalt}
   <p><a href="/">zu viele mangas</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p>
 </footer>
 ${opts.daten ?? ""}
-<script src="/physik/assets/physik.js" defer></script>
+<script src="/physik/assets/physik.js?v=${V_JS}" defer></script>
 </body>
 </html>
 `;

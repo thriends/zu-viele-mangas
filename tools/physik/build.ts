@@ -51,32 +51,43 @@ interface SeqDatei extends Sequenz { faktencheck?: Fakt[] }
 
 // ---------- Rahmen ----------
 
-function seite(opts: { titel: string; beschreibung: string; aktiv: string; inhalt: string; daten?: string }) {
+const ICON: Record<string, string> = {
+  start: '<path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/>',
+  glossar: '<path d="M5 3h11l3 3v15H5z"/><path d="M8 9h8M8 13h8M8 17h5"/>',
+  karten: '<rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/>',
+  operatoren: '<path d="M9 6h11M9 12h11M9 18h11"/><path d="m3.5 6 1.5 1.5L7.5 5M3.5 12l1.5 1.5L7.5 11M3.5 18l1.5 1.5L7.5 17"/>',
+};
+const icon = (k: string) => `<svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[k]}</svg>`;
+
+function seite(opts: { titel: string; beschreibung: string; aktiv: string; inhalt: string; daten?: string; kontext?: string; klasse?: string }) {
   const nav = [
     ["Start", "/physik/", "start"],
     ["Glossar", "/physik/glossar/", "glossar"],
     ["Karten", "/physik/karten/", "karten"],
     ["Operatoren", "/physik/operatoren/", "operatoren"],
-  ].map(([t, h, k]) => `<a href="${h}"${k === opts.aktiv ? ' aria-current="page"' : ""}>${t}</a>`).join("");
+  ].map(([t, h, k]) => `<a href="${h}"${k === opts.aktiv ? ' aria-current="page"' : ""}>${icon(k)}<span>${t}</span></a>`).join("");
   return `<!doctype html>
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FDF6EC">
 <meta name="robots" content="noindex, nofollow">
 <title>${esc(opts.titel)}</title>
 <meta name="description" content="${esc(opts.beschreibung)}">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="stylesheet" href="/physik/assets/physik.css?v=${V_CSS}">
 </head>
-<body>
+<body class="${opts.klasse ?? ""}">
 <a class="skip" href="#inhalt">Zum Inhalt</a>
 <header class="topbar">
   <div class="topbar-inner">
     <a class="marke" href="/physik/"><span class="blitz" aria-hidden="true">⚡</span><span>Physik<span class="dim"> · Oskars Fachunterlage</span></span></a>
+    ${opts.kontext ?? ""}
     <nav class="hauptnav" aria-label="Physik">${nav}</nav>
   </div>
 </header>
+<nav class="tabbar" aria-label="Physik">${nav}</nav>
 <main id="inhalt">
 ${opts.inhalt}
 </main>
@@ -151,7 +162,7 @@ function coulombWidget() {
 </div>`;
 }
 
-function schrittSection(seq: Sequenz, s: Schritt, webcodes: Quellen["webcodes"]) {
+function schrittSeite(seq: SeqDatei, s: Schritt, webcodes: Quellen["webcodes"]) {
   const theorie = s.theorie.map(a => `${a.ueberschrift ? `<h4>${md(a.ueberschrift)}</h4>` : ""}<p>${md(a.text)}</p>`).join("");
   const merke = s.merke.length ? `<aside class="merke"><p class="merke-label">Merke</p>${s.merke.map(m => `<p>${md(m)}</p>`).join("")}</aside>` : "";
   const skizzen = s.skizzen.map(k => `<figure class="skizze">${cleanSvg(k.svg).replace('class="skizze-svg"', `class="skizze-svg" aria-label="${esc(k.alt)}"`)}<figcaption>${md(k.titel)}</figcaption></figure>`).join("");
@@ -181,34 +192,66 @@ function schrittSection(seq: Sequenz, s: Schritt, webcodes: Quellen["webcodes"])
     s.buchseiten.length ? `<span><strong>Im Buch:</strong> ${esc(s.buchseiten.join("; "))}</span>` : "",
   ].filter(Boolean).join("");
 
-  return `<section class="schritt" id="${s.id}" aria-labelledby="${s.id}-h">
+  const i = seq.schritte.findIndex(x => x.id === s.id);
+  const vor = seq.schritte[i - 1], nach = seq.schritte[i + 1];
+  const abschnitte: [string, string][] = [["theorie", "Theorie"]];
+  if (videos) abschnitte.push(["video", "Video"]);
+  if (versuch) abschnitte.push(["versuch", "Versuch"]);
+  if (praxis) abschnitte.push(["praxis", "Physik in echt"]);
+  if (training) abschnitte.push(["training", "Training"]);
+  abschnitte.push(["kurz", "In kurz"]);
+  if (s.quiz.length) abschnitte.push(["quiz", "Quiz"]);
+  const abschnittNav = `<nav class="abschnitt-nav" aria-label="Abschnitte dieses Lernschritts"><div class="abschnitt-scroll">${abschnitte.map(([id, t]) => `<a class="chip" href="#${id}">${t}</a>`).join("")}</div></nav>`;
+  const liste = seq.schritte.map(x => `<li><a href="/physik/${seq.id}/${x.id}/"${x.id === s.id ? ' aria-current="page"' : ""}><span class="nr">${x.nr}</span><span class="titel">${esc(x.titel)}</span><span class="haken" data-haken="${seq.id}:${x.id}" aria-hidden="true">✓</span></a></li>`).join("");
+  const seitenleiste = `<aside class="seitenleiste" id="schrittliste" aria-label="Lernschritte">
+    <div class="seitenleiste-kopf"><a class="zur-uebersicht" href="/physik/${seq.id}/">${esc(seq.titel)}</a><button type="button" class="schliessen" data-schrittliste-zu aria-label="Liste schließen">✕</button></div>
+    <ol class="schrittliste">${liste}</ol>
+    <a class="leiste-link" href="/physik/${seq.id}/#selbstcheck">Selbstcheck und Boss-Fight</a>
+  </aside>`;
+  const blaettern = `<nav class="blaettern" aria-label="Weiter">
+    ${vor ? `<a class="blatt zurueck" href="/physik/${seq.id}/${vor.id}/"><span class="klein">Zurück</span><span>${vor.nr}. ${esc(vor.titel)}</span></a>` : `<a class="blatt zurueck" href="/physik/${seq.id}/"><span class="klein">Zurück</span><span>Übersicht</span></a>`}
+    ${nach ? `<a class="blatt weiter" href="/physik/${seq.id}/${nach.id}/"><span class="klein">Weiter</span><span>${nach.nr}. ${esc(nach.titel)}</span></a>` : `<a class="blatt weiter" href="/physik/${seq.id}/#selbstcheck"><span class="klein">Geschafft, weiter zum</span><span>Selbstcheck und Boss-Fight</span></a>`}
+  </nav>`;
+  const inhalt = `<div class="lern-layout">
+  ${seitenleiste}
+  <article class="schritt" aria-labelledby="h">
   <header class="schritt-kopf">
-    <p class="schritt-nr">Lernschritt ${s.nr}</p>
-    <h2 id="${s.id}-h">${md(s.titel)}</h2>
+    <p class="schritt-nr">Lernschritt ${s.nr} · ${esc(seq.titel)}</p>
+    <h1 id="h">${md(s.titel)}</h1>
     <p class="leitfrage">${md(s.leitfrage)}</p>
     <label class="ichkann"><input type="checkbox" data-ichkann="${seq.id}:${s.id}"> <span><strong>Ich kann</strong> ${md(s.ichKann)}</span></label>
     ${meta ? `<p class="schritt-meta">${meta}</p>` : ""}
   </header>
+  ${abschnittNav}
+  <section id="theorie" class="abschnitt">
   <p class="einstieg">${md(s.einstieg)}</p>
   <div class="theorie">${theorie}</div>
   ${merke}
   ${skizzen ? `<div class="skizzen">${skizzen}</div>` : ""}
   ${s.interaktiv === "coulomb" ? coulombWidget() : ""}
   ${falle ? `<div class="fallen">${falle}</div>` : ""}
-  ${videos ? `<h3 class="block-h">Video</h3>${videos}` : ""}
-  ${links.length ? `<h3 class="block-h">Zum Weiterklicken</h3><ul class="links">${links.join("")}</ul>` : ""}
-  ${versuch}
-  ${praxis ? `<h3 class="block-h">Physik in echt</h3><div class="praxis-grid">${praxis}</div>` : ""}
-  ${training ? `<h3 class="block-h">Training</h3><p class="klein">Erst selbst probieren, dann Tipp 1, dann Tipp 2. Den Lösungsweg erst ganz zum Schluss.</p><div class="trainings">${training}</div>` : ""}
-  <aside class="kurz"><p class="kurz-label">In kurz</p><ul>${s.kurzfassung.map(k => `<li>${md(k)}</li>`).join("")}</ul></aside>
-  ${s.quiz.length ? quizBlock(s.quiz, `${s.id}-quiz`, "Schnellcheck") : ""}
+  </section>
+  ${videos ? `<section id="video" class="abschnitt"><h2 class="block-h">Video</h2>${videos}${links.length ? `<h3 class="block-h klein-h">Zum Weiterklicken</h3><ul class="links">${links.join("")}</ul>` : ""}</section>` : ""}
+  ${versuch ? `<section id="versuch" class="abschnitt">${versuch}</section>` : ""}
+  ${praxis ? `<section id="praxis" class="abschnitt"><h2 class="block-h">Physik in echt</h2><div class="praxis-grid">${praxis}</div></section>` : ""}
+  ${training ? `<section id="training" class="abschnitt"><h2 class="block-h">Training</h2><p class="klein">Erst selbst probieren, dann Tipp 1, dann Tipp 2. Den Lösungsweg erst ganz zum Schluss.</p><div class="trainings">${training}</div></section>` : ""}
+  <section id="kurz" class="abschnitt"><aside class="kurz"><p class="kurz-label">In kurz</p><ul>${s.kurzfassung.map(k => `<li>${md(k)}</li>`).join("")}</ul></aside></section>
+  ${s.quiz.length ? `<section id="quiz" class="abschnitt">${quizBlock(s.quiz, `${s.id}-quiz`, "Schnellcheck")}</section>` : ""}
   ${begriffe ? `<p class="begriffe"><span class="klein">Begriffe aus diesem Schritt:</span> ${begriffe}</p>` : ""}
-</section>`;
+  ${blaettern}
+  </article>
+</div>`;
+  const kontext = `<button type="button" class="schritt-knopf" data-schrittliste-auf aria-controls="schrittliste" aria-expanded="false"><span class="klein">${esc(seq.titel)}</span><span>Schritt ${s.nr} <span aria-hidden="true">▾</span></span></button>`;
+  return seite({ titel: `${s.titel} · ${seq.titel} · Physik`, beschreibung: s.leitfrage, aktiv: "", inhalt, kontext, klasse: "hat-schritte" });
 }
 
-function sequenzSeite(seq: SeqDatei, quellen: Quellen) {
-  const nav = seq.schritte.map(s => `<a class="chip" href="#${s.id}">${s.nr}. ${esc(s.titel)}</a>`).join("");
-  const selbstcheck = seq.schritte.map(s => `<li><label class="ichkann"><input type="checkbox" data-ichkann="${seq.id}:${s.id}"> <span>${md(s.ichKann)}</span></label> <a href="#${s.id}" class="klein">zum Schritt</a></li>`).join("");
+function sequenzSeite(seq: SeqDatei) {
+  const karten = seq.schritte.map(s => `<li><a class="schritt-karte" href="/physik/${seq.id}/${s.id}/">
+    <span class="nr">${s.nr}</span>
+    <span class="text"><span class="titel">${esc(s.titel)}</span><span class="frage">${md(s.leitfrage)}</span></span>
+    <span class="haken" data-haken="${seq.id}:${s.id}" aria-label="abgehakt">✓</span>
+  </a></li>`).join("");
+  const selbstcheck = seq.schritte.map(s => `<li><label class="ichkann"><input type="checkbox" data-ichkann="${seq.id}:${s.id}"> <span>${md(s.ichKann)}</span></label> <a href="/physik/${seq.id}/${s.id}/" class="klein">zum Schritt</a></li>`).join("");
   const boss = seq.schritte.flatMap(s => s.quiz.slice(0, 1).map(q => ({ ...q, frage: `[${s.nr}] ${q.frage}` })));
   const fakten = (seq.faktencheck ?? []).map(f => `<tr><td>${md(f.aussage)}</td><td>${/^https?:/.test(f.quelle) ? `<a href="${esc(f.quelle)}" target="_blank" rel="noopener">Quelle</a>` : md(f.quelle)}</td><td>${esc(f.status)}</td></tr>`).join("");
   const inhalt = `<section class="hero">
@@ -218,9 +261,12 @@ function sequenzSeite(seq: SeqDatei, quellen: Quellen) {
   <p class="ki-zeile"><span class="ki-marke">KI</span> Mit KI erstellt, fachlich gegengeprüft. <a href="/physik/#entstehung">Mehr dazu</a></p>
   <div class="ziel"><p class="ziel-label">Das kann ich am Ende der Lernsequenz</p><p>${md(seq.ziel)}</p></div>
   <p class="fortschritt" data-fortschritt="${seq.id}" data-gesamt="${seq.schritte.length}"></p>
-  <nav class="schritt-nav" aria-label="Lernschritte">${nav}</nav>
+  <p><a class="knopf" data-weiter-lernen="${seq.id}" href="/physik/${seq.id}/${seq.schritte[0].id}/">Los geht's mit Schritt ${seq.schritte[0].nr}</a></p>
 </section>
-${seq.schritte.map(s => schrittSection(seq, s, quellen.webcodes)).join("\n")}
+<section aria-labelledby="lernschritte-h">
+  <h2 id="lernschritte-h">Lernschritte</h2>
+  <ol class="schritt-karten">${karten}</ol>
+</section>
 <section class="abschluss" id="selbstcheck">
   <h2>Selbstcheck</h2>
   <p>Hak ab, was du wirklich kannst. Ehrlich, das sieht nur dein Browser.</p>
@@ -228,7 +274,8 @@ ${seq.schritte.map(s => schrittSection(seq, s, quellen.webcodes)).join("\n")}
   ${quizBlock(boss, `${seq.id}-boss`, "Boss-Fight: je eine Frage aus jedem Lernschritt")}
   <p><a class="knopf" href="/physik/karten/?seq=${seq.id}">Lernkarten zu ${esc(seq.titel)} üben</a></p>
 </section>
-${fakten ? `<section class="abschluss" id="faktencheck"><h2>Quellen und Faktencheck</h2><p class="klein">Jede Zahl und jede Jahreszahl auf dieser Seite ist hier mit Quelle geprüft. Im Buch: ${esc(seq.buchquellen.join("; "))}.</p><div class="tabelle"><table><thead><tr><th>Aussage</th><th>Quelle</th><th>Status</th></tr></thead><tbody>${fakten}</tbody></table></div></section>` : ""}`;
+${fakten ? `<section class="abschluss" id="faktencheck"><details class="kasten"><summary>Quellen und Faktencheck (${(seq.faktencheck ?? []).length} geprüfte Aussagen)</summary><p class="klein">Jede Zahl und jede Jahreszahl dieser Lernsequenz ist hier mit Quelle geprüft. Im Buch: ${esc(seq.buchquellen.join("; "))}.</p><div class="tabelle"><table><thead><tr><th>Aussage</th><th>Quelle</th><th>Status</th></tr></thead><tbody>${fakten}</tbody></table></div></details></section>` : ""}
+<script>/* alte Links der Form #s3 auf die neue Schrittseite umlenken */(function(){var m=location.hash.match(/^#(s\\d+)$/);if(m)location.replace("./"+m[1]+"/");})();</script>`;
   return seite({ titel: `${seq.titel} · Physik · Oskars Fachunterlage`, beschreibung: seq.untertitel, aktiv: "", inhalt });
 }
 
@@ -275,13 +322,19 @@ function glossarSeite(seqs: SeqDatei[]) {
     let id = slug(b.begriff);
     if (gesehen.has(id)) id = `${id}-${b.seq.id}`;
     gesehen.add(id);
-    return `<div class="glossar-eintrag" id="${id}" data-such="${esc(b.begriff.toLowerCase())}">
+    const c = b.begriff[0].toUpperCase();
+    const anker = gesehen.has("b-" + c) ? "" : `<span class="az-anker" id="b-${c}"></span>`;
+    gesehen.add("b-" + c);
+    return `${anker}<div class="glossar-eintrag" id="${id}" data-such="${esc(b.begriff.toLowerCase())}">
   <dt>${esc(b.begriff)}</dt>
-  <dd><p>${md(b.definition)}</p><p class="klein"><strong>Beispiel:</strong> ${md(b.beispiel)}</p><p class="klein"><a href="/physik/${b.seq.id}/#${b.schritt.id}">${esc(b.seq.titel)}, Lernschritt ${b.schritt.nr}: ${esc(b.schritt.titel)}</a></p></dd>
+  <dd><p>${md(b.definition)}</p><p class="klein"><strong>Beispiel:</strong> ${md(b.beispiel)}</p><p class="klein"><a href="/physik/${b.seq.id}/${b.schritt.id}/">${esc(b.seq.titel)}, Lernschritt ${b.schritt.nr}: ${esc(b.schritt.titel)}</a></p></dd>
 </div>`;
   }).join("");
+  const buchst = [...new Set(alle.map(b => b.begriff[0].toUpperCase()))];
+  const az = `<nav class="az" aria-label="Nach Anfangsbuchstabe springen">${buchst.map(c => `<a href="#b-${c}">${c}</a>`).join("")}</nav>`;
   const inhalt = `<section class="hero"><p class="kicker">Nachschlagen</p><h1>Glossar</h1><p class="untertitel">${alle.length} Fachbegriffe aus allen Lernsequenzen, von A bis Z.</p>
   <label class="suche"><span>Begriff suchen</span><input type="search" data-glossar-suche placeholder="z. B. Influenz"></label></section>
+<div class="glossar-kopf">${az}</div>
 <dl class="glossar">${eintraege}</dl>`;
   return seite({ titel: "Glossar · Physik · Oskars Fachunterlage", beschreibung: "Alle Physik-Fachbegriffe von Oskar an einem Ort.", aktiv: "glossar", inhalt });
 }
@@ -310,6 +363,8 @@ function kartenSeite(seqs: SeqDatei[]) {
     <button type="button" class="knopf zurueck" data-nochmal>Nochmal</button>
     <button type="button" class="knopf" data-gewusst>Gewusst</button>
   </div>
+  <p class="klein tasten-hinweis">Tastatur: Leertaste dreht um, Pfeil rechts heißt gewusst, Pfeil links heißt nochmal.</p>
+  <p class="klein wisch-hinweis">Umgedrehte Karte nach rechts wischen heißt gewusst, nach links heißt nochmal.</p>
   <p class="klein"><button type="button" class="linkknopf" data-reset>Fortschritt dieser Auswahl zurücksetzen</button></p>
 </section>`;
   const daten = `<script type="application/json" id="karten-daten">${JSON.stringify(karten).replace(/</g, "\\u003c")}</script>`;
@@ -353,7 +408,12 @@ for (const d of readdirSync(PHYSIK, { withFileTypes: true })) {
 }
 
 writeFileSync(join(PHYSIK, "index.html"), startSeite(seqs));
-for (const s of seqs) schreibe(s.id, sequenzSeite(s, quellen));
+for (const sq of seqs) {
+  schreibe(sq.id, sequenzSeite(sq));
+  const ids = new Set(sq.schritte.map(x => x.id));
+  for (const d of readdirSync(join(PHYSIK, sq.id), { withFileTypes: true })) if (d.isDirectory() && !ids.has(d.name)) rmSync(join(PHYSIK, sq.id, d.name), { recursive: true });
+  for (const st of sq.schritte) schreibe(`${sq.id}/${st.id}`, schrittSeite(sq, st, quellen.webcodes));
+}
 schreibe("glossar", glossarSeite(seqs));
 const k = kartenSeite(seqs);
 schreibe("karten", k.html);

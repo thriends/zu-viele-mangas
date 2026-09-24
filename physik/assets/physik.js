@@ -37,6 +37,26 @@
   });
   fortschrittZeigen();
 
+  // Häkchen in Schrittliste und Übersicht
+  function hakenZeigen() {
+    $$("[data-haken]").forEach(function (h) { h.classList.toggle("ist-fertig", !!ichkann[h.getAttribute("data-haken")]); });
+    // "Weiter lernen": erster Schritt, der noch nicht abgehakt ist
+    $$("[data-weiter-lernen]").forEach(function (a) {
+      var seq = a.getAttribute("data-weiter-lernen");
+      var offen = $$(".schritt-karte").map(function (k) { return k; }).filter(function (k) {
+        var h = k.querySelector("[data-haken]"); return h && !ichkann[h.getAttribute("data-haken")];
+      })[0];
+      var alleFertig = !offen && $$(".schritt-karte").length;
+      if (offen) {
+        var fertige = $$(".schritt-karte [data-haken]").filter(function (h) { return ichkann[h.getAttribute("data-haken")]; }).length;
+        a.href = offen.getAttribute("href");
+        a.textContent = (fertige ? "Weiter mit Schritt " : "Los geht's mit Schritt ") + offen.querySelector(".nr").textContent;
+      } else if (alleFertig) { a.href = "#selbstcheck"; a.textContent = "Alles abgehakt: ab zum Boss-Fight"; }
+    });
+  }
+  hakenZeigen();
+  $$("[data-ichkann]").forEach(function (box) { box.addEventListener("change", hakenZeigen); });
+
   // ---------- Video erst nach Klick (youtube-nocookie) ----------
   $$(".video-rahmen").forEach(function (r) {
     var knopf = r.querySelector(".video-start");
@@ -114,6 +134,50 @@
     zeichne();
   });
 
+  // ---------- Schrittliste als Blatt (Handy/Tablet) ----------
+  var auf = document.querySelector("[data-schrittliste-auf]");
+  if (auf) {
+    var hintergrund = null;
+    var zu = function () {
+      document.body.classList.remove("liste-offen");
+      auf.setAttribute("aria-expanded", "false");
+      if (hintergrund) { hintergrund.remove(); hintergrund = null; }
+      auf.focus();
+    };
+    auf.addEventListener("click", function () {
+      document.body.classList.add("liste-offen");
+      auf.setAttribute("aria-expanded", "true");
+      hintergrund = document.createElement("div");
+      hintergrund.className = "blatt-hintergrund";
+      hintergrund.addEventListener("click", zu);
+      document.body.appendChild(hintergrund);
+      var akt = document.querySelector('.schrittliste a[aria-current="page"]');
+      if (akt) akt.focus();
+    });
+    $$("[data-schrittliste-zu]").forEach(function (b) { b.addEventListener("click", zu); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && document.body.classList.contains("liste-offen")) zu(); });
+  }
+
+  // ---------- Sprungleiste folgt beim Scrollen ----------
+  var chips = $$(".abschnitt-nav .chip");
+  if (chips.length && "IntersectionObserver" in window) {
+    var leiste = document.querySelector(".abschnitt-scroll");
+    var markiere = function (id) {
+      chips.forEach(function (c) {
+        var an = c.getAttribute("href") === "#" + id;
+        if (an) { c.setAttribute("aria-current", "true"); leiste.scrollLeft = c.offsetLeft - (leiste.clientWidth - c.offsetWidth) / 2; }
+        else c.removeAttribute("aria-current");
+      });
+    };
+    var sichtbar = {};
+    var io = new IntersectionObserver(function (eintraege) {
+      eintraege.forEach(function (e) { sichtbar[e.target.id] = e.isIntersecting; });
+      var erster = $$(".abschnitt").filter(function (s) { return sichtbar[s.id]; })[0];
+      if (erster) markiere(erster.id);
+    }, { rootMargin: "-120px 0px -55% 0px" });
+    $$(".abschnitt").forEach(function (s) { io.observe(s); });
+  }
+
   // ---------- Glossar-Suche ----------
   var suche = document.querySelector("[data-glossar-suche]");
   if (suche) suche.addEventListener("input", function () {
@@ -172,6 +236,22 @@
       auswahl().forEach(function (k) { delete fach[k.id]; }); speicher.schreib("leitner", fach); naechste();
     });
     fSeq.addEventListener("change", naechste); fTyp.addEventListener("change", naechste);
+    document.addEventListener("keydown", function (e) {
+      if (e.target && /INPUT|SELECT|TEXTAREA/.test(e.target.tagName)) return;
+      if (e.key === "ArrowRight") { e.preventDefault(); box.querySelector("[data-gewusst]").click(); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); box.querySelector("[data-nochmal]").click(); }
+      else if (e.key === " " && e.target === document.body) { e.preventDefault(); umdrehen(); }
+    });
+    var startX = null, startY = null;
+    karte.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; startY = e.touches[0].clientY; }, { passive: true });
+    karte.addEventListener("touchend", function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX, dy = e.changedTouches[0].clientY - startY;
+      startX = null;
+      if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.5 && karte.classList.contains("umgedreht")) {
+        box.querySelector(dx > 0 ? "[data-gewusst]" : "[data-nochmal]").click();
+      }
+    });
     naechste();
   }
 })();

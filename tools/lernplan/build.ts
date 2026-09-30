@@ -1,18 +1,22 @@
-// Baut die Physik-Fachunterlage aus physik/inhalt/*.json nach physik/**/index.html.
-// Aufruf: bun run physik:build  (aus dem Repo-Stamm)
-// Eine neue Lernsequenz = neue Datei physik/inhalt/<id>.json nach tools/physik/types.ts. Dateien mit "_" am Anfang werden ignoriert.
+// Baut eine Fachunterlage aus <fach>/inhalt/*.json nach <fach>/**/index.html.
+// Aufruf: bun tools/lernplan/build.ts <fach>  (aus dem Repo-Stamm), z. B. bun run physik:build
+// Eine neue Lernsequenz = neue Datei <fach>/inhalt/<id>.json nach tools/lernplan/types.ts. Dateien mit "_" am Anfang werden ignoriert.
+// Neues Fach: Eintrag in tools/lernplan/faecher.ts plus <fach>/assets/<fach>.css und .js.
 
 import { readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import type { Sequenz, Schritt, Stufe, Video, Training, Quiz } from "./types";
+import { fachAusArgs } from "./faecher";
+
+const F = fachAusArgs();
 
 const ROOT = join(import.meta.dir, "..", "..");
-const PHYSIK = join(ROOT, "physik");
+const PHYSIK = join(ROOT, F.id);
 const INHALT = join(PHYSIK, "inhalt");
 
 // Inhaltskennung für CSS/JS, damit der Browser nach einem Update nicht die alte Fassung aus dem Cache nimmt
 const kennung = (f: string) => new Bun.CryptoHasher("sha1").update(readFileSync(join(PHYSIK, "assets", f))).digest("hex").slice(0, 8);
-const V_CSS = kennung("physik.css"), V_JS = kennung("physik.js");
+const V_CSS = kennung(`${F.id}.css`), V_JS = kennung(`${F.id}.js`);
 
 // ---------- Hilfen ----------
 
@@ -61,10 +65,10 @@ const icon = (k: string) => `<svg class="nav-icon" viewBox="0 0 24 24" aria-hidd
 
 function seite(opts: { titel: string; beschreibung: string; aktiv: string; inhalt: string; daten?: string; kontext?: string; klasse?: string }) {
   const nav = [
-    ["Start", "/physik/", "start"],
-    ["Glossar", "/physik/glossar/", "glossar"],
-    ["Karten", "/physik/karten/", "karten"],
-    ["Operatoren", "/physik/operatoren/", "operatoren"],
+    ["Start", `/${F.id}/`, "start"],
+    ["Glossar", `/${F.id}/glossar/`, "glossar"],
+    ["Karten", `/${F.id}/karten/`, "karten"],
+    ["Operatoren", `/${F.id}/operatoren/`, "operatoren"],
   ].map(([t, h, k]) => `<a href="${h}"${k === opts.aktiv ? ' aria-current="page"' : ""}>${icon(k)}<span>${t}</span></a>`).join("");
   return `<!doctype html>
 <html lang="de">
@@ -76,28 +80,28 @@ function seite(opts: { titel: string; beschreibung: string; aktiv: string; inhal
 <title>${esc(opts.titel)}</title>
 <meta name="description" content="${esc(opts.beschreibung)}">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="stylesheet" href="/physik/assets/physik.css?v=${V_CSS}">
+<link rel="stylesheet" href="/${F.id}/assets/${F.id}.css?v=${V_CSS}">
 </head>
 <body class="${opts.klasse ?? ""}">
 <a class="skip" href="#inhalt">Zum Inhalt</a>
 <header class="topbar">
   <div class="topbar-inner">
-    <a class="marke" href="/physik/"><span class="blitz" aria-hidden="true">⚡</span><span>Physik<span class="dim"> · Oskars Fachunterlage</span></span></a>
+    <a class="marke" href="/${F.id}/"><span class="blitz" aria-hidden="true">${F.marke}</span><span>${F.name}<span class="dim"> · Oskars Fachunterlage</span></span></a>
     ${opts.kontext ?? ""}
-    <nav class="hauptnav" aria-label="Physik">${nav}</nav>
+    <nav class="hauptnav" aria-label="${F.name}">${nav}</nav>
   </div>
 </header>
-<nav class="tabbar" aria-label="Physik">${nav}</nav>
+<nav class="tabbar" aria-label="${F.name}">${nav}</nav>
 <main id="inhalt">
 ${opts.inhalt}
 </main>
 <footer class="fuss">
-  <p class="ki-hinweis"><span class="ki-marke">KI</span> Texte, Aufgaben, Quizfragen und Skizzen dieser Unterlage wurden mit KI erstellt (Claude von Anthropic) und von einem zweiten KI-Modell fachlich gegengeprüft. Fehler sind trotzdem möglich. Im Zweifel gilt, was Lehrkraft und Schulbuch sagen. <a href="/physik/#entstehung">Wie die Unterlage entsteht</a></p>
+  <p class="ki-hinweis"><span class="ki-marke">KI</span> Texte, Aufgaben, Quizfragen und Skizzen dieser Unterlage wurden mit KI erstellt (Claude von Anthropic) und von einem zweiten KI-Modell fachlich gegengeprüft. Fehler sind trotzdem möglich. Im Zweifel gilt, was Lehrkraft und Schulbuch sagen. <a href="/${F.id}/#entstehung">Wie die Unterlage entsteht</a></p>
   <p>Buchseiten sind nur Verweise. Videos und verlinkte Seiten stammen von ihren Anbietern und sind nicht mit KI erstellt.</p>
   <p><a href="/">zu viele mangas</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p>
 </footer>
 ${opts.daten ?? ""}
-<script src="/physik/assets/physik.js?v=${V_JS}" defer></script>
+<script src="/${F.id}/assets/${F.id}.js?v=${V_JS}" defer></script>
 </body>
 </html>
 `;
@@ -183,10 +187,10 @@ function schrittSeite(seq: SeqDatei, s: Schritt, webcodes: Quellen["webcodes"]) 
   const praxis = (["einfach", "mittel", "schwer"] as Stufe[]).map(st => {
     const ps = s.praxis.filter(p => p.stufe === st);
     if (!ps.length) return "";
-    return ps.map(p => `<article class="praxis stufe-${st}"><span class="badge stufe-${st}">${STUFE[st].label}</span><h5>${md(p.titel)}</h5><p>${md(p.phaenomen)}</p><details><summary>Physik dahinter</summary><p>${md(p.erklaerung)}</p></details></article>`).join("");
+    return ps.map(p => `<article class="praxis stufe-${st}"><span class="badge stufe-${st}">${STUFE[st].label}</span><h5>${md(p.titel)}</h5><p>${md(p.phaenomen)}</p><details><summary>${F.praxisDahinter}</summary><p>${md(p.erklaerung)}</p></details></article>`).join("");
   }).join("");
   const training = s.training.map((t, i) => trainingBlock(t, i, s.id)).join("");
-  const begriffe = s.begriffe.map(b => `<a class="chip" href="/physik/glossar/#${slug(b.begriff)}">${esc(b.begriff)}</a>`).join("");
+  const begriffe = s.begriffe.map(b => `<a class="chip" href="/${F.id}/glossar/#${slug(b.begriff)}">${esc(b.begriff)}</a>`).join("");
   const meta = [
     s.aufgabenImUnterricht.length ? `<span><strong>Im Unterricht:</strong> ${esc(s.aufgabenImUnterricht.join(", "))}</span>` : "",
     s.buchseiten.length ? `<span><strong>Im Buch:</strong> ${esc(s.buchseiten.join("; "))}</span>` : "",
@@ -197,20 +201,20 @@ function schrittSeite(seq: SeqDatei, s: Schritt, webcodes: Quellen["webcodes"]) 
   const abschnitte: [string, string][] = [["theorie", "Theorie"]];
   if (videos) abschnitte.push(["video", "Video"]);
   if (versuch) abschnitte.push(["versuch", "Versuch"]);
-  if (praxis) abschnitte.push(["praxis", "Physik in echt"]);
+  if (praxis) abschnitte.push(["praxis", F.praxisTitel]);
   if (training) abschnitte.push(["training", "Training"]);
   abschnitte.push(["kurz", "In kurz"]);
   if (s.quiz.length) abschnitte.push(["quiz", "Quiz"]);
   const abschnittNav = `<nav class="abschnitt-nav" aria-label="Abschnitte dieses Lernschritts"><div class="abschnitt-scroll">${abschnitte.map(([id, t]) => `<a class="chip" href="#${id}">${t}</a>`).join("")}</div></nav>`;
-  const liste = seq.schritte.map(x => `<li><a href="/physik/${seq.id}/${x.id}/"${x.id === s.id ? ' aria-current="page"' : ""}><span class="nr">${x.nr}</span><span class="titel">${esc(x.titel)}</span><span class="haken" data-haken="${seq.id}:${x.id}" aria-hidden="true">✓</span></a></li>`).join("");
+  const liste = seq.schritte.map(x => `<li><a href="/${F.id}/${seq.id}/${x.id}/"${x.id === s.id ? ' aria-current="page"' : ""}><span class="nr">${x.nr}</span><span class="titel">${esc(x.titel)}</span><span class="haken" data-haken="${seq.id}:${x.id}" aria-hidden="true">✓</span></a></li>`).join("");
   const seitenleiste = `<aside class="seitenleiste" id="schrittliste" aria-label="Lernschritte">
-    <div class="seitenleiste-kopf"><a class="zur-uebersicht" href="/physik/${seq.id}/">${esc(seq.titel)}</a><button type="button" class="schliessen" data-schrittliste-zu aria-label="Liste schließen">✕</button></div>
+    <div class="seitenleiste-kopf"><a class="zur-uebersicht" href="/${F.id}/${seq.id}/">${esc(seq.titel)}</a><button type="button" class="schliessen" data-schrittliste-zu aria-label="Liste schließen">✕</button></div>
     <ol class="schrittliste">${liste}</ol>
-    <a class="leiste-link" href="/physik/${seq.id}/#selbstcheck">Selbstcheck und Boss-Fight</a>
+    <a class="leiste-link" href="/${F.id}/${seq.id}/#selbstcheck">Selbstcheck und Boss-Fight</a>
   </aside>`;
   const blaettern = `<nav class="blaettern" aria-label="Weiter">
-    ${vor ? `<a class="blatt zurueck" href="/physik/${seq.id}/${vor.id}/"><span class="klein">Zurück</span><span>${vor.nr}. ${esc(vor.titel)}</span></a>` : `<a class="blatt zurueck" href="/physik/${seq.id}/"><span class="klein">Zurück</span><span>Übersicht</span></a>`}
-    ${nach ? `<a class="blatt weiter" href="/physik/${seq.id}/${nach.id}/"><span class="klein">Weiter</span><span>${nach.nr}. ${esc(nach.titel)}</span></a>` : `<a class="blatt weiter" href="/physik/${seq.id}/#selbstcheck"><span class="klein">Geschafft, weiter zum</span><span>Selbstcheck und Boss-Fight</span></a>`}
+    ${vor ? `<a class="blatt zurueck" href="/${F.id}/${seq.id}/${vor.id}/"><span class="klein">Zurück</span><span>${vor.nr}. ${esc(vor.titel)}</span></a>` : `<a class="blatt zurueck" href="/${F.id}/${seq.id}/"><span class="klein">Zurück</span><span>Übersicht</span></a>`}
+    ${nach ? `<a class="blatt weiter" href="/${F.id}/${seq.id}/${nach.id}/"><span class="klein">Weiter</span><span>${nach.nr}. ${esc(nach.titel)}</span></a>` : `<a class="blatt weiter" href="/${F.id}/${seq.id}/#selbstcheck"><span class="klein">Geschafft, weiter zum</span><span>Selbstcheck und Boss-Fight</span></a>`}
   </nav>`;
   const inhalt = `<div class="lern-layout">
   ${seitenleiste}
@@ -233,7 +237,7 @@ function schrittSeite(seq: SeqDatei, s: Schritt, webcodes: Quellen["webcodes"]) 
   </section>
   ${videos ? `<section id="video" class="abschnitt"><h2 class="block-h">Video</h2>${videos}${links.length ? `<h3 class="block-h klein-h">Zum Weiterklicken</h3><ul class="links">${links.join("")}</ul>` : ""}</section>` : ""}
   ${versuch ? `<section id="versuch" class="abschnitt">${versuch}</section>` : ""}
-  ${praxis ? `<section id="praxis" class="abschnitt"><h2 class="block-h">Physik in echt</h2><div class="praxis-grid">${praxis}</div></section>` : ""}
+  ${praxis ? `<section id="praxis" class="abschnitt"><h2 class="block-h">${F.praxisTitel}</h2><div class="praxis-grid">${praxis}</div></section>` : ""}
   ${training ? `<section id="training" class="abschnitt"><h2 class="block-h">Training</h2><p class="klein">Erst selbst probieren, dann Tipp 1, dann Tipp 2. Den Lösungsweg erst ganz zum Schluss.</p><div class="trainings">${training}</div></section>` : ""}
   <section id="kurz" class="abschnitt"><aside class="kurz"><p class="kurz-label">In kurz</p><ul>${s.kurzfassung.map(k => `<li>${md(k)}</li>`).join("")}</ul></aside></section>
   ${s.quiz.length ? `<section id="quiz" class="abschnitt">${quizBlock(s.quiz, `${s.id}-quiz`, "Schnellcheck")}</section>` : ""}
@@ -242,27 +246,35 @@ function schrittSeite(seq: SeqDatei, s: Schritt, webcodes: Quellen["webcodes"]) 
   </article>
 </div>`;
   const kontext = `<button type="button" class="schritt-knopf" data-schrittliste-auf aria-controls="schrittliste" aria-expanded="false"><span class="klein">${esc(seq.titel)}</span><span>Schritt ${s.nr} <span aria-hidden="true">▾</span></span></button>`;
-  return seite({ titel: `${s.titel} · ${seq.titel} · Physik`, beschreibung: s.leitfrage, aktiv: "", inhalt, kontext, klasse: "hat-schritte" });
+  return seite({ titel: `${s.titel} · ${seq.titel} · ${F.name}`, beschreibung: s.leitfrage, aktiv: "", inhalt, kontext, klasse: "hat-schritte" });
 }
 
 function sequenzSeite(seq: SeqDatei) {
-  const karten = seq.schritte.map(s => `<li><a class="schritt-karte" href="/physik/${seq.id}/${s.id}/">
+  const karten = seq.schritte.map(s => `<li><a class="schritt-karte" href="/${F.id}/${seq.id}/${s.id}/">
     <span class="nr">${s.nr}</span>
     <span class="text"><span class="titel">${esc(s.titel)}</span><span class="frage">${md(s.leitfrage)}</span></span>
     <span class="haken" data-haken="${seq.id}:${s.id}" aria-label="abgehakt">✓</span>
   </a></li>`).join("");
-  const selbstcheck = seq.schritte.map(s => `<li><label class="ichkann"><input type="checkbox" data-ichkann="${seq.id}:${s.id}"> <span>${md(s.ichKann)}</span></label> <a href="/physik/${seq.id}/${s.id}/" class="klein">zum Schritt</a></li>`).join("");
+  const selbstcheck = seq.schritte.map(s => `<li><label class="ichkann"><input type="checkbox" data-ichkann="${seq.id}:${s.id}"> <span>${md(s.ichKann)}</span></label> <a href="/${F.id}/${seq.id}/${s.id}/" class="klein">zum Schritt</a></li>`).join("");
   const boss = seq.schritte.flatMap(s => s.quiz.slice(0, 1).map(q => ({ ...q, frage: `[${s.nr}] ${q.frage}` })));
+  // Lernzettel: Zeilen mit Präfix "s3: " werden unter der Überschrift ihres Lernschritts gruppiert
+  const zettelGruppen = new Map<string, string[]>();
+  for (const z of seq.lernzettel ?? []) {
+    const m = z.match(/^(s\d+):\s*/);
+    const key = m && seq.schritte.some(x => x.id === m[1]) ? m[1] : "";
+    zettelGruppen.set(key, [...(zettelGruppen.get(key) ?? []), m ? z.slice(m[0].length) : z]);
+  }
+  const lernzettel = zettelGruppen.size ? `<section class="abschluss lernzettel" id="lernzettel"><h2>Das musst du können</h2><p class="klein">Der Lernzettel für die Wiederholung. Erst jeden Satz abdecken und selbst sagen, dann nachlesen.</p>${[...zettelGruppen].map(([k, zeilen]) => { const st = seq.schritte.find(x => x.id === k); return `${st ? `<h3><a href="/${F.id}/${seq.id}/${st.id}/">${st.nr}. ${esc(st.titel)}</a></h3>` : ""}<ul>${zeilen.map(z => `<li>${md(z)}</li>`).join("")}</ul>`; }).join("")}</section>` : "";
   const fakten = (seq.faktencheck ?? []).map(f => `<tr><td>${md(f.aussage)}</td><td>${/^https?:/.test(f.quelle) ? `<a href="${esc(f.quelle)}" target="_blank" rel="noopener">Quelle</a>` : md(f.quelle)}</td><td>${esc(f.status)}</td></tr>`).join("");
   const inhalt = `<section class="hero">
   <p class="kicker">Klasse ${seq.klasse} · ${esc(seq.zeitraum)}</p>
   <h1>${md(seq.titel)}</h1>
   <p class="untertitel">${md(seq.untertitel)}</p>
-  <p class="ki-zeile"><span class="ki-marke">KI</span> Mit KI erstellt, fachlich gegengeprüft. <a href="/physik/#entstehung">Mehr dazu</a></p>
+  <p class="ki-zeile"><span class="ki-marke">KI</span> Mit KI erstellt, fachlich gegengeprüft. <a href="/${F.id}/#entstehung">Mehr dazu</a></p>
   <div class="ziel"><p class="ziel-label">Das kann ich am Ende der Lernsequenz</p><p>${md(seq.ziel)}</p></div>
   <p class="fortschritt" data-fortschritt="${seq.id}" data-gesamt="${seq.schritte.length}"></p>
-  <p><a class="knopf" data-weiter-lernen="${seq.id}" href="/physik/${seq.id}/${seq.schritte[0].id}/">Los geht's mit Schritt ${seq.schritte[0].nr}</a></p>
-</section>
+  <p><a class="knopf" data-weiter-lernen="${seq.id}" href="/${F.id}/${seq.id}/${seq.schritte[0].id}/">Los geht's mit Schritt ${seq.schritte[0].nr}</a></p>
+</section>${lernzettel}
 <section aria-labelledby="lernschritte-h">
   <h2 id="lernschritte-h">Lernschritte</h2>
   <ol class="schritt-karten">${karten}</ol>
@@ -272,17 +284,17 @@ function sequenzSeite(seq: SeqDatei) {
   <p>Hak ab, was du wirklich kannst. Ehrlich, das sieht nur dein Browser.</p>
   <ul class="selbstcheck">${selbstcheck}</ul>
   ${quizBlock(boss, `${seq.id}-boss`, "Boss-Fight: je eine Frage aus jedem Lernschritt")}
-  <p><a class="knopf" href="/physik/karten/?seq=${seq.id}">Lernkarten zu ${esc(seq.titel)} üben</a></p>
+  <p><a class="knopf" href="/${F.id}/karten/?seq=${seq.id}">Lernkarten zu ${esc(seq.titel)} üben</a></p>
 </section>
 ${fakten ? `<section class="abschluss" id="faktencheck"><details class="kasten"><summary>Quellen und Faktencheck (${(seq.faktencheck ?? []).length} geprüfte Aussagen)</summary><p class="klein">Jede Zahl und jede Jahreszahl dieser Lernsequenz ist hier mit Quelle geprüft. Im Buch: ${esc(seq.buchquellen.join("; "))}.</p><div class="tabelle"><table><thead><tr><th>Aussage</th><th>Quelle</th><th>Status</th></tr></thead><tbody>${fakten}</tbody></table></div></details></section>` : ""}
 <script>/* alte Links der Form #s3 auf die neue Schrittseite umlenken */(function(){var m=location.hash.match(/^#(s\\d+)$/);if(m)location.replace("./"+m[1]+"/");})();</script>`;
-  return seite({ titel: `${seq.titel} · Physik · Oskars Fachunterlage`, beschreibung: seq.untertitel, aktiv: "", inhalt });
+  return seite({ titel: `${seq.titel} · ${F.name} · Oskars Fachunterlage`, beschreibung: seq.untertitel, aktiv: "", inhalt });
 }
 
 // ---------- Sammelseiten ----------
 
 function startSeite(seqs: SeqDatei[]) {
-  const karten = seqs.map(s => `<a class="seq-karte" href="/physik/${s.id}/">
+  const karten = seqs.map(s => `<a class="seq-karte" href="/${F.id}/${s.id}/">
   <span class="kicker">Klasse ${s.klasse} · ${esc(s.zeitraum)}</span>
   <span class="seq-titel">${esc(s.titel)}</span>
   <span class="seq-unter">${esc(s.untertitel)}</span>
@@ -290,8 +302,8 @@ function startSeite(seqs: SeqDatei[]) {
   <span class="fortschritt" data-fortschritt="${s.id}" data-gesamt="${s.schritte.length}"></span>
 </a>`).join("");
   const inhalt = `<section class="hero">
-  <p class="kicker">Oskars Physik</p>
-  <h1>Alles, was du in Physik schon gecheckt hast.</h1>
+  <p class="kicker">${F.startKicker}</p>
+  <h1>${F.startH1}</h1>
   <p class="untertitel">Jede Lernsequenz landet hier. Glossar und Lernkarten wachsen mit, damit du in Klasse 9 noch findest, was du in Klasse 7 gelernt hast.</p>
 </section>
 <section class="seq-liste" aria-label="Lernsequenzen">${karten}</section>
@@ -307,11 +319,11 @@ function startSeite(seqs: SeqDatei[]) {
   <ol class="anleitung">
     <li><strong>Lesen:</strong> Pro Lernschritt erst Einstieg und Theorie, dann das Video.</li>
     <li><strong>Machen:</strong> Trainingsaufgaben selbst lösen. Tipps nur, wenn du festhängst.</li>
-    <li><strong>Abrufen:</strong> Jeden Tag ein paar <a href="/physik/karten/">Lernkarten</a>. Das bringt mehr als nochmal lesen.</li>
+    <li><strong>Abrufen:</strong> Jeden Tag ein paar <a href="/${F.id}/karten/">Lernkarten</a>. Das bringt mehr als nochmal lesen.</li>
     <li><strong>Checken:</strong> Am Ende den Selbstcheck und den Boss-Fight.</li>
   </ol>
 </section>`;
-  return seite({ titel: "Physik · Oskars Fachunterlage", beschreibung: "Oskars eigene Physik-Fachunterlage mit Theorie, Praxis, Videos und Lernkarten.", aktiv: "start", inhalt });
+  return seite({ titel: `${F.name} · Oskars Fachunterlage`, beschreibung: F.startBeschreibung, aktiv: "start", inhalt });
 }
 
 function glossarSeite(seqs: SeqDatei[]) {
@@ -327,16 +339,16 @@ function glossarSeite(seqs: SeqDatei[]) {
     gesehen.add("b-" + c);
     return `${anker}<div class="glossar-eintrag" id="${id}" data-such="${esc(b.begriff.toLowerCase())}">
   <dt>${esc(b.begriff)}</dt>
-  <dd><p>${md(b.definition)}</p><p class="klein"><strong>Beispiel:</strong> ${md(b.beispiel)}</p><p class="klein"><a href="/physik/${b.seq.id}/${b.schritt.id}/">${esc(b.seq.titel)}, Lernschritt ${b.schritt.nr}: ${esc(b.schritt.titel)}</a></p></dd>
+  <dd><p>${md(b.definition)}</p><p class="klein"><strong>Beispiel:</strong> ${md(b.beispiel)}</p><p class="klein"><a href="/${F.id}/${b.seq.id}/${b.schritt.id}/">${esc(b.seq.titel)}, Lernschritt ${b.schritt.nr}: ${esc(b.schritt.titel)}</a></p></dd>
 </div>`;
   }).join("");
   const buchst = [...new Set(alle.map(b => b.begriff[0].toUpperCase()))];
   const az = `<nav class="az" aria-label="Nach Anfangsbuchstabe springen">${buchst.map(c => `<a href="#b-${c}">${c}</a>`).join("")}</nav>`;
   const inhalt = `<section class="hero"><p class="kicker">Nachschlagen</p><h1>Glossar</h1><p class="untertitel">${alle.length} Fachbegriffe aus allen Lernsequenzen, von A bis Z.</p>
-  <label class="suche"><span>Begriff suchen</span><input type="search" data-glossar-suche placeholder="z. B. Influenz"></label></section>
+  <label class="suche"><span>Begriff suchen</span><input type="search" data-glossar-suche placeholder="${F.glossarBeispiel}"></label></section>
 <div class="glossar-kopf">${az}</div>
 <dl class="glossar">${eintraege}</dl>`;
-  return seite({ titel: "Glossar · Physik · Oskars Fachunterlage", beschreibung: "Alle Physik-Fachbegriffe von Oskar an einem Ort.", aktiv: "glossar", inhalt });
+  return seite({ titel: `Glossar · ${F.name} · Oskars Fachunterlage`, beschreibung: `Alle ${F.name}-Fachbegriffe von Oskar an einem Ort.`, aktiv: "glossar", inhalt });
 }
 
 function kartenSeite(seqs: SeqDatei[]) {
@@ -368,7 +380,7 @@ function kartenSeite(seqs: SeqDatei[]) {
   <p class="klein"><button type="button" class="linkknopf" data-reset>Fortschritt dieser Auswahl zurücksetzen</button></p>
 </section>`;
   const daten = `<script type="application/json" id="karten-daten">${JSON.stringify(karten).replace(/</g, "\\u003c")}</script>`;
-  return { html: seite({ titel: "Lernkarten · Physik · Oskars Fachunterlage", beschreibung: "Lernkarten über alle Physik-Sequenzen.", aktiv: "karten", inhalt, daten }), anzahl: karten.length };
+  return { html: seite({ titel: `Lernkarten · ${F.name} · Oskars Fachunterlage`, beschreibung: `Lernkarten über alle ${F.name}-Sequenzen.`, aktiv: "karten", inhalt, daten }), anzahl: karten.length };
 }
 
 interface Operator { wort: string; afb: string; bedeutung: string; beispielAufgabe: string; soKlingtEsGut: string; typischerFehler: string }
@@ -384,7 +396,7 @@ function operatorenSeite(ops: Operator[]) {
   <p class="untertitel">Das erste Wort einer Aufgabe sagt dir, was du liefern musst. „Nenne“ will eine Liste, „beurteile“ will ein Urteil mit Gründen. Wer das verwechselt, verschenkt Punkte.</p>
   <p class="klein">AFB I: wiedergeben · AFB II: anwenden und erklären · AFB III: beurteilen und übertragen</p></section>
 <section class="operatoren">${reihen}</section>`;
-  return seite({ titel: "Operatoren · Physik · Oskars Fachunterlage", beschreibung: "Was nenne, erkläre, beurteile in Aufgaben bedeuten.", aktiv: "operatoren", inhalt });
+  return seite({ titel: `Operatoren · ${F.name} · Oskars Fachunterlage`, beschreibung: "Was nenne, erkläre, beurteile in Aufgaben bedeuten.", aktiv: "operatoren", inhalt });
 }
 
 // ---------- Lauf ----------
@@ -419,4 +431,4 @@ const k = kartenSeite(seqs);
 schreibe("karten", k.html);
 schreibe("operatoren", operatorenSeite(ops));
 
-console.log(`physik:build · ${seqs.length} Sequenz(en): ${seqs.map(s => s.id).join(", ")} · ${k.anzahl} Karten · ${ops.length} Operatoren`);
+console.log(`${F.id}:build · ${seqs.length} Sequenz(en): ${seqs.map(s => s.id).join(", ")} · ${k.anzahl} Karten · ${ops.length} Operatoren`);

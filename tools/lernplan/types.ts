@@ -1,4 +1,4 @@
-// Datenformat der Physik-Fachunterlage. Eine Lernsequenz = eine JSON-Datei in physik/inhalt/.
+// Datenformat der Fachunterlagen (Physik, Latein, ...). Eine Lernsequenz = eine JSON-Datei in physik/inhalt/.
 // Textfelder dürfen **fett** und *kursiv* enthalten, sonst reiner Text (kein HTML).
 
 export type Stufe = "einfach" | "mittel" | "schwer";
@@ -11,6 +11,7 @@ export interface Sequenz {
   untertitel: string;         // ein Teenager-tauglicher Satz
   ziel: string;               // "Das kann ich am Ende der Lernsequenz" wörtlich aus dem Lernplan
   buchquellen: string[];      // nur Verweise, z. B. "Cornelsen S. 392–397"
+  lernzettel?: string[];      // optional: "Das musst du können", knappe Sätze für die Wiederholung vor dem Test
   schritte: Schritt[];
 }
 

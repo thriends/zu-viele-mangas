@@ -2,6 +2,7 @@
   "name": "zu-viele-mangas",
   "private": true,
   "scripts": {
-    "physik:build": "bun tools/physik/build.ts"
+    "physik:build": "bun tools/lernplan/build.ts physik",
+    "latein:build": "bun tools/lernplan/build.ts latein"
   }
 }

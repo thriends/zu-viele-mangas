@@ -1,1456 +1,1456 @@
 {
- "id": "gallien",
- "titel": "Gallien und die Kelten",
- "klasse": 7,
- "zeitraum": "Herbst 2026",
- "untertitel": "Wer die Gallier wirklich waren, was ein Druide alles konnte und wie viel Wahrheit in Asterix steckt.",
- "ziel": "Ich kann erklären, wer die Kelten und die Gallier waren, ihre Lebensweise und die Rolle des Druiden beschreiben, die römische Eroberung Galliens mit den wichtigsten Daten einordnen und darstellen, was von der keltischen Kultur geblieben ist.",
- "buchquellen": [
-  "Lehrbuch Lektion 10, Römischer Alltag III: Galliens Welt",
-  "Buchseite: Celtae oder Galli, eine europäische Hochkultur"
- ],
- "schritte": [
-  {
-   "id": "s0",
-   "nr": 0,
-   "titel": "Celtae und Galli: wer ist wer?",
-   "leitfrage": "Warum heißen dieselben Menschen einmal Kelten und einmal Gallier?",
-   "ichKann": "erklären, wer die Kelten und wer die Gallier sind und wo Gallien lag.",
-   "aufgabenImUnterricht": [],
-   "buchseiten": [
+  "id": "gallien",
+  "titel": "Gallien und die Kelten",
+  "klasse": 7,
+  "zeitraum": "Herbst 2026",
+  "untertitel": "Wer die Gallier wirklich waren, was ein Druide alles konnte und wie viel Wahrheit in Asterix steckt.",
+  "ziel": "Ich kann erklären, wer die Kelten und die Gallier waren, ihre Lebensweise und die Rolle des Druiden beschreiben, die römische Eroberung Galliens mit den wichtigsten Daten einordnen und darstellen, was von der keltischen Kultur geblieben ist.",
+  "buchquellen": [
     "Lehrbuch Lektion 10, Römischer Alltag III: Galliens Welt",
     "Buchseite: Celtae oder Galli, eine europäische Hochkultur"
-   ],
-   "einstieg": "Kelten, Gallier, *Celtae*, *Galli*: klingt nach vier verschiedenen Völkern, ist aber im Kern eine Sache mit zwei Namen. Wenn du das einmal sauber sortiert hast, ist der Rest vom Test deutlich entspannter.",
-   "theorie": [
+  ],
+  "schritte": [
     {
-     "ueberschrift": "Ein Volk, zwei Namen",
-     "text": "Die **Kelten** waren keine einheitliche Nation, sondern viele Stämme mit ähnlicher Sprache, Religion und Kultur. Sie lebten in weiten Teilen Europas. Die Römer nannten die Kelten, die in Gallien lebten, **Gallier** (lateinisch *Galli*). Kelten (*Celtae*) ist also der Name der Menschen selbst, Gallier ist der Name, den ihnen die Römer gaben."
+      "id": "s0",
+      "nr": 0,
+      "titel": "Celtae und Galli: wer ist wer?",
+      "leitfrage": "Warum heißen dieselben Menschen einmal Kelten und einmal Gallier?",
+      "ichKann": "erklären, wer die Kelten und wer die Gallier sind und wo Gallien lag.",
+      "aufgabenImUnterricht": [],
+      "buchseiten": [
+        "Lehrbuch Lektion 10, Römischer Alltag III: Galliens Welt",
+        "Buchseite: Celtae oder Galli, eine europäische Hochkultur"
+      ],
+      "einstieg": "Kelten, Gallier, *Celtae*, *Galli*: klingt nach vier verschiedenen Völkern, ist aber im Kern eine Sache mit zwei Namen. Wenn du das einmal sauber sortiert hast, ist der Rest vom Test deutlich entspannter.",
+      "theorie": [
+        {
+          "ueberschrift": "Ein Volk, zwei Namen",
+          "text": "Die **Kelten** waren keine einheitliche Nation, sondern viele Stämme mit ähnlicher Sprache, Religion und Kultur. Sie lebten in weiten Teilen Europas. Die Römer nannten die Kelten, die in Gallien lebten, **Gallier** (lateinisch *Galli*). Kelten (*Celtae*) ist also der Name der Menschen selbst, Gallier ist der Name, den ihnen die Römer gaben."
+        },
+        {
+          "ueberschrift": "Wo lag Gallien?",
+          "text": "**Gallien** (lateinisch *Gallia*) ist das Gebiet, das ungefähr dem **heutigen Frankreich** entspricht. Vor der römischen Eroberung lebten dort vorwiegend Kelten."
+        },
+        {
+          "ueberschrift": "Was Caesar dazu schreibt",
+          "text": "Gaius Iulius Caesar beginnt seinen Bericht über den Gallischen Krieg mit dem Satz *Gallia est omnis divisa in partes tres*: Ganz Gallien ist in drei Teile geteilt. Über einen dieser Teile schreibt er, die Bewohner hießen *ipsorum lingua Celtae, nostra Galli*: in ihrer eigenen Sprache Kelten, in unserer Gallier. Genau diese Namensfrage bringt auch dein Buch in der Überschrift auf den Punkt: *Celtae* oder *Galli*."
+        },
+        {
+          "ueberschrift": "Eine europäische Hochkultur",
+          "text": "Dein Buch nennt die Kelten eine **europäische Hochkultur**. Damit ist gemeint: Sie hatten befestigte Städte, Handwerk, Handel, eine ausgebildete Priesterschaft und eine eigene Religion. Die Römer stellten sie oft als unzivilisiert dar. Die Überschrift „Kulturloses Gallien?“ in deinem Buch ist deshalb als Frage gemeint, und die Antwort lautet: nein."
+        }
+      ],
+      "merke": [
+        "Die Kelten (*Celtae*) nannten sich selbst so; die Römer nannten die Kelten in Gallien Gallier (*Galli*).",
+        "Gallien (*Gallia*) entspricht ungefähr dem heutigen Frankreich. Vor der römischen Eroberung lebten dort vorwiegend Kelten."
+      ],
+      "skizzen": [],
+      "falle": [
+        {
+          "falsch": "Kelten und Gallier sind zwei verschiedene Völker, die gegeneinander kämpften.",
+          "richtig": "Gallier ist der römische Name für die Kelten, die in Gallien lebten. Es handelt sich um dieselben Menschen.",
+          "warum": "Zwei Namen klingen nach zwei Völkern. Der Unterschied liegt aber nur darin, wer spricht: die Kelten selbst oder die Römer."
+        },
+        {
+          "falsch": "Gallien ist ein altes Wort für Italien.",
+          "richtig": "Gallien entspricht ungefähr dem heutigen Frankreich. Italien war das Kernland der Römer.",
+          "warum": "Weil im Lateinunterricht alles mit Rom zu tun hat, verrutscht Gallien leicht nach Italien."
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Frankreich heißt auf Französisch La France",
+          "phaenomen": "Wer heute nach Frankreich fährt, fährt ungefähr in das alte Gallien.",
+          "erklaerung": "Gallien entspricht ungefähr dem heutigen Frankreich. Der Name Frankreich stammt allerdings nicht von den Galliern, sondern von den Franken, einem späteren germanischen Volk. Gallien ist also das Gebiet, nicht der heutige Staatsname."
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Deutschland, Germany, Allemagne",
+          "phaenomen": "Deutschland heißt auf Englisch Germany, auf Französisch Allemagne. Wir selbst sagen Deutschland.",
+          "erklaerung": "Genau wie bei *Celtae* und *Galli* haben Völker oft einen eigenen Namen und fremde Namen, die andere ihnen geben. Die Römer sagten *Galli*, die Menschen selbst nannten sich nach Caesar *Celtae*."
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Wer schreibt, bestimmt das Bild",
+          "phaenomen": "Fast alles, was wir schriftlich über die Gallier wissen, stammt von Griechen und Römern, vor allem von Caesar.",
+          "erklaerung": "Die Kelten selbst haben kaum schriftliche Texte hinterlassen. Deshalb sehen wir sie oft durch die Augen ihrer Gegner. Die Archäologie, also Ausgrabungen, hilft, dieses Bild zu prüfen. So erkennt man, dass die Kelten eine Hochkultur waren."
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Nenne",
+          "aufgabe": "Nenne den Namen, den sich die Kelten selbst gaben, und den Namen, den die Römer den Kelten in Gallien gaben. Nenne auch das heutige Land, das ungefähr Gallien entspricht.",
+          "tipp1": "Ein Name ist lateinisch *Celtae*, der andere *Galli*.",
+          "tipp2": "Gallien liegt westlich von Deutschland.",
+          "loesung": "Selbstbezeichnung: Kelten (*Celtae*). Römische Bezeichnung: Gallier (*Galli*). Gallien entspricht ungefähr dem heutigen Frankreich."
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Erkläre",
+          "aufgabe": "Erkläre, warum man sagen kann: Die meisten Bewohner Galliens waren Kelten, aber nicht alle Kelten lebten in Gallien.",
+          "tipp1": "Überlege, wo überall Kelten lebten.",
+          "tipp2": "Gallier nannten die Römer die Kelten, die in Gallien lebten.",
+          "loesung": "Kelten lebten in weiten Teilen Europas, zum Beispiel auch in Mitteleuropa und auf den Britischen Inseln. Gallier nannten die Römer die Kelten, die in Gallien, also ungefähr im heutigen Frankreich, lebten. Dort lebten vorwiegend Kelten, aber nicht nur. Deshalb waren die meisten Bewohner Galliens Kelten, aber nicht alle Kelten lebten in Gallien."
+        },
+        {
+          "stufe": "schwer",
+          "afb": "III",
+          "operator": "Beurteile",
+          "aufgabe": "Das Buch fragt: „Kulturloses Gallien?“ Beurteile diese Frage mit mindestens zwei Belegen aus diesem Kapitel.",
+          "tipp1": "Denke an Städte, Mauern, Priester und Religion.",
+          "tipp2": "Beachte auch, wer das Bild vom kulturlosen Gallien verbreitet hat.",
+          "loesung": "Die Frage ist mit Nein zu beantworten. Die Kelten lebten in über 100 befestigten Städten mit starken Mauern, sie hatten mit den Druiden Richter, Lehrer, Ärzte und Priester und eine eigene Religion. Das Bild vom kulturlosen Gallien stammt vor allem von römischen Autoren, die die Kelten als Gegner darstellten. Das Buch nennt die Kelten deshalb eine europäische Hochkultur."
+        }
+      ],
+      "kurzfassung": [
+        "Kelten (*Celtae*) ist der eigene Name, Gallier (*Galli*) der römische Name für die Kelten in Gallien.",
+        "Gallien (*Gallia*) entspricht ungefähr dem heutigen Frankreich.",
+        "Vor der römischen Eroberung lebten dort vorwiegend Kelten.",
+        "Das Buch nennt die Kelten eine europäische Hochkultur."
+      ],
+      "begriffe": [
+        {
+          "begriff": "Kelten (*Celtae*)",
+          "definition": "Viele Stämme mit ähnlicher Sprache, Religion und Kultur in weiten Teilen Europas. Kelten ist ihre Selbstbezeichnung.",
+          "beispiel": "Caesar: *qui ipsorum lingua Celtae, nostra Galli appellantur*."
+        },
+        {
+          "begriff": "Gallier (*Galli*)",
+          "definition": "Römischer Name für die Kelten, die in Gallien lebten.",
+          "beispiel": "Asterix und Obelix sind Gallier."
+        },
+        {
+          "begriff": "Gallien (*Gallia*)",
+          "definition": "Gebiet, das ungefähr dem heutigen Frankreich entspricht. Vor der römischen Eroberung lebten dort vorwiegend Kelten.",
+          "beispiel": "*Gallia est omnis divisa in partes tres.*"
+        },
+        {
+          "begriff": "Hochkultur",
+          "definition": "Eine weit entwickelte Kultur mit Städten, Handwerk, Religion und fester Ordnung. Das Buch bezeichnet die Kelten als europäische Hochkultur.",
+          "beispiel": "Überschrift im Buch: *Celtae* oder *Galli*: eine europäische Hochkultur."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Warum gibt es für dieselben Menschen zwei Namen?",
+          "antwort": "Kelten (*Celtae*) nannten sie sich selbst. Die Römer nannten die Kelten in Gallien Gallier (*Galli*). Der Name hängt also davon ab, wer spricht."
+        },
+        {
+          "frage": "Welchem heutigen Land entspricht Gallien ungefähr?",
+          "antwort": "Gallien entspricht ungefähr dem heutigen Frankreich."
+        },
+        {
+          "frage": "Wer lebte vor der römischen Eroberung in Gallien?",
+          "antwort": "Vorwiegend Kelten, die von den Römern Gallier genannt wurden."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Wie nannten die Römer die Kelten in Gallien?",
+          "optionen": [
+            "*Celtae*",
+            "*Galli*",
+            "*Germani*",
+            "*Britanni*"
+          ],
+          "richtig": 1,
+          "begruendung": "*Galli* ist der römische Name. *Celtae* ist die Selbstbezeichnung."
+        },
+        {
+          "frage": "Welchem heutigen Land entspricht Gallien ungefähr?",
+          "optionen": [
+            "Italien",
+            "Spanien",
+            "Frankreich",
+            "Irland"
+          ],
+          "richtig": 2,
+          "begruendung": "Gallien entspricht ungefähr dem heutigen Frankreich."
+        },
+        {
+          "frage": "Was meint das Buch mit der Frage „Kulturloses Gallien?“",
+          "optionen": [
+            "Die Gallier hatten wirklich keine Kultur.",
+            "Es stellt das römische Vorurteil in Frage; die Kelten waren eine Hochkultur.",
+            "Gallien war unbewohnt.",
+            "Nur die Römer brachten Städte nach Gallien."
+          ],
+          "richtig": 1,
+          "begruendung": "Das Buch nennt die Kelten eine europäische Hochkultur. Die Frage ist rhetorisch gemeint."
+        }
+      ]
     },
     {
-     "ueberschrift": "Wo lag Gallien?",
-     "text": "**Gallien** (lateinisch *Gallia*) ist das Gebiet, das ungefähr dem **heutigen Frankreich** entspricht. Vor der römischen Eroberung lebten dort vorwiegend Kelten."
+      "id": "s1",
+      "nr": 1,
+      "titel": "Die Kelten vor Rom",
+      "leitfrage": "Wie lebten die Kelten, bevor die Römer kamen, und woher wissen wir das?",
+      "ichKann": "die wichtigsten Daten der Kelten vor der römischen Eroberung nennen und am Zeitstrahl einordnen.",
+      "aufgabenImUnterricht": [],
+      "buchseiten": [
+        "Buchseite: Celtae oder Galli, eine europäische Hochkultur"
+      ],
+      "einstieg": "Bevor Caesar überhaupt geboren war, hatten die Kelten schon Städte, Fürstengräber und einmal fast Rom eingenommen. Drei Zahlen, dann sitzt dieser Teil: 600, 400, 387.",
+      "theorie": [
+        {
+          "ueberschrift": "Woher wir es wissen",
+          "text": "Die frühen Kelten haben keine Bücher hinterlassen. Was wir über sie wissen, zeigen vor allem **archäologische Ausgrabungen**: Reste von Mauern, Häusern, Gräbern und Fundstücken."
+        },
+        {
+          "ueberschrift": "Um 600 v. Chr.",
+          "text": "Schon **um 600 v. Chr.** lebten Kelten in **Mitteleuropa** zum Teil in **befestigten Städten**. Ihre Anführer bestatteten sie in **Hügelgräbern**, die man weithin sehen konnte. Ein Hügelgrab ist ein Grab, über dem ein großer Erdhügel aufgeschüttet wurde."
+        },
+        {
+          "ueberschrift": "Ab 400 v. Chr.: Wanderungen",
+          "text": "**Ab 400 v. Chr.** wanderten viele Kelten weit nach **Süden und Osten**. So kamen sie auch nach Italien."
+        },
+        {
+          "ueberschrift": "387 v. Chr.: Rom in Gefahr",
+          "text": "Im Jahr **387 v. Chr.** sollen Kelten **Rom beinahe erobert** haben. Das Buch schreibt „sollen“, weil wir dieses Ereignis nur aus späteren römischen Berichten kennen. Für die Römer blieb es lange eine schlimme Erinnerung."
+        },
+        {
+          "ueberschrift": "Wichtig: v. Chr. zählt rückwärts",
+          "text": "Bei Jahreszahlen vor Christi Geburt ist die größere Zahl das frühere Jahr. 600 v. Chr. liegt also vor 400 v. Chr., und 400 v. Chr. liegt vor 387 v. Chr."
+        }
+      ],
+      "merke": [
+        "Um 600 v. Chr. lebten Kelten in Mitteleuropa zum Teil in befestigten Städten und bestatteten ihre Anführer in weithin sichtbaren Hügelgräbern.",
+        "Ab 400 v. Chr. wanderten viele Kelten nach Süden und Osten; 387 v. Chr. sollen sie Rom beinahe erobert haben.",
+        "Vor Christi Geburt gilt: größere Zahl heißt früheres Jahr."
+      ],
+      "skizzen": [
+        {
+          "titel": "Zeitstrahl: Kelten und Römer",
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 760 230\" font-family=\"inherit\"><line x1=\"20\" y1=\"115\" x2=\"740\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M740,115 L728,108 L728,122 z\" fill=\"currentColor\"/><line x1=\"610\" y1=\"95\" x2=\"610\" y2=\"135\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"4 3\"/><text x=\"610\" y=\"152\" font-size=\"13\" text-anchor=\"middle\" fill=\"currentColor\">Christi Geburt</text><text x=\"310\" y=\"222\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\" opacity=\"0.7\">nicht maßstabsgetreu</text><circle cx=\"40\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"40\" y1=\"109\" x2=\"40\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"40\" y=\"46\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">600 v. Chr.</text><text x=\"40\" y=\"64\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">Städte, Hügelgräber</text><circle cx=\"150\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"150\" y1=\"121\" x2=\"150\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"150\" y=\"178\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">ab 400 v. Chr.</text><text x=\"150\" y=\"196\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">Wanderung nach S und O</text><circle cx=\"250\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"250\" y1=\"109\" x2=\"250\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"250\" y=\"46\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">387 v. Chr.</text><text x=\"250\" y=\"64\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">Rom beinahe erobert</text><circle cx=\"360\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"360\" y1=\"121\" x2=\"360\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"360\" y=\"178\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">2. Jh. v. Chr.</text><text x=\"360\" y=\"196\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">provincia in Südgallien</text><circle cx=\"470\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"470\" y1=\"109\" x2=\"470\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"470\" y=\"46\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">52 v. Chr.</text><text x=\"470\" y=\"64\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">Vercingetorix</text><circle cx=\"555\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"555\" y1=\"121\" x2=\"555\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"555\" y=\"178\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">um 50 v. Chr.</text><text x=\"555\" y=\"196\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">Asterix (Comic)</text><circle cx=\"690\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"690\" y1=\"109\" x2=\"690\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"690\" y=\"46\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">um 130 n. Chr.</text><text x=\"690\" y=\"64\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">Epona-Relief, Trier</text></svg>",
+          "alt": "Zeitstrahl von links nach rechts: 600 v. Chr. Städte und Hügelgräber, ab 400 v. Chr. Wanderung nach Süden und Osten, 387 v. Chr. Rom beinahe erobert, 2. Jahrhundert v. Chr. provincia in Südgallien, 52 v. Chr. Vercingetorix, um 50 v. Chr. Asterix als Comicfigur, Christi Geburt, um 130 n. Chr. Epona-Relief in Trier. Nicht maßstabsgetreu."
+        }
+      ],
+      "falle": [
+        {
+          "falsch": "400 v. Chr. kommt nach 387 v. Chr., weil 400 größer ist.",
+          "richtig": "400 v. Chr. liegt 13 Jahre vor 387 v. Chr. Vor Christi Geburt wird rückwärts gezählt.",
+          "warum": "Wir sind gewohnt, dass größere Zahlen später kommen. Vor Christi Geburt ist es umgekehrt."
+        },
+        {
+          "falsch": "Die Kelten haben Rom 387 v. Chr. erobert.",
+          "richtig": "Laut Buch sollen sie Rom 387 v. Chr. **beinahe** erobert haben. Im Test genau so schreiben.",
+          "warum": "Das Wort „beinahe“ geht beim Lernen leicht verloren. Im Test ist es entscheidend."
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "titel": "Wikipedia: Kelten",
+          "url": "https://de.wikipedia.org/wiki/Kelten",
+          "typ": "Artikel",
+          "auftrag": "Suche im Artikel den Namen des keltischen Heerführers, der Rom belagerte. Schreibe einen Satz dazu. Das ist Zusatzwissen, im Test zählt die Buchfassung."
+        }
+      ],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Grabhügel im Wald",
+          "phaenomen": "In vielen Wäldern in Deutschland findet man flache, runde Hügel, die auf Wanderkarten als Hügelgrab eingetragen sind.",
+          "erklaerung": "Viele davon stammen aus keltischer oder noch früherer Zeit. Die Kelten bestatteten ihre Anführer in weithin sichtbaren Hügelgräbern. Man sollte sie nicht beschädigen, denn sie sind Bodendenkmäler."
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Ausgraben statt Nachlesen",
+          "phaenomen": "Archäologen legen Mauerreste und Gräber frei und bestimmen, wie alt sie sind.",
+          "erklaerung": "Weil die frühen Kelten keine Texte hinterlassen haben, sind Ausgrabungen die wichtigste Quelle. So weiß man, dass es um 600 v. Chr. schon befestigte keltische Städte gab."
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Eine alte Angst der Römer",
+          "phaenomen": "Römische Schriftsteller berichten noch Jahrhunderte später von dem Tag, an dem die Kelten fast Rom einnahmen.",
+          "erklaerung": "Das Ereignis von 387 v. Chr. prägte das römische Bild der Gallier als gefährliche Feinde. Das hilft zu verstehen, warum Caesar später so hart gegen Gallien vorging und warum römische Texte die Gallier oft negativ darstellen."
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Nenne",
+          "aufgabe": "Nenne zu jeder Jahreszahl das Ereignis: 600 v. Chr., ab 400 v. Chr., 387 v. Chr.",
+          "tipp1": "Städte und Gräber, Wanderung, Rom.",
+          "tipp2": "Die früheste Zahl gehört zu Städten und Hügelgräbern.",
+          "loesung": "600 v. Chr.: Kelten in Mitteleuropa leben zum Teil in befestigten Städten und bestatten ihre Anführer in Hügelgräbern. Ab 400 v. Chr.: Viele Kelten wandern nach Süden und Osten. 387 v. Chr.: Kelten sollen Rom beinahe erobert haben."
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Ordne",
+          "aufgabe": "Ordne zeitlich, beginnend mit dem frühesten Ereignis: Vercingetorix einigt die Stämme; Kelten erreichen beinahe Rom; befestigte keltische Städte in Mitteleuropa; Wanderung nach Süden und Osten beginnt.",
+          "tipp1": "Schreibe zuerst die Jahreszahlen dazu.",
+          "tipp2": "600, 400, 387, 52: vor Christus ist die größte Zahl die früheste.",
+          "loesung": "1. Befestigte keltische Städte in Mitteleuropa (um 600 v. Chr.). 2. Beginn der Wanderung nach Süden und Osten (ab 400 v. Chr.). 3. Kelten erreichen beinahe Rom (387 v. Chr.). 4. Vercingetorix einigt die Stämme (52 v. Chr.)."
+        },
+        {
+          "stufe": "schwer",
+          "afb": "III",
+          "operator": "Beurteile",
+          "aufgabe": "Beurteile, warum das Buch bei 387 v. Chr. „sollen“ schreibt, bei 600 v. Chr. aber „wie archäologische Ausgrabungen zeigen“.",
+          "tipp1": "Überlege, woher man das jeweilige Wissen hat.",
+          "tipp2": "Mauern und Gräber kann man ausgraben. Eine Belagerung hinterlässt kaum Spuren.",
+          "loesung": "Die Städte und Hügelgräber um 600 v. Chr. sind durch Ausgrabungen belegt, man kann ihre Reste sehen. Den Angriff auf Rom kennen wir nur aus Berichten römischer Schriftsteller, die viel später schrieben. Deshalb ist das Buch vorsichtig und schreibt „sollen“. Das ist sorgfältiger Umgang mit Quellen."
+        }
+      ],
+      "kurzfassung": [
+        "Archäologische Ausgrabungen zeigen: Um 600 v. Chr. lebten Kelten in Mitteleuropa zum Teil in befestigten Städten.",
+        "Ihre Anführer wurden in weithin sichtbaren Hügelgräbern bestattet.",
+        "Ab 400 v. Chr. wanderten viele Kelten nach Süden und Osten.",
+        "387 v. Chr. sollen sie Rom beinahe erobert haben."
+      ],
+      "begriffe": [
+        {
+          "begriff": "Hügelgrab",
+          "definition": "Grab, über dem ein großer, weithin sichtbarer Erdhügel aufgeschüttet wurde. Die Kelten bestatteten darin ihre Anführer.",
+          "beispiel": "Keltische Hügelgräber gibt es um 600 v. Chr. in Mitteleuropa."
+        },
+        {
+          "begriff": "Archäologie",
+          "definition": "Wissenschaft, die aus Ausgrabungen und Fundstücken erforscht, wie Menschen früher lebten.",
+          "beispiel": "Ausgrabungen zeigen befestigte keltische Städte um 600 v. Chr."
+        },
+        {
+          "begriff": "befestigte Stadt",
+          "definition": "Siedlung, die durch Mauern oder Wälle gegen Angreifer geschützt ist.",
+          "beispiel": "Kelten lebten um 600 v. Chr. zum Teil in befestigten Städten."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Wann lebten Kelten in Mitteleuropa schon zum Teil in befestigten Städten?",
+          "antwort": "Um 600 v. Chr. Das zeigen archäologische Ausgrabungen."
+        },
+        {
+          "frage": "Wie bestatteten die Kelten um 600 v. Chr. ihre Anführer?",
+          "antwort": "In weithin sichtbaren Hügelgräbern."
+        },
+        {
+          "frage": "Was geschah ab 400 v. Chr.?",
+          "antwort": "Viele Kelten wanderten weit nach Süden und Osten."
+        },
+        {
+          "frage": "Was sollen die Kelten 387 v. Chr. getan haben?",
+          "antwort": "Sie sollen Rom beinahe erobert haben."
+        },
+        {
+          "frage": "Warum wissen wir über die frühen Kelten vor allem durch Ausgrabungen Bescheid?",
+          "antwort": "Die frühen Kelten haben keine eigenen Texte hinterlassen. Mauern, Gräber und Fundstücke sind deshalb die wichtigsten Quellen."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Wann sollen Kelten Rom beinahe erobert haben?",
+          "optionen": [
+            "600 v. Chr.",
+            "400 v. Chr.",
+            "387 v. Chr.",
+            "52 v. Chr."
+          ],
+          "richtig": 2,
+          "begruendung": "387 v. Chr. sollen Kelten Rom beinahe erobert haben."
+        },
+        {
+          "frage": "In welche Richtungen wanderten viele Kelten ab 400 v. Chr.?",
+          "optionen": [
+            "Nach Norden und Westen",
+            "Nach Süden und Osten",
+            "Nur nach Westen",
+            "Nach Amerika"
+          ],
+          "richtig": 1,
+          "begruendung": "Das Buch nennt Süden und Osten."
+        },
+        {
+          "frage": "Welches Jahr liegt am frühesten?",
+          "optionen": [
+            "387 v. Chr.",
+            "400 v. Chr.",
+            "600 v. Chr.",
+            "52 v. Chr."
+          ],
+          "richtig": 2,
+          "begruendung": "Vor Christi Geburt ist die größte Zahl das früheste Jahr."
+        }
+      ]
     },
     {
-     "ueberschrift": "Was Caesar dazu schreibt",
-     "text": "Gaius Iulius Caesar beginnt seinen Bericht über den Gallischen Krieg mit dem Satz *Gallia est omnis divisa in partes tres*: Ganz Gallien ist in drei Teile geteilt. Über einen dieser Teile schreibt er, die Bewohner hießen *ipsorum lingua Celtae, nostra Galli*: in ihrer eigenen Sprache Kelten, in unserer Gallier. Genau diese Namensfrage bringt auch dein Buch in der Überschrift auf den Punkt: *Celtae* oder *Galli*."
+      "id": "s2",
+      "nr": 2,
+      "titel": "Leben in Gallien zur Zeit Caesars",
+      "leitfrage": "Wie und wo lebten die Gallier im 1. Jahrhundert v. Chr.?",
+      "ichKann": "die Siedlungen und die Anführer der Gallier zur Zeit Caesars beschreiben.",
+      "aufgabenImUnterricht": [],
+      "buchseiten": [
+        "Buchseite: Celtae oder Galli, eine europäische Hochkultur"
+      ],
+      "einstieg": "Vergiss das eine kleine Dorf aus dem Comic. Zur Zeit Caesars gab es in Gallien über 100 Städte, manche so groß wie heute eine Kleinstadt. Und die Chefs hießen fast alle irgendwas mit -rix.",
+      "theorie": [
+        {
+          "ueberschrift": "Viele Stämme",
+          "text": "Im **1. Jahrhundert v. Chr.** siedelten in Gallien **viele verschiedene keltische Stämme**. Es gab keinen gemeinsamen Staat und keinen gemeinsamen König."
+        },
+        {
+          "ueberschrift": "Dörfer und Städte",
+          "text": "Die **meisten Kelten lebten in Dörfern**. Es gab aber auch **über 100 Städte**, in denen **bis zu 10.000 Bewohner** lebten. Diese Städte lagen geschützt **auf Bergrücken** und hatten **starke Mauern aus Holz, Stein und Erde**."
+        },
+        {
+          "ueberschrift": "Die Anführer",
+          "text": "**Reiche Anführer** wohnten oft auf ihren **gut gesicherten Gutshöfen**. Sie **kämpften untereinander um die Macht im Stamm**. Ihren Kindern gaben sie gern Namen, die auf **-rix** endeten. Das ist keltisch und bedeutet **„König“**. Ein berühmtes Beispiel ist Vercingetorix."
+        },
+        {
+          "ueberschrift": "Zerstritten",
+          "text": "Weil die Stämme und ihre Anführer oft zerstritten waren, konnten sie sich gegen die Römer nur schwer gemeinsam wehren. Nur ein einziges Mal gelang es, sie zu vereinen. Davon handelt Schritt 5."
+        }
+      ],
+      "merke": [
+        "Im 1. Jh. v. Chr. lebten in Gallien viele keltische Stämme, die meisten Menschen in Dörfern.",
+        "Es gab über 100 Städte mit bis zu 10.000 Bewohnern, geschützt auf Bergrücken, mit Mauern aus Holz, Stein und Erde.",
+        "Reiche Anführer wohnten auf gesicherten Gutshöfen, kämpften um die Macht im Stamm und gaben ihren Kindern Namen auf -rix (keltisch für König)."
+      ],
+      "skizzen": [],
+      "falle": [
+        {
+          "falsch": "Die Gallier lebten alle in Dörfern wie Asterix.",
+          "richtig": "Die meisten lebten in Dörfern, es gab aber auch über 100 Städte mit bis zu 10.000 Bewohnern.",
+          "warum": "Der Comic zeigt nur ein Dorf. Das Buch betont ausdrücklich die Städte."
+        },
+        {
+          "falsch": "Die Mauern der gallischen Städte waren aus Stein, wie bei einer Burg.",
+          "richtig": "Die Mauern bestanden aus Holz, Stein und Erde.",
+          "warum": "Bei Mauern denkt man an Steinburgen. Im Test werden alle drei Baustoffe erwartet."
+        },
+        {
+          "falsch": "-rix bedeutet Krieger.",
+          "richtig": "-rix ist keltisch und bedeutet König.",
+          "warum": "Weil viele -rix-Namen zu Kämpfern gehören, rät man leicht falsch."
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Namen-Check",
+          "phaenomen": "Vercingetorix, Asterix, Obelix, Majestix: fast alle Gallier im Comic heißen auf -ix.",
+          "erklaerung": "Die Comiczeichner spielen mit echten keltischen Namen auf -rix. Das keltische -rix bedeutet König. Echte Anführer gaben ihren Kindern gern solche Namen, weil sie Macht und Rang zeigen sollten."
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Stadt auf dem Berg",
+          "phaenomen": "Viele alte Burgen und Städte in Europa liegen auf Bergen oder Hügeln.",
+          "erklaerung": "Schon die gallischen Städte lagen geschützt auf Bergrücken. Von oben sieht man Feinde früh, und Angreifer müssen bergauf kämpfen. Zusätzlich schützten starke Mauern aus Holz, Stein und Erde."
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Uneinig gegen einen starken Gegner",
+          "phaenomen": "Wenn sich die Spieler einer Mannschaft streiten, verliert sie oft gegen ein schwächeres, aber einiges Team.",
+          "erklaerung": "Die gallischen Anführer kämpften untereinander um die Macht. Rom trat dagegen mit einem geordneten Heer unter einem Feldherrn auf. Die Uneinigkeit der Gallier war ein Grund, warum Caesar sie Stück für Stück besiegen konnte."
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Nenne",
+          "aufgabe": "Nenne die drei Baustoffe der Mauern gallischer Städte und die höchste Einwohnerzahl, die das Buch nennt.",
+          "tipp1": "Ein Baustoff wächst im Wald.",
+          "tipp2": "Die Zahl hat vier Nullen.",
+          "loesung": "Holz, Stein und Erde. Bis zu 10.000 Bewohner."
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Beschreibe",
+          "aufgabe": "Beschreibe in drei bis vier Sätzen, wie die Gallier zur Zeit Caesars wohnten.",
+          "tipp1": "Unterscheide Dörfer, Städte und Gutshöfe.",
+          "tipp2": "Nenne Lage und Schutz der Städte.",
+          "loesung": "Die meisten Gallier lebten in Dörfern. Es gab aber auch über 100 Städte mit bis zu 10.000 Bewohnern. Diese lagen geschützt auf Bergrücken und hatten starke Mauern aus Holz, Stein und Erde. Reiche Anführer wohnten oft auf gut gesicherten Gutshöfen."
+        },
+        {
+          "stufe": "schwer",
+          "afb": "III",
+          "operator": "Erkläre",
+          "aufgabe": "Erkläre, warum es für Caesar ein Vorteil war, dass die Gallier aus vielen Stämmen bestanden.",
+          "tipp1": "Was taten die Anführer untereinander?",
+          "tipp2": "Denke an Einigkeit und Uneinigkeit.",
+          "loesung": "Gallien bestand aus vielen verschiedenen Stämmen, deren Anführer untereinander um die Macht kämpften. Sie hatten keinen gemeinsamen Anführer und handelten nicht gemeinsam. Caesar konnte deshalb einzelne Stämme nacheinander besiegen. Nur einmal, unter Vercingetorix, standen die Gallier geschlossen gegen ihn."
+        }
+      ],
+      "kurzfassung": [
+        "Im 1. Jh. v. Chr. siedelten in Gallien viele keltische Stämme.",
+        "Die meisten lebten in Dörfern, es gab aber über 100 Städte mit bis zu 10.000 Bewohnern.",
+        "Die Städte lagen auf Bergrücken und hatten Mauern aus Holz, Stein und Erde.",
+        "Reiche Anführer lebten auf gesicherten Gutshöfen, kämpften um die Macht und gaben Namen auf -rix (König)."
+      ],
+      "begriffe": [
+        {
+          "begriff": "-rix",
+          "definition": "Keltische Namensendung mit der Bedeutung König. Reiche Anführer gaben sie gern ihren Kindern.",
+          "beispiel": "Vercingetorix"
+        },
+        {
+          "begriff": "Stamm",
+          "definition": "Gruppe von Menschen, die sich als zusammengehörig verstehen und einen gemeinsamen Anführer haben. In Gallien gab es viele keltische Stämme.",
+          "beispiel": "Die Arverner waren ein gallischer Stamm."
+        },
+        {
+          "begriff": "Gutshof",
+          "definition": "Großer Bauernhof eines reichen Besitzers. Gallische Anführer wohnten oft auf gut gesicherten Gutshöfen.",
+          "beispiel": "Ein Anführer lenkt von seinem Gutshof aus seine Leute."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Wann lebten die Gallier, von denen dieser Schritt handelt?",
+          "antwort": "Im 1. Jahrhundert v. Chr., also zur Zeit Caesars."
+        },
+        {
+          "frage": "Wo lebten die meisten Gallier?",
+          "antwort": "In Dörfern."
+        },
+        {
+          "frage": "Wie viele Städte gab es und wie groß waren sie?",
+          "antwort": "Über 100 Städte mit bis zu 10.000 Bewohnern."
+        },
+        {
+          "frage": "Warum lagen die gallischen Städte auf Bergrücken?",
+          "antwort": "Dort waren sie geschützt. Zusätzlich hatten sie starke Mauern aus Holz, Stein und Erde."
+        },
+        {
+          "frage": "Was bedeutet die keltische Endung -rix?",
+          "antwort": "König."
+        },
+        {
+          "frage": "Wo wohnten reiche Anführer, und worum kämpften sie?",
+          "antwort": "Sie wohnten oft auf gut gesicherten Gutshöfen und kämpften untereinander um die Macht im Stamm."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Wie viele Bewohner hatten die größten gallischen Städte laut Buch?",
+          "optionen": [
+            "bis zu 1.000",
+            "bis zu 10.000",
+            "bis zu 100.000",
+            "über 1 Million"
+          ],
+          "richtig": 1,
+          "begruendung": "Das Buch nennt bis zu 10.000 Bewohner."
+        },
+        {
+          "frage": "Woraus bestanden die Mauern?",
+          "optionen": [
+            "nur Stein",
+            "Holz, Stein und Erde",
+            "Ziegel und Beton",
+            "Eisen"
+          ],
+          "richtig": 1,
+          "begruendung": "Holz, Stein und Erde."
+        },
+        {
+          "frage": "Was bedeutet -rix?",
+          "optionen": [
+            "Krieger",
+            "Druide",
+            "König",
+            "Pferd"
+          ],
+          "richtig": 2,
+          "begruendung": "-rix ist keltisch für König."
+        }
+      ]
     },
     {
-     "ueberschrift": "Eine europäische Hochkultur",
-     "text": "Dein Buch nennt die Kelten eine **europäische Hochkultur**. Damit ist gemeint: Sie hatten befestigte Städte, Handwerk, Handel, eine ausgebildete Priesterschaft und eine eigene Religion. Die Römer stellten sie oft als unzivilisiert dar. Die Überschrift „Kulturloses Gallien?“ in deinem Buch ist deshalb als Frage gemeint, und die Antwort lautet: nein."
+      "id": "s3",
+      "nr": 3,
+      "titel": "Der Druide",
+      "leitfrage": "Warum war der Druide für jeden Gallier eine der wichtigsten Personen?",
+      "ichKann": "die Aufgaben des Druiden nennen und seine Stellung im Stamm erklären.",
+      "aufgabenImUnterricht": [],
+      "buchseiten": [
+        "Lehrbuch Lektion 10, Römischer Alltag III: Galliens Welt"
+      ],
+      "einstieg": "Im Comic braut Miraculix den Zaubertrank. Im Buch ist der Druide viel mehr: fünf Jobs in einer Person. Wer die fünf aufzählen kann, hat die sicherste Frage des Tests schon im Sack.",
+      "theorie": [
+        {
+          "ueberschrift": "Fünf Aufgaben in einer Person",
+          "text": "Eine der wichtigsten Personen für jeden Gallier war der **Druide** (lateinisch Mehrzahl *druides*). Er war **Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten** in einer Person."
+        },
+        {
+          "ueberschrift": "Als Richter",
+          "text": "Der Druide **entschied in allen Streitfragen** und **setzte die Strafen fest**."
+        },
+        {
+          "ueberschrift": "Als Berater",
+          "text": "**Kein Stammesfürst unternahm oder entschied etwas ohne den Rat eines Druiden.** Damit hatte der Druide großen politischen Einfluss."
+        },
+        {
+          "ueberschrift": "Als Priester",
+          "text": "Als Priester war der Druide für das **Darbringen der Opfer** zuständig. **Allgemein üblich waren Tieropfer.** Es gab aber auch, **wie in vielen frühen Kulturen, Menschenopfer**."
+        },
+        {
+          "ueberschrift": "Zusatzinfo: Woher wir das wissen",
+          "text": "Fast alle Nachrichten über die Druiden stammen von Römern und Griechen, vor allem von Caesar, dem Gegner der Gallier. Forscher halten es für möglich, dass er manches übertrieben hat, um seinen Krieg zu rechtfertigen. Für den Test gilt die Fassung im Buch."
+        }
+      ],
+      "merke": [
+        "Der Druide war Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten in einer Person.",
+        "Er entschied in allen Streitfragen und setzte die Strafen fest; kein Stammesfürst handelte ohne seinen Rat.",
+        "Als Priester brachte er die Opfer dar: üblich waren Tieropfer, es gab aber auch Menschenopfer."
+      ],
+      "skizzen": [
+        {
+          "titel": "Die fünf Aufgaben des Druiden",
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 260\" font-family=\"inherit\"><circle cx=\"230\" cy=\"130\" r=\"52\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"230\" y=\"136\" font-size=\"18\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">Druide</text><line x1=\"230\" y1=\"68\" x2=\"230\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"230\" y=\"30\" font-size=\"15\" text-anchor=\"middle\" fill=\"currentColor\">Priester</text><line x1=\"288\" y1=\"109\" x2=\"344\" y2=\"99\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"382\" y=\"99\" font-size=\"15\" text-anchor=\"middle\" fill=\"currentColor\">Richter</text><line x1=\"267\" y1=\"182\" x2=\"302\" y2=\"206\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"326\" y=\"224\" font-size=\"15\" text-anchor=\"middle\" fill=\"currentColor\">Arzt</text><line x1=\"193\" y1=\"182\" x2=\"158\" y2=\"206\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"134\" y=\"224\" font-size=\"15\" text-anchor=\"middle\" fill=\"currentColor\">Lehrer</text><line x1=\"172\" y1=\"109\" x2=\"116\" y2=\"99\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"78\" y=\"99\" font-size=\"15\" text-anchor=\"middle\" fill=\"currentColor\">Berater</text></svg>",
+          "alt": "Kreis mit der Aufschrift Druide, davon gehen fünf Linien aus zu Priester, Richter, Arzt, Lehrer und Berater."
+        }
+      ],
+      "falle": [
+        {
+          "falsch": "Der Druide war der Anführer des Stammes.",
+          "richtig": "Anführer war der Stammesfürst. Der Druide war sein Berater, ohne dessen Rat der Fürst nichts entschied.",
+          "warum": "Weil der Druide so mächtig war, verwechselt man ihn leicht mit dem Fürsten."
+        },
+        {
+          "falsch": "Der Druide war vor allem ein Zauberer, der Tränke braute.",
+          "richtig": "Der Druide war Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten.",
+          "warum": "Das Bild vom Zaubertrank stammt aus dem Asterix-Comic, nicht aus dem Buch."
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "titel": "Wikipedia: Druide",
+          "url": "https://de.wikipedia.org/wiki/Druide",
+          "typ": "Artikel",
+          "auftrag": "Suche im Artikel, welche Quelle vor allem über die Druiden berichtet, und warum Forscher ihr nicht in allem trauen. Ein Satz genügt."
+        }
+      ],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Miraculix im Comic",
+          "phaenomen": "Der Druide Miraculix ist im Comic der Klügste im Dorf und wird bei allen wichtigen Fragen gefragt.",
+          "erklaerung": "Das passt zum Buch: Kein Stammesfürst entschied etwas ohne den Rat eines Druiden. Den Zaubertrank gibt es aber nur im Comic."
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Heute sind es viele Berufe",
+          "phaenomen": "Bei uns gibt es für Streit Gerichte, für Krankheiten Ärzte, für Bildung Lehrer und für Religion Pfarrer oder andere Geistliche.",
+          "erklaerung": "Bei den Galliern vereinte der Druide all diese Aufgaben. Das zeigt, wie viel Wissen und Macht in seiner Hand lagen."
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Wer erzählt die Geschichte?",
+          "phaenomen": "Caesar berichtet ausführlich über Menschenopfer der Gallier.",
+          "erklaerung": "Caesar war der Feind der Gallier. Ein grausames Bild der Gallier half ihm, seinen Krieg in Rom als gerecht darzustellen. Deshalb prüfen Forscher solche Berichte kritisch. Das Buch hält fest, dass es Menschenopfer gab, wie in vielen frühen Kulturen."
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Nenne",
+          "aufgabe": "Nenne die fünf Aufgaben des Druiden.",
+          "tipp1": "Eine Aufgabe hat mit Gericht zu tun, eine mit Schule, eine mit Krankheit.",
+          "tipp2": "Die übrigen zwei: Religion und der Stammesfürst.",
+          "loesung": "Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten."
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Beschreibe",
+          "aufgabe": "Beschreibe die Aufgaben des Druiden als Richter und als Priester.",
+          "tipp1": "Als Richter: Streit und Strafe.",
+          "tipp2": "Als Priester: Opfer, zwei Arten.",
+          "loesung": "Als Richter entschied der Druide in allen Streitfragen und setzte die Strafen fest. Als Priester war er für das Darbringen der Opfer zuständig. Allgemein üblich waren Tieropfer, es gab aber auch, wie in vielen frühen Kulturen, Menschenopfer."
+        },
+        {
+          "stufe": "schwer",
+          "afb": "III",
+          "operator": "Erkläre",
+          "aufgabe": "Erkläre, warum man sagen kann, dass der Druide oft mächtiger war als der Stammesfürst.",
+          "tipp1": "Was durfte der Fürst ohne den Druiden nicht?",
+          "tipp2": "Denke auch an Strafen und Religion.",
+          "loesung": "Kein Stammesfürst unternahm oder entschied etwas ohne den Rat eines Druiden. Außerdem entschied der Druide alle Streitfragen und setzte die Strafen fest, und als Priester stand er zwischen den Menschen und den Göttern. Dadurch hatte er auf alle wichtigen Entscheidungen Einfluss, auch auf die des Fürsten."
+        }
+      ],
+      "kurzfassung": [
+        "Der Druide war eine der wichtigsten Personen für jeden Gallier.",
+        "Er war Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten.",
+        "Er entschied Streitfragen, setzte Strafen fest, und kein Fürst handelte ohne seinen Rat.",
+        "Als Priester brachte er Opfer dar: meist Tieropfer, aber auch Menschenopfer."
+      ],
+      "begriffe": [
+        {
+          "begriff": "Druide (*druides*)",
+          "definition": "Gallischer Priester und Gelehrter; Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten in einer Person.",
+          "beispiel": "Miraculix ist im Comic ein Druide."
+        },
+        {
+          "begriff": "Stammesfürst",
+          "definition": "Anführer eines gallischen Stammes. Er entschied nichts ohne den Rat eines Druiden.",
+          "beispiel": "Vercingetorix war Fürst der Arverner."
+        },
+        {
+          "begriff": "Opfer",
+          "definition": "Gabe an die Götter. Bei den Galliern waren Tieropfer üblich, es gab aber auch Menschenopfer.",
+          "beispiel": "Der Druide bringt ein Tieropfer dar."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Welche fünf Aufgaben hatte der Druide?",
+          "antwort": "Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten."
+        },
+        {
+          "frage": "Was tat der Druide als Richter?",
+          "antwort": "Er entschied in allen Streitfragen und setzte die Strafen fest."
+        },
+        {
+          "frage": "Warum war der Druide für den Stammesfürsten so wichtig?",
+          "antwort": "Kein Stammesfürst unternahm oder entschied etwas ohne den Rat eines Druiden."
+        },
+        {
+          "frage": "Welche Opfer brachte der Druide dar?",
+          "antwort": "Allgemein üblich waren Tieropfer. Es gab aber auch, wie in vielen frühen Kulturen, Menschenopfer."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Welche Aufgabe hatte der Druide NICHT?",
+          "optionen": [
+            "Richter",
+            "Arzt",
+            "Stammesfürst",
+            "Lehrer"
+          ],
+          "richtig": 2,
+          "begruendung": "Der Druide war Berater des Stammesfürsten, nicht selbst der Fürst."
+        },
+        {
+          "frage": "Welche Opfer waren allgemein üblich?",
+          "optionen": [
+            "Menschenopfer",
+            "Tieropfer",
+            "Geldopfer",
+            "keine"
+          ],
+          "richtig": 1,
+          "begruendung": "Tieropfer waren üblich; Menschenopfer gab es auch, aber nicht als Regel."
+        },
+        {
+          "frage": "Wer setzte bei den Galliern die Strafen fest?",
+          "optionen": [
+            "der Stammesfürst",
+            "der Druide",
+            "die Römer",
+            "jeder selbst"
+          ],
+          "richtig": 1,
+          "begruendung": "Der Druide entschied Streitfragen und setzte die Strafen fest."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "nr": 4,
+      "titel": "Rom greift zu",
+      "leitfrage": "Wie kam Gallien unter römische Herrschaft?",
+      "ichKann": "die zwei Stufen der römischen Eroberung Galliens mit Zeitangabe beschreiben.",
+      "aufgabenImUnterricht": [],
+      "buchseiten": [
+        "Lehrbuch Lektion 10, Römischer Alltag III: Galliens Welt"
+      ],
+      "einstieg": "Urlaub in der Provence? Dann warst du in der ersten römischen Beute in Gallien. Der Name verrät es bis heute.",
+      "theorie": [
+        {
+          "ueberschrift": "Stufe 1: der Süden (2. Jh. v. Chr.)",
+          "text": "Im **2. Jahrhundert v. Chr.** eroberten die Römer gallische Gebiete im **heutigen Südfrankreich** und machten sie zur römischen **provincia**. Aus diesem lateinischen Wort entstand der heutige Landschaftsname **Provence**."
+        },
+        {
+          "ueberschrift": "Stufe 2: ganz Gallien (Caesar)",
+          "text": "Der römische Feldherr **Gaius Iulius Caesar** dehnte die römische Macht dann auf **ganz Gallien** aus. Das geschah in **langwierigen und grausamen Eroberungskriegen**. Caesar schrieb darüber selbst ein Buch, *De bello Gallico* (Über den Gallischen Krieg)."
+        },
+        {
+          "ueberschrift": "Widerstand und Eingliederung",
+          "text": "Die Bewohner Galliens leisteten **anfangs heftigen Widerstand**. Dann ließen sie sich aber doch **schnell in das Römische Reich eingliedern**. Der Höhepunkt des Widerstands war das Jahr 52 v. Chr. (Schritt 5)."
+        },
+        {
+          "ueberschrift": "Wort-Tipp: provincia",
+          "text": "*Provincia* bedeutet im Lateinischen ein Gebiet außerhalb Italiens, das von Rom beherrscht und verwaltet wird. Aus diesem Wort kommt unser Wort Provinz. Die Provence ist also die Gegend, die die Römer einfach „die Provinz“ nannten."
+        }
+      ],
+      "merke": [
+        "Im 2. Jh. v. Chr. eroberten die Römer Südfrankreich und machten es zur *provincia*; daraus entstand der Name Provence.",
+        "Gaius Iulius Caesar dehnte die römische Macht in langwierigen und grausamen Eroberungskriegen auf ganz Gallien aus.",
+        "Die Gallier leisteten anfangs heftigen Widerstand, ließen sich dann aber schnell in das Römische Reich eingliedern."
+      ],
+      "skizzen": [],
+      "falle": [
+        {
+          "falsch": "Caesar eroberte im 2. Jh. v. Chr. Südfrankreich.",
+          "richtig": "Südfrankreich wurde schon im 2. Jh. v. Chr. römisch. Caesar eroberte später, im 1. Jh. v. Chr., das übrige Gallien.",
+          "warum": "Beide Eroberungen gehören zusammen, liegen aber zeitlich auseinander."
+        },
+        {
+          "falsch": "Provence und Provinz haben nichts miteinander zu tun.",
+          "richtig": "Beide Wörter stammen vom lateinischen *provincia*.",
+          "warum": "Man übersieht die Verwandtschaft, weil die Provence heute ein Landschaftsname ist."
+        },
+        {
+          "falsch": "Das 2. Jh. v. Chr. meint die Jahre 200 bis 299 v. Chr.",
+          "richtig": "Das 2. Jh. v. Chr. umfasst die Jahre 200 bis 101 v. Chr.",
+          "warum": "Vor Christi Geburt wird rückwärts gezählt."
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "titel": "Wikipedia: Gallia Narbonensis",
+          "url": "https://de.wikipedia.org/wiki/Gallia_Narbonensis",
+          "typ": "Artikel",
+          "auftrag": "Suche im Artikel die Jahre, in denen Rom Südgallien zur Provinz machte, und den Satz über den Namen Provence."
+        }
+      ],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Provence auf der Landkarte",
+          "phaenomen": "Die Provence ist eine Landschaft im Südosten Frankreichs am Mittelmeer.",
+          "erklaerung": "Ihr Name kommt von *provincia*. Dieses Gebiet war das erste in Gallien, das die Römer im 2. Jh. v. Chr. eroberten."
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Römische Spuren im Süden",
+          "phaenomen": "In Südfrankreich stehen bis heute römische Bauwerke wie Theater, Arenen und Wasserleitungen.",
+          "erklaerung": "Weil Südfrankreich schon im 2. Jh. v. Chr. römisch wurde, stand es besonders lange unter römischem Einfluss. Die Bauten zeigen, wie stark die Römer das Land prägten."
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Der Sieger schreibt mit",
+          "phaenomen": "Caesar berichtet in *De bello Gallico* selbst über seinen Krieg.",
+          "erklaerung": "Caesar wollte in Rom als großer Feldherr dastehen. Sein Bericht ist deshalb eine wichtige, aber einseitige Quelle. Dass das Buch die Kriege „langwierig und grausam“ nennt, zeigt die Sicht von heute auf das Geschehen."
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Nenne",
+          "aufgabe": "Nenne den vollständigen Namen des römischen Feldherrn, der ganz Gallien eroberte, und den Landschaftsnamen, der aus *provincia* entstand.",
+          "tipp1": "Er hat drei Namen.",
+          "tipp2": "Die Landschaft liegt in Südfrankreich.",
+          "loesung": "Gaius Iulius Caesar. Provence."
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Beschreibe",
+          "aufgabe": "Beschreibe die beiden Stufen, in denen Gallien römisch wurde.",
+          "tipp1": "Erst der Süden, dann der Rest.",
+          "tipp2": "Nenne jeweils die Zeit und wer beteiligt war.",
+          "loesung": "Zuerst eroberten die Römer im 2. Jh. v. Chr. gallische Gebiete im heutigen Südfrankreich und machten sie zur *provincia*, daraus wurde der Name Provence. Später dehnte Gaius Iulius Caesar in langwierigen und grausamen Eroberungskriegen die römische Macht auf ganz Gallien aus."
+        },
+        {
+          "stufe": "schwer",
+          "afb": "III",
+          "operator": "Vergleiche",
+          "aufgabe": "Vergleiche den Anfang und das Ende des gallischen Widerstands.",
+          "tipp1": "Das Buch benutzt zwei Adjektive: eines für den Anfang, eines für die Eingliederung.",
+          "tipp2": "„heftig“ und „schnell“.",
+          "loesung": "Am Anfang leisteten die Gallier heftigen Widerstand gegen Caesar, 52 v. Chr. hätten sie ihn unter Vercingetorix beinahe besiegt. Nach der Niederlage ließen sie sich aber schnell in das Römische Reich eingliedern und übernahmen römische Sitten und die lateinische Sprache. Der Gegensatz ist also: erst heftiger Kampf, dann rasche Anpassung."
+        }
+      ],
+      "kurzfassung": [
+        "Im 2. Jh. v. Chr. eroberten die Römer Südfrankreich und machten es zur *provincia*.",
+        "Daraus entstand der Name Provence.",
+        "Gaius Iulius Caesar eroberte in langwierigen und grausamen Kriegen ganz Gallien.",
+        "Die Gallier leisteten erst heftigen Widerstand und wurden dann schnell eingegliedert."
+      ],
+      "begriffe": [
+        {
+          "begriff": "*provincia*",
+          "definition": "Lateinisch für ein von Rom beherrschtes und verwaltetes Gebiet außerhalb Italiens. Davon kommen die Wörter Provinz und Provence.",
+          "beispiel": "Südfrankreich wurde im 2. Jh. v. Chr. römische *provincia*."
+        },
+        {
+          "begriff": "Provence",
+          "definition": "Landschaft in Südfrankreich; ihr Name stammt von der römischen *provincia*.",
+          "beispiel": "Die Provence war das erste römische Gebiet in Gallien."
+        },
+        {
+          "begriff": "Gaius Iulius Caesar",
+          "definition": "Römischer Feldherr, der in langwierigen und grausamen Eroberungskriegen ganz Gallien unter römische Herrschaft brachte.",
+          "beispiel": "Caesar schrieb *De bello Gallico*."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Wann eroberten die Römer Südfrankreich?",
+          "antwort": "Im 2. Jahrhundert v. Chr."
+        },
+        {
+          "frage": "Woher hat die Provence ihren Namen?",
+          "antwort": "Die Römer machten Südfrankreich zur *provincia*. Daraus entstand der Name Provence."
+        },
+        {
+          "frage": "Wer dehnte die römische Macht auf ganz Gallien aus, und wie?",
+          "antwort": "Gaius Iulius Caesar, in langwierigen und grausamen Eroberungskriegen."
+        },
+        {
+          "frage": "Wie verhielten sich die Gallier gegenüber den Römern?",
+          "antwort": "Anfangs leisteten sie heftigen Widerstand, dann ließen sie sich schnell in das Römische Reich eingliedern."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Welcher Name stammt von *provincia*?",
+          "optionen": [
+            "Paris",
+            "Provence",
+            "Bretagne",
+            "Gallien"
+          ],
+          "richtig": 1,
+          "begruendung": "Provence kommt von *provincia*."
+        },
+        {
+          "frage": "Wann wurde Südfrankreich römisch?",
+          "optionen": [
+            "im 2. Jh. v. Chr.",
+            "52 v. Chr.",
+            "387 v. Chr.",
+            "um 130 n. Chr."
+          ],
+          "richtig": 0,
+          "begruendung": "Im 2. Jahrhundert v. Chr."
+        },
+        {
+          "frage": "Wie beschreibt das Buch Caesars Eroberungskriege?",
+          "optionen": [
+            "kurz und friedlich",
+            "langwierig und grausam",
+            "schnell und unblutig",
+            "erfolglos"
+          ],
+          "richtig": 1,
+          "begruendung": "Langwierig und grausam."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "nr": 5,
+      "titel": "Vercingetorix und das Jahr 52 v. Chr.",
+      "leitfrage": "Wie konnte ein einzelner Fürst Caesar beinahe besiegen?",
+      "ichKann": "Vercingetorix vorstellen und die Bedeutung des Jahres 52 v. Chr. erklären.",
+      "aufgabenImUnterricht": [],
+      "buchseiten": [
+        "Buchseite: Celtae oder Galli, eine europäische Hochkultur",
+        "Lehrbuch Lektion 10, Römischer Alltag III: Galliens Welt"
+      ],
+      "einstieg": "Ein Name, ein Jahr, ein Stamm: Vercingetorix, 52 v. Chr., Arverner. Das ist der Mann, der Caesar richtig ins Schwitzen brachte.",
+      "theorie": [
+        {
+          "ueberschrift": "Wer war Vercingetorix?",
+          "text": "**Vercingetorix** war **Fürst der Arverner**, eines gallischen Stammes. Sein Name endet auf -rix, das keltische Wort für König."
+        },
+        {
+          "ueberschrift": "Die einzige Einigung",
+          "text": "Die gallischen Stämme waren meist zerstritten. **Nur einmal** gelang es, sie zu vereinen, und zwar Vercingetorix. **Im Jahr 52 v. Chr.** hätten die vereinten Gallier dadurch **Caesars Truppen beinahe den Untergang gebracht**."
+        },
+        {
+          "ueberschrift": "Zusatzinfo: Alesia",
+          "text": "Am Ende wurde Vercingetorix mit seinem Heer in der befestigten Stadt **Alesia** eingeschlossen und musste sich im selben Jahr, 52 v. Chr., Caesar ergeben. Das steht nicht auf deinen Buchseiten, hilft aber zu verstehen, warum danach der Widerstand zusammenbrach."
+        },
+        {
+          "ueberschrift": "Danach",
+          "text": "Die Gallier hatten **anfangs heftigen Widerstand** geleistet. Nach dieser Niederlage ließen sie sich aber **schnell in das Römische Reich eingliedern**."
+        }
+      ],
+      "merke": [
+        "Vercingetorix, Fürst der Arverner, einte als Einziger die zerstrittenen gallischen Stämme.",
+        "Im Jahr 52 v. Chr. hätten die vereinten Gallier Caesars Truppen beinahe den Untergang gebracht."
+      ],
+      "skizzen": [],
+      "falle": [
+        {
+          "falsch": "Vercingetorix hat Caesar 52 n. Chr. besiegt.",
+          "richtig": "Er hätte Caesars Truppen 52 **v.** Chr. **beinahe** den Untergang gebracht.",
+          "warum": "Zwei Fallen in einem Satz: v. Chr. gegen n. Chr. und beinahe gegen tatsächlich."
+        },
+        {
+          "falsch": "Vercingetorix war Fürst der Arverner, weil alle Gallier Arverner hießen.",
+          "richtig": "Die Arverner waren nur einer von vielen gallischen Stämmen.",
+          "warum": "Weil Vercingetorix alle Gallier anführte, hält man seinen Stamm für das ganze Volk."
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "titel": "Wikipedia: Vercingetorix",
+          "url": "https://de.wikipedia.org/wiki/Vercingetorix",
+          "typ": "Artikel",
+          "auftrag": "Suche den Ort, an dem Vercingetorix 52 v. Chr. belagert wurde, und schreibe ihn auf."
+        }
+      ],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Statue in Frankreich",
+          "phaenomen": "In Frankreich stehen große Denkmäler von Vercingetorix, und er gilt dort als Nationalheld.",
+          "erklaerung": "Er war der Einzige, der die zerstrittenen gallischen Stämme einte und Caesar 52 v. Chr. beinahe besiegt hätte. Deshalb erinnert man an ihn als Symbol für Widerstand."
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Gemeinsam stark",
+          "phaenomen": "Viele kleine Gruppen erreichen gemeinsam, was eine allein nicht schafft.",
+          "erklaerung": "Solange die gallischen Anführer untereinander um Macht kämpften, konnte Caesar sie einzeln besiegen. Erst die Einigung unter Vercingetorix machte die Gallier gefährlich für Rom."
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Knapp vorbei ist auch vorbei",
+          "phaenomen": "Das Buch betont „beinahe“ und „nur einmal“.",
+          "erklaerung": "Die Einigung unter Vercingetorix war die größte Gefahr für Caesar. Weil sie scheiterte, gab es danach keinen vergleichbaren gemeinsamen Widerstand mehr, und die Gallier wurden schnell Teil des Römischen Reichs."
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Nenne",
+          "aufgabe": "Nenne den Stamm, dessen Fürst Vercingetorix war, und das Jahr, in dem er Caesar beinahe besiegt hätte.",
+          "tipp1": "Der Stamm beginnt mit A.",
+          "tipp2": "Das Jahr liegt kurz vor Christi Geburt.",
+          "loesung": "Die Arverner. 52 v. Chr."
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Erkläre",
+          "aufgabe": "Erkläre, warum die Leistung des Vercingetorix für die Gallier so außergewöhnlich war.",
+          "tipp1": "Wie verhielten sich die Anführer sonst untereinander?",
+          "tipp2": "Das Buch sagt: nur einmal.",
+          "loesung": "Die gallischen Anführer kämpften sonst untereinander um die Macht, die Stämme waren zerstritten. Vercingetorix gelang es als Einzigem, sie zu vereinen. Dadurch hätten die Gallier 52 v. Chr. Caesars Truppen beinahe den Untergang gebracht."
+        },
+        {
+          "stufe": "schwer",
+          "afb": "III",
+          "operator": "Beurteile",
+          "aufgabe": "Beurteile die Aussage: „Hätten sich die Gallier früher geeinigt, wäre Gallien vielleicht nicht römisch geworden.“",
+          "tipp1": "Was hat die Einigung 52 v. Chr. bewirkt?",
+          "tipp2": "Bedenke auch die Stärke des römischen Heeres. Eine sichere Antwort gibt es nicht.",
+          "loesung": "Die Aussage ist plausibel, aber nicht beweisbar. Als die Gallier 52 v. Chr. unter Vercingetorix vereint waren, brachten sie Caesars Truppen beinahe den Untergang. Vorher konnte Caesar die zerstrittenen Stämme einzeln besiegen. Ob eine frühere Einigung Rom dauerhaft aufgehalten hätte, bleibt aber Vermutung, denn Rom war militärisch sehr stark."
+        }
+      ],
+      "kurzfassung": [
+        "Vercingetorix war Fürst der Arverner.",
+        "Nur ihm gelang es, die zerstrittenen gallischen Stämme zu vereinen.",
+        "52 v. Chr. hätten die Gallier Caesars Truppen dadurch beinahe den Untergang gebracht.",
+        "Danach ließen sich die Gallier schnell eingliedern."
+      ],
+      "begriffe": [
+        {
+          "begriff": "Vercingetorix",
+          "definition": "Fürst der Arverner, der als Einziger die zerstrittenen gallischen Stämme einte und 52 v. Chr. Caesar beinahe besiegte.",
+          "beispiel": "Vercingetorix ist in Frankreich ein Nationalheld."
+        },
+        {
+          "begriff": "Arverner",
+          "definition": "Ein gallischer Stamm; Vercingetorix war ihr Fürst.",
+          "beispiel": "Vercingetorix, der Fürst der Arverner."
+        },
+        {
+          "begriff": "Alesia",
+          "definition": "Befestigte gallische Stadt, in der Vercingetorix 52 v. Chr. belagert wurde und sich Caesar ergab (Zusatzwissen).",
+          "beispiel": "Nach Alesia war der gemeinsame Widerstand gebrochen."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Wer war Vercingetorix?",
+          "antwort": "Der Fürst der Arverner."
+        },
+        {
+          "frage": "Was gelang Vercingetorix als Einzigem?",
+          "antwort": "Er vereinte die zerstrittenen gallischen Stämme."
+        },
+        {
+          "frage": "Was geschah 52 v. Chr.?",
+          "antwort": "Die vereinten Gallier unter Vercingetorix hätten Caesars Truppen beinahe den Untergang gebracht."
+        },
+        {
+          "frage": "Warum war die Einigung der Gallier so selten?",
+          "antwort": "Die Anführer kämpften untereinander um die Macht im Stamm, die Stämme waren zerstritten."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Welchem Stamm stand Vercingetorix vor?",
+          "optionen": [
+            "den Belgern",
+            "den Arvernern",
+            "den Römern",
+            "den Bretonen"
+          ],
+          "richtig": 1,
+          "begruendung": "Er war Fürst der Arverner."
+        },
+        {
+          "frage": "In welchem Jahr brachten die Gallier Caesar beinahe den Untergang?",
+          "optionen": [
+            "387 v. Chr.",
+            "52 v. Chr.",
+            "52 n. Chr.",
+            "um 130 n. Chr."
+          ],
+          "richtig": 1,
+          "begruendung": "52 v. Chr."
+        },
+        {
+          "frage": "Wie oft gelang es, die gallischen Stämme zu vereinen?",
+          "optionen": [
+            "nie",
+            "nur einmal",
+            "oft",
+            "jedes Jahr"
+          ],
+          "richtig": 1,
+          "begruendung": "Das Buch sagt: nur einmal, unter Vercingetorix."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "nr": 6,
+      "titel": "Was von den Kelten blieb, und was Asterix damit zu tun hat",
+      "leitfrage": "Was ist von der keltischen Kultur geblieben, und wie viel Wahrheit steckt in Asterix?",
+      "ichKann": "die Romanisierung Galliens und das Weiterleben keltischer Kultur beschreiben und Asterix als Comic einordnen.",
+      "aufgabenImUnterricht": [
+        "Aufgabe a: Portfolio zur keltischen Kultur in deiner Region (machst du selbst)"
+      ],
+      "buchseiten": [
+        "Buchseite: Celtae oder Galli, eine europäische Hochkultur",
+        "Lehrbuch Lektion 10, Römischer Alltag III: Galliens Welt"
+      ],
+      "einstieg": "Asterix ist der berühmteste Gallier der Welt, dabei hat es ihn nie gegeben. Trotzdem steckt im Comic mehr echte Geschichte, als man denkt. Und in manchen Ländern sprechen Menschen heute noch Keltisch.",
+      "theorie": [
+        {
+          "ueberschrift": "Romanisierung",
+          "text": "Nach der römischen Eroberung **nahmen die Kelten schnell römische Sitten an und lernten Latein**. Diesen Vorgang nennt man Romanisierung."
+        },
+        {
+          "ueberschrift": "Nicht ganz vergessen",
+          "text": "Ihre **bisherige Sprache, Religion und Kultur geriet aber nicht ganz in Vergessenheit**. **Noch heute** werden keltische Sprachen gesprochen, und zwar in **Irland, Schottland, Wales und der Bretagne**. Die Bretagne ist im Comic die **Heimat von Asterix und seinen Freunden**."
+        },
+        {
+          "ueberschrift": "Epona",
+          "text": "Auch keltische Götter wurden weiter verehrt. Die keltische **Pferdegöttin Epona** wurde **auch noch in römischer Zeit verehrt**. Ein Beispiel ist ein **Relief** (ein Bild, das aus Stein herausgearbeitet ist) **um 130 n. Chr.** aus **Trier**."
+        },
+        {
+          "ueberschrift": "Asterix: was stimmt?",
+          "text": "Asterix und seine Freunde (der Druide **Miraculix**, **Obelix** und sein Hündchen **Idefix**) sind **heute die berühmtesten Gallier**. Laut Buch lebten sie **um 50 v. Chr.** in einem **kleinen gallischen Dorf im heutigen Frankreich** und verteidigten es **erfolgreich gegen Iulius Caesar und die Römer**. Das Buch fragt dazu: Was sagt die Forschung? **Stimmt:** die Zeit um 50 v. Chr., Caesar als Eroberer, Druiden als wichtige Personen, Namen auf -rix, das Dorfleben. **Erfunden:** die Figuren selbst, der Zaubertrank und das Dorf, das nie besiegt wurde. In Wirklichkeit war Gallien nach dem Sieg bei Alesia 52 v. Chr. bald ganz römisch, und es gab auch große Städte, nicht nur Dörfer."
+        },
+        {
+          "ueberschrift": "Kelten zum Anfassen",
+          "text": "Heute stellen Gruppen das keltische Leben nach, zum Beispiel die **Keltengruppe Taranis aus Reinheim im Saarland** (Foto im Buch, 2002). Taranis ist der Name eines keltischen Gottes."
+        },
+        {
+          "ueberschrift": "Deine Aufgabe a",
+          "text": "Für dein Portfolio recherchierst du selbst Spuren der Kelten in deiner Region. Mögliche Suchbegriffe: „Kelten“ plus Name deiner Stadt oder deines Landkreises, „Hügelgrab“ plus Region, „Ringwall“ oder „keltische Wallanlage“ plus Region, „Keltenmuseum“, „keltische Funde Museum“ plus Bundesland. Notiere zu jedem Fund: was, wo, wie alt, Quelle."
+        }
+      ],
+      "merke": [
+        "Nach der Eroberung übernahmen die Kelten schnell römische Sitten und Latein; Sprache, Religion und Kultur gerieten aber nicht ganz in Vergessenheit.",
+        "Keltische Sprachen spricht man noch heute in Irland, Schottland, Wales und der Bretagne.",
+        "Die keltische Pferdegöttin Epona wurde auch in römischer Zeit verehrt (Relief um 130 n. Chr., Trier)."
+      ],
+      "skizzen": [],
+      "falle": [
+        {
+          "falsch": "Nach der Eroberung verschwand die keltische Kultur vollständig.",
+          "richtig": "Die Kelten übernahmen römische Sitten und Latein, doch ihre Sprache, Religion und Kultur gerieten nicht ganz in Vergessenheit.",
+          "warum": "„Schnell römisch“ klingt nach „komplett weg“. Das Buch sagt ausdrücklich: nicht ganz."
+        },
+        {
+          "falsch": "Das Epona-Relief stammt aus der Zeit vor Caesar.",
+          "richtig": "Es entstand um 130 **n.** Chr., also in römischer Zeit.",
+          "warum": "Gerade das ist der Beleg, dass keltische Religion unter den Römern weiterlebte."
+        },
+        {
+          "falsch": "In Frankreich spricht man heute überall Keltisch.",
+          "richtig": "Keltische Sprachen spricht man in Irland, Schottland, Wales und der Bretagne. Französisch stammt vom Latein ab.",
+          "warum": "Weil Gallien keltisch war, vermutet man Keltisch im ganzen heutigen Frankreich."
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "titel": "Wikipedia: Asterix",
+          "url": "https://de.wikipedia.org/wiki/Asterix",
+          "typ": "Artikel",
+          "auftrag": "Suche, wer Asterix erfunden hat und in welchem Jahr er zum ersten Mal erschien."
+        }
+      ],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Walisisch am Bahnhof",
+          "phaenomen": "In Wales stehen Schilder in zwei Sprachen: Englisch und Walisisch.",
+          "erklaerung": "Walisisch ist eine keltische Sprache. Sie zeigt, dass keltische Sprachen bis heute gesprochen werden, genau wie in Irland, Schottland und der Bretagne."
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Französisch kommt vom Latein",
+          "phaenomen": "Viele französische Wörter ähneln lateinischen: *pater* wird zu père, *aqua* zu eau über viele Zwischenstufen.",
+          "erklaerung": "Nach der römischen Eroberung lernten die Gallier Latein. Aus diesem Latein entwickelte sich später das Französische. Das ist eine Folge der Romanisierung."
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Göttin für Reiter",
+          "phaenomen": "Die Pferdegöttin Epona wurde auch von römischen Soldaten verehrt, besonders von Reitern.",
+          "erklaerung": "Die Römer übernahmen manche Götter der eroberten Völker. Dass Epona um 130 n. Chr. in Trier noch als Relief dargestellt wurde, zeigt: Keltische Religion lebte unter römischer Herrschaft weiter und mischte sich mit der römischen."
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Nenne",
+          "aufgabe": "Nenne die vier Gebiete, in denen heute noch keltische Sprachen gesprochen werden.",
+          "tipp1": "Drei liegen auf den Britischen Inseln.",
+          "tipp2": "Das vierte ist die Heimat von Asterix.",
+          "loesung": "Irland, Schottland, Wales und die Bretagne."
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Beschreibe",
+          "aufgabe": "Beschreibe, was nach der römischen Eroberung mit der keltischen Kultur geschah. Nenne ein Beispiel für das Weiterleben keltischer Religion.",
+          "tipp1": "Erst: was übernahmen die Kelten? Dann: was blieb?",
+          "tipp2": "Denke an die Pferdegöttin.",
+          "loesung": "Die Kelten nahmen schnell römische Sitten an und lernten Latein. Ihre Sprache, Religion und Kultur gerieten aber nicht ganz in Vergessenheit. Ein Beispiel ist die keltische Pferdegöttin Epona, die auch in römischer Zeit verehrt wurde, wie ein Relief um 130 n. Chr. aus Trier zeigt."
+        },
+        {
+          "stufe": "schwer",
+          "afb": "III",
+          "operator": "Beurteile",
+          "aufgabe": "Beurteile, ob Asterix ein gutes Bild der Gallier zeigt. Nenne zwei Dinge, die stimmen, und zwei, die erfunden sind.",
+          "tipp1": "Vergleiche mit Druiden, -rix-Namen, Städten und 52 v. Chr.",
+          "tipp2": "Gab es ein Dorf, das nie erobert wurde?",
+          "loesung": "Asterix zeigt manches richtig: Die Geschichten spielen um 50 v. Chr., zur Zeit von Caesars Eroberung, und der Druide Miraculix ist wie im Buch eine sehr wichtige Person; auch die Namen auf -ix erinnern an echte Namen auf -rix. Erfunden sind die Figuren, der Zaubertrank und das unbesiegbare Dorf. In Wirklichkeit war Gallien nach dem Sieg bei Alesia 52 v. Chr. bald ganz römisch, und es gab auch über 100 Städte. Asterix ist also unterhaltsam und enthält echte Bezüge, aber er ist kein Geschichtsbuch."
+        }
+      ],
+      "kurzfassung": [
+        "Nach der Eroberung übernahmen die Kelten römische Sitten und Latein.",
+        "Sprache, Religion und Kultur gerieten nicht ganz in Vergessenheit.",
+        "Keltische Sprachen spricht man noch in Irland, Schottland, Wales und der Bretagne.",
+        "Die Pferdegöttin Epona wurde auch in römischer Zeit verehrt (Relief um 130 n. Chr., Trier).",
+        "Asterix spielt um 50 v. Chr., ist aber ein Comic mit erfundenen Figuren."
+      ],
+      "begriffe": [
+        {
+          "begriff": "Romanisierung",
+          "definition": "Übernahme römischer Sitten, Lebensweise und der lateinischen Sprache durch eroberte Völker.",
+          "beispiel": "Die Gallier lernten nach der Eroberung Latein."
+        },
+        {
+          "begriff": "Epona",
+          "definition": "Keltische Pferdegöttin, die auch in römischer Zeit verehrt wurde.",
+          "beispiel": "Relief der Epona um 130 n. Chr., Trier."
+        },
+        {
+          "begriff": "keltische Sprachen heute",
+          "definition": "Sprachen keltischen Ursprungs, die noch gesprochen werden: in Irland, Schottland, Wales und der Bretagne.",
+          "beispiel": "Walisisch in Wales, Bretonisch in der Bretagne."
+        },
+        {
+          "begriff": "Asterix",
+          "definition": "Comicfigur, ein Gallier, der laut Buch um 50 v. Chr. in einem kleinen gallischen Dorf im heutigen Frankreich lebte und es erfolgreich gegen Caesar verteidigte.",
+          "beispiel": "Asterix, Obelix mit Idefix und der Druide Miraculix."
+        },
+        {
+          "begriff": "Keltengruppe Taranis",
+          "definition": "Gruppe aus Reinheim im Saarland, die keltisches Leben nachstellt (Foto im Buch von 2002).",
+          "beispiel": "Mitglieder der Keltengruppe Taranis in keltischer Kleidung."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Was taten die Kelten nach der römischen Eroberung?",
+          "antwort": "Sie nahmen schnell römische Sitten an und lernten Latein."
+        },
+        {
+          "frage": "Was geriet nicht ganz in Vergessenheit?",
+          "antwort": "Die bisherige Sprache, Religion und Kultur der Kelten."
+        },
+        {
+          "frage": "Wo spricht man noch heute keltische Sprachen?",
+          "antwort": "In Irland, Schottland, Wales und der Bretagne."
+        },
+        {
+          "frage": "Wer ist Epona, und woher kennen wir sie aus römischer Zeit?",
+          "antwort": "Die keltische Pferdegöttin. Sie wurde auch in römischer Zeit verehrt, zum Beispiel auf einem Relief um 130 n. Chr. aus Trier."
+        },
+        {
+          "frage": "Wann und wo lebten Asterix und seine Freunde laut Buch?",
+          "antwort": "Um 50 v. Chr. in einem kleinen gallischen Dorf im heutigen Frankreich, in der Bretagne."
+        },
+        {
+          "frage": "Wer gehört zu Asterix' Freunden?",
+          "antwort": "Der Druide Miraculix, Obelix und sein Hündchen Idefix."
+        },
+        {
+          "frage": "Wogegen verteidigten Asterix und seine Freunde ihr Dorf?",
+          "antwort": "Erfolgreich gegen Iulius Caesar und die Römer."
+        },
+        {
+          "frage": "Was zeigt das Foto der Keltengruppe Taranis?",
+          "antwort": "Menschen aus Reinheim im Saarland, die 2002 keltisches Leben nachstellen."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "In welchem dieser Gebiete spricht man heute eine keltische Sprache?",
+          "optionen": [
+            "Italien",
+            "Wales",
+            "Spanien",
+            "Bayern"
+          ],
+          "richtig": 1,
+          "begruendung": "Irland, Schottland, Wales und die Bretagne."
+        },
+        {
+          "frage": "Wann entstand das Epona-Relief aus Trier?",
+          "optionen": [
+            "um 600 v. Chr.",
+            "52 v. Chr.",
+            "um 130 n. Chr.",
+            "um 1959"
+          ],
+          "richtig": 2,
+          "begruendung": "Um 130 n. Chr., in römischer Zeit."
+        },
+        {
+          "frage": "Welche Aussage zu Asterix stimmt?",
+          "optionen": [
+            "Asterix war ein echter Stammesfürst.",
+            "Die Geschichten spielen um 50 v. Chr.",
+            "Das Dorf lag in Italien.",
+            "Obelix ist ein Druide."
+          ],
+          "richtig": 1,
+          "begruendung": "Die Geschichten spielen um 50 v. Chr.; Druide ist Miraculix, das Dorf liegt in der Bretagne."
+        }
+      ]
     }
-   ],
-   "merke": [
-    "Die Kelten (*Celtae*) nannten sich selbst so; die Römer nannten die Kelten in Gallien Gallier (*Galli*).",
-    "Gallien (*Gallia*) entspricht ungefähr dem heutigen Frankreich. Vor der römischen Eroberung lebten dort vorwiegend Kelten."
-   ],
-   "skizzen": [],
-   "falle": [
+  ],
+  "lernzettel": [
+    "s0: Die Kelten nannten sich selbst *Celtae*; die Römer nannten die Kelten in Gallien *Galli* (Gallier).",
+    "s0: Gallien (*Gallia*) ist das Gebiet, das ungefähr dem heutigen Frankreich entspricht; vor der Eroberung lebten dort vorwiegend Kelten.",
+    "s0: Das Buch nennt die Kelten eine europäische Hochkultur.",
+    "s1: Archäologische Ausgrabungen zeigen: Um 600 v. Chr. lebten Kelten in Mitteleuropa zum Teil in befestigten Städten.",
+    "s1: Ihre Anführer bestatteten sie in weithin sichtbaren Hügelgräbern.",
+    "s1: Ab 400 v. Chr. wanderten viele Kelten weit nach Süden und Osten.",
+    "s1: 387 v. Chr. sollen Kelten Rom beinahe erobert haben.",
+    "s2: Im 1. Jh. v. Chr. siedelten in Gallien viele verschiedene keltische Stämme.",
+    "s2: Die meisten Kelten lebten in Dörfern, es gab aber über 100 Städte mit bis zu 10.000 Bewohnern.",
+    "s2: Die Städte lagen geschützt auf Bergrücken und hatten starke Mauern aus Holz, Stein und Erde.",
+    "s2: Reiche Anführer wohnten oft auf gut gesicherten Gutshöfen und kämpften untereinander um die Macht im Stamm.",
+    "s2: Sie gaben ihren Kindern gern Namen auf -rix; -rix ist keltisch für König.",
+    "s3: Der Druide war eine der wichtigsten Personen für jeden Gallier.",
+    "s3: Er war Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten in einer Person.",
+    "s3: Er entschied in allen Streitfragen und setzte die Strafen fest; kein Stammesfürst handelte ohne seinen Rat.",
+    "s3: Als Priester brachte er die Opfer dar: üblich waren Tieropfer, es gab aber auch, wie in vielen frühen Kulturen, Menschenopfer.",
+    "s4: Im 2. Jh. v. Chr. eroberten die Römer gallische Gebiete im heutigen Südfrankreich und machten sie zur *provincia*.",
+    "s4: Aus *provincia* entstand der heutige Name Provence.",
+    "s4: Gaius Iulius Caesar dehnte in langwierigen und grausamen Eroberungskriegen die römische Macht auf ganz Gallien aus.",
+    "s4: Die Gallier leisteten anfangs heftigen Widerstand, ließen sich dann aber schnell ins Römische Reich eingliedern.",
+    "s5: Vercingetorix, der Fürst der Arverner, vereinte als Einziger die zerstrittenen gallischen Stämme.",
+    "s5: Dadurch hätten die Gallier 52 v. Chr. Caesars Truppen beinahe den Untergang gebracht.",
+    "s6: Nach der Eroberung nahmen die Kelten schnell römische Sitten an und lernten Latein.",
+    "s6: Ihre Sprache, Religion und Kultur gerieten aber nicht ganz in Vergessenheit.",
+    "s6: Keltische Sprachen spricht man noch heute in Irland, Schottland, Wales und der Bretagne, der Heimat von Asterix.",
+    "s6: Die keltische Pferdegöttin Epona wurde auch in römischer Zeit verehrt (Relief um 130 n. Chr., Trier).",
+    "s6: Asterix und seine Freunde (Miraculix, Obelix, Idefix) sind heute die berühmtesten Gallier; laut Buch lebten sie um 50 v. Chr. in einem kleinen Dorf im heutigen Frankreich und verteidigten es erfolgreich gegen Caesar.",
+    "s6: Asterix ist ein Comic: Figuren, Zaubertrank und unbesiegbares Dorf sind erfunden.",
+    "s6: Foto im Buch: die Keltengruppe Taranis aus Reinheim (Saarland), 2002."
+  ],
+  "faktencheck": [
     {
-     "falsch": "Kelten und Gallier sind zwei verschiedene Völker, die gegeneinander kämpften.",
-     "richtig": "Gallier ist der römische Name für die Kelten, die in Gallien lebten. Es handelt sich um dieselben Menschen.",
-     "warum": "Zwei Namen klingen nach zwei Völkern. Der Unterschied liegt aber nur darin, wer spricht: die Kelten selbst oder die Römer."
+      "aussage": "s0: Caesar, De bello Gallico 1,1: *Gallia est omnis divisa in partes tres* ... *qui ipsorum lingua Celtae, nostra Galli appellantur*.",
+      "quelle": "https://www.thelatinlibrary.com/caesar/gall1.shtml (abgerufen 30.09.2026)",
+      "status": "belegt"
     },
     {
-     "falsch": "Gallien ist ein altes Wort für Italien.",
-     "richtig": "Gallien entspricht ungefähr dem heutigen Frankreich. Italien war das Kernland der Römer.",
-     "warum": "Weil im Lateinunterricht alles mit Rom zu tun hat, verrutscht Gallien leicht nach Italien."
+      "aussage": "s0: Gallien entspricht ungefähr dem heutigen Frankreich.",
+      "quelle": "Lehrbuch Lektion 10",
+      "status": "vereinfacht",
+      "notiz": "Caesars Gallien reichte bis an den Rhein und umfasste auch das heutige Belgien, Teile der Schweiz und Westdeutschlands. Deshalb „ungefähr“."
+    },
+    {
+      "aussage": "s1: Um 600 v. Chr. lebten Kelten in Mitteleuropa zum Teil in befestigten Städten und bestatteten Anführer in Hügelgräbern.",
+      "quelle": "Buchseite Celtae oder Galli; https://de.wikipedia.org/wiki/Kelten (späte Hallstattkultur, etwa 650 bis 475 v. Chr., Fürstengräber)",
+      "status": "vereinfacht",
+      "notiz": "Die Forschung spricht für diese Zeit meist von befestigten Fürstensitzen und frühkeltischer Hallstattkultur; „Städte“ ist die Buchfassung."
+    },
+    {
+      "aussage": "s1: 387 v. Chr. sollen Kelten Rom beinahe erobert haben.",
+      "quelle": "Buchseite Celtae oder Galli; https://de.wikipedia.org/wiki/Kelten (Brennus, wahrscheinlich 387/386 v. Chr.)",
+      "status": "Buchfassung",
+      "notiz": "Die Datierung schwankt je nach Quelle (387/386 v. Chr., römische Tradition auch 390 v. Chr.). Nach römischen Berichten wurde die Stadt geplündert, nur das Kapitol hielt stand. Für den Test gilt: 387 v. Chr., beinahe erobert."
+    },
+    {
+      "aussage": "s3: Der Druide war Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten; es gab Menschenopfer.",
+      "quelle": "Lehrbuch Lektion 10; https://de.wikipedia.org/wiki/Druide",
+      "status": "Buchfassung",
+      "notiz": "Das Wissen stammt fast nur von antiken Autoren, vor allem Caesar. Seine Berichte über Menschenopfer gelten in der Forschung als möglicherweise übertrieben (Kriegspropaganda). Im Test gilt die Buchfassung."
+    },
+    {
+      "aussage": "s4: Im 2. Jh. v. Chr. wurde Südfrankreich römische provincia, daraus der Name Provence.",
+      "quelle": "https://de.wikipedia.org/wiki/Gallia_Narbonensis (Provinz 125 bis 118 v. Chr.; Name Provence)",
+      "status": "belegt"
+    },
+    {
+      "aussage": "s4/s5: Die Gallier ließen sich nach anfangs heftigem Widerstand schnell eingliedern.",
+      "quelle": "Lehrbuch Lektion 10",
+      "status": "Buchfassung",
+      "notiz": "Die Romanisierung war ein Vorgang über Generationen; auf dem Land blieben keltische Sprache und Bräuche lange erhalten, wie das Buch in Seite A selbst andeutet. „Schnell“ ist die Buchfassung."
+    },
+    {
+      "aussage": "s5: Vercingetorix, Fürst der Arverner, einte 52 v. Chr. fast alle gallischen Völker; Belagerung und Kapitulation bei Alesia.",
+      "quelle": "https://de.wikipedia.org/wiki/Vercingetorix",
+      "status": "belegt",
+      "notiz": "Alesia ist Zusatzwissen, nicht auf den Buchseiten."
+    },
+    {
+      "aussage": "s6: Keltische Sprachen heute in Irland, Schottland, Wales, Bretagne.",
+      "quelle": "https://de.wikipedia.org/wiki/Keltische_Sprachen",
+      "status": "belegt"
+    },
+    {
+      "aussage": "s6: Epona, keltische Pferdegöttin, auch von Römern verehrt, besonders von Reitern.",
+      "quelle": "https://de.wikipedia.org/wiki/Epona_(Mythologie); Relief um 130 n. Chr. Trier laut Buchbildunterschrift",
+      "status": "belegt",
+      "notiz": "Datierung und Fundort des Reliefs stammen aus der Bildunterschrift im Buch, nicht unabhängig geprüft."
+    },
+    {
+      "aussage": "s6: Asterix und seine Freunde lebten um 50 v. Chr. in einem kleinen gallischen Dorf.",
+      "quelle": "Buchseite Celtae oder Galli; https://de.wikipedia.org/wiki/Asterix (Comic von Goscinny und Uderzo, seit 1959; Handlung um 50 v. Chr. in Aremorica, heutige Bretagne)",
+      "status": "Buchfassung",
+      "notiz": "Asterix ist eine erfundene Comicfigur; „lebten“ meint die Handlungszeit des Comics. Das Buch stellt die Frage nach der Forschung selbst."
     }
-   ],
-   "videos": [],
-   "links": [],
-   "praxis": [
-    {
-     "stufe": "einfach",
-     "titel": "Frankreich heißt auf Französisch La France",
-     "phaenomen": "Wer heute nach Frankreich fährt, fährt ungefähr in das alte Gallien.",
-     "erklaerung": "Gallien entspricht ungefähr dem heutigen Frankreich. Der Name Frankreich stammt allerdings nicht von den Galliern, sondern von den Franken, einem späteren germanischen Volk. Gallien ist also das Gebiet, nicht der heutige Staatsname."
-    },
-    {
-     "stufe": "mittel",
-     "titel": "Deutsch oder deutsch?",
-     "phaenomen": "Deutschland heißt auf Englisch Germany, auf Französisch Allemagne. Wir selbst sagen Deutschland.",
-     "erklaerung": "Genau wie bei *Celtae* und *Galli* haben Völker oft einen eigenen Namen und fremde Namen, die andere ihnen geben. Die Römer sagten *Galli*, die Menschen selbst nannten sich nach Caesar *Celtae*."
-    },
-    {
-     "stufe": "schwer",
-     "titel": "Wer schreibt, bestimmt das Bild",
-     "phaenomen": "Fast alles, was wir schriftlich über die Gallier wissen, stammt von Griechen und Römern, vor allem von Caesar.",
-     "erklaerung": "Die Kelten selbst haben kaum schriftliche Texte hinterlassen. Deshalb sehen wir sie oft durch die Augen ihrer Gegner. Die Archäologie, also Ausgrabungen, hilft, dieses Bild zu prüfen. So erkennt man, dass die Kelten eine Hochkultur waren."
-    }
-   ],
-   "training": [
-    {
-     "stufe": "einfach",
-     "afb": "I",
-     "operator": "Nenne",
-     "aufgabe": "Nenne den Namen, den sich die Kelten selbst gaben, und den Namen, den die Römer den Kelten in Gallien gaben. Nenne auch das heutige Land, das ungefähr Gallien entspricht.",
-     "tipp1": "Ein Name ist lateinisch *Celtae*, der andere *Galli*.",
-     "tipp2": "Gallien liegt westlich von Deutschland.",
-     "loesung": "Selbstbezeichnung: Kelten (*Celtae*). Römische Bezeichnung: Gallier (*Galli*). Gallien entspricht ungefähr dem heutigen Frankreich."
-    },
-    {
-     "stufe": "mittel",
-     "afb": "II",
-     "operator": "Erkläre",
-     "aufgabe": "Erkläre, warum man sagen kann: Alle Gallier waren Kelten, aber nicht alle Kelten waren Gallier.",
-     "tipp1": "Überlege, wo überall Kelten lebten.",
-     "tipp2": "Gallier heißen nur die Kelten, die in Gallien lebten.",
-     "loesung": "Kelten lebten in weiten Teilen Europas, zum Beispiel auch in Mitteleuropa und auf den Britischen Inseln. Gallier nannten die Römer nur die Kelten, die in Gallien, also ungefähr im heutigen Frankreich, lebten. Deshalb ist jeder Gallier ein Kelte, aber nicht jeder Kelte ein Gallier."
-    },
-    {
-     "stufe": "schwer",
-     "afb": "III",
-     "operator": "Beurteile",
-     "aufgabe": "Das Buch fragt: „Kulturloses Gallien?“ Beurteile diese Frage mit mindestens zwei Belegen aus diesem Kapitel.",
-     "tipp1": "Denke an Städte, Mauern, Priester und Religion.",
-     "tipp2": "Beachte auch, wer das Bild vom kulturlosen Gallien verbreitet hat.",
-     "loesung": "Die Frage ist mit Nein zu beantworten. Die Kelten lebten in über 100 befestigten Städten mit starken Mauern, sie hatten mit den Druiden Richter, Lehrer, Ärzte und Priester und eine eigene Religion. Das Bild vom kulturlosen Gallien stammt vor allem von römischen Autoren, die die Kelten als Gegner darstellten. Das Buch nennt die Kelten deshalb eine europäische Hochkultur."
-    }
-   ],
-   "kurzfassung": [
-    "Kelten (*Celtae*) ist der eigene Name, Gallier (*Galli*) der römische Name für die Kelten in Gallien.",
-    "Gallien (*Gallia*) entspricht ungefähr dem heutigen Frankreich.",
-    "Vor der römischen Eroberung lebten dort vorwiegend Kelten.",
-    "Das Buch nennt die Kelten eine europäische Hochkultur."
-   ],
-   "begriffe": [
-    {
-     "begriff": "Kelten (*Celtae*)",
-     "definition": "Viele Stämme mit ähnlicher Sprache, Religion und Kultur in weiten Teilen Europas. Kelten ist ihre Selbstbezeichnung.",
-     "beispiel": "Caesar: *qui ipsorum lingua Celtae, nostra Galli appellantur*."
-    },
-    {
-     "begriff": "Gallier (*Galli*)",
-     "definition": "Römischer Name für die Kelten, die in Gallien lebten.",
-     "beispiel": "Asterix und Obelix sind Gallier."
-    },
-    {
-     "begriff": "Gallien (*Gallia*)",
-     "definition": "Gebiet, das ungefähr dem heutigen Frankreich entspricht. Vor der römischen Eroberung lebten dort vorwiegend Kelten.",
-     "beispiel": "*Gallia est omnis divisa in partes tres.*"
-    },
-    {
-     "begriff": "Hochkultur",
-     "definition": "Eine weit entwickelte Kultur mit Städten, Handwerk, Religion und fester Ordnung. Das Buch bezeichnet die Kelten als europäische Hochkultur.",
-     "beispiel": "Überschrift im Buch: *Celtae* oder *Galli*: eine europäische Hochkultur."
-    }
-   ],
-   "warumKarten": [
-    {
-     "frage": "Warum gibt es für dieselben Menschen zwei Namen?",
-     "antwort": "Kelten (*Celtae*) nannten sie sich selbst. Die Römer nannten die Kelten in Gallien Gallier (*Galli*). Der Name hängt also davon ab, wer spricht."
-    },
-    {
-     "frage": "Welchem heutigen Land entspricht Gallien ungefähr?",
-     "antwort": "Gallien entspricht ungefähr dem heutigen Frankreich."
-    },
-    {
-     "frage": "Wer lebte vor der römischen Eroberung in Gallien?",
-     "antwort": "Vorwiegend Kelten, die von den Römern Gallier genannt wurden."
-    }
-   ],
-   "quiz": [
-    {
-     "frage": "Wie nannten die Römer die Kelten in Gallien?",
-     "optionen": [
-      "*Celtae*",
-      "*Galli*",
-      "*Germani*",
-      "*Britanni*"
-     ],
-     "richtig": 1,
-     "begruendung": "*Galli* ist der römische Name. *Celtae* ist die Selbstbezeichnung."
-    },
-    {
-     "frage": "Welchem heutigen Land entspricht Gallien ungefähr?",
-     "optionen": [
-      "Italien",
-      "Spanien",
-      "Frankreich",
-      "Irland"
-     ],
-     "richtig": 2,
-     "begruendung": "Gallien entspricht ungefähr dem heutigen Frankreich."
-    },
-    {
-     "frage": "Was meint das Buch mit der Frage „Kulturloses Gallien?“",
-     "optionen": [
-      "Die Gallier hatten wirklich keine Kultur.",
-      "Es stellt das römische Vorurteil in Frage; die Kelten waren eine Hochkultur.",
-      "Gallien war unbewohnt.",
-      "Nur die Römer brachten Städte nach Gallien."
-     ],
-     "richtig": 1,
-     "begruendung": "Das Buch nennt die Kelten eine europäische Hochkultur. Die Frage ist rhetorisch gemeint."
-    }
-   ]
-  },
-  {
-   "id": "s1",
-   "nr": 1,
-   "titel": "Die Kelten vor Rom",
-   "leitfrage": "Wie lebten die Kelten, bevor die Römer kamen, und woher wissen wir das?",
-   "ichKann": "die wichtigsten Daten der Kelten vor der römischen Eroberung nennen und am Zeitstrahl einordnen.",
-   "aufgabenImUnterricht": [],
-   "buchseiten": [
-    "Buchseite: Celtae oder Galli, eine europäische Hochkultur"
-   ],
-   "einstieg": "Bevor Caesar überhaupt geboren war, hatten die Kelten schon Städte, Fürstengräber und einmal fast Rom eingenommen. Drei Zahlen, dann sitzt dieser Teil: 600, 400, 387.",
-   "theorie": [
-    {
-     "ueberschrift": "Woher wir es wissen",
-     "text": "Die frühen Kelten haben keine Bücher hinterlassen. Was wir über sie wissen, zeigen vor allem **archäologische Ausgrabungen**: Reste von Mauern, Häusern, Gräbern und Fundstücken."
-    },
-    {
-     "ueberschrift": "Um 600 v. Chr.",
-     "text": "Schon **um 600 v. Chr.** lebten Kelten in **Mitteleuropa** zum Teil in **befestigten Städten**. Ihre Anführer bestatteten sie in **Hügelgräbern**, die man weithin sehen konnte. Ein Hügelgrab ist ein Grab, über dem ein großer Erdhügel aufgeschüttet wurde."
-    },
-    {
-     "ueberschrift": "Ab 400 v. Chr.: Wanderungen",
-     "text": "**Ab 400 v. Chr.** wanderten viele Kelten weit nach **Süden und Osten**. So kamen sie auch nach Italien."
-    },
-    {
-     "ueberschrift": "387 v. Chr.: Rom in Gefahr",
-     "text": "Im Jahr **387 v. Chr.** sollen Kelten **Rom beinahe erobert** haben. Das Buch schreibt „sollen“, weil wir dieses Ereignis nur aus späteren römischen Berichten kennen. Für die Römer blieb es lange eine schlimme Erinnerung."
-    },
-    {
-     "ueberschrift": "Wichtig: v. Chr. zählt rückwärts",
-     "text": "Bei Jahreszahlen vor Christi Geburt ist die größere Zahl das frühere Jahr. 600 v. Chr. liegt also vor 400 v. Chr., und 400 v. Chr. liegt vor 387 v. Chr."
-    }
-   ],
-   "merke": [
-    "Um 600 v. Chr. lebten Kelten in Mitteleuropa zum Teil in befestigten Städten und bestatteten ihre Anführer in weithin sichtbaren Hügelgräbern.",
-    "Ab 400 v. Chr. wanderten viele Kelten nach Süden und Osten; 387 v. Chr. sollen sie Rom beinahe erobert haben.",
-    "Vor Christi Geburt gilt: größere Zahl heißt früheres Jahr."
-   ],
-   "skizzen": [
-    {
-     "titel": "Zeitstrahl: Kelten und Römer",
-     "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 760 230\" font-family=\"inherit\"><line x1=\"20\" y1=\"115\" x2=\"740\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M740,115 L728,108 L728,122 z\" fill=\"currentColor\"/><line x1=\"610\" y1=\"95\" x2=\"610\" y2=\"135\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"4 3\"/><text x=\"610\" y=\"152\" font-size=\"13\" text-anchor=\"middle\" fill=\"currentColor\">Christi Geburt</text><text x=\"310\" y=\"222\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\" opacity=\"0.7\">nicht maßstabsgetreu</text><circle cx=\"40\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"40\" y1=\"109\" x2=\"40\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"40\" y=\"46\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">600 v. Chr.</text><text x=\"40\" y=\"64\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">Städte, Hügelgräber</text><circle cx=\"150\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"150\" y1=\"121\" x2=\"150\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"150\" y=\"178\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">ab 400 v. Chr.</text><text x=\"150\" y=\"196\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">Wanderung nach S und O</text><circle cx=\"250\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"250\" y1=\"109\" x2=\"250\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"250\" y=\"46\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">387 v. Chr.</text><text x=\"250\" y=\"64\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">Rom beinahe erobert</text><circle cx=\"360\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"360\" y1=\"121\" x2=\"360\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"360\" y=\"178\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">2. Jh. v. Chr.</text><text x=\"360\" y=\"196\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">provincia in Südgallien</text><circle cx=\"470\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"470\" y1=\"109\" x2=\"470\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"470\" y=\"46\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">52 v. Chr.</text><text x=\"470\" y=\"64\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">Vercingetorix</text><circle cx=\"555\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"555\" y1=\"121\" x2=\"555\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"555\" y=\"178\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">um 50 v. Chr.</text><text x=\"555\" y=\"196\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">Asterix (Comic)</text><circle cx=\"690\" cy=\"115\" r=\"6\" fill=\"currentColor\"/><line x1=\"690\" y1=\"109\" x2=\"690\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"690\" y=\"46\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">um 130 n. Chr.</text><text x=\"690\" y=\"64\" font-size=\"12\" text-anchor=\"middle\" fill=\"currentColor\">Epona-Relief, Trier</text></svg>",
-     "alt": "Zeitstrahl von links nach rechts: 600 v. Chr. Städte und Hügelgräber, ab 400 v. Chr. Wanderung nach Süden und Osten, 387 v. Chr. Rom beinahe erobert, 2. Jahrhundert v. Chr. provincia in Südgallien, 52 v. Chr. Vercingetorix, um 50 v. Chr. Asterix als Comicfigur, Christi Geburt, um 130 n. Chr. Epona-Relief in Trier. Nicht maßstabsgetreu."
-    }
-   ],
-   "falle": [
-    {
-     "falsch": "400 v. Chr. kommt nach 387 v. Chr., weil 400 größer ist.",
-     "richtig": "400 v. Chr. liegt 13 Jahre vor 387 v. Chr. Vor Christi Geburt wird rückwärts gezählt.",
-     "warum": "Wir sind gewohnt, dass größere Zahlen später kommen. Vor Christi Geburt ist es umgekehrt."
-    },
-    {
-     "falsch": "Die Kelten haben Rom 387 v. Chr. erobert.",
-     "richtig": "Sie sollen Rom 387 v. Chr. **beinahe** erobert haben.",
-     "warum": "Das Wort „beinahe“ geht beim Lernen leicht verloren. Im Test ist es entscheidend."
-    }
-   ],
-   "videos": [],
-   "links": [
-    {
-     "titel": "Wikipedia: Kelten",
-     "url": "https://de.wikipedia.org/wiki/Kelten",
-     "typ": "Artikel",
-     "auftrag": "Suche im Artikel den Namen des keltischen Heerführers, der Rom belagerte. Schreibe einen Satz dazu. Das ist Zusatzwissen, im Test zählt die Buchfassung."
-    }
-   ],
-   "praxis": [
-    {
-     "stufe": "einfach",
-     "titel": "Grabhügel im Wald",
-     "phaenomen": "In vielen Wäldern in Deutschland findet man flache, runde Hügel, die auf Wanderkarten als Hügelgrab eingetragen sind.",
-     "erklaerung": "Viele davon stammen aus keltischer oder noch früherer Zeit. Die Kelten bestatteten ihre Anführer in weithin sichtbaren Hügelgräbern. Man sollte sie nicht beschädigen, denn sie sind Bodendenkmäler."
-    },
-    {
-     "stufe": "mittel",
-     "titel": "Ausgraben statt Nachlesen",
-     "phaenomen": "Archäologen legen Mauerreste und Gräber frei und bestimmen, wie alt sie sind.",
-     "erklaerung": "Weil die frühen Kelten keine Texte hinterlassen haben, sind Ausgrabungen die wichtigste Quelle. So weiß man, dass es um 600 v. Chr. schon befestigte keltische Städte gab."
-    },
-    {
-     "stufe": "schwer",
-     "titel": "Eine alte Angst der Römer",
-     "phaenomen": "Römische Schriftsteller berichten noch Jahrhunderte später von dem Tag, an dem die Kelten fast Rom einnahmen.",
-     "erklaerung": "Das Ereignis von 387 v. Chr. prägte das römische Bild der Gallier als gefährliche Feinde. Das hilft zu verstehen, warum Caesar später so hart gegen Gallien vorging und warum römische Texte die Gallier oft negativ darstellen."
-    }
-   ],
-   "training": [
-    {
-     "stufe": "einfach",
-     "afb": "I",
-     "operator": "Nenne",
-     "aufgabe": "Nenne zu jeder Jahreszahl das Ereignis: 600 v. Chr., ab 400 v. Chr., 387 v. Chr.",
-     "tipp1": "Städte und Gräber, Wanderung, Rom.",
-     "tipp2": "Die früheste Zahl gehört zu Städten und Hügelgräbern.",
-     "loesung": "600 v. Chr.: Kelten in Mitteleuropa leben zum Teil in befestigten Städten und bestatten ihre Anführer in Hügelgräbern. Ab 400 v. Chr.: Viele Kelten wandern nach Süden und Osten. 387 v. Chr.: Kelten sollen Rom beinahe erobert haben."
-    },
-    {
-     "stufe": "mittel",
-     "afb": "II",
-     "operator": "Ordne",
-     "aufgabe": "Ordne zeitlich, beginnend mit dem frühesten Ereignis: Vercingetorix einigt die Stämme; Kelten erreichen beinahe Rom; befestigte keltische Städte in Mitteleuropa; Wanderung nach Süden und Osten beginnt.",
-     "tipp1": "Schreibe zuerst die Jahreszahlen dazu.",
-     "tipp2": "600, 400, 387, 52: vor Christus ist die größte Zahl die früheste.",
-     "loesung": "1. Befestigte keltische Städte in Mitteleuropa (um 600 v. Chr.). 2. Beginn der Wanderung nach Süden und Osten (ab 400 v. Chr.). 3. Kelten erreichen beinahe Rom (387 v. Chr.). 4. Vercingetorix einigt die Stämme (52 v. Chr.)."
-    },
-    {
-     "stufe": "schwer",
-     "afb": "III",
-     "operator": "Beurteile",
-     "aufgabe": "Beurteile, warum das Buch bei 387 v. Chr. „sollen“ schreibt, bei 600 v. Chr. aber „wie archäologische Ausgrabungen zeigen“.",
-     "tipp1": "Überlege, woher man das jeweilige Wissen hat.",
-     "tipp2": "Mauern und Gräber kann man ausgraben. Eine Belagerung hinterlässt kaum Spuren.",
-     "loesung": "Die Städte und Hügelgräber um 600 v. Chr. sind durch Ausgrabungen belegt, man kann ihre Reste sehen. Den Angriff auf Rom kennen wir nur aus Berichten römischer Schriftsteller, die viel später schrieben. Deshalb ist das Buch vorsichtig und schreibt „sollen“. Das ist sorgfältiger Umgang mit Quellen."
-    }
-   ],
-   "kurzfassung": [
-    "Archäologische Ausgrabungen zeigen: Um 600 v. Chr. lebten Kelten in Mitteleuropa zum Teil in befestigten Städten.",
-    "Ihre Anführer wurden in weithin sichtbaren Hügelgräbern bestattet.",
-    "Ab 400 v. Chr. wanderten viele Kelten nach Süden und Osten.",
-    "387 v. Chr. sollen sie Rom beinahe erobert haben."
-   ],
-   "begriffe": [
-    {
-     "begriff": "Hügelgrab",
-     "definition": "Grab, über dem ein großer, weithin sichtbarer Erdhügel aufgeschüttet wurde. Die Kelten bestatteten darin ihre Anführer.",
-     "beispiel": "Keltische Hügelgräber gibt es um 600 v. Chr. in Mitteleuropa."
-    },
-    {
-     "begriff": "Archäologie",
-     "definition": "Wissenschaft, die aus Ausgrabungen und Fundstücken erforscht, wie Menschen früher lebten.",
-     "beispiel": "Ausgrabungen zeigen befestigte keltische Städte um 600 v. Chr."
-    },
-    {
-     "begriff": "befestigte Stadt",
-     "definition": "Siedlung, die durch Mauern oder Wälle gegen Angreifer geschützt ist.",
-     "beispiel": "Kelten lebten um 600 v. Chr. zum Teil in befestigten Städten."
-    }
-   ],
-   "warumKarten": [
-    {
-     "frage": "Wann lebten Kelten in Mitteleuropa schon zum Teil in befestigten Städten?",
-     "antwort": "Um 600 v. Chr. Das zeigen archäologische Ausgrabungen."
-    },
-    {
-     "frage": "Wie bestatteten die Kelten um 600 v. Chr. ihre Anführer?",
-     "antwort": "In weithin sichtbaren Hügelgräbern."
-    },
-    {
-     "frage": "Was geschah ab 400 v. Chr.?",
-     "antwort": "Viele Kelten wanderten weit nach Süden und Osten."
-    },
-    {
-     "frage": "Was sollen die Kelten 387 v. Chr. getan haben?",
-     "antwort": "Sie sollen Rom beinahe erobert haben."
-    },
-    {
-     "frage": "Warum wissen wir über die frühen Kelten vor allem durch Ausgrabungen Bescheid?",
-     "antwort": "Die frühen Kelten haben keine eigenen Texte hinterlassen. Mauern, Gräber und Fundstücke sind deshalb die wichtigsten Quellen."
-    }
-   ],
-   "quiz": [
-    {
-     "frage": "Wann sollen Kelten Rom beinahe erobert haben?",
-     "optionen": [
-      "600 v. Chr.",
-      "400 v. Chr.",
-      "387 v. Chr.",
-      "52 v. Chr."
-     ],
-     "richtig": 2,
-     "begruendung": "387 v. Chr. sollen Kelten Rom beinahe erobert haben."
-    },
-    {
-     "frage": "In welche Richtungen wanderten viele Kelten ab 400 v. Chr.?",
-     "optionen": [
-      "Nach Norden und Westen",
-      "Nach Süden und Osten",
-      "Nur nach Westen",
-      "Nach Amerika"
-     ],
-     "richtig": 1,
-     "begruendung": "Das Buch nennt Süden und Osten."
-    },
-    {
-     "frage": "Welches Jahr liegt am frühesten?",
-     "optionen": [
-      "387 v. Chr.",
-      "400 v. Chr.",
-      "600 v. Chr.",
-      "52 v. Chr."
-     ],
-     "richtig": 2,
-     "begruendung": "Vor Christi Geburt ist die größte Zahl das früheste Jahr."
-    }
-   ]
-  },
-  {
-   "id": "s2",
-   "nr": 2,
-   "titel": "Leben in Gallien zur Zeit Caesars",
-   "leitfrage": "Wie und wo lebten die Gallier im 1. Jahrhundert v. Chr.?",
-   "ichKann": "die Siedlungen und die Anführer der Gallier zur Zeit Caesars beschreiben.",
-   "aufgabenImUnterricht": [],
-   "buchseiten": [
-    "Buchseite: Celtae oder Galli, eine europäische Hochkultur"
-   ],
-   "einstieg": "Vergiss das eine kleine Dorf aus dem Comic. Zur Zeit Caesars gab es in Gallien über 100 Städte, manche so groß wie heute eine Kleinstadt. Und die Chefs hießen fast alle irgendwas mit -rix.",
-   "theorie": [
-    {
-     "ueberschrift": "Viele Stämme",
-     "text": "Im **1. Jahrhundert v. Chr.** siedelten in Gallien **viele verschiedene keltische Stämme**. Es gab keinen gemeinsamen Staat und keinen gemeinsamen König."
-    },
-    {
-     "ueberschrift": "Dörfer und Städte",
-     "text": "Die **meisten Kelten lebten in Dörfern**. Es gab aber auch **über 100 Städte**, in denen **bis zu 10.000 Bewohner** lebten. Diese Städte lagen geschützt **auf Bergrücken** und hatten **starke Mauern aus Holz, Stein und Erde**."
-    },
-    {
-     "ueberschrift": "Die Anführer",
-     "text": "**Reiche Anführer** wohnten oft auf ihren **gut gesicherten Gutshöfen**. Sie **kämpften untereinander um die Macht im Stamm**. Ihren Kindern gaben sie gern Namen, die auf **-rix** endeten. Das ist keltisch und bedeutet **„König“**. Ein berühmtes Beispiel ist Vercingetorix."
-    },
-    {
-     "ueberschrift": "Zerstritten",
-     "text": "Weil die Stämme und ihre Anführer oft zerstritten waren, konnten sie sich gegen die Römer nur schwer gemeinsam wehren. Nur ein einziges Mal gelang es, sie zu vereinen. Davon handelt Schritt 5."
-    }
-   ],
-   "merke": [
-    "Im 1. Jh. v. Chr. lebten in Gallien viele keltische Stämme, die meisten Menschen in Dörfern.",
-    "Es gab über 100 Städte mit bis zu 10.000 Bewohnern, geschützt auf Bergrücken, mit Mauern aus Holz, Stein und Erde.",
-    "Reiche Anführer wohnten auf gesicherten Gutshöfen, kämpften um die Macht im Stamm und gaben ihren Kindern Namen auf -rix (keltisch für König)."
-   ],
-   "skizzen": [],
-   "falle": [
-    {
-     "falsch": "Die Gallier lebten alle in Dörfern wie Asterix.",
-     "richtig": "Die meisten lebten in Dörfern, es gab aber auch über 100 Städte mit bis zu 10.000 Bewohnern.",
-     "warum": "Der Comic zeigt nur ein Dorf. Das Buch betont ausdrücklich die Städte."
-    },
-    {
-     "falsch": "Die Mauern der gallischen Städte waren aus Stein, wie bei einer Burg.",
-     "richtig": "Die Mauern bestanden aus Holz, Stein und Erde.",
-     "warum": "Bei Mauern denkt man an Steinburgen. Im Test werden alle drei Baustoffe erwartet."
-    },
-    {
-     "falsch": "-rix bedeutet Krieger.",
-     "richtig": "-rix ist keltisch und bedeutet König.",
-     "warum": "Weil viele -rix-Namen zu Kämpfern gehören, rät man leicht falsch."
-    }
-   ],
-   "videos": [],
-   "links": [],
-   "praxis": [
-    {
-     "stufe": "einfach",
-     "titel": "Namen-Check",
-     "phaenomen": "Vercingetorix, Asterix, Obelix, Majestix: fast alle Gallier im Comic heißen auf -ix.",
-     "erklaerung": "Die Comiczeichner spielen mit echten keltischen Namen auf -rix. Das keltische -rix bedeutet König. Echte Anführer gaben ihren Kindern gern solche Namen, weil sie Macht und Rang zeigen sollten."
-    },
-    {
-     "stufe": "mittel",
-     "titel": "Stadt auf dem Berg",
-     "phaenomen": "Viele alte Burgen und Städte in Europa liegen auf Bergen oder Hügeln.",
-     "erklaerung": "Schon die gallischen Städte lagen geschützt auf Bergrücken. Von oben sieht man Feinde früh, und Angreifer müssen bergauf kämpfen. Zusätzlich schützten starke Mauern aus Holz, Stein und Erde."
-    },
-    {
-     "stufe": "schwer",
-     "titel": "Uneinig gegen einen starken Gegner",
-     "phaenomen": "Wenn sich die Spieler einer Mannschaft streiten, verliert sie oft gegen ein schwächeres, aber einiges Team.",
-     "erklaerung": "Die gallischen Anführer kämpften untereinander um die Macht. Rom trat dagegen mit einem geordneten Heer unter einem Feldherrn auf. Die Uneinigkeit der Gallier war ein Grund, warum Caesar sie Stück für Stück besiegen konnte."
-    }
-   ],
-   "training": [
-    {
-     "stufe": "einfach",
-     "afb": "I",
-     "operator": "Nenne",
-     "aufgabe": "Nenne die drei Baustoffe der Mauern gallischer Städte und die höchste Einwohnerzahl, die das Buch nennt.",
-     "tipp1": "Ein Baustoff wächst im Wald.",
-     "tipp2": "Die Zahl hat vier Nullen.",
-     "loesung": "Holz, Stein und Erde. Bis zu 10.000 Bewohner."
-    },
-    {
-     "stufe": "mittel",
-     "afb": "II",
-     "operator": "Beschreibe",
-     "aufgabe": "Beschreibe in drei bis vier Sätzen, wie die Gallier zur Zeit Caesars wohnten.",
-     "tipp1": "Unterscheide Dörfer, Städte und Gutshöfe.",
-     "tipp2": "Nenne Lage und Schutz der Städte.",
-     "loesung": "Die meisten Gallier lebten in Dörfern. Es gab aber auch über 100 Städte mit bis zu 10.000 Bewohnern. Diese lagen geschützt auf Bergrücken und hatten starke Mauern aus Holz, Stein und Erde. Reiche Anführer wohnten oft auf gut gesicherten Gutshöfen."
-    },
-    {
-     "stufe": "schwer",
-     "afb": "III",
-     "operator": "Erkläre",
-     "aufgabe": "Erkläre, warum es für Caesar ein Vorteil war, dass die Gallier aus vielen Stämmen bestanden.",
-     "tipp1": "Was taten die Anführer untereinander?",
-     "tipp2": "Denke an Einigkeit und Uneinigkeit.",
-     "loesung": "Gallien bestand aus vielen verschiedenen Stämmen, deren Anführer untereinander um die Macht kämpften. Sie hatten keinen gemeinsamen Anführer und handelten nicht gemeinsam. Caesar konnte deshalb einzelne Stämme nacheinander besiegen. Nur einmal, unter Vercingetorix, standen die Gallier geschlossen gegen ihn."
-    }
-   ],
-   "kurzfassung": [
-    "Im 1. Jh. v. Chr. siedelten in Gallien viele keltische Stämme.",
-    "Die meisten lebten in Dörfern, es gab aber über 100 Städte mit bis zu 10.000 Bewohnern.",
-    "Die Städte lagen auf Bergrücken und hatten Mauern aus Holz, Stein und Erde.",
-    "Reiche Anführer lebten auf gesicherten Gutshöfen, kämpften um die Macht und gaben Namen auf -rix (König)."
-   ],
-   "begriffe": [
-    {
-     "begriff": "-rix",
-     "definition": "Keltische Namensendung mit der Bedeutung König. Reiche Anführer gaben sie gern ihren Kindern.",
-     "beispiel": "Vercingetorix"
-    },
-    {
-     "begriff": "Stamm",
-     "definition": "Gruppe von Menschen, die sich als zusammengehörig verstehen und einen gemeinsamen Anführer haben. In Gallien gab es viele keltische Stämme.",
-     "beispiel": "Die Arverner waren ein gallischer Stamm."
-    },
-    {
-     "begriff": "Gutshof",
-     "definition": "Großer Bauernhof eines reichen Besitzers. Gallische Anführer wohnten oft auf gut gesicherten Gutshöfen.",
-     "beispiel": "Ein Anführer lenkt von seinem Gutshof aus seine Leute."
-    }
-   ],
-   "warumKarten": [
-    {
-     "frage": "Wann lebten die Gallier, von denen dieser Schritt handelt?",
-     "antwort": "Im 1. Jahrhundert v. Chr., also zur Zeit Caesars."
-    },
-    {
-     "frage": "Wo lebten die meisten Gallier?",
-     "antwort": "In Dörfern."
-    },
-    {
-     "frage": "Wie viele Städte gab es und wie groß waren sie?",
-     "antwort": "Über 100 Städte mit bis zu 10.000 Bewohnern."
-    },
-    {
-     "frage": "Warum lagen die gallischen Städte auf Bergrücken?",
-     "antwort": "Dort waren sie geschützt. Zusätzlich hatten sie starke Mauern aus Holz, Stein und Erde."
-    },
-    {
-     "frage": "Was bedeutet die keltische Endung -rix?",
-     "antwort": "König."
-    },
-    {
-     "frage": "Wo wohnten reiche Anführer, und worum kämpften sie?",
-     "antwort": "Sie wohnten oft auf gut gesicherten Gutshöfen und kämpften untereinander um die Macht im Stamm."
-    }
-   ],
-   "quiz": [
-    {
-     "frage": "Wie viele Bewohner hatten die größten gallischen Städte laut Buch?",
-     "optionen": [
-      "bis zu 1.000",
-      "bis zu 10.000",
-      "bis zu 100.000",
-      "über 1 Million"
-     ],
-     "richtig": 1,
-     "begruendung": "Das Buch nennt bis zu 10.000 Bewohner."
-    },
-    {
-     "frage": "Woraus bestanden die Mauern?",
-     "optionen": [
-      "nur Stein",
-      "Holz, Stein und Erde",
-      "Ziegel und Beton",
-      "Eisen"
-     ],
-     "richtig": 1,
-     "begruendung": "Holz, Stein und Erde."
-    },
-    {
-     "frage": "Was bedeutet -rix?",
-     "optionen": [
-      "Krieger",
-      "Druide",
-      "König",
-      "Pferd"
-     ],
-     "richtig": 2,
-     "begruendung": "-rix ist keltisch für König."
-    }
-   ]
-  },
-  {
-   "id": "s3",
-   "nr": 3,
-   "titel": "Der Druide",
-   "leitfrage": "Warum war der Druide für jeden Gallier eine der wichtigsten Personen?",
-   "ichKann": "die Aufgaben des Druiden nennen und seine Stellung im Stamm erklären.",
-   "aufgabenImUnterricht": [],
-   "buchseiten": [
-    "Lehrbuch Lektion 10, Römischer Alltag III: Galliens Welt"
-   ],
-   "einstieg": "Im Comic braut Miraculix den Zaubertrank. Im Buch ist der Druide viel mehr: fünf Jobs in einer Person. Wer die fünf aufzählen kann, hat die sicherste Frage des Tests schon im Sack.",
-   "theorie": [
-    {
-     "ueberschrift": "Fünf Aufgaben in einer Person",
-     "text": "Eine der wichtigsten Personen für jeden Gallier war der **Druide** (lateinisch Mehrzahl *druides*). Er war **Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten** in einer Person."
-    },
-    {
-     "ueberschrift": "Als Richter",
-     "text": "Der Druide **entschied in allen Streitfragen** und **setzte die Strafen fest**."
-    },
-    {
-     "ueberschrift": "Als Berater",
-     "text": "**Kein Stammesfürst unternahm oder entschied etwas ohne den Rat eines Druiden.** Damit hatte der Druide großen politischen Einfluss."
-    },
-    {
-     "ueberschrift": "Als Priester",
-     "text": "Als Priester war der Druide für das **Darbringen der Opfer** zuständig. **Allgemein üblich waren Tieropfer.** Es gab aber auch, **wie in vielen frühen Kulturen, Menschenopfer**."
-    },
-    {
-     "ueberschrift": "Zusatzinfo: Woher wir das wissen",
-     "text": "Fast alle Nachrichten über die Druiden stammen von Römern und Griechen, vor allem von Caesar, dem Gegner der Gallier. Forscher halten es für möglich, dass er manches übertrieben hat, um seinen Krieg zu rechtfertigen. Für den Test gilt die Fassung im Buch."
-    }
-   ],
-   "merke": [
-    "Der Druide war Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten in einer Person.",
-    "Er entschied in allen Streitfragen und setzte die Strafen fest; kein Stammesfürst handelte ohne seinen Rat.",
-    "Als Priester brachte er die Opfer dar: üblich waren Tieropfer, es gab aber auch Menschenopfer."
-   ],
-   "skizzen": [
-    {
-     "titel": "Die fünf Aufgaben des Druiden",
-     "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 260\" font-family=\"inherit\"><circle cx=\"230\" cy=\"130\" r=\"52\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"230\" y=\"136\" font-size=\"18\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"currentColor\">Druide</text><line x1=\"230\" y1=\"68\" x2=\"230\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"230\" y=\"30\" font-size=\"15\" text-anchor=\"middle\" fill=\"currentColor\">Priester</text><line x1=\"288\" y1=\"109\" x2=\"344\" y2=\"99\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"382\" y=\"99\" font-size=\"15\" text-anchor=\"middle\" fill=\"currentColor\">Richter</text><line x1=\"267\" y1=\"182\" x2=\"302\" y2=\"206\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"326\" y=\"224\" font-size=\"15\" text-anchor=\"middle\" fill=\"currentColor\">Arzt</text><line x1=\"193\" y1=\"182\" x2=\"158\" y2=\"206\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"134\" y=\"224\" font-size=\"15\" text-anchor=\"middle\" fill=\"currentColor\">Lehrer</text><line x1=\"172\" y1=\"109\" x2=\"116\" y2=\"99\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"78\" y=\"99\" font-size=\"15\" text-anchor=\"middle\" fill=\"currentColor\">Berater</text></svg>",
-     "alt": "Kreis mit der Aufschrift Druide, davon gehen fünf Linien aus zu Priester, Richter, Arzt, Lehrer und Berater."
-    }
-   ],
-   "falle": [
-    {
-     "falsch": "Der Druide war der Anführer des Stammes.",
-     "richtig": "Anführer war der Stammesfürst. Der Druide war sein Berater, ohne dessen Rat der Fürst nichts entschied.",
-     "warum": "Weil der Druide so mächtig war, verwechselt man ihn leicht mit dem Fürsten."
-    },
-    {
-     "falsch": "Der Druide war vor allem ein Zauberer, der Tränke braute.",
-     "richtig": "Der Druide war Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten.",
-     "warum": "Das Bild vom Zaubertrank stammt aus dem Asterix-Comic, nicht aus dem Buch."
-    }
-   ],
-   "videos": [],
-   "links": [
-    {
-     "titel": "Wikipedia: Druide",
-     "url": "https://de.wikipedia.org/wiki/Druide",
-     "typ": "Artikel",
-     "auftrag": "Suche im Artikel, welche Quelle vor allem über die Druiden berichtet, und warum Forscher ihr nicht in allem trauen. Ein Satz genügt."
-    }
-   ],
-   "praxis": [
-    {
-     "stufe": "einfach",
-     "titel": "Miraculix im Comic",
-     "phaenomen": "Der Druide Miraculix ist im Comic der Klügste im Dorf und wird bei allen wichtigen Fragen gefragt.",
-     "erklaerung": "Das passt zum Buch: Kein Stammesfürst entschied etwas ohne den Rat eines Druiden. Den Zaubertrank gibt es aber nur im Comic."
-    },
-    {
-     "stufe": "mittel",
-     "titel": "Heute sind es viele Berufe",
-     "phaenomen": "Bei uns gibt es für Streit Gerichte, für Krankheiten Ärzte, für Bildung Lehrer und für Religion Pfarrer oder andere Geistliche.",
-     "erklaerung": "Bei den Galliern vereinte der Druide all diese Aufgaben. Das zeigt, wie viel Wissen und Macht in seiner Hand lagen."
-    },
-    {
-     "stufe": "schwer",
-     "titel": "Wer erzählt die Geschichte?",
-     "phaenomen": "Caesar berichtet ausführlich über Menschenopfer der Gallier.",
-     "erklaerung": "Caesar war der Feind der Gallier. Ein grausames Bild der Gallier half ihm, seinen Krieg in Rom als gerecht darzustellen. Deshalb prüfen Forscher solche Berichte kritisch. Das Buch hält fest, dass es Menschenopfer gab, wie in vielen frühen Kulturen."
-    }
-   ],
-   "training": [
-    {
-     "stufe": "einfach",
-     "afb": "I",
-     "operator": "Nenne",
-     "aufgabe": "Nenne die fünf Aufgaben des Druiden.",
-     "tipp1": "Eine Aufgabe hat mit Gericht zu tun, eine mit Schule, eine mit Krankheit.",
-     "tipp2": "Die übrigen zwei: Religion und der Stammesfürst.",
-     "loesung": "Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten."
-    },
-    {
-     "stufe": "mittel",
-     "afb": "II",
-     "operator": "Beschreibe",
-     "aufgabe": "Beschreibe die Aufgaben des Druiden als Richter und als Priester.",
-     "tipp1": "Als Richter: Streit und Strafe.",
-     "tipp2": "Als Priester: Opfer, zwei Arten.",
-     "loesung": "Als Richter entschied der Druide in allen Streitfragen und setzte die Strafen fest. Als Priester war er für das Darbringen der Opfer zuständig. Allgemein üblich waren Tieropfer, es gab aber auch, wie in vielen frühen Kulturen, Menschenopfer."
-    },
-    {
-     "stufe": "schwer",
-     "afb": "III",
-     "operator": "Erkläre",
-     "aufgabe": "Erkläre, warum man sagen kann, dass der Druide oft mächtiger war als der Stammesfürst.",
-     "tipp1": "Was durfte der Fürst ohne den Druiden nicht?",
-     "tipp2": "Denke auch an Strafen und Religion.",
-     "loesung": "Kein Stammesfürst unternahm oder entschied etwas ohne den Rat eines Druiden. Außerdem entschied der Druide alle Streitfragen und setzte die Strafen fest, und als Priester stand er zwischen den Menschen und den Göttern. Dadurch hatte er auf alle wichtigen Entscheidungen Einfluss, auch auf die des Fürsten."
-    }
-   ],
-   "kurzfassung": [
-    "Der Druide war eine der wichtigsten Personen für jeden Gallier.",
-    "Er war Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten.",
-    "Er entschied Streitfragen, setzte Strafen fest, und kein Fürst handelte ohne seinen Rat.",
-    "Als Priester brachte er Opfer dar: meist Tieropfer, aber auch Menschenopfer."
-   ],
-   "begriffe": [
-    {
-     "begriff": "Druide (*druides*)",
-     "definition": "Gallischer Priester und Gelehrter; Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten in einer Person.",
-     "beispiel": "Miraculix ist im Comic ein Druide."
-    },
-    {
-     "begriff": "Stammesfürst",
-     "definition": "Anführer eines gallischen Stammes. Er entschied nichts ohne den Rat eines Druiden.",
-     "beispiel": "Vercingetorix war Fürst der Arverner."
-    },
-    {
-     "begriff": "Opfer",
-     "definition": "Gabe an die Götter. Bei den Galliern waren Tieropfer üblich, es gab aber auch Menschenopfer.",
-     "beispiel": "Der Druide bringt ein Tieropfer dar."
-    }
-   ],
-   "warumKarten": [
-    {
-     "frage": "Welche fünf Aufgaben hatte der Druide?",
-     "antwort": "Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten."
-    },
-    {
-     "frage": "Was tat der Druide als Richter?",
-     "antwort": "Er entschied in allen Streitfragen und setzte die Strafen fest."
-    },
-    {
-     "frage": "Warum war der Druide für den Stammesfürsten so wichtig?",
-     "antwort": "Kein Stammesfürst unternahm oder entschied etwas ohne den Rat eines Druiden."
-    },
-    {
-     "frage": "Welche Opfer brachte der Druide dar?",
-     "antwort": "Allgemein üblich waren Tieropfer. Es gab aber auch, wie in vielen frühen Kulturen, Menschenopfer."
-    }
-   ],
-   "quiz": [
-    {
-     "frage": "Welche Aufgabe hatte der Druide NICHT?",
-     "optionen": [
-      "Richter",
-      "Arzt",
-      "Stammesfürst",
-      "Lehrer"
-     ],
-     "richtig": 2,
-     "begruendung": "Der Druide war Berater des Stammesfürsten, nicht selbst der Fürst."
-    },
-    {
-     "frage": "Welche Opfer waren allgemein üblich?",
-     "optionen": [
-      "Menschenopfer",
-      "Tieropfer",
-      "Geldopfer",
-      "keine"
-     ],
-     "richtig": 1,
-     "begruendung": "Tieropfer waren üblich; Menschenopfer gab es auch, aber nicht als Regel."
-    },
-    {
-     "frage": "Wer setzte bei den Galliern die Strafen fest?",
-     "optionen": [
-      "der Stammesfürst",
-      "der Druide",
-      "die Römer",
-      "jeder selbst"
-     ],
-     "richtig": 1,
-     "begruendung": "Der Druide entschied Streitfragen und setzte die Strafen fest."
-    }
-   ]
-  },
-  {
-   "id": "s4",
-   "nr": 4,
-   "titel": "Rom greift zu",
-   "leitfrage": "Wie kam Gallien unter römische Herrschaft?",
-   "ichKann": "die zwei Stufen der römischen Eroberung Galliens mit Zeitangabe beschreiben.",
-   "aufgabenImUnterricht": [],
-   "buchseiten": [
-    "Lehrbuch Lektion 10, Römischer Alltag III: Galliens Welt"
-   ],
-   "einstieg": "Urlaub in der Provence? Dann warst du in der ersten römischen Beute in Gallien. Der Name verrät es bis heute.",
-   "theorie": [
-    {
-     "ueberschrift": "Stufe 1: der Süden (2. Jh. v. Chr.)",
-     "text": "Im **2. Jahrhundert v. Chr.** eroberten die Römer gallische Gebiete im **heutigen Südfrankreich** und machten sie zur römischen **provincia**. Aus diesem lateinischen Wort entstand der heutige Landschaftsname **Provence**."
-    },
-    {
-     "ueberschrift": "Stufe 2: ganz Gallien (Caesar)",
-     "text": "Der römische Feldherr **Gaius Iulius Caesar** dehnte die römische Macht dann auf **ganz Gallien** aus. Das geschah in **langwierigen und grausamen Eroberungskriegen**. Caesar schrieb darüber selbst ein Buch, *De bello Gallico* (Über den Gallischen Krieg)."
-    },
-    {
-     "ueberschrift": "Widerstand und Eingliederung",
-     "text": "Die Bewohner Galliens leisteten **anfangs heftigen Widerstand**. Dann ließen sie sich aber doch **schnell in das Römische Reich eingliedern**. Der Höhepunkt des Widerstands war das Jahr 52 v. Chr. (Schritt 5)."
-    },
-    {
-     "ueberschrift": "Wort-Tipp: provincia",
-     "text": "*Provincia* bedeutet im Lateinischen ein Gebiet außerhalb Italiens, das von Rom beherrscht und verwaltet wird. Aus diesem Wort kommt unser Wort Provinz. Die Provence ist also die Gegend, die die Römer einfach „die Provinz“ nannten."
-    }
-   ],
-   "merke": [
-    "Im 2. Jh. v. Chr. eroberten die Römer Südfrankreich und machten es zur *provincia*; daraus entstand der Name Provence.",
-    "Gaius Iulius Caesar dehnte die römische Macht in langwierigen und grausamen Eroberungskriegen auf ganz Gallien aus.",
-    "Die Gallier leisteten anfangs heftigen Widerstand, ließen sich dann aber schnell in das Römische Reich eingliedern."
-   ],
-   "skizzen": [],
-   "falle": [
-    {
-     "falsch": "Caesar eroberte im 2. Jh. v. Chr. Südfrankreich.",
-     "richtig": "Südfrankreich wurde schon im 2. Jh. v. Chr. römisch. Caesar eroberte später, im 1. Jh. v. Chr., das übrige Gallien.",
-     "warum": "Beide Eroberungen gehören zusammen, liegen aber zeitlich auseinander."
-    },
-    {
-     "falsch": "Provence und Provinz haben nichts miteinander zu tun.",
-     "richtig": "Beide Wörter stammen vom lateinischen *provincia*.",
-     "warum": "Man übersieht die Verwandtschaft, weil die Provence heute ein Landschaftsname ist."
-    },
-    {
-     "falsch": "Das 2. Jh. v. Chr. meint die Jahre 200 bis 299 v. Chr.",
-     "richtig": "Das 2. Jh. v. Chr. umfasst die Jahre 200 bis 101 v. Chr.",
-     "warum": "Vor Christi Geburt wird rückwärts gezählt."
-    }
-   ],
-   "videos": [],
-   "links": [
-    {
-     "titel": "Wikipedia: Gallia Narbonensis",
-     "url": "https://de.wikipedia.org/wiki/Gallia_Narbonensis",
-     "typ": "Artikel",
-     "auftrag": "Suche im Artikel die Jahre, in denen Rom Südgallien zur Provinz machte, und den Satz über den Namen Provence."
-    }
-   ],
-   "praxis": [
-    {
-     "stufe": "einfach",
-     "titel": "Provence auf der Landkarte",
-     "phaenomen": "Die Provence ist eine Landschaft im Südosten Frankreichs am Mittelmeer.",
-     "erklaerung": "Ihr Name kommt von *provincia*. Dieses Gebiet war das erste in Gallien, das die Römer im 2. Jh. v. Chr. eroberten."
-    },
-    {
-     "stufe": "mittel",
-     "titel": "Römische Spuren im Süden",
-     "phaenomen": "In Südfrankreich stehen bis heute römische Bauwerke wie Theater, Arenen und Wasserleitungen.",
-     "erklaerung": "Weil Südfrankreich schon im 2. Jh. v. Chr. römisch wurde, stand es besonders lange unter römischem Einfluss. Die Bauten zeigen, wie stark die Römer das Land prägten."
-    },
-    {
-     "stufe": "schwer",
-     "titel": "Der Sieger schreibt mit",
-     "phaenomen": "Caesar berichtet in *De bello Gallico* selbst über seinen Krieg.",
-     "erklaerung": "Caesar wollte in Rom als großer Feldherr dastehen. Sein Bericht ist deshalb eine wichtige, aber einseitige Quelle. Dass das Buch die Kriege „langwierig und grausam“ nennt, zeigt die Sicht von heute auf das Geschehen."
-    }
-   ],
-   "training": [
-    {
-     "stufe": "einfach",
-     "afb": "I",
-     "operator": "Nenne",
-     "aufgabe": "Nenne den vollständigen Namen des römischen Feldherrn, der ganz Gallien eroberte, und den Landschaftsnamen, der aus *provincia* entstand.",
-     "tipp1": "Er hat drei Namen.",
-     "tipp2": "Die Landschaft liegt in Südfrankreich.",
-     "loesung": "Gaius Iulius Caesar. Provence."
-    },
-    {
-     "stufe": "mittel",
-     "afb": "II",
-     "operator": "Beschreibe",
-     "aufgabe": "Beschreibe die beiden Stufen, in denen Gallien römisch wurde.",
-     "tipp1": "Erst der Süden, dann der Rest.",
-     "tipp2": "Nenne jeweils die Zeit und wer beteiligt war.",
-     "loesung": "Zuerst eroberten die Römer im 2. Jh. v. Chr. gallische Gebiete im heutigen Südfrankreich und machten sie zur *provincia*, daraus wurde der Name Provence. Später dehnte Gaius Iulius Caesar in langwierigen und grausamen Eroberungskriegen die römische Macht auf ganz Gallien aus."
-    },
-    {
-     "stufe": "schwer",
-     "afb": "III",
-     "operator": "Vergleiche",
-     "aufgabe": "Vergleiche den Anfang und das Ende des gallischen Widerstands.",
-     "tipp1": "Das Buch benutzt zwei Adjektive: eines für den Anfang, eines für die Eingliederung.",
-     "tipp2": "„heftig“ und „schnell“.",
-     "loesung": "Am Anfang leisteten die Gallier heftigen Widerstand gegen Caesar, 52 v. Chr. hätten sie ihn unter Vercingetorix beinahe besiegt. Nach der Niederlage ließen sie sich aber schnell in das Römische Reich eingliedern und übernahmen römische Sitten und die lateinische Sprache. Der Gegensatz ist also: erst heftiger Kampf, dann rasche Anpassung."
-    }
-   ],
-   "kurzfassung": [
-    "Im 2. Jh. v. Chr. eroberten die Römer Südfrankreich und machten es zur *provincia*.",
-    "Daraus entstand der Name Provence.",
-    "Gaius Iulius Caesar eroberte in langwierigen und grausamen Kriegen ganz Gallien.",
-    "Die Gallier leisteten erst heftigen Widerstand und wurden dann schnell eingegliedert."
-   ],
-   "begriffe": [
-    {
-     "begriff": "*provincia*",
-     "definition": "Lateinisch für ein von Rom beherrschtes und verwaltetes Gebiet außerhalb Italiens. Davon kommen die Wörter Provinz und Provence.",
-     "beispiel": "Südfrankreich wurde im 2. Jh. v. Chr. römische *provincia*."
-    },
-    {
-     "begriff": "Provence",
-     "definition": "Landschaft in Südfrankreich; ihr Name stammt von der römischen *provincia*.",
-     "beispiel": "Die Provence war das erste römische Gebiet in Gallien."
-    },
-    {
-     "begriff": "Gaius Iulius Caesar",
-     "definition": "Römischer Feldherr, der in langwierigen und grausamen Eroberungskriegen ganz Gallien unter römische Herrschaft brachte.",
-     "beispiel": "Caesar schrieb *De bello Gallico*."
-    }
-   ],
-   "warumKarten": [
-    {
-     "frage": "Wann eroberten die Römer Südfrankreich?",
-     "antwort": "Im 2. Jahrhundert v. Chr."
-    },
-    {
-     "frage": "Woher hat die Provence ihren Namen?",
-     "antwort": "Die Römer machten Südfrankreich zur *provincia*. Daraus entstand der Name Provence."
-    },
-    {
-     "frage": "Wer dehnte die römische Macht auf ganz Gallien aus, und wie?",
-     "antwort": "Gaius Iulius Caesar, in langwierigen und grausamen Eroberungskriegen."
-    },
-    {
-     "frage": "Wie verhielten sich die Gallier gegenüber den Römern?",
-     "antwort": "Anfangs leisteten sie heftigen Widerstand, dann ließen sie sich schnell in das Römische Reich eingliedern."
-    }
-   ],
-   "quiz": [
-    {
-     "frage": "Welcher Name stammt von *provincia*?",
-     "optionen": [
-      "Paris",
-      "Provence",
-      "Bretagne",
-      "Gallien"
-     ],
-     "richtig": 1,
-     "begruendung": "Provence kommt von *provincia*."
-    },
-    {
-     "frage": "Wann wurde Südfrankreich römisch?",
-     "optionen": [
-      "im 2. Jh. v. Chr.",
-      "52 v. Chr.",
-      "387 v. Chr.",
-      "um 130 n. Chr."
-     ],
-     "richtig": 0,
-     "begruendung": "Im 2. Jahrhundert v. Chr."
-    },
-    {
-     "frage": "Wie beschreibt das Buch Caesars Eroberungskriege?",
-     "optionen": [
-      "kurz und friedlich",
-      "langwierig und grausam",
-      "schnell und unblutig",
-      "erfolglos"
-     ],
-     "richtig": 1,
-     "begruendung": "Langwierig und grausam."
-    }
-   ]
-  },
-  {
-   "id": "s5",
-   "nr": 5,
-   "titel": "Vercingetorix und das Jahr 52 v. Chr.",
-   "leitfrage": "Wie konnte ein einzelner Fürst Caesar beinahe besiegen?",
-   "ichKann": "Vercingetorix vorstellen und die Bedeutung des Jahres 52 v. Chr. erklären.",
-   "aufgabenImUnterricht": [],
-   "buchseiten": [
-    "Buchseite: Celtae oder Galli, eine europäische Hochkultur",
-    "Lehrbuch Lektion 10, Römischer Alltag III: Galliens Welt"
-   ],
-   "einstieg": "Ein Name, ein Jahr, ein Stamm: Vercingetorix, 52 v. Chr., Arverner. Das ist der Mann, der Caesar richtig ins Schwitzen brachte.",
-   "theorie": [
-    {
-     "ueberschrift": "Wer war Vercingetorix?",
-     "text": "**Vercingetorix** war **Fürst der Arverner**, eines gallischen Stammes. Sein Name endet auf -rix, das keltische Wort für König."
-    },
-    {
-     "ueberschrift": "Die einzige Einigung",
-     "text": "Die gallischen Stämme waren meist zerstritten. **Nur einmal** gelang es, sie zu vereinen, und zwar Vercingetorix. **Im Jahr 52 v. Chr.** hätten die vereinten Gallier dadurch **Caesars Truppen beinahe den Untergang gebracht**."
-    },
-    {
-     "ueberschrift": "Zusatzinfo: Alesia",
-     "text": "Am Ende wurde Vercingetorix mit seinem Heer in der befestigten Stadt **Alesia** eingeschlossen und musste sich im selben Jahr, 52 v. Chr., Caesar ergeben. Das steht nicht auf deinen Buchseiten, hilft aber zu verstehen, warum danach der Widerstand zusammenbrach."
-    },
-    {
-     "ueberschrift": "Danach",
-     "text": "Die Gallier hatten **anfangs heftigen Widerstand** geleistet. Nach dieser Niederlage ließen sie sich aber **schnell in das Römische Reich eingliedern**."
-    }
-   ],
-   "merke": [
-    "Vercingetorix, Fürst der Arverner, einte als Einziger die zerstrittenen gallischen Stämme.",
-    "Im Jahr 52 v. Chr. hätten die vereinten Gallier Caesars Truppen beinahe den Untergang gebracht."
-   ],
-   "skizzen": [],
-   "falle": [
-    {
-     "falsch": "Vercingetorix hat Caesar 52 n. Chr. besiegt.",
-     "richtig": "Er hätte Caesars Truppen 52 **v.** Chr. **beinahe** den Untergang gebracht.",
-     "warum": "Zwei Fallen in einem Satz: v. Chr. gegen n. Chr. und beinahe gegen tatsächlich."
-    },
-    {
-     "falsch": "Vercingetorix war Fürst der Arverner, weil alle Gallier Arverner hießen.",
-     "richtig": "Die Arverner waren nur einer von vielen gallischen Stämmen.",
-     "warum": "Weil Vercingetorix alle Gallier anführte, hält man seinen Stamm für das ganze Volk."
-    }
-   ],
-   "videos": [],
-   "links": [
-    {
-     "titel": "Wikipedia: Vercingetorix",
-     "url": "https://de.wikipedia.org/wiki/Vercingetorix",
-     "typ": "Artikel",
-     "auftrag": "Suche den Ort, an dem Vercingetorix 52 v. Chr. belagert wurde, und schreibe ihn auf."
-    }
-   ],
-   "praxis": [
-    {
-     "stufe": "einfach",
-     "titel": "Statue in Frankreich",
-     "phaenomen": "In Frankreich stehen große Denkmäler von Vercingetorix, und er gilt dort als Nationalheld.",
-     "erklaerung": "Er war der Einzige, der die zerstrittenen gallischen Stämme einte und Caesar 52 v. Chr. beinahe besiegt hätte. Deshalb erinnert man an ihn als Symbol für Widerstand."
-    },
-    {
-     "stufe": "mittel",
-     "titel": "Gemeinsam stark",
-     "phaenomen": "Viele kleine Gruppen erreichen gemeinsam, was eine allein nicht schafft.",
-     "erklaerung": "Solange die gallischen Anführer untereinander um Macht kämpften, konnte Caesar sie einzeln besiegen. Erst die Einigung unter Vercingetorix machte die Gallier gefährlich für Rom."
-    },
-    {
-     "stufe": "schwer",
-     "titel": "Knapp vorbei ist auch vorbei",
-     "phaenomen": "Das Buch betont „beinahe“ und „nur einmal“.",
-     "erklaerung": "Die Einigung unter Vercingetorix war die größte Gefahr für Caesar. Weil sie scheiterte, gab es danach keinen vergleichbaren gemeinsamen Widerstand mehr, und die Gallier wurden schnell Teil des Römischen Reichs."
-    }
-   ],
-   "training": [
-    {
-     "stufe": "einfach",
-     "afb": "I",
-     "operator": "Nenne",
-     "aufgabe": "Nenne den Stamm, dessen Fürst Vercingetorix war, und das Jahr, in dem er Caesar beinahe besiegt hätte.",
-     "tipp1": "Der Stamm beginnt mit A.",
-     "tipp2": "Das Jahr liegt kurz vor Christi Geburt.",
-     "loesung": "Die Arverner. 52 v. Chr."
-    },
-    {
-     "stufe": "mittel",
-     "afb": "II",
-     "operator": "Erkläre",
-     "aufgabe": "Erkläre, warum die Leistung des Vercingetorix für die Gallier so außergewöhnlich war.",
-     "tipp1": "Wie verhielten sich die Anführer sonst untereinander?",
-     "tipp2": "Das Buch sagt: nur einmal.",
-     "loesung": "Die gallischen Anführer kämpften sonst untereinander um die Macht, die Stämme waren zerstritten. Vercingetorix gelang es als Einzigem, sie zu vereinen. Dadurch hätten die Gallier 52 v. Chr. Caesars Truppen beinahe den Untergang gebracht."
-    },
-    {
-     "stufe": "schwer",
-     "afb": "III",
-     "operator": "Beurteile",
-     "aufgabe": "Beurteile die Aussage: „Hätten sich die Gallier früher geeinigt, wäre Gallien vielleicht nicht römisch geworden.“",
-     "tipp1": "Was hat die Einigung 52 v. Chr. bewirkt?",
-     "tipp2": "Bedenke auch die Stärke des römischen Heeres. Eine sichere Antwort gibt es nicht.",
-     "loesung": "Die Aussage ist plausibel, aber nicht beweisbar. Als die Gallier 52 v. Chr. unter Vercingetorix vereint waren, brachten sie Caesars Truppen beinahe den Untergang. Vorher konnte Caesar die zerstrittenen Stämme einzeln besiegen. Ob eine frühere Einigung Rom dauerhaft aufgehalten hätte, bleibt aber Vermutung, denn Rom war militärisch sehr stark."
-    }
-   ],
-   "kurzfassung": [
-    "Vercingetorix war Fürst der Arverner.",
-    "Nur ihm gelang es, die zerstrittenen gallischen Stämme zu vereinen.",
-    "52 v. Chr. hätten die Gallier Caesars Truppen dadurch beinahe den Untergang gebracht.",
-    "Danach ließen sich die Gallier schnell eingliedern."
-   ],
-   "begriffe": [
-    {
-     "begriff": "Vercingetorix",
-     "definition": "Fürst der Arverner, der als Einziger die zerstrittenen gallischen Stämme einte und 52 v. Chr. Caesar beinahe besiegte.",
-     "beispiel": "Vercingetorix ist in Frankreich ein Nationalheld."
-    },
-    {
-     "begriff": "Arverner",
-     "definition": "Ein gallischer Stamm; Vercingetorix war ihr Fürst.",
-     "beispiel": "Vercingetorix, der Fürst der Arverner."
-    },
-    {
-     "begriff": "Alesia",
-     "definition": "Befestigte gallische Stadt, in der Vercingetorix 52 v. Chr. belagert wurde und sich Caesar ergab (Zusatzwissen).",
-     "beispiel": "Nach Alesia war der gemeinsame Widerstand gebrochen."
-    }
-   ],
-   "warumKarten": [
-    {
-     "frage": "Wer war Vercingetorix?",
-     "antwort": "Der Fürst der Arverner."
-    },
-    {
-     "frage": "Was gelang Vercingetorix als Einzigem?",
-     "antwort": "Er vereinte die zerstrittenen gallischen Stämme."
-    },
-    {
-     "frage": "Was geschah 52 v. Chr.?",
-     "antwort": "Die vereinten Gallier unter Vercingetorix hätten Caesars Truppen beinahe den Untergang gebracht."
-    },
-    {
-     "frage": "Warum war die Einigung der Gallier so selten?",
-     "antwort": "Die Anführer kämpften untereinander um die Macht im Stamm, die Stämme waren zerstritten."
-    }
-   ],
-   "quiz": [
-    {
-     "frage": "Welchem Stamm stand Vercingetorix vor?",
-     "optionen": [
-      "den Belgern",
-      "den Arvernern",
-      "den Römern",
-      "den Bretonen"
-     ],
-     "richtig": 1,
-     "begruendung": "Er war Fürst der Arverner."
-    },
-    {
-     "frage": "In welchem Jahr brachten die Gallier Caesar beinahe den Untergang?",
-     "optionen": [
-      "387 v. Chr.",
-      "52 v. Chr.",
-      "52 n. Chr.",
-      "um 130 n. Chr."
-     ],
-     "richtig": 1,
-     "begruendung": "52 v. Chr."
-    },
-    {
-     "frage": "Wie oft gelang es, die gallischen Stämme zu vereinen?",
-     "optionen": [
-      "nie",
-      "nur einmal",
-      "oft",
-      "jedes Jahr"
-     ],
-     "richtig": 1,
-     "begruendung": "Das Buch sagt: nur einmal, unter Vercingetorix."
-    }
-   ]
-  },
-  {
-   "id": "s6",
-   "nr": 6,
-   "titel": "Was von den Kelten blieb, und was Asterix damit zu tun hat",
-   "leitfrage": "Was ist von der keltischen Kultur geblieben, und wie viel Wahrheit steckt in Asterix?",
-   "ichKann": "die Romanisierung Galliens und das Weiterleben keltischer Kultur beschreiben und Asterix als Comic einordnen.",
-   "aufgabenImUnterricht": [
-    "Aufgabe a: Portfolio zur keltischen Kultur in deiner Region (machst du selbst)"
-   ],
-   "buchseiten": [
-    "Buchseite: Celtae oder Galli, eine europäische Hochkultur",
-    "Lehrbuch Lektion 10, Römischer Alltag III: Galliens Welt"
-   ],
-   "einstieg": "Asterix ist der berühmteste Gallier der Welt, dabei hat es ihn nie gegeben. Trotzdem steckt im Comic mehr echte Geschichte, als man denkt. Und in manchen Ländern sprechen Menschen heute noch Keltisch.",
-   "theorie": [
-    {
-     "ueberschrift": "Romanisierung",
-     "text": "Nach der römischen Eroberung **nahmen die Kelten schnell römische Sitten an und lernten Latein**. Diesen Vorgang nennt man Romanisierung."
-    },
-    {
-     "ueberschrift": "Nicht ganz vergessen",
-     "text": "Ihre **bisherige Sprache, Religion und Kultur geriet aber nicht ganz in Vergessenheit**. **Noch heute** werden keltische Sprachen gesprochen, und zwar in **Irland, Schottland, Wales und der Bretagne**. Die Bretagne ist im Comic die **Heimat von Asterix und seinen Freunden**."
-    },
-    {
-     "ueberschrift": "Epona",
-     "text": "Auch keltische Götter wurden weiter verehrt. Die keltische **Pferdegöttin Epona** wurde **auch noch in römischer Zeit verehrt**. Ein Beispiel ist ein **Relief** (ein Bild, das aus Stein herausgearbeitet ist) **um 130 n. Chr.** aus **Trier**."
-    },
-    {
-     "ueberschrift": "Asterix: was stimmt?",
-     "text": "Asterix und seine Freunde (der Druide **Miraculix**, **Obelix** und sein Hündchen **Idefix**) sind **heute die berühmtesten Gallier**. Laut Buch lebten sie **um 50 v. Chr.** in einem **kleinen gallischen Dorf im heutigen Frankreich** und verteidigten es **erfolgreich gegen Iulius Caesar und die Römer**. Das Buch fragt dazu: Was sagt die Forschung? **Stimmt:** die Zeit um 50 v. Chr., Caesar als Eroberer, Druiden als wichtige Personen, Namen auf -rix, das Dorfleben. **Erfunden:** die Figuren selbst, der Zaubertrank und das Dorf, das nie besiegt wurde. In Wirklichkeit war Gallien nach 52 v. Chr. römisch, und es gab auch große Städte, nicht nur Dörfer."
-    },
-    {
-     "ueberschrift": "Kelten zum Anfassen",
-     "text": "Heute stellen Gruppen das keltische Leben nach, zum Beispiel die **Keltengruppe Taranis aus Reinheim im Saarland** (Foto im Buch, 2002). Taranis ist der Name eines keltischen Gottes."
-    },
-    {
-     "ueberschrift": "Deine Aufgabe a",
-     "text": "Für dein Portfolio recherchierst du selbst Spuren der Kelten in deiner Region. Mögliche Suchbegriffe: „Kelten“ plus Name deiner Stadt oder deines Landkreises, „Hügelgrab“ plus Region, „Ringwall“ oder „keltische Wallanlage“ plus Region, „Keltenmuseum“, „keltische Funde Museum“ plus Bundesland. Notiere zu jedem Fund: was, wo, wie alt, Quelle."
-    }
-   ],
-   "merke": [
-    "Nach der Eroberung übernahmen die Kelten schnell römische Sitten und Latein; Sprache, Religion und Kultur gerieten aber nicht ganz in Vergessenheit.",
-    "Keltische Sprachen spricht man noch heute in Irland, Schottland, Wales und der Bretagne.",
-    "Die keltische Pferdegöttin Epona wurde auch in römischer Zeit verehrt (Relief um 130 n. Chr., Trier)."
-   ],
-   "skizzen": [],
-   "falle": [
-    {
-     "falsch": "Nach der Eroberung verschwand die keltische Kultur vollständig.",
-     "richtig": "Die Kelten übernahmen römische Sitten und Latein, doch ihre Sprache, Religion und Kultur gerieten nicht ganz in Vergessenheit.",
-     "warum": "„Schnell römisch“ klingt nach „komplett weg“. Das Buch sagt ausdrücklich: nicht ganz."
-    },
-    {
-     "falsch": "Das Epona-Relief stammt aus der Zeit vor Caesar.",
-     "richtig": "Es entstand um 130 **n.** Chr., also in römischer Zeit.",
-     "warum": "Gerade das ist der Beleg, dass keltische Religion unter den Römern weiterlebte."
-    },
-    {
-     "falsch": "In Frankreich spricht man heute überall Keltisch.",
-     "richtig": "Keltische Sprachen spricht man in Irland, Schottland, Wales und der Bretagne. Französisch stammt vom Latein ab.",
-     "warum": "Weil Gallien keltisch war, vermutet man Keltisch im ganzen heutigen Frankreich."
-    }
-   ],
-   "videos": [],
-   "links": [
-    {
-     "titel": "Wikipedia: Asterix",
-     "url": "https://de.wikipedia.org/wiki/Asterix",
-     "typ": "Artikel",
-     "auftrag": "Suche, wer Asterix erfunden hat und in welchem Jahr er zum ersten Mal erschien."
-    }
-   ],
-   "praxis": [
-    {
-     "stufe": "einfach",
-     "titel": "Walisisch am Bahnhof",
-     "phaenomen": "In Wales stehen Schilder in zwei Sprachen: Englisch und Walisisch.",
-     "erklaerung": "Walisisch ist eine keltische Sprache. Sie zeigt, dass keltische Sprachen bis heute gesprochen werden, genau wie in Irland, Schottland und der Bretagne."
-    },
-    {
-     "stufe": "mittel",
-     "titel": "Französisch kommt vom Latein",
-     "phaenomen": "Viele französische Wörter ähneln lateinischen: *pater* wird zu père, *aqua* zu eau über viele Zwischenstufen.",
-     "erklaerung": "Nach der römischen Eroberung lernten die Gallier Latein. Aus diesem Latein entwickelte sich später das Französische. Das ist eine Folge der Romanisierung."
-    },
-    {
-     "stufe": "schwer",
-     "titel": "Göttin für Reiter",
-     "phaenomen": "Die Pferdegöttin Epona wurde auch von römischen Soldaten verehrt, besonders von Reitern.",
-     "erklaerung": "Die Römer übernahmen manche Götter der eroberten Völker. Dass Epona um 130 n. Chr. in Trier noch als Relief dargestellt wurde, zeigt: Keltische Religion lebte unter römischer Herrschaft weiter und mischte sich mit der römischen."
-    }
-   ],
-   "training": [
-    {
-     "stufe": "einfach",
-     "afb": "I",
-     "operator": "Nenne",
-     "aufgabe": "Nenne die vier Gebiete, in denen heute noch keltische Sprachen gesprochen werden.",
-     "tipp1": "Drei liegen auf den Britischen Inseln.",
-     "tipp2": "Das vierte ist die Heimat von Asterix.",
-     "loesung": "Irland, Schottland, Wales und die Bretagne."
-    },
-    {
-     "stufe": "mittel",
-     "afb": "II",
-     "operator": "Beschreibe",
-     "aufgabe": "Beschreibe, was nach der römischen Eroberung mit der keltischen Kultur geschah. Nenne ein Beispiel für das Weiterleben keltischer Religion.",
-     "tipp1": "Erst: was übernahmen die Kelten? Dann: was blieb?",
-     "tipp2": "Denke an die Pferdegöttin.",
-     "loesung": "Die Kelten nahmen schnell römische Sitten an und lernten Latein. Ihre Sprache, Religion und Kultur gerieten aber nicht ganz in Vergessenheit. Ein Beispiel ist die keltische Pferdegöttin Epona, die auch in römischer Zeit verehrt wurde, wie ein Relief um 130 n. Chr. aus Trier zeigt."
-    },
-    {
-     "stufe": "schwer",
-     "afb": "III",
-     "operator": "Beurteile",
-     "aufgabe": "Beurteile, ob Asterix ein gutes Bild der Gallier zeigt. Nenne zwei Dinge, die stimmen, und zwei, die erfunden sind.",
-     "tipp1": "Vergleiche mit Druiden, -rix-Namen, Städten und 52 v. Chr.",
-     "tipp2": "Gab es ein Dorf, das nie erobert wurde?",
-     "loesung": "Asterix zeigt manches richtig: Die Geschichten spielen um 50 v. Chr., zur Zeit von Caesars Eroberung, und der Druide Miraculix ist wie im Buch eine sehr wichtige Person; auch die Namen auf -ix erinnern an echte Namen auf -rix. Erfunden sind die Figuren, der Zaubertrank und das unbesiegbare Dorf. In Wirklichkeit war Gallien nach 52 v. Chr. römisch, und es gab auch über 100 Städte. Asterix ist also unterhaltsam und enthält echte Bezüge, aber er ist kein Geschichtsbuch."
-    }
-   ],
-   "kurzfassung": [
-    "Nach der Eroberung übernahmen die Kelten römische Sitten und Latein.",
-    "Sprache, Religion und Kultur gerieten nicht ganz in Vergessenheit.",
-    "Keltische Sprachen spricht man noch in Irland, Schottland, Wales und der Bretagne.",
-    "Die Pferdegöttin Epona wurde auch in römischer Zeit verehrt (Relief um 130 n. Chr., Trier).",
-    "Asterix spielt um 50 v. Chr., ist aber ein Comic mit erfundenen Figuren."
-   ],
-   "begriffe": [
-    {
-     "begriff": "Romanisierung",
-     "definition": "Übernahme römischer Sitten, Lebensweise und der lateinischen Sprache durch eroberte Völker.",
-     "beispiel": "Die Gallier lernten nach der Eroberung Latein."
-    },
-    {
-     "begriff": "Epona",
-     "definition": "Keltische Pferdegöttin, die auch in römischer Zeit verehrt wurde.",
-     "beispiel": "Relief der Epona um 130 n. Chr., Trier."
-    },
-    {
-     "begriff": "keltische Sprachen heute",
-     "definition": "Sprachen keltischen Ursprungs, die noch gesprochen werden: in Irland, Schottland, Wales und der Bretagne.",
-     "beispiel": "Walisisch in Wales, Bretonisch in der Bretagne."
-    },
-    {
-     "begriff": "Asterix",
-     "definition": "Comicfigur, ein Gallier, der laut Buch um 50 v. Chr. in einem kleinen gallischen Dorf im heutigen Frankreich lebte und es erfolgreich gegen Caesar verteidigte.",
-     "beispiel": "Asterix, Obelix mit Idefix und der Druide Miraculix."
-    },
-    {
-     "begriff": "Keltengruppe Taranis",
-     "definition": "Gruppe aus Reinheim im Saarland, die keltisches Leben nachstellt (Foto im Buch von 2002).",
-     "beispiel": "Mitglieder der Keltengruppe Taranis in keltischer Kleidung."
-    }
-   ],
-   "warumKarten": [
-    {
-     "frage": "Was taten die Kelten nach der römischen Eroberung?",
-     "antwort": "Sie nahmen schnell römische Sitten an und lernten Latein."
-    },
-    {
-     "frage": "Was geriet nicht ganz in Vergessenheit?",
-     "antwort": "Die bisherige Sprache, Religion und Kultur der Kelten."
-    },
-    {
-     "frage": "Wo spricht man noch heute keltische Sprachen?",
-     "antwort": "In Irland, Schottland, Wales und der Bretagne."
-    },
-    {
-     "frage": "Wer ist Epona, und woher kennen wir sie aus römischer Zeit?",
-     "antwort": "Die keltische Pferdegöttin. Sie wurde auch in römischer Zeit verehrt, zum Beispiel auf einem Relief um 130 n. Chr. aus Trier."
-    },
-    {
-     "frage": "Wann und wo lebten Asterix und seine Freunde laut Buch?",
-     "antwort": "Um 50 v. Chr. in einem kleinen gallischen Dorf im heutigen Frankreich, in der Bretagne."
-    },
-    {
-     "frage": "Wer gehört zu Asterix' Freunden?",
-     "antwort": "Der Druide Miraculix, Obelix und sein Hündchen Idefix."
-    },
-    {
-     "frage": "Wogegen verteidigten Asterix und seine Freunde ihr Dorf?",
-     "antwort": "Erfolgreich gegen Iulius Caesar und die Römer."
-    },
-    {
-     "frage": "Was zeigt das Foto der Keltengruppe Taranis?",
-     "antwort": "Menschen aus Reinheim im Saarland, die 2002 keltisches Leben nachstellen."
-    }
-   ],
-   "quiz": [
-    {
-     "frage": "In welchem dieser Gebiete spricht man heute eine keltische Sprache?",
-     "optionen": [
-      "Italien",
-      "Wales",
-      "Spanien",
-      "Bayern"
-     ],
-     "richtig": 1,
-     "begruendung": "Irland, Schottland, Wales und die Bretagne."
-    },
-    {
-     "frage": "Wann entstand das Epona-Relief aus Trier?",
-     "optionen": [
-      "um 600 v. Chr.",
-      "52 v. Chr.",
-      "um 130 n. Chr.",
-      "um 1959"
-     ],
-     "richtig": 2,
-     "begruendung": "Um 130 n. Chr., in römischer Zeit."
-    },
-    {
-     "frage": "Welche Aussage zu Asterix stimmt?",
-     "optionen": [
-      "Asterix war ein echter Stammesfürst.",
-      "Die Geschichten spielen um 50 v. Chr.",
-      "Das Dorf lag in Italien.",
-      "Obelix ist ein Druide."
-     ],
-     "richtig": 1,
-     "begruendung": "Die Geschichten spielen um 50 v. Chr.; Druide ist Miraculix, das Dorf liegt in der Bretagne."
-    }
-   ]
-  }
- ],
- "lernzettel": [
-  "s0: Die Kelten nannten sich selbst *Celtae*; die Römer nannten die Kelten in Gallien *Galli* (Gallier).",
-  "s0: Gallien (*Gallia*) ist das Gebiet, das ungefähr dem heutigen Frankreich entspricht; vor der Eroberung lebten dort vorwiegend Kelten.",
-  "s0: Das Buch nennt die Kelten eine europäische Hochkultur.",
-  "s1: Archäologische Ausgrabungen zeigen: Um 600 v. Chr. lebten Kelten in Mitteleuropa zum Teil in befestigten Städten.",
-  "s1: Ihre Anführer bestatteten sie in weithin sichtbaren Hügelgräbern.",
-  "s1: Ab 400 v. Chr. wanderten viele Kelten weit nach Süden und Osten.",
-  "s1: 387 v. Chr. sollen Kelten Rom beinahe erobert haben.",
-  "s2: Im 1. Jh. v. Chr. siedelten in Gallien viele verschiedene keltische Stämme.",
-  "s2: Die meisten Kelten lebten in Dörfern, es gab aber über 100 Städte mit bis zu 10.000 Bewohnern.",
-  "s2: Die Städte lagen geschützt auf Bergrücken und hatten starke Mauern aus Holz, Stein und Erde.",
-  "s2: Reiche Anführer wohnten oft auf gut gesicherten Gutshöfen und kämpften untereinander um die Macht im Stamm.",
-  "s2: Sie gaben ihren Kindern gern Namen auf -rix; -rix ist keltisch für König.",
-  "s3: Der Druide war eine der wichtigsten Personen für jeden Gallier.",
-  "s3: Er war Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten in einer Person.",
-  "s3: Er entschied in allen Streitfragen und setzte die Strafen fest; kein Stammesfürst handelte ohne seinen Rat.",
-  "s3: Als Priester brachte er die Opfer dar: üblich waren Tieropfer, es gab aber auch, wie in vielen frühen Kulturen, Menschenopfer.",
-  "s4: Im 2. Jh. v. Chr. eroberten die Römer gallische Gebiete im heutigen Südfrankreich und machten sie zur *provincia*.",
-  "s4: Aus *provincia* entstand der heutige Name Provence.",
-  "s4: Gaius Iulius Caesar dehnte in langwierigen und grausamen Eroberungskriegen die römische Macht auf ganz Gallien aus.",
-  "s4: Die Gallier leisteten anfangs heftigen Widerstand, ließen sich dann aber schnell ins Römische Reich eingliedern.",
-  "s5: Vercingetorix, der Fürst der Arverner, vereinte als Einziger die zerstrittenen gallischen Stämme.",
-  "s5: Dadurch hätten die Gallier 52 v. Chr. Caesars Truppen beinahe den Untergang gebracht.",
-  "s6: Nach der Eroberung nahmen die Kelten schnell römische Sitten an und lernten Latein.",
-  "s6: Ihre Sprache, Religion und Kultur gerieten aber nicht ganz in Vergessenheit.",
-  "s6: Keltische Sprachen spricht man noch heute in Irland, Schottland, Wales und der Bretagne, der Heimat von Asterix.",
-  "s6: Die keltische Pferdegöttin Epona wurde auch in römischer Zeit verehrt (Relief um 130 n. Chr., Trier).",
-  "s6: Asterix und seine Freunde (Miraculix, Obelix, Idefix) sind heute die berühmtesten Gallier; laut Buch lebten sie um 50 v. Chr. in einem kleinen Dorf im heutigen Frankreich und verteidigten es erfolgreich gegen Caesar.",
-  "s6: Asterix ist ein Comic: Figuren, Zaubertrank und unbesiegbares Dorf sind erfunden.",
-  "s6: Foto im Buch: die Keltengruppe Taranis aus Reinheim (Saarland), 2002."
- ],
- "faktencheck": [
-  {
-   "aussage": "s0: Caesar, De bello Gallico 1,1: *Gallia est omnis divisa in partes tres* ... *qui ipsorum lingua Celtae, nostra Galli appellantur*.",
-   "quelle": "https://www.thelatinlibrary.com/caesar/gall1.shtml (abgerufen 30.09.2026)",
-   "status": "belegt"
-  },
-  {
-   "aussage": "s0: Gallien entspricht ungefähr dem heutigen Frankreich.",
-   "quelle": "Lehrbuch Lektion 10",
-   "status": "vereinfacht",
-   "notiz": "Caesars Gallien reichte bis an den Rhein und umfasste auch das heutige Belgien, Teile der Schweiz und Westdeutschlands. Deshalb „ungefähr“."
-  },
-  {
-   "aussage": "s1: Um 600 v. Chr. lebten Kelten in Mitteleuropa zum Teil in befestigten Städten und bestatteten Anführer in Hügelgräbern.",
-   "quelle": "Buchseite Celtae oder Galli; https://de.wikipedia.org/wiki/Kelten (späte Hallstattkultur, etwa 650 bis 475 v. Chr., Fürstengräber)",
-   "status": "vereinfacht",
-   "notiz": "Die Forschung spricht für diese Zeit meist von befestigten Fürstensitzen und frühkeltischer Hallstattkultur; „Städte“ ist die Buchfassung."
-  },
-  {
-   "aussage": "s1: 387 v. Chr. sollen Kelten Rom beinahe erobert haben.",
-   "quelle": "Buchseite Celtae oder Galli; https://de.wikipedia.org/wiki/Kelten (Brennus, wahrscheinlich 387/386 v. Chr.)",
-   "status": "Buchfassung",
-   "notiz": "Die Datierung schwankt je nach Quelle (387/386 v. Chr., römische Tradition auch 390 v. Chr.). Nach römischen Berichten wurde die Stadt geplündert, nur das Kapitol hielt stand. Für den Test gilt: 387 v. Chr., beinahe erobert."
-  },
-  {
-   "aussage": "s3: Der Druide war Richter, Lehrer, Arzt, Priester und Berater des Stammesfürsten; es gab Menschenopfer.",
-   "quelle": "Lehrbuch Lektion 10; https://de.wikipedia.org/wiki/Druide",
-   "status": "Buchfassung",
-   "notiz": "Das Wissen stammt fast nur von antiken Autoren, vor allem Caesar. Seine Berichte über Menschenopfer gelten in der Forschung als möglicherweise übertrieben (Kriegspropaganda). Im Test gilt die Buchfassung."
-  },
-  {
-   "aussage": "s4: Im 2. Jh. v. Chr. wurde Südfrankreich römische provincia, daraus der Name Provence.",
-   "quelle": "https://de.wikipedia.org/wiki/Gallia_Narbonensis (Provinz 125 bis 118 v. Chr.; Name Provence)",
-   "status": "belegt"
-  },
-  {
-   "aussage": "s4/s5: Die Gallier ließen sich nach anfangs heftigem Widerstand schnell eingliedern.",
-   "quelle": "Lehrbuch Lektion 10",
-   "status": "Buchfassung",
-   "notiz": "Die Romanisierung war ein Vorgang über Generationen; auf dem Land blieben keltische Sprache und Bräuche lange erhalten, wie das Buch in Seite A selbst andeutet. „Schnell“ ist die Buchfassung."
-  },
-  {
-   "aussage": "s5: Vercingetorix, Fürst der Arverner, einte 52 v. Chr. fast alle gallischen Völker; Belagerung und Kapitulation bei Alesia.",
-   "quelle": "https://de.wikipedia.org/wiki/Vercingetorix",
-   "status": "belegt",
-   "notiz": "Alesia ist Zusatzwissen, nicht auf den Buchseiten."
-  },
-  {
-   "aussage": "s6: Keltische Sprachen heute in Irland, Schottland, Wales, Bretagne.",
-   "quelle": "https://de.wikipedia.org/wiki/Keltische_Sprachen",
-   "status": "belegt"
-  },
-  {
-   "aussage": "s6: Epona, keltische Pferdegöttin, auch von Römern verehrt, besonders von Reitern.",
-   "quelle": "https://de.wikipedia.org/wiki/Epona_(Mythologie); Relief um 130 n. Chr. Trier laut Buchbildunterschrift",
-   "status": "belegt",
-   "notiz": "Datierung und Fundort des Reliefs stammen aus der Bildunterschrift im Buch, nicht unabhängig geprüft."
-  },
-  {
-   "aussage": "s6: Asterix und seine Freunde lebten um 50 v. Chr. in einem kleinen gallischen Dorf.",
-   "quelle": "Buchseite Celtae oder Galli; https://de.wikipedia.org/wiki/Asterix (Comic von Goscinny und Uderzo, seit 1959; Handlung um 50 v. Chr. in Aremorica, heutige Bretagne)",
-   "status": "Buchfassung",
-   "notiz": "Asterix ist eine erfundene Comicfigur; „lebten“ meint die Handlungszeit des Comics. Das Buch stellt die Frage nach der Forschung selbst."
-  }
- ]
+  ]
 }

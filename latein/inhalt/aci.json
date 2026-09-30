@@ -431,8 +431,8 @@
           "warum": "Aus Gewohnheit übersetzt man einen Akkusativ als Objekt. Im ACI ist er aber der Handelnde des Infinitivs."
         },
         {
-          "falsch": "Das Prädikat im dass-Satz bleibt im Infinitiv: „…, dass die Gallier kämpfen sein.“",
-          "richtig": "Der Infinitiv wird zu einer gebeugten Verbform, die zum neuen Subjekt passt: „…, dass die Gallier kämpfen.“",
+          "falsch": "Das Prädikat im dass-Satz bleibt im Infinitiv: „Caesar sagt, dass die Gallier tapfer sein.“",
+          "richtig": "Der Infinitiv wird zu einer gebeugten Verbform, die zum neuen Subjekt passt: „Caesar sagt, dass die Gallier tapfer sind.“",
           "warum": "Ein deutscher Nebensatz braucht ein gebeugtes Verb."
         }
       ],
@@ -768,7 +768,7 @@
           "stufe": "mittel",
           "titel": "Wer fürchtet wen?",
           "phaenomen": "*Caesar audit Gallos Romanos timere.*",
-          "erklaerung": "Zwei Akkusative: *Gallos* und *Romanos*. Der erste ist Subjektsakkusativ, der zweite Objekt von *timere*. Übersetzung: „Caesar hört, dass die Gallier die Römer fürchten.“ Vokabelhilfe: *timere* fürchten."
+          "erklaerung": "Zwei Akkusative: *Gallos* und *Romanos*. Nach der Faustregel ist der erste der Subjektsakkusativ, der zweite Objekt von *timere*. Der Satz allein ließe auch die andere Lesart zu, deshalb immer den Zusammenhang prüfen. Übersetzung: „Caesar hört, dass die Gallier die Römer fürchten.“ Vokabelhilfe: *timere* fürchten."
         },
         {
           "stufe": "schwer",
@@ -872,7 +872,7 @@
             "niemand"
           ],
           "richtig": 2,
-          "begruendung": "*Gallos* steht zuerst und ist Subjektsakkusativ, *Romanos* ist Objekt von *timere*."
+          "begruendung": "Nach der Faustregel ist der erste Akkusativ der Subjektsakkusativ: *Gallos*. *Romanos* ist Objekt von *timere*. Der Satz allein ließe auch die andere Lesart zu, deshalb immer den Zusammenhang prüfen."
         }
       ]
     }

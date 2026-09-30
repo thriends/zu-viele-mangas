@@ -1,0 +1,68 @@
+{
+  "operatoren": [
+    {
+      "wort": "nennen",
+      "afb": "I",
+      "bedeutung": "Fakten, Namen oder Begriffe knapp aufzählen, ohne Erklärung.",
+      "beispielAufgabe": "Nenne vier Aufgaben eines Druiden.",
+      "soKlingtEsGut": "Richter, Lehrer, Arzt, Priester (dazu Berater des Stammesfürsten).",
+      "typischerFehler": "Lange Sätze schreiben, obwohl nur eine Liste gefragt ist."
+    },
+    {
+      "wort": "bestimmen",
+      "afb": "I",
+      "bedeutung": "Bei einer lateinischen Form genau angeben, was sie ist: Kasus, Numerus, Genus bei Nomen; Person, Numerus, Tempus bei Verben; beim Infinitiv das Tempus.",
+      "beispielAufgabe": "Bestimme die Form *Gallos*.",
+      "soKlingtEsGut": "*Gallos*: Akkusativ Plural maskulin von *Gallus*.",
+      "typischerFehler": "Nur „Akkusativ“ schreiben. Numerus und Genus gehören dazu."
+    },
+    {
+      "wort": "markieren",
+      "afb": "I",
+      "bedeutung": "Im lateinischen Satz die gesuchten Teile sichtbar machen, zum Beispiel unterstreichen oder einkreisen.",
+      "beispielAufgabe": "Markiere im Satz *Caesar dicit Gallos pugnare* den ACI.",
+      "soKlingtEsGut": "Auslöser *dicit*, ACI *Gallos pugnare* (Akkusativ *Gallos*, Infinitiv *pugnare*).",
+      "typischerFehler": "Den Auslöser mit in den ACI hineinmarkieren. Er gehört zum Hauptsatz."
+    },
+    {
+      "wort": "übersetzen",
+      "afb": "II",
+      "bedeutung": "Den lateinischen Satz vollständig und grammatisch genau in gutes Deutsch übertragen.",
+      "beispielAufgabe": "Übersetze: *Romani vident Gallos fortes esse.*",
+      "soKlingtEsGut": "Die Römer sehen, dass die Gallier tapfer sind.",
+      "typischerFehler": "Wort für Wort übersetzen: „Die Römer sehen die Gallier tapfer sein.“ Das ist kein Deutsch."
+    },
+    {
+      "wort": "beschreiben",
+      "afb": "II",
+      "bedeutung": "Einen Sachverhalt in eigenen Worten geordnet und vollständig darstellen.",
+      "beispielAufgabe": "Beschreibe, wie die Gallier zur Zeit Caesars lebten.",
+      "soKlingtEsGut": "Die meisten lebten in Dörfern. Es gab aber über 100 Städte mit bis zu 10.000 Bewohnern, geschützt auf Bergrücken und mit starken Mauern aus Holz, Stein und Erde.",
+      "typischerFehler": "Nur Stichworte liefern oder eine Meinung einbauen."
+    },
+    {
+      "wort": "erklären",
+      "afb": "II",
+      "bedeutung": "Einen Zusammenhang begründet darstellen: warum etwas so ist oder wie es entstand.",
+      "beispielAufgabe": "Erkläre, woher der Name Provence kommt.",
+      "soKlingtEsGut": "Im 2. Jh. v. Chr. eroberten die Römer Gebiete im heutigen Südfrankreich und machten sie zur *provincia*. Aus diesem Wort entstand der Name Provence.",
+      "typischerFehler": "Nur das Ergebnis nennen („kommt von provincia“) ohne den Weg dahin."
+    },
+    {
+      "wort": "vergleichen",
+      "afb": "II",
+      "bedeutung": "Gemeinsamkeiten und Unterschiede nach klaren Gesichtspunkten gegenüberstellen.",
+      "beispielAufgabe": "Vergleiche das Asterix-Dorf mit dem, was die Forschung über Gallien sagt.",
+      "soKlingtEsGut": "Gemeinsam: Gallier um 50 v. Chr., Druide als wichtige Person. Unterschied: Im Comic bleibt ein Dorf frei, in Wirklichkeit eroberte Caesar ganz Gallien.",
+      "typischerFehler": "Beide Seiten nacheinander beschreiben, ohne sie aufeinander zu beziehen."
+    },
+    {
+      "wort": "beurteilen",
+      "afb": "III",
+      "bedeutung": "Zu einer Aussage ein begründetes eigenes Urteil fällen, mit Argumenten aus dem Stoff.",
+      "beispielAufgabe": "Beurteile die Überschrift „Kulturloses Gallien?“.",
+      "soKlingtEsGut": "Die Frage ist zu verneinen: Die Gallier hatten Städte, eine geordnete Gesellschaft mit Druiden als Richtern und Lehrern und eine eigene Religion. Nur aus römischer Sicht wirkten sie fremd.",
+      "typischerFehler": "Eine Meinung ohne Begründung aus dem Text."
+    }
+  ]
+}

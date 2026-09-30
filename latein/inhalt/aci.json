@@ -1,0 +1,970 @@
+{
+  "id": "aci",
+  "titel": "ACI: Accusativus cum Infinitivo",
+  "klasse": 7,
+  "zeitraum": "Herbst 2026",
+  "untertitel": "Wie ein Akkusativ und ein Infinitiv zusammen einen ganzen dass-Satz ergeben, erklärt an Caesar, den Galliern und den Druiden.",
+  "ziel": "Ich kann einen ACI mit Infinitiv Präsens in einem lateinischen Satz erkennen, seine Bausteine bestimmen und ihn mit einem dass-Satz richtig ins Deutsche übersetzen, auch mit esse und Adjektiv und wenn das Hauptverb in der Vergangenheit steht.",
+  "buchquellen": [
+    "Nicht im Lehrbuch, aus Schulgrammatiken recherchiert (siehe Faktencheck)"
+  ],
+  "schritte": [
+    {
+      "id": "s0",
+      "nr": 0,
+      "titel": "Den ACI gibt es auch im Deutschen",
+      "leitfrage": "Wo benutze ich im Deutschen schon einen Akkusativ mit Infinitiv?",
+      "ichKann": "an deutschen Sätzen zeigen, dass ein Akkusativ zusammen mit einem Infinitiv eine Handlung ausdrücken kann.",
+      "aufgabenImUnterricht": [],
+      "buchseiten": [],
+      "einstieg": "Du benutzt den ACI schon, ohne es zu merken. Wenn du sagst „Ich höre den Hund bellen“, dann bellt der Hund, obwohl er im Akkusativ steht. Genau dieser Trick ist im Lateinischen der Normalfall.",
+      "theorie": [
+        {
+          "ueberschrift": "Ein Akkusativ, der etwas tut",
+          "text": "Im Satz „Ich sehe dich kommen“ steht *dich* im Akkusativ. Trotzdem bist du derjenige, der kommt. Der Akkusativ ist also nicht nur Objekt von *sehen*, sondern zugleich die Person, die die Handlung des Infinitivs *kommen* ausführt. Diese Verbindung aus **Akkusativ** und **Infinitiv** nennt man *Accusativus cum Infinitivo*, auf Deutsch „Akkusativ mit Infinitiv“, kurz **ACI**."
+        },
+        {
+          "ueberschrift": "Im Deutschen nur nach wenigen Verben",
+          "text": "Im Deutschen gibt es den ACI vor allem nach Verben der Wahrnehmung wie *sehen* und *hören*: „Ich höre den Wind pfeifen.“ Man kann denselben Inhalt auch mit einem Nebensatz sagen: „Ich höre, wie der Wind pfeift“ oder „Ich höre, dass der Wind pfeift.“ Im Lateinischen kommt der ACI viel häufiger vor, auch nach Verben des Sagens, Denkens und Wissens. Dort muss man ihn im Deutschen fast immer mit einem **dass-Satz** wiedergeben."
+        }
+      ],
+      "merke": [
+        "Ein ACI besteht aus einem Akkusativ und einem Infinitiv. Der Akkusativ gibt an, wer die Handlung des Infinitivs ausführt.",
+        "Im Deutschen gibt es den ACI vor allem nach sehen und hören, im Lateinischen nach vielen weiteren Verben."
+      ],
+      "skizzen": [],
+      "falle": [
+        {
+          "falsch": "Wer im Akkusativ steht, kann nichts tun, er wird nur behandelt.",
+          "richtig": "Im ACI führt der Akkusativ die Handlung des Infinitivs aus. In „Ich sehe dich kommen“ bist du derjenige, der kommt.",
+          "warum": "Normalerweise ist der Akkusativ das Objekt. Im ACI hat er eine Doppelrolle."
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Der Hund bellt, obwohl er im Akkusativ steht",
+          "phaenomen": "„Ich höre den Hund bellen.“ Grammatisch ist *den Hund* ein Akkusativ, trotzdem bellt der Hund.",
+          "erklaerung": "*den Hund* ist Akkusativ, *bellen* ist Infinitiv. Zusammen bilden sie einen ACI. Der Akkusativ sagt, wer bellt. Als Nebensatz: „Ich höre, dass der Hund bellt.“"
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Caesar sieht die Gallier kämpfen",
+          "phaenomen": "*Caesar Gallos pugnare videt.* Wort für Wort: Caesar die Gallier kämpfen sieht.",
+          "erklaerung": "Das ist derselbe Bau wie im Deutschen. *Gallos* ist Akkusativ, *pugnare* ist Infinitiv, *videt* ist das Verb des Sehens. Übersetzung: „Caesar sieht die Gallier kämpfen“ oder „Caesar sieht, dass die Gallier kämpfen.“ Vokabelhilfe: *pugnare* kämpfen."
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Wo das Deutsche nicht mehr mitmacht",
+          "phaenomen": "*Caesar dicit Gallos fortes esse.* Wort für Wort: „Caesar sagt die Gallier tapfer sein.“ So kann man im Deutschen nicht sprechen.",
+          "erklaerung": "Nach *sagen* gibt es im Deutschen keinen ACI. Deshalb braucht man einen dass-Satz: „Caesar sagt, dass die Gallier tapfer sind.“ Genau hier beginnt die eigentliche Übersetzungsarbeit, die du in den nächsten Schritten lernst. Vokabelhilfe: *fortis* tapfer."
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Markiere",
+          "aufgabe": "Markiere im Satz „Ich höre die Soldaten schreien“ den Akkusativ und den Infinitiv. Nenne, wer schreit.",
+          "tipp1": "Frage: Wen oder was höre ich?",
+          "tipp2": "Der Infinitiv ist die Verbform auf -en, die nicht gebeugt ist.",
+          "loesung": "Akkusativ: **die Soldaten**. Infinitiv: *schreien*. Auslöser ist das Wahrnehmungsverb „hören“. Die Soldaten schreien."
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Übersetze",
+          "aufgabe": "Übersetze auf zwei Arten, einmal mit Infinitiv und einmal mit dass-Satz: *Audio milites clamare.* Vokabelhilfe: *miles, militis* Soldat; *clamare* schreien, rufen.",
+          "tipp1": "*audio* heißt „ich höre“. *milites* ist hier Akkusativ Plural.",
+          "tipp2": "Mit Infinitiv bleibt der Bau wie im Lateinischen. Beim dass-Satz wird *milites* zum Subjekt.",
+          "loesung": "Auslöser: *audio* (Wahrnehmung). Akkusativ: **milites**. Infinitiv: *clamare*. Mit Infinitiv: „Ich höre die Soldaten schreien.“ Mit dass-Satz: „Ich höre, dass die Soldaten schreien.“"
+        },
+        {
+          "stufe": "schwer",
+          "afb": "III",
+          "operator": "Erkläre",
+          "aufgabe": "Erkläre, warum man *Video Gallos venire* mit „Ich sehe die Gallier kommen“ übersetzen kann, *Caesar dicit Gallos venire* aber nicht mit „Caesar sagt die Gallier kommen“.",
+          "tipp1": "Probiere beide deutschen Sätze laut aus.",
+          "tipp2": "Nach welchen deutschen Verben gibt es den ACI?",
+          "loesung": "Beide lateinischen Sätze enthalten einen ACI: Akkusativ **Gallos**, Infinitiv *venire*. Im ersten Satz ist der Auslöser *video* ein Verb der Wahrnehmung, danach gibt es auch im Deutschen einen ACI. Im zweiten Satz ist der Auslöser *dicit* ein Verb des Sagens. Nach „sagen“ kennt das Deutsche keinen ACI, deshalb muss man einen dass-Satz bilden: „Caesar sagt, dass die Gallier kommen.“"
+        }
+      ],
+      "kurzfassung": [
+        "Ein ACI ist ein Akkusativ zusammen mit einem Infinitiv.",
+        "Der Akkusativ führt die Handlung des Infinitivs aus.",
+        "Im Deutschen gibt es den ACI nach sehen und hören, im Lateinischen nach viel mehr Verben."
+      ],
+      "begriffe": [
+        {
+          "begriff": "ACI (Accusativus cum Infinitivo)",
+          "definition": "Satzteil aus einem Akkusativ und einem Infinitiv, der von einem übergeordneten Verb abhängt. Der Akkusativ gibt an, wer die Handlung des Infinitivs ausführt.",
+          "beispiel": "*Video Gallos venire.* Ich sehe die Gallier kommen."
+        },
+        {
+          "begriff": "Infinitiv",
+          "definition": "Grundform des Verbs, die nicht nach Person und Numerus gebeugt ist.",
+          "beispiel": "*venire* kommen, *esse* sein."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Warum heißt es Accusativus cum Infinitivo?",
+          "antwort": "Das ist Latein und bedeutet „Akkusativ mit Infinitiv“. Der Name beschreibt genau die beiden Bausteine der Konstruktion."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Welcher deutsche Satz enthält einen ACI?",
+          "optionen": [
+            "Ich sehe den Hund.",
+            "Ich sehe den Hund laufen.",
+            "Der Hund läuft schnell.",
+            "Ich will laufen."
+          ],
+          "richtig": 1,
+          "begruendung": "Nur hier stehen ein Akkusativ (den Hund) und ein Infinitiv (laufen) zusammen, und der Hund führt das Laufen aus."
+        },
+        {
+          "frage": "Wer tut etwas im Satz „Ich höre die Gallier singen“?",
+          "optionen": [
+            "Ich singe.",
+            "Die Gallier singen.",
+            "Niemand singt.",
+            "Ich höre und singe."
+          ],
+          "richtig": 1,
+          "begruendung": "Der Akkusativ „die Gallier“ gibt an, wer die Handlung des Infinitivs „singen“ ausführt."
+        }
+      ]
+    },
+    {
+      "id": "s1",
+      "nr": 1,
+      "titel": "Die Bausteine: Infinitiv Präsens und Akkusativ",
+      "leitfrage": "Woran erkenne ich den Infinitiv Präsens und den Akkusativ?",
+      "ichKann": "den Infinitiv Präsens Aktiv und die Akkusativformen der ersten drei Deklinationen sicher erkennen.",
+      "aufgabenImUnterricht": [],
+      "buchseiten": [],
+      "einstieg": "Bevor du einen ACI findest, musst du seine zwei Bausteine blind erkennen. Die gute Nachricht: Beide kennst du schon aus den ersten Lektionen.",
+      "theorie": [
+        {
+          "ueberschrift": "Der Infinitiv Präsens Aktiv",
+          "text": "Der Infinitiv Präsens Aktiv endet auf **-re**: *clamare* (rufen), *videre* (sehen), *dicere* (sagen), *audire* (hören). Die wichtige Ausnahme ist *esse* (sein). Ein Infinitiv hat keine Personalendung wie -t, -nt oder -mus. Wenn du eine Form auf -re findest, prüfe trotzdem kurz, ob es wirklich ein Verb ist."
+        },
+        {
+          "ueberschrift": "Die Akkusativformen",
+          "text": "Die wichtigsten Akkusativendungen: a-Deklination **-am** (Singular) und **-as** (Plural): *puellam, puellas*. o-Deklination **-um** und **-os**: *amicum, amicos*; bei Neutra **-um** und **-a**: *oppidum, oppida*. Konsonantische Deklination **-em** und **-es**: *militem, milites*; *hostem, hostes*. Achtung: Bei *milites*, *hostes* und *druides* sehen Nominativ Plural und Akkusativ Plural gleich aus. Auch bei Neutra wie *oppidum* sind Nominativ und Akkusativ gleich."
+        }
+      ],
+      "merke": [
+        "Der Infinitiv Präsens Aktiv endet auf -re; die Ausnahme ist esse.",
+        "Akkusativendungen: -am/-as, -um/-os, beim Neutrum -um/-a, konsonantisch -em/-es."
+      ],
+      "skizzen": [],
+      "falle": [
+        {
+          "falsch": "*milites* ist immer Nominativ.",
+          "richtig": "*milites* kann Nominativ Plural oder Akkusativ Plural sein. Welcher Kasus vorliegt, zeigt erst der Satz.",
+          "warum": "In der konsonantischen Deklination haben Nominativ und Akkusativ Plural dieselbe Endung -es."
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Das Mädchen sieht den Sklaven arbeiten",
+          "phaenomen": "*Puella servum laborare videt.*",
+          "erklaerung": "*servum* hat die Endung -um und ist Akkusativ Singular. *laborare* endet auf -re und ist Infinitiv. Übersetzung: „Das Mädchen sieht den Sklaven arbeiten.“ Vokabelhilfe: *servus* Sklave, *laborare* arbeiten."
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Der Freund hört den Jungen erzählen",
+          "phaenomen": "*Amicus puerum narrare audit.*",
+          "erklaerung": "*amicus* endet auf -us, das ist der Nominativ und damit das Subjekt. *puerum* ist Akkusativ, *narrare* ist Infinitiv. Übersetzung: „Der Freund hört den Jungen erzählen.“ Vokabelhilfe: *narrare* erzählen."
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Wer kommt: die Römer oder die Feinde?",
+          "phaenomen": "*Romani hostes venire audiunt.*",
+          "erklaerung": "*hostes* könnte Nominativ oder Akkusativ Plural sein. *Romani* ist aber eindeutig Nominativ Plural und passt zum Prädikat *audiunt*. Also ist *hostes* Akkusativ. Übersetzung: „Die Römer hören, dass die Feinde kommen.“ Vokabelhilfe: *hostis, hostis* Feind."
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Bestimme",
+          "aufgabe": "Bestimme, welche Formen Infinitive sind: *pugnare, pugnant, esse, est, videre, videt, audire, audimus*.",
+          "tipp1": "Achte auf die Endung -re.",
+          "tipp2": "Eine Ausnahme ohne -re gehört auch dazu.",
+          "loesung": "Infinitive sind *pugnare*, *esse*, *videre* und *audire*. Die anderen Formen haben eine Personalendung (-nt, -t, -mus) und sind deshalb keine Infinitive."
+        },
+        {
+          "stufe": "mittel",
+          "afb": "I",
+          "operator": "Bestimme",
+          "aufgabe": "Bestimme bei jeder Form, ob sie Akkusativ sein kann: *Gallos, Galli, provinciam, provincia, militem, milites, oppidum, druides*.",
+          "tipp1": "Vergleiche mit den Endungen -am/-as, -um/-os, -em/-es.",
+          "tipp2": "Bei manchen Formen sind zwei Kasus möglich.",
+          "loesung": "Sicher Akkusativ: **Gallos**, **provinciam**, **militem**. Akkusativ möglich, aber auch Nominativ: **milites**, **oppidum**, **druides**. Kein Akkusativ: *Galli* (Nominativ Plural) und *provincia* (Nominativ oder Ablativ Singular)."
+        },
+        {
+          "stufe": "schwer",
+          "afb": "II",
+          "operator": "Übersetze",
+          "aufgabe": "Übersetze und begründe, welches Wort Subjekt und welches Akkusativ ist: *Romani hostes venire audiunt.*",
+          "tipp1": "Welches Wort kann nur Nominativ sein?",
+          "tipp2": "*audiunt* steht im Plural. Das Subjekt muss auch Plural sein.",
+          "loesung": "Auslöser: *audiunt* (Wahrnehmung). *Romani* kann nur Nominativ sein und ist Subjekt. Akkusativ: **hostes**. Infinitiv: *venire*. Übersetzung: „Die Römer hören die Feinde kommen“ oder „Die Römer hören, dass die Feinde kommen.“"
+        }
+      ],
+      "kurzfassung": [
+        "Infinitiv Präsens Aktiv: Endung -re, Ausnahme esse.",
+        "Akkusativ: -am/-as, -um/-os, Neutrum -um/-a, konsonantisch -em/-es.",
+        "Bei -es und bei Neutra entscheidet der Satz, ob Nominativ oder Akkusativ vorliegt."
+      ],
+      "begriffe": [
+        {
+          "begriff": "Infinitiv Präsens Aktiv",
+          "definition": "Grundform des Verbs auf -re, Ausnahme esse. Im ACI drückt er aus, dass seine Handlung gleichzeitig mit der des Hauptverbs geschieht.",
+          "beispiel": "*pugnare* kämpfen, *esse* sein."
+        },
+        {
+          "begriff": "Akkusativ",
+          "definition": "Vierter Fall, fragt nach „wen oder was?“. Im ACI ist er zugleich der Handelnde des Infinitivs.",
+          "beispiel": "*Gallos, puellam, militem*."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Warum reicht die Endung allein bei *milites* nicht aus?",
+          "antwort": "Nominativ Plural und Akkusativ Plural haben in der konsonantischen Deklination beide die Endung -es. Erst das Prädikat und die anderen Wörter im Satz zeigen, welcher Kasus gemeint ist."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Welche Form ist ein Infinitiv Präsens?",
+          "optionen": [
+            "*narrat*",
+            "*narrare*",
+            "*narrant*",
+            "*narro*"
+          ],
+          "richtig": 1,
+          "begruendung": "*narrare* endet auf -re und hat keine Personalendung."
+        },
+        {
+          "frage": "Welche Form ist sicher ein Akkusativ?",
+          "optionen": [
+            "*milites*",
+            "*oppidum*",
+            "*Gallos*",
+            "*druides*"
+          ],
+          "richtig": 2,
+          "begruendung": "*Gallos* kann nur Akkusativ Plural sein. Die anderen drei Formen können auch Nominativ sein."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "nr": 2,
+      "titel": "Erkennen: Auslöserverb, Akkusativ, Infinitiv",
+      "leitfrage": "Woran erkenne ich, dass ein Satz einen ACI enthält?",
+      "ichKann": "Auslöserverben den fünf Gruppen zuordnen und in einem Satz Auslöser, Akkusativ und Infinitiv markieren.",
+      "aufgabenImUnterricht": [],
+      "buchseiten": [],
+      "einstieg": "Ein ACI kommt nie allein. Er braucht ein Verb, das ihn auslöst, und das sind fast immer Tätigkeiten, die im Kopf oder mit den Sinnen passieren. Merk dir: Kopfverb gefunden, ACI in Sicht.",
+      "theorie": [
+        {
+          "ueberschrift": "Die Auslöserverben",
+          "text": "Ein ACI hängt von einem Verb ab, das ihn auslöst. Diese Verben lassen sich in Gruppen ordnen. **Wahrnehmen**: *videre* (sehen), *audire* (hören), *sentire* (fühlen, merken). **Sagen**: *dicere* (sagen), *narrare* (erzählen), *clamare* (rufen). **Denken und Meinen**: *putare* (glauben, meinen). **Wissen**: *scire* (wissen). **Gefühl**: *gaudere* (sich freuen). Als Merkhilfe nennt man sie **Kopfverben**: alles, was man mit dem Kopf und den Sinnen tun kann."
+        },
+        {
+          "ueberschrift": "Drei Bausteine",
+          "text": "Ein Satz mit ACI enthält drei Bausteine: das **Auslöserverb** als Prädikat des Hauptsatzes, einen **Akkusativ** und einen **Infinitiv**. Beispiel: *Caesar dicit Gallos fortes esse.* Auslöser ist *dicit*, Akkusativ ist *Gallos*, Infinitiv ist *esse*. Erst wenn alle drei da sind, liegt ein ACI vor."
+        }
+      ],
+      "merke": [
+        "Ein ACI steht nach Verben des Wahrnehmens, Sagens, Denkens und Meinens, Wissens und Fühlens (Kopfverben).",
+        "Ein ACI braucht drei Bausteine: Auslöserverb, Akkusativ und Infinitiv."
+      ],
+      "skizzen": [],
+      "falle": [
+        {
+          "falsch": "Jeder Satz mit einem Infinitiv enthält einen ACI.",
+          "richtig": "Ein ACI liegt nur vor, wenn ein Auslöserverb, ein Akkusativ und ein Infinitiv zusammenkommen und der Akkusativ die Handlung des Infinitivs ausführt.",
+          "warum": "Infinitive gibt es auch in anderen Verbindungen, zum Beispiel nach *debere* (müssen)."
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Freude über einen Besuch",
+          "phaenomen": "*Gaudeo amicum venire.*",
+          "erklaerung": "Auslöser ist *gaudeo* (ich freue mich), ein Verb des Gefühls. Akkusativ: *amicum*. Infinitiv: *venire*. Übersetzung: „Ich freue mich, dass der Freund kommt.“ Vokabelhilfe: *gaudere* sich freuen."
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Was die Druiden wissen",
+          "phaenomen": "*Druides sciunt deos bonos esse.*",
+          "erklaerung": "Auslöser ist *sciunt* (sie wissen). Akkusativ: *deos*. Infinitiv: *esse*. Übersetzung: „Die Druiden wissen, dass die Götter gut sind.“ Die Druiden waren bei den Galliern Priester und Gelehrte. Vokabelhilfe: *druides, druidum* die Druiden; *deus* Gott."
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Die Römer merken etwas",
+          "phaenomen": "*Romani sentiunt hostes venire.*",
+          "erklaerung": "*sentire* heißt hier „merken, spüren“ und gehört zu den Wahrnehmungsverben. Akkusativ: *hostes* (Plural, hier Akkusativ, weil *Romani* das Subjekt ist). Infinitiv: *venire*. Übersetzung: „Die Römer merken, dass die Feinde kommen.“"
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Markiere",
+          "aufgabe": "Markiere Auslöser, Akkusativ und Infinitiv: *Caesar dicit Gallos fortes esse.*",
+          "tipp1": "Suche zuerst das Verb mit Personalendung.",
+          "tipp2": "Der Infinitiv ist die Ausnahme ohne -re.",
+          "loesung": "Auslöser: *dicit* (Sagen). Akkusativ: **Gallos**. Infinitiv: *esse*. *fortes* gehört als Adjektiv zu *Gallos*. Übersetzung: „Caesar sagt, dass die Gallier tapfer sind.“"
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Bestimme",
+          "aufgabe": "Ordne die Auslöserverben den Gruppen Wahrnehmen, Sagen, Denken, Wissen, Gefühl zu: *audit, putat, narrat, scit, gaudet, videt, clamat, sentit*.",
+          "tipp1": "Übersetze jedes Verb zuerst.",
+          "tipp2": "Zwei Verben gehören zu Sagen, drei zu Wahrnehmen.",
+          "loesung": "Wahrnehmen: *audit*, *videt*, *sentit*. Sagen: *narrat*, *clamat*. Denken und Meinen: *putat*. Wissen: *scit*. Gefühl: *gaudet*."
+        },
+        {
+          "stufe": "schwer",
+          "afb": "II",
+          "operator": "Übersetze",
+          "aufgabe": "Markiere die drei Bausteine und übersetze: *Servus narrat Caesarem in provincia esse.* Vokabelhilfe: *provincia* Provinz.",
+          "tipp1": "*in provincia* ist ein Ablativ mit Präposition, kein Akkusativ.",
+          "tipp2": "Der Akkusativ hat hier die Endung -em.",
+          "loesung": "Auslöser: *narrat* (Sagen). Akkusativ: **Caesarem**. Infinitiv: *esse*. Übersetzung: „Der Sklave erzählt, dass Caesar in der Provinz ist.“"
+        }
+      ],
+      "kurzfassung": [
+        "Ein ACI hängt von einem Kopfverb ab.",
+        "Die Gruppen sind Wahrnehmen, Sagen, Denken und Meinen, Wissen, Gefühl.",
+        "Erst Auslöser, Akkusativ und Infinitiv zusammen ergeben einen ACI."
+      ],
+      "begriffe": [
+        {
+          "begriff": "Auslöserverb (Kopfverb)",
+          "definition": "Verb des Wahrnehmens, Sagens, Denkens, Wissens oder Fühlens, von dem ein ACI abhängt.",
+          "beispiel": "*dicit, videt, putat, scit, gaudet*."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Warum nennt man die Auslöser Kopfverben?",
+          "antwort": "Sie bezeichnen Tätigkeiten, die im Kopf oder über die Sinne geschehen: sehen, hören, sagen, meinen, wissen, sich freuen. Die Merkhilfe hilft, sie im Satz schnell zu finden."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Welches Verb löst typischerweise keinen ACI aus?",
+          "optionen": [
+            "*putare*",
+            "*scire*",
+            "*habitare*",
+            "*audire*"
+          ],
+          "richtig": 2,
+          "begruendung": "*habitare* (wohnen) ist kein Kopfverb. Die anderen drei gehören zu Denken, Wissen und Wahrnehmen."
+        },
+        {
+          "frage": "Zu welcher Gruppe gehört *gaudere*?",
+          "optionen": [
+            "Sagen",
+            "Wahrnehmen",
+            "Gefühl",
+            "Wissen"
+          ],
+          "richtig": 2,
+          "begruendung": "*gaudere* heißt „sich freuen“ und gehört zu den Verben des Gefühls."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "nr": 3,
+      "titel": "Übersetzen in vier Schritten",
+      "leitfrage": "Wie übersetze ich einen ACI Schritt für Schritt?",
+      "ichKann": "einen ACI mit Infinitiv Präsens in vier Schritten als dass-Satz übersetzen.",
+      "aufgabenImUnterricht": [],
+      "buchseiten": [],
+      "einstieg": "Mit einem festen Ablauf wird jeder ACI zur Routine. Vier Schritte, jedes Mal dieselben, und du baust aus einem lateinischen Wortsalat einen sauberen deutschen Satz.",
+      "theorie": [
+        {
+          "ueberschrift": "Die vier Schritte",
+          "text": "**Schritt 1:** Finde das Auslöserverb und übersetze den Hauptsatz bis dorthin, dann setze ein Komma und „dass“. **Schritt 2:** Finde den Infinitiv. **Schritt 3:** Suche den Akkusativ, der zum Infinitiv gehört. **Schritt 4:** Baue den dass-Satz: Der **Akkusativ wird Subjekt**, der **Infinitiv wird Prädikat**. Das Prädikat richtet sich im Deutschen nach dem neuen Subjekt und steht am Ende des dass-Satzes."
+        },
+        {
+          "ueberschrift": "Ein Beispiel",
+          "text": "*Caesar audit Gallos in oppido habitare.* Schritt 1: *audit*, also „Caesar hört, dass …“. Schritt 2: Infinitiv *habitare*. Schritt 3: Akkusativ *Gallos*. Schritt 4: *Gallos* wird Subjekt „die Gallier“, *habitare* wird Prädikat „wohnen“, im Plural, weil das Subjekt Plural ist. Ergebnis: „Caesar hört, dass die Gallier in der Stadt wohnen.“"
+        }
+      ],
+      "merke": [
+        "Im dass-Satz wird der Akkusativ des ACI zum Subjekt und der Infinitiv zum Prädikat.",
+        "Das Prädikat des dass-Satzes richtet sich in Person und Numerus nach dem neuen Subjekt."
+      ],
+      "skizzen": [
+        {
+          "titel": "Übersetzen in vier Schritten",
+          "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 310' font-family='inherit' font-size='17'>\n<g fill='none' stroke='currentColor' stroke-width='2'>\n<rect x='10' y='20' width='190' height='46' rx='8'/><rect x='230' y='20' width='130' height='46' rx='8' stroke-width='3'/><rect x='390' y='20' width='160' height='46' rx='8'/>\n<rect x='10' y='220' width='190' height='46' rx='8'/><rect x='230' y='220' width='160' height='46' rx='8' stroke-width='3'/><rect x='420' y='220' width='130' height='46' rx='8'/>\n<path d='M105 66 V220'/><path d='M295 66 L310 220'/><path d='M470 66 L485 220'/>\n</g>\n<g fill='currentColor' text-anchor='middle'>\n<text x='105' y='49'>Caesar <tspan font-style='italic'>dicit</tspan></text>\n<text x='295' y='49' font-weight='700'>Gallos</text>\n<text x='470' y='49' font-style='italic'>fortes esse</text>\n<text x='105' y='249'>Caesar sagt,</text>\n<text x='310' y='249' font-weight='700'>dass die Gallier</text>\n<text x='485' y='249'>tapfer sind.</text>\n</g>\n<g fill='currentColor' font-size='14'>\n<text x='112' y='120'>1 Auslöser</text>\n<text x='112' y='138'>(sagen)</text>\n<text x='462' y='120' text-anchor='end'>2 Infinitiv</text>\n<text x='462' y='138' text-anchor='end'>wird Prädikat</text>\n<text x='292' y='120' text-anchor='end'>3 Akkusativ</text>\n<text x='292' y='138' text-anchor='end'>wird Subjekt</text>\n<text x='280' y='298' text-anchor='middle'>4 dass-Satz bauen, Verb ans Ende</text>\n</g>\n</svg>",
+          "alt": "Oben der lateinische Satz Caesar dicit Gallos fortes esse in drei Kästen, unten die Übersetzung in drei Kästen: Caesar sagt, dass die Gallier, tapfer sind. Linien verbinden Caesar dicit mit Caesar sagt, Gallos mit dass die Gallier und fortes esse mit tapfer sind. Beschriftet sind Auslöser, Akkusativ wird Subjekt, Infinitiv wird Prädikat und dass-Satz bauen."
+        }
+      ],
+      "falle": [
+        {
+          "falsch": "Man übersetzt den Akkusativ als Objekt: „Caesar sagt die Gallier, tapfer zu sein.“",
+          "richtig": "Im dass-Satz wird der Akkusativ zum Subjekt: „Caesar sagt, dass die Gallier tapfer sind.“",
+          "warum": "Aus Gewohnheit übersetzt man einen Akkusativ als Objekt. Im ACI ist er aber der Handelnde des Infinitivs."
+        },
+        {
+          "falsch": "Das Prädikat im dass-Satz bleibt im Infinitiv: „Caesar sagt, dass die Gallier tapfer sein.“",
+          "richtig": "Der Infinitiv wird zu einer gebeugten Verbform, die zum neuen Subjekt passt: „Caesar sagt, dass die Gallier tapfer sind.“",
+          "warum": "Ein deutscher Nebensatz braucht ein gebeugtes Verb."
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "titel": "Serlo: AcI, Accusativus cum Infinitivo",
+          "url": "https://de.serlo.org/latein/33896/aci-accusativus-cum-infinitivo",
+          "typ": "Artikel",
+          "auftrag": "Lies den Abschnitt zur Übersetzung. Vergleiche die dort genannten Schritte mit den vier Schritten hier und schreibe auf, worin sie übereinstimmen."
+        }
+      ],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Vercingetorix kommt",
+          "phaenomen": "*Milites clamant Vercingetorigem venire.*",
+          "erklaerung": "Schritt 1: *clamant*, „Die Soldaten rufen, dass …“. Schritt 2: *venire*. Schritt 3: *Vercingetorigem* (Akkusativ von *Vercingetorix*). Schritt 4: „Die Soldaten rufen, dass Vercingetorix kommt.“ Vercingetorix führte im Jahr 52 v. Chr. einen großen Aufstand der Gallier gegen Caesar an."
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Kämpfe in der Provinz",
+          "phaenomen": "*Gallus dicit Romanos in provincia pugnare.*",
+          "erklaerung": "Auslöser: *dicit*. Infinitiv: *pugnare*. Akkusativ: *Romanos*. Weil *Romanos* Plural ist, heißt das deutsche Prädikat „kämpfen“. Übersetzung: „Der Gallier sagt, dass die Römer in der Provinz kämpfen.“"
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Das Volk freut sich",
+          "phaenomen": "*Populus Romanus gaudet milites venire.*",
+          "erklaerung": "*Populus Romanus* ist Nominativ Singular und Subjekt, deshalb muss *milites* hier Akkusativ sein. Auslöser: *gaudet*. Infinitiv: *venire*. Übersetzung: „Das römische Volk freut sich, dass die Soldaten kommen.“ Vokabelhilfe: *populus* Volk."
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Übersetze",
+          "aufgabe": "Übersetze in vier Schritten: *Caesar audit Gallos in oppido habitare.* Vokabelhilfe: *oppidum* Stadt; *habitare* wohnen.",
+          "tipp1": "Schritt 1: „Caesar hört, dass …“",
+          "tipp2": "*Gallos* wird Subjekt, *habitare* wird Prädikat im Plural.",
+          "loesung": "Auslöser: *audit* (Wahrnehmung). Akkusativ: **Gallos**. Infinitiv: *habitare*. Übersetzung: „Caesar hört, dass die Gallier in der Stadt wohnen.“"
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Übersetze",
+          "aufgabe": "Übersetze: *Druides putant Caesarem venire.*",
+          "tipp1": "*druides* kann Nominativ oder Akkusativ sein. Welches Wort braucht das Prädikat *putant* als Subjekt?",
+          "tipp2": "*Caesarem* ist eindeutig Akkusativ.",
+          "loesung": "Auslöser: *putant* (Meinen). *Druides* ist Subjekt des Hauptsatzes. Akkusativ: **Caesarem**. Infinitiv: *venire*. Übersetzung: „Die Druiden glauben, dass Caesar kommt.“"
+        },
+        {
+          "stufe": "schwer",
+          "afb": "II",
+          "operator": "Übersetze",
+          "aufgabe": "Übersetze und achte auf die Person des Prädikats: *Scio te laborare.* und *Puella sentit amicos clamare.* Vokabelhilfe: *te* dich (Akkusativ zu *tu*).",
+          "tipp1": "*te* ist ein Akkusativ. Im dass-Satz wird daraus „du“.",
+          "tipp2": "„du“ braucht die Verbform der 2. Person: „du arbeitest“.",
+          "loesung": "Satz 1: Auslöser *scio* (Wissen). Akkusativ: **te**. Infinitiv: *laborare*. „Ich weiß, dass du arbeitest.“ Satz 2: Auslöser *sentit* (Wahrnehmung). Akkusativ: **amicos**. Infinitiv: *clamare*. „Das Mädchen merkt, dass die Freunde rufen.“"
+        }
+      ],
+      "kurzfassung": [
+        "Schritt 1: Auslöser finden und „…, dass“ anhängen.",
+        "Schritt 2: Infinitiv finden. Schritt 3: den passenden Akkusativ suchen.",
+        "Schritt 4: Akkusativ wird Subjekt, Infinitiv wird Prädikat."
+      ],
+      "begriffe": [
+        {
+          "begriff": "dass-Satz",
+          "definition": "Deutscher Nebensatz, der mit der Konjunktion „dass“ beginnt. Mit ihm wird ein lateinischer ACI in der Regel übersetzt.",
+          "beispiel": "Caesar sagt, **dass die Gallier tapfer sind**."
+        },
+        {
+          "begriff": "Subjektsakkusativ",
+          "definition": "Der Akkusativ im ACI, der die Handlung des Infinitivs ausführt und im dass-Satz zum Subjekt wird.",
+          "beispiel": "*Gallos* in *Caesar dicit Gallos fortes esse*."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Warum wird aus dem Akkusativ im Deutschen ein Nominativ?",
+          "antwort": "Der Akkusativ führt die Handlung des Infinitivs aus, er ist also der Handelnde. Im deutschen dass-Satz steht der Handelnde als Subjekt, und das Subjekt steht im Nominativ."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Was wird im dass-Satz aus dem Infinitiv?",
+          "optionen": [
+            "das Subjekt",
+            "das Objekt",
+            "das Prädikat",
+            "eine Zeitangabe"
+          ],
+          "richtig": 2,
+          "begruendung": "Der Infinitiv wird zum gebeugten Prädikat des dass-Satzes."
+        },
+        {
+          "frage": "Welche Übersetzung von *Caesar videt milites pugnare* ist richtig?",
+          "optionen": [
+            "Caesar sieht, dass die Soldaten kämpfen.",
+            "Caesar sieht die Soldaten, kämpft.",
+            "Die Soldaten sehen, dass Caesar kämpft.",
+            "Caesar kämpft und sieht die Soldaten."
+          ],
+          "richtig": 0,
+          "begruendung": "*milites* ist der Akkusativ des ACI und wird Subjekt, *pugnare* wird Prädikat. Auch „Caesar sieht die Soldaten kämpfen“ wäre richtig."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "nr": 4,
+      "titel": "ACI mit esse und Adjektiv, Gleichzeitigkeit in der Vergangenheit",
+      "leitfrage": "Was passiert mit dem Adjektiv bei esse, und wie übersetze ich, wenn das Hauptverb in der Vergangenheit steht?",
+      "ichKann": "das Prädikatsnomen im ACI bestimmen und einen ACI nach einem Hauptverb in der Vergangenheit gleichzeitig übersetzen.",
+      "aufgabenImUnterricht": [],
+      "buchseiten": [],
+      "einstieg": "Der häufigste ACI im Test ist einer mit *esse*: Jemand sagt, glaubt oder weiß, dass etwas so ist. Dabei gibt es zwei Stolpersteine, das Adjektiv und die Zeit. Beide löst du mit einer einfachen Regel.",
+      "theorie": [
+        {
+          "ueberschrift": "Das Prädikatsnomen steht auch im Akkusativ",
+          "text": "Steht im ACI der Infinitiv *esse*, gehört meist ein **Prädikatsnomen** dazu, also ein Adjektiv oder Substantiv, das etwas über den Akkusativ aussagt. Dieses Prädikatsnomen steht ebenfalls im **Akkusativ** und stimmt mit dem Subjektsakkusativ in **Kasus, Numerus und Genus** überein (KNG-Kongruenz). *Caesar dicit Gallos fortes esse.* *fortes* ist Akkusativ Plural maskulin wie *Gallos*. Bei einem Neutrum ändert sich die Endung: *Miles putat oppidum magnum esse.* Im Deutschen steht das Adjektiv unverändert: „…, dass die Stadt groß ist.“"
+        },
+        {
+          "ueberschrift": "Gleichzeitigkeit",
+          "text": "Der Infinitiv Präsens im ACI zeigt keine feste Zeit an, sondern ein Zeitverhältnis: Die Handlung des Infinitivs geschieht **gleichzeitig** mit der Handlung des Hauptverbs. Steht das Hauptverb in der Gegenwart, übersetzt man den dass-Satz in der Gegenwart. Steht es in der Vergangenheit, spielt auch der dass-Satz in der Vergangenheit: *Caesar putabat Gallos fortes esse.* heißt „Caesar glaubte, dass die Gallier tapfer seien“ oder „…, dass die Gallier tapfer waren“. Das Glauben und das Tapfersein passierten zur selben Zeit. Beide Übersetzungen sind richtig; „seien“ ist die Form der indirekten Rede, „waren“ klingt alltäglicher."
+        },
+        {
+          "ueberschrift": "Kommt später",
+          "text": "Soll die Handlung des Infinitivs **vor** der Handlung des Hauptverbs liegen, braucht das Lateinische einen anderen Infinitiv. Diese Vorzeitigkeit lernst du später."
+        }
+      ],
+      "merke": [
+        "Das Prädikatsnomen im ACI steht im Akkusativ und stimmt mit dem Subjektsakkusativ in Kasus, Numerus und Genus überein.",
+        "Der Infinitiv Präsens im ACI drückt Gleichzeitigkeit aus: Seine Handlung geschieht zur selben Zeit wie die des Hauptverbs.",
+        "Steht das Hauptverb in der Vergangenheit, steht auch der dass-Satz in der Vergangenheit (seien oder waren)."
+      ],
+      "skizzen": [],
+      "falle": [
+        {
+          "falsch": "*Caesar putabat Gallos fortes esse* heißt „Caesar glaubte, dass die Gallier tapfer sind“, weil *esse* Präsens ist.",
+          "richtig": "Der Infinitiv Präsens bedeutet Gleichzeitigkeit, nicht Gegenwart. Nach einem Hauptverb in der Vergangenheit übersetzt man: „…, dass die Gallier tapfer seien“ oder „waren“.",
+          "warum": "Der Name „Infinitiv Präsens“ klingt nach Gegenwart. Er gibt aber nur an, dass beide Handlungen gleichzeitig sind."
+        },
+        {
+          "falsch": "Das Adjektiv im ACI steht im Nominativ, weil es im Deutschen „tapfer“ heißt.",
+          "richtig": "Im Lateinischen steht das Adjektiv im Akkusativ, passend zum Subjektsakkusativ: *Gallos fortes esse*.",
+          "warum": "Im Deutschen wird das Adjektiv nach „sein“ nicht gebeugt. Im Lateinischen muss es mit seinem Bezugswort übereinstimmen."
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Vercingetorix über die Römer",
+          "phaenomen": "*Vercingetorix dicit Romanos iratos esse.*",
+          "erklaerung": "Auslöser: *dicit*. Akkusativ: *Romanos*. Infinitiv: *esse*. Prädikatsnomen: *iratos*, Akkusativ Plural maskulin wie *Romanos*. Übersetzung: „Vercingetorix sagt, dass die Römer zornig sind.“ Vokabelhilfe: *iratus* zornig."
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Eine große Stadt",
+          "phaenomen": "*Miles narrabat oppidum magnum esse.*",
+          "erklaerung": "*narrabat* ist Imperfekt, also Vergangenheit. *oppidum* ist Neutrum, deshalb heißt das Prädikatsnomen *magnum* mit der Neutrum-Endung -um. Übersetzung: „Der Soldat erzählte, dass die Stadt groß sei“ oder „…, dass die Stadt groß war.“ Das Erzählen und das Großsein gelten zur selben Zeit."
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Ein Feind, kein Freund",
+          "phaenomen": "*Galli sciebant Caesarem hostem esse.*",
+          "erklaerung": "Das Prädikatsnomen kann auch ein Substantiv sein. *hostem* steht im Akkusativ Singular wie *Caesarem*. *sciebant* ist Imperfekt. Übersetzung: „Die Gallier wussten, dass Caesar ein Feind war“ oder „…, dass Caesar ein Feind sei.“"
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Übersetze",
+          "aufgabe": "Übersetze: *Puella putat villam magnam esse.* Vokabelhilfe: *villa* Landhaus.",
+          "tipp1": "*putat* ist Präsens, der dass-Satz also auch.",
+          "tipp2": "*magnam* gehört zu *villam*.",
+          "loesung": "Auslöser: *putat* (Meinen). Akkusativ: **villam**. Infinitiv: *esse*. Prädikatsnomen: *magnam*, Akkusativ Singular feminin wie *villam*. Übersetzung: „Das Mädchen glaubt, dass das Landhaus groß ist.“"
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Übersetze",
+          "aufgabe": "Übersetze beide Sätze und erkläre den Unterschied: (a) *Caesar putat Gallos fortes esse.* (b) *Caesar putabat Gallos fortes esse.*",
+          "tipp1": "Vergleiche die Zeit von *putat* und *putabat*.",
+          "tipp2": "Der Infinitiv *esse* bleibt gleich, er zeigt Gleichzeitigkeit.",
+          "loesung": "In beiden Sätzen: Auslöser *putat* bzw. *putabat* (Meinen), Akkusativ **Gallos**, Infinitiv *esse*, Prädikatsnomen *fortes*. (a) „Caesar glaubt, dass die Gallier tapfer sind.“ (b) „Caesar glaubte, dass die Gallier tapfer seien“ oder „waren“. In (b) steht das Hauptverb in der Vergangenheit. Weil Glauben und Tapfersein gleichzeitig sind, steht auch der dass-Satz in der Vergangenheit."
+        },
+        {
+          "stufe": "schwer",
+          "afb": "II",
+          "operator": "Bestimme",
+          "aufgabe": "Setze das Adjektiv in der richtigen Form ein und übersetze: (a) *Romani putant provinciam ___ esse.* (*bonus*) (b) *Galli putabant oppida ___ esse.* (*magnus*) (c) *Caesar sentiebat milites ___ esse.* (*laetus*)",
+          "tipp1": "Bestimme zuerst Kasus, Numerus und Genus des Subjektsakkusativs.",
+          "tipp2": "*oppida* ist Neutrum Plural, die Endung ist -a.",
+          "loesung": "(a) Akkusativ **provinciam**, Infinitiv *esse*, Adjektiv *bonam*. „Die Römer glauben, dass die Provinz gut ist.“ (b) Akkusativ **oppida**, Infinitiv *esse*, Adjektiv *magna*. „Die Gallier glaubten, dass die Städte groß seien.“ (c) Akkusativ **milites**, Infinitiv *esse*, Adjektiv *laetos*. „Caesar merkte, dass die Soldaten froh waren.“ Auslöser: *putant*, *putabant* (Meinen) und *sentiebat* (Wahrnehmung)."
+        }
+      ],
+      "kurzfassung": [
+        "Bei esse steht das Prädikatsnomen im Akkusativ und passt in Kasus, Numerus und Genus zum Subjektsakkusativ.",
+        "Der Infinitiv Präsens bedeutet: gleichzeitig mit dem Hauptverb.",
+        "Hauptverb in der Vergangenheit: dass-Satz auch in der Vergangenheit, zum Beispiel „seien“ oder „waren“.",
+        "Die Vorzeitigkeit mit einem anderen Infinitiv kommt später."
+      ],
+      "begriffe": [
+        {
+          "begriff": "Prädikatsnomen",
+          "definition": "Adjektiv oder Substantiv, das zusammen mit esse das Prädikat bildet. Im ACI steht es im Akkusativ und stimmt mit dem Subjektsakkusativ überein.",
+          "beispiel": "*fortes* in *Gallos fortes esse*."
+        },
+        {
+          "begriff": "Gleichzeitigkeit",
+          "definition": "Zeitverhältnis, bei dem die Handlung des Infinitivs zur selben Zeit geschieht wie die Handlung des Hauptverbs. Im ACI ausgedrückt durch den Infinitiv Präsens.",
+          "beispiel": "*Caesar putabat Gallos fortes esse.* Caesar glaubte, dass die Gallier tapfer seien."
+        },
+        {
+          "begriff": "KNG-Kongruenz",
+          "definition": "Übereinstimmung zweier zusammengehöriger Wörter in Kasus, Numerus und Genus.",
+          "beispiel": "*oppidum magnum*, *oppida magna*."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Warum heißt es *Gallos fortes esse* und nicht *Gallos fortis esse*?",
+          "antwort": "Das Adjektiv muss zu *Gallos* passen: Akkusativ Plural maskulin. In der dritten Deklination endet diese Form auf -es."
+        },
+        {
+          "frage": "Warum übersetzt man *putabat … esse* nicht mit „ist“?",
+          "antwort": "Der Infinitiv Präsens sagt nur, dass beide Handlungen gleichzeitig sind. Das Glauben lag in der Vergangenheit, also lag auch das Tapfersein, an das Caesar dachte, in der Vergangenheit."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Welche Form passt? *Caesar putat oppidum ___ esse.*",
+          "optionen": [
+            "*magnus*",
+            "*magnum*",
+            "*magnos*",
+            "*magna*"
+          ],
+          "richtig": 1,
+          "begruendung": "*oppidum* ist Akkusativ Singular Neutrum, also *magnum*."
+        },
+        {
+          "frage": "Wie übersetzt man *Galli sciebant Romanos fortes esse*?",
+          "optionen": [
+            "Die Gallier wissen, dass die Römer tapfer sind.",
+            "Die Gallier wussten, dass die Römer tapfer waren.",
+            "Die Gallier wussten, dass die Römer tapfer gewesen waren.",
+            "Die Römer wussten, dass die Gallier tapfer waren."
+          ],
+          "richtig": 1,
+          "begruendung": "*sciebant* ist Vergangenheit, *esse* zeigt Gleichzeitigkeit. Also steht auch der dass-Satz in der Vergangenheit, ohne Vorzeitigkeit. „…, dass die Römer tapfer seien“ wäre ebenfalls richtig."
+        },
+        {
+          "frage": "Was drückt der Infinitiv Präsens im ACI aus?",
+          "optionen": [
+            "immer Gegenwart",
+            "Gleichzeitigkeit mit dem Hauptverb",
+            "Vorzeitigkeit",
+            "Zukunft"
+          ],
+          "richtig": 1,
+          "begruendung": "Der Infinitiv Präsens zeigt ein Zeitverhältnis an: Seine Handlung ist gleichzeitig mit der des Hauptverbs."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "nr": 5,
+      "titel": "Stolperfallen und großes Training",
+      "leitfrage": "Wie erkenne ich einen ACI auch in schwierigen Sätzen sicher?",
+      "ichKann": "einen ACI von einem Akkusativobjekt mit Infinitiv unterscheiden, einen Auslöser am Satzende finden und bei zwei Akkusativen den Subjektsakkusativ bestimmen.",
+      "aufgabenImUnterricht": [],
+      "buchseiten": [],
+      "einstieg": "Jetzt kommen die Sätze, bei denen man im Test gern danebenliegt. Drei Fallen, drei Prüffragen, und dann wird trainiert.",
+      "theorie": [
+        {
+          "ueberschrift": "Falle 1: Akkusativ und Infinitiv, aber kein ACI",
+          "text": "Nicht jeder Akkusativ neben einem Infinitiv ist ein ACI. In *Galli hostes timere non debent* (Die Gallier dürfen die Feinde nicht fürchten) ist *hostes* das **Objekt** von *timere*, und *debent* ist kein Kopfverb. Prüffrage: Führt der Akkusativ die Handlung des Infinitivs aus? Die Feinde fürchten hier nicht, sie werden gefürchtet. Also liegt kein ACI vor."
+        },
+        {
+          "ueberschrift": "Falle 2: Der Auslöser steht am Ende",
+          "text": "Im Lateinischen steht das Prädikat oft am Satzende. Dann kommt der ACI **vor** dem Auslöser: *Gallos in oppido pugnare Caesar audit.* Lies deshalb den Satz bis zum Ende, bevor du übersetzt. Erst beim Wort *audit* ist klar, dass *Gallos … pugnare* ein ACI ist."
+        },
+        {
+          "ueberschrift": "Falle 3: Zwei Akkusative",
+          "text": "Ist der Infinitiv ein Verb mit Objekt, stehen im ACI zwei Akkusative: *Puer scit druides pueros docere.* Einer ist Subjektsakkusativ, der andere Objekt des Infinitivs. Meist steht der **Subjektsakkusativ an erster Stelle**. Prüfe außerdem den Sinn: Die Druiden unterrichten die Jungen, nicht umgekehrt. Übersetzung: „Der Junge weiß, dass die Druiden die Jungen unterrichten.“"
+        },
+        {
+          "ueberschrift": "Kommt später: Vorzeitigkeit",
+          "text": "Mit einem anderen Infinitiv kann der ACI auch ausdrücken, dass etwas vorher geschehen ist. Das lernst du in einer späteren Lektion."
+        }
+      ],
+      "merke": [
+        "Ein ACI liegt nur vor, wenn der Akkusativ die Handlung des Infinitivs ausführt und ein Auslöserverb vorhanden ist.",
+        "Das Auslöserverb kann auch am Satzende stehen; deshalb den ganzen Satz lesen, bevor man übersetzt.",
+        "Bei zwei Akkusativen im ACI steht der Subjektsakkusativ meist zuerst; im Zweifel entscheidet der Sinn."
+      ],
+      "skizzen": [],
+      "falle": [
+        {
+          "falsch": "*Galli hostes timere non debent* enthält einen ACI: „…, dass die Feinde fürchten.“",
+          "richtig": "*hostes* ist Objekt von *timere*, und *debent* ist kein Auslöserverb. Übersetzung: „Die Gallier dürfen die Feinde nicht fürchten.“",
+          "warum": "Akkusativ und Infinitiv stehen nebeneinander, aber der Akkusativ führt die Handlung nicht aus."
+        },
+        {
+          "falsch": "Bei zwei Akkusativen ist egal, welcher Subjekt wird.",
+          "richtig": "Einer ist Subjektsakkusativ, der andere Objekt. Meist steht der Subjektsakkusativ zuerst, und der Sinn muss passen.",
+          "warum": "Vertauscht man die beiden, kehrt sich die Aussage um: Wer fürchtet wen?"
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "titel": "lateinlehrer.net: AcI",
+          "url": "https://www.lateinlehrer.net/lateinische-grammatik/aci",
+          "typ": "Artikel",
+          "auftrag": "Suche auf der Seite den Satz mit *Caesar milites clamare audivit* und schreibe beide dort genannten Übersetzungen ab. Welche Übersetzung ist nur bei Wahrnehmungsverben möglich?"
+        }
+      ],
+      "praxis": [
+        {
+          "stufe": "einfach",
+          "titel": "Der Auslöser kommt zum Schluss",
+          "phaenomen": "*Gallos in oppido pugnare Caesar audit.*",
+          "erklaerung": "Am Anfang weißt du noch nicht, wozu *Gallos* gehört. Erst *audit* am Ende löst den ACI aus. Übersetzung: „Caesar hört, dass die Gallier in der Stadt kämpfen.“"
+        },
+        {
+          "stufe": "mittel",
+          "titel": "Wer fürchtet wen?",
+          "phaenomen": "*Caesar audit Gallos Romanos timere.*",
+          "erklaerung": "Zwei Akkusative: *Gallos* und *Romanos*. Nach der Faustregel ist der erste der Subjektsakkusativ, der zweite Objekt von *timere*. Der Satz allein ließe auch die andere Lesart zu, deshalb immer den Zusammenhang prüfen. Übersetzung: „Caesar hört, dass die Gallier die Römer fürchten.“ Vokabelhilfe: *timere* fürchten."
+        },
+        {
+          "stufe": "schwer",
+          "titel": "Die Druiden als Lehrer",
+          "phaenomen": "*Puer scit druides pueros docere.*",
+          "erklaerung": "*druides* ist hier Subjektsakkusativ, *pueros* ist Objekt von *docere*. Beides passt auch zum Sinn: Bei den Galliern waren die Druiden Priester und Gelehrte. Übersetzung: „Der Junge weiß, dass die Druiden die Jungen unterrichten.“ Vokabelhilfe: *docere* lehren, unterrichten."
+        }
+      ],
+      "training": [
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Bestimme",
+          "aufgabe": "Bestimme, ob ein ACI vorliegt, und begründe: (a) *Caesar videt Gallos.* (b) *Caesar videt Gallos venire.* (c) *Galli hostes timere non debent.* Vokabelhilfe: *debere* müssen, *non debere* nicht dürfen.",
+          "tipp1": "Suche in jedem Satz Auslöser, Akkusativ und Infinitiv.",
+          "tipp2": "Frage: Führt der Akkusativ die Handlung des Infinitivs aus?",
+          "loesung": "(a) Kein ACI: Es fehlt ein Infinitiv. „Caesar sieht die Gallier.“ (b) ACI: Auslöser *videt* (Wahrnehmung), Akkusativ **Gallos**, Infinitiv *venire*. „Caesar sieht, dass die Gallier kommen.“ (c) Kein ACI: *debent* ist kein Auslöser, *hostes* ist Objekt von *timere*. „Die Gallier dürfen die Feinde nicht fürchten.“"
+        },
+        {
+          "stufe": "einfach",
+          "afb": "I",
+          "operator": "Übersetze",
+          "aufgabe": "Übersetze: *Vercingetorix Gallos fortes esse scit.*",
+          "tipp1": "Das Auslöserverb steht am Ende.",
+          "tipp2": "*fortes* ist Prädikatsnomen zu *Gallos*.",
+          "loesung": "Auslöser: *scit* (Wissen). Akkusativ: **Gallos**. Infinitiv: *esse*. Prädikatsnomen: *fortes*. Übersetzung: „Vercingetorix weiß, dass die Gallier tapfer sind.“"
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Übersetze",
+          "aufgabe": "Übersetze: *Romani sciunt Vercingetorigem hostem esse.*",
+          "tipp1": "*Vercingetorigem* und *hostem* sind beide Akkusativ.",
+          "tipp2": "Einer ist Subjektsakkusativ, der andere Prädikatsnomen bei *esse*.",
+          "loesung": "Auslöser: *sciunt* (Wissen). Akkusativ: **Vercingetorigem**. Infinitiv: *esse*. Prädikatsnomen: *hostem*. Übersetzung: „Die Römer wissen, dass Vercingetorix ein Feind ist.“"
+        },
+        {
+          "stufe": "mittel",
+          "afb": "II",
+          "operator": "Markiere",
+          "aufgabe": "Markiere Auslöser, Subjektsakkusativ, Objekt und Infinitiv, dann übersetze: *Puer scit druides pueros docere.*",
+          "tipp1": "*druides* und *pueros* sind beide Akkusativ.",
+          "tipp2": "Der erste Akkusativ ist meist der Subjektsakkusativ. Prüfe den Sinn.",
+          "loesung": "Auslöser: *scit* (Wissen). Subjektsakkusativ: **druides**. Objekt des Infinitivs: *pueros*. Infinitiv: *docere*. Übersetzung: „Der Junge weiß, dass die Druiden die Jungen unterrichten.“"
+        },
+        {
+          "stufe": "schwer",
+          "afb": "III",
+          "operator": "Erkläre",
+          "aufgabe": "Übersetze und erkläre jeden Schritt: *Caesar audiebat Gallos Romanos timere.*",
+          "tipp1": "Achte auf die Zeit von *audiebat*.",
+          "tipp2": "Zwei Akkusative: Wer fürchtet wen?",
+          "loesung": "Auslöser: *audiebat* (Wahrnehmung), Imperfekt. Subjektsakkusativ: **Gallos**, Objekt: *Romanos*. Infinitiv: *timere*, Gleichzeitigkeit. Weil das Hauptverb in der Vergangenheit steht, steht auch der dass-Satz in der Vergangenheit. Übersetzung: „Caesar hörte, dass die Gallier die Römer fürchteten.“"
+        },
+        {
+          "stufe": "schwer",
+          "afb": "III",
+          "operator": "Übersetze",
+          "aufgabe": "Übersetze den kleinen Text: *Caesar in Galliam venit. Nuntius narrat Gallos in oppido esse. Caesar putat Gallos fortes esse. Milites gaudent Caesarem laetum esse.* Vokabelhilfe: *Gallia* Gallien; *nuntius* Bote.",
+          "tipp1": "Nur drei der vier Sätze enthalten einen ACI.",
+          "tipp2": "Im letzten Satz gehört *laetum* zu *Caesarem*.",
+          "loesung": "„Caesar kommt nach Gallien.“ (kein ACI) „Der Bote erzählt, dass die Gallier in der Stadt sind.“ Auslöser *narrat*, Akkusativ **Gallos**, Infinitiv *esse*. „Caesar glaubt, dass die Gallier tapfer sind.“ Auslöser *putat*, Akkusativ **Gallos**, Infinitiv *esse*, Prädikatsnomen *fortes*. „Die Soldaten freuen sich, dass Caesar froh ist.“ Auslöser *gaudent*, Akkusativ **Caesarem**, Infinitiv *esse*, Prädikatsnomen *laetum*."
+        }
+      ],
+      "kurzfassung": [
+        "Prüffrage: Führt der Akkusativ die Handlung des Infinitivs aus, und gibt es ein Auslöserverb?",
+        "Der Auslöser kann am Satzende stehen, deshalb erst zu Ende lesen.",
+        "Bei zwei Akkusativen ist meist der erste der Subjektsakkusativ, der Sinn muss passen."
+      ],
+      "begriffe": [
+        {
+          "begriff": "Akkusativobjekt des Infinitivs",
+          "definition": "Akkusativ, der nicht handelt, sondern Objekt der Handlung des Infinitivs ist.",
+          "beispiel": "*pueros* in *druides pueros docere*."
+        }
+      ],
+      "warumKarten": [
+        {
+          "frage": "Warum soll man einen lateinischen Satz erst ganz lesen?",
+          "antwort": "Das Prädikat, also oft der Auslöser des ACI, steht im Lateinischen häufig am Ende. Erst wenn man es kennt, weiß man, wie die Akkusative und Infinitive davor zusammenhängen."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "In welchem Satz liegt ein ACI vor?",
+          "optionen": [
+            "*Galli hostes timere non debent.*",
+            "*Caesar Gallos videt.*",
+            "*Gallos venire Caesar sentit.*",
+            "*Galli in oppido habitant.*"
+          ],
+          "richtig": 2,
+          "begruendung": "Nur dort gibt es Auslöser (*sentit*), Akkusativ (*Gallos*) und Infinitiv (*venire*), und die Gallier führen das Kommen aus."
+        },
+        {
+          "frage": "*Caesar audit Gallos Romanos timere.* Wer fürchtet?",
+          "optionen": [
+            "Caesar",
+            "die Römer",
+            "die Gallier",
+            "niemand"
+          ],
+          "richtig": 2,
+          "begruendung": "Nach der Faustregel ist der erste Akkusativ der Subjektsakkusativ: *Gallos*. *Romanos* ist Objekt von *timere*. Der Satz allein ließe auch die andere Lesart zu, deshalb immer den Zusammenhang prüfen."
+        }
+      ]
+    }
+  ],
+  "lernzettel": [
+    "Ein ACI besteht aus Auslöserverb, Akkusativ und Infinitiv.",
+    "Der Akkusativ gibt an, wer die Handlung des Infinitivs ausführt.",
+    "Auslöser sind Kopfverben: Wahrnehmen (videre, audire, sentire), Sagen (dicere, narrare, clamare), Denken und Meinen (putare), Wissen (scire), Gefühl (gaudere).",
+    "Infinitiv Präsens Aktiv: Endung -re, Ausnahme esse.",
+    "Übersetzen, Schritt 1: Auslöser finden und „…, dass“ anhängen.",
+    "Schritt 2: Infinitiv finden. Schritt 3: passenden Akkusativ suchen.",
+    "Schritt 4: Akkusativ wird Subjekt, Infinitiv wird Prädikat des dass-Satzes.",
+    "Das Prädikat im dass-Satz passt sich an das neue Subjekt an.",
+    "Bei esse steht das Prädikatsnomen auch im Akkusativ und stimmt in Kasus, Numerus und Genus mit dem Subjektsakkusativ überein.",
+    "Der Infinitiv Präsens bedeutet Gleichzeitigkeit mit dem Hauptverb.",
+    "Hauptverb in der Vergangenheit: dass-Satz auch in der Vergangenheit (seien oder waren).",
+    "Nach Wahrnehmungsverben geht auch: „Ich sehe die Gallier kommen.“",
+    "Kein ACI, wenn der Akkusativ nur Objekt des Infinitivs ist und kein Auslöser da ist.",
+    "Auslöser kann am Satzende stehen: erst den ganzen Satz lesen.",
+    "Zwei Akkusative: meist ist der erste der Subjektsakkusativ.",
+    "Muster 1: Caesar dicit Gallos fortes esse. Caesar sagt, dass die Gallier tapfer sind.",
+    "Muster 2: Caesar putabat Gallos fortes esse. Caesar glaubte, dass die Gallier tapfer seien."
+  ],
+  "faktencheck": [
+    {
+      "aussage": "s0: Den ACI gibt es auch im Deutschen, besonders nach Wahrnehmungsverben wie hören und sehen (Ich höre den Wind pfeifen).",
+      "quelle": "https://de.wikipedia.org/wiki/Accusativus_cum_infinitivo",
+      "status": "belegt"
+    },
+    {
+      "aussage": "s2: Auslöser des ACI sind Verben des Wahrnehmens, Sagens, Denkens und Meinens, Wissens und des Gefühls (gaudere).",
+      "quelle": "https://de.serlo.org/latein/33896/aci-accusativus-cum-infinitivo",
+      "status": "belegt",
+      "notiz": "Gegengeprüft mit https://www.schule-bw.de/faecher-und-schularten/sprachen-und-literatur/latein/sprache/satzlehre/aci-accusativus-cum-infinitivo-und-nci/accusativus-cum-infinitivo-aci.html (Sagen, Wahrnehmung, Gefühl mit gaudere, Denken). Dort zusätzlich Verben des Wollens und unpersönliche Ausdrücke, die hier bewusst weggelassen sind."
+    },
+    {
+      "aussage": "s2: Merkhilfe Kopfverben: Der ACI steht nach Verben, die man mit dem Kopf tun kann (sagen, denken, hören, sehen).",
+      "quelle": "https://www.lateinlehrer.net/lateinische-grammatik/aci",
+      "status": "belegt"
+    },
+    {
+      "aussage": "s3: Übersetzung mit dass-Satz: Der Akkusativ wird Subjekt, der Infinitiv wird Prädikat.",
+      "quelle": "https://de.wikipedia.org/wiki/Accusativus_cum_infinitivo",
+      "status": "belegt",
+      "notiz": "Gegengeprüft mit https://www2.uni-erfurt.de/renzi/latein/ZKONLINE/grammar/aci.htm und https://www.lateinlehrer.net/lateinische-grammatik/aci"
+    },
+    {
+      "aussage": "s3: Übersetzen in vier Schritten (Auslöser mit dass, Infinitiv, Akkusativ, dass-Satz bauen).",
+      "quelle": "https://de.serlo.org/latein/33896/aci-accusativus-cum-infinitivo",
+      "status": "vereinfacht",
+      "notiz": "Serlo nennt vier Schritte in leicht anderer Reihenfolge (erst Akkusativ und Infinitiv bestimmen, dann Hauptsatz mit dass). Die Reihenfolge hier ist didaktisch angepasst."
+    },
+    {
+      "aussage": "s4: Das Prädikatsnomen im ACI steht im Akkusativ und stimmt in Kasus, Numerus und Genus mit dem Subjektsakkusativ überein (Puto te felicem esse).",
+      "quelle": "https://de.serlo.org/latein/33896/aci-accusativus-cum-infinitivo",
+      "status": "belegt",
+      "notiz": "Gegengeprüft mit https://www2.uni-erfurt.de/renzi/latein/ZKONLINE/grammar/aci.htm (Angleichung in Kasus, Numerus und Genus an den Subjektsakkusativ)."
+    },
+    {
+      "aussage": "s4: Der Infinitiv Präsens im ACI drückt Gleichzeitigkeit mit dem Hauptverb aus, unabhängig von dessen Tempus.",
+      "quelle": "https://de.wikipedia.org/wiki/Accusativus_cum_infinitivo",
+      "status": "belegt",
+      "notiz": "Gegengeprüft mit https://www2.uni-erfurt.de/renzi/latein/ZKONLINE/grammar/aci.htm (Infinitiv markiert relative Zeit)."
+    },
+    {
+      "aussage": "s4: Steht das Hauptverb in der Vergangenheit, wird der gleichzeitige ACI in der Vergangenheit übersetzt, im Deutschen oft mit Konjunktiv (seien) oder Indikativ (waren).",
+      "quelle": "https://www.schule-bw.de/faecher-und-schularten/sprachen-und-literatur/latein/sprache/satzlehre/aci-accusativus-cum-infinitivo-und-nci/accusativus-cum-infinitivo-aci.html",
+      "status": "belegt",
+      "notiz": "Dort Beispiel mit zwei Übersetzungen (machte/mache). Serlo nennt für Vergangenheit im Hauptsatz meist den Konjunktiv."
+    },
+    {
+      "aussage": "s5: Nach Wahrnehmungsverben kann der ACI auch mit Infinitiv übersetzt werden (Caesar hörte die Soldaten schreien).",
+      "quelle": "https://www.lateinlehrer.net/lateinische-grammatik/aci",
+      "status": "belegt"
+    },
+    {
+      "aussage": "s5: Im ACI steht der Subjektsakkusativ meist an erster Stelle; ein ACI kann zwei Akkusative enthalten.",
+      "quelle": "https://www.schule-bw.de/faecher-und-schularten/sprachen-und-literatur/latein/sprache/satzlehre/aci-accusativus-cum-infinitivo-und-nci/accusativus-cum-infinitivo-aci.html",
+      "status": "belegt",
+      "notiz": "Beispiel mit zwei Akkusativen auch bei https://de.serlo.org/latein/33896/aci-accusativus-cum-infinitivo"
+    },
+    {
+      "aussage": "s2, s5: Die Druiden waren bei den Galliern Priester und Gelehrte.",
+      "quelle": "https://de.wikipedia.org/wiki/Druide",
+      "status": "belegt",
+      "notiz": "Nach Caesar Priesterstand, zugleich Philosophen, Rechtsgelehrte und Ratgeber."
+    },
+    {
+      "aussage": "s3: Vercingetorix führte 52 v. Chr. einen großen Aufstand der Gallier gegen Caesar an.",
+      "quelle": "https://de.wikipedia.org/wiki/Vercingetorix",
+      "status": "belegt",
+      "notiz": "Fürst der Arverner, Kapitulation bei Alesia."
+    }
+  ]
+}
